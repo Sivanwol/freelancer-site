@@ -7,13 +7,33 @@ import { loadSlim } from '@tsparticles/slim';
 
 export default function ParticleBackground() {
   const [init, setInit] = useState(false);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
+    let mounted = true;
+
     initParticlesEngine(async (engine) => {
-      await loadSlim(engine);
-    }).then(() => {
-      setInit(true);
+      try {
+        await loadSlim(engine);
+        if (mounted) {
+          setInit(true);
+        }
+      } catch (err) {
+        console.error('Failed to initialize particles:', err);
+        if (mounted) {
+          setError(true);
+        }
+      }
+    }).catch((err) => {
+      console.error('Particles engine initialization failed:', err);
+      if (mounted) {
+        setError(true);
+      }
     });
+
+    return () => {
+      mounted = false;
+    };
   }, []);
 
   const options: ISourceOptions = useMemo(
@@ -87,6 +107,11 @@ export default function ParticleBackground() {
     []
   );
 
+  // If there's an error, return null silently (don't break the page)
+  if (error) {
+    return null;
+  }
+
   if (init) {
     return (
       <Particles
@@ -100,7 +125,8 @@ export default function ParticleBackground() {
     );
   }
 
-  return null;
+  // Return a placeholder div to maintain layout during initialization
+  return <div className="absolute inset-0 z-0" aria-hidden="true" />;
 }
 
 

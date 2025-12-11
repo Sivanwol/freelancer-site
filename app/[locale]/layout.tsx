@@ -67,13 +67,25 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
+  let locale: string;
+  let messages: Awaited<ReturnType<typeof getMessages>>;
   
-  if (!routing.locales.includes(locale as typeof routing.locales[number])) {
-    notFound();
+  try {
+    const resolvedParams = await params;
+    locale = resolvedParams.locale;
+    
+    if (!routing.locales.includes(locale as typeof routing.locales[number])) {
+      notFound();
+    }
+
+    messages = await getMessages();
+  } catch (error) {
+    console.error('Error in LocaleLayout:', error);
+    // Fallback to default locale
+    locale = routing.defaultLocale;
+    messages = await getMessages({ locale });
   }
 
-  const messages = await getMessages();
   const dir = locale === 'he' ? 'rtl' : 'ltr';
 
   // Structured data for SEO
@@ -110,14 +122,29 @@ export default async function LocaleLayout({
   };
 
   return (
-    <html lang={locale} dir={dir}>
+    <html lang={locale} dir={dir} suppressHydrationWarning>
       <head>
+        {/* Critical CSS to prevent black screen if styles fail to load */}
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            body { 
+              background-color: #0d1117 !important; 
+              color: #f0f6fc !important; 
+              margin: 0;
+              padding: 0;
+            }
+            html { 
+              background-color: #0d1117 !important; 
+            }
+          `
+        }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+          suppressHydrationWarning
         />
       </head>
-      <body className="antialiased">
+      <body className="antialiased" suppressHydrationWarning style={{ backgroundColor: '#0d1117', color: '#f0f6fc' }}>
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>

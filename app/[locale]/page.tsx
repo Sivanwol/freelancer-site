@@ -8,21 +8,24 @@ import ExperienceTimeline from '@/components/ExperienceTimeline';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import FloatingCTA from '@/components/FloatingCTA';
+import { ErrorBoundary } from '@/components/ErrorBoundary';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#0d1117]">
-      <Navbar />
-      <FloatingCTA />
-      <Hero />
-      <About />
-      <Services />
-      <Skills />
-      <Testimonials />
-      <ExperienceTimeline />
-      <Contact />
-      <Footer />
-    </main>
+    <ErrorBoundary>
+      <main className="min-h-screen bg-[#0d1117]">
+        <Navbar />
+        <FloatingCTA />
+        <Hero />
+        <About />
+        <Services />
+        <Skills />
+        <Testimonials />
+        <ExperienceTimeline />
+        <Contact />
+        <Footer />
+      </main>
+    </ErrorBoundary>
   );
 }
 
