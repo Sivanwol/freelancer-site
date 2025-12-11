@@ -91,7 +91,7 @@ export default function ParticleBackground() {
     return (
       <Particles
         id="tsparticles"
-        particlesLoaded={async (container: Container) => {
+        particlesLoaded={async (container?: Container) => {
           console.log('Particles loaded', container);
         }}
         options={options}
