@@ -128,13 +128,13 @@ export default async function LocaleLayout({
         <style dangerouslySetInnerHTML={{
           __html: `
             body { 
-              background-color: #0d1117 !important; 
+              background-color: #111827 !important; 
               color: #f0f6fc !important; 
               margin: 0;
               padding: 0;
             }
             html { 
-              background-color: #0d1117 !important; 
+              background-color: #111827 !important; 
             }
           `
         }} />
@@ -144,7 +144,7 @@ export default async function LocaleLayout({
           suppressHydrationWarning
         />
       </head>
-      <body className="antialiased" suppressHydrationWarning style={{ backgroundColor: '#0d1117', color: '#f0f6fc' }}>
+      <body className="antialiased" suppressHydrationWarning style={{ backgroundColor: '#111827', color: '#f0f6fc' }}>
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
