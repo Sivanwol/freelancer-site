@@ -1,0 +1,82 @@
+{
+  "nav": {
+    "home": "בית",
+    "about": "אודות",
+    "services": "שירותים",
+    "skills": "כישורים",
+    "testimonials": "המלצות",
+    "contact": "צור קשר"
+  },
+  "hero": {
+    "greeting": "שלום! 👋🏻",
+    "name": "סיון וולברג",
+    "title": "מפתח Full Stack & AI",
+    "subtitle": "15+ שנות ניסיון | React | Node.js | Python | LangChain",
+    "cta": {
+      "hire": "שכור אותי ב-Upwork",
+      "contact": "בואו נדבר"
+    },
+    "badges": {
+      "jobSuccess": "100% הצלחה בעבודה",
+      "topRated": "Top Rated Plus",
+      "verified": "מאומת"
+    }
+  },
+  "about": {
+    "title": "למה לעבוד איתי?",
+    "description": "אני לא רק כותב קוד — אני מספק תוצאות. עם 15+ שנות ניסיון מעשי, עזרתי לסטארטאפים לצמוח מ-MVP למיליוני משתמשים, ולארגונים גדולים לחדש מערכות ישנות לפלטפורמות מונעות AI. הלקוחות שלי מקבלים קוד נקי, מוכן לייצור, שנמסר בזמן ועובד תחת לחץ.",
+    "experience": "15+",
+    "experienceLabel": "שנות מצוינות",
+    "highlight1": "100% הצלחה בעבודה ב-Upwork עם דירוג Top Rated Plus",
+    "highlight2": "מומחה ב-React, Node.js, Python ואינטגרציית AI",
+    "highlight3": "מקונספט לפריסה — אספקה מלאה"
+  },
+  "services": {
+    "title": "השירותים שלי",
+    "fullstack": {
+      "title": "פיתוח Full Stack",
+      "description": "React, Next.js, Node.js, TypeScript - בניית אפליקציות web מודרניות וחזקות"
+    },
+    "ai": {
+      "title": "פיתוח AI",
+      "description": "LangChain, Claude Code, Cursor Agents, GPT-4 - אינטגרציה של AI לפתרונות חכמים"
+    },
+    "backend": {
+      "title": "Backend APIs",
+      "description": "Node.js, Python, FastAPI, NestJS - בניית APIs מהירים, מאובטחים וניתנים להרחבה"
+    }
+  },
+  "skills": {
+    "title": "הכישורים שלי",
+    "nextjs": "Next.js",
+    "nestjs": "NestJS",
+    "claude": "Claude AI",
+    "cursor": "Cursor/AI Agents",
+    "python": "Python/LangChain",
+    "php": "PHP"
+  },
+  "testimonials": {
+    "title": "מה אומרים עליי",
+    "subtitle": "המלצות מלקוחות מרוצים מ-Upwork"
+  },
+  "experience": {
+    "title": "הניסיון שלי"
+  },
+  "contact": {
+    "title": "בואו נדבר",
+    "subtitle": "יש לך פרויקט? בואו נבנה משהו מדהים ביחד!",
+    "email": "אימייל",
+    "upwork": "צפה בפרופיל שלי",
+    "linkedin": "התחבר איתי"
+  },
+  "footer": {
+    "rights": "כל הזכויות שמורות © 2025 סיון וולברג"
+  },
+  "meta": {
+    "title": "סיון וולברג - מפתח Full Stack & AI",
+    "description": "15+ שנות ניסיון | Top Rated Plus ב-Upwork | React | Node.js | Python | LangChain | Claude Code"
+  }
+}
+
+
+

@@ -1,0 +1,82 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "skills": "Skills",
+    "testimonials": "Testimonials",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi There! 👋🏻",
+    "name": "Sivan Wolberg",
+    "title": "Full Stack & AI Developer",
+    "subtitle": "15+ Years Experience | React | Node.js | Python | LangChain",
+    "cta": {
+      "hire": "Hire Me on Upwork",
+      "contact": "Let's Talk"
+    },
+    "badges": {
+      "jobSuccess": "100% Job Success",
+      "topRated": "Top Rated Plus",
+      "verified": "Verified"
+    }
+  },
+  "about": {
+    "title": "Why Work With Me?",
+    "description": "I don't just write code — I deliver results. With 15+ years of hands-on experience, I've helped startups scale from MVP to millions of users, and enterprises modernize legacy systems into AI-powered platforms. My clients get clean, production-ready code that ships on time and performs under pressure.",
+    "experience": "15+",
+    "experienceLabel": "Years Delivering Excellence",
+    "highlight1": "100% Job Success on Upwork with Top Rated Plus status",
+    "highlight2": "Expert in React, Node.js, Python & AI integration",
+    "highlight3": "From concept to deployment — full lifecycle delivery"
+  },
+  "services": {
+    "title": "My Services",
+    "fullstack": {
+      "title": "Full-Stack Development",
+      "description": "React, Next.js, Node.js, TypeScript - Building modern and robust web applications"
+    },
+    "ai": {
+      "title": "AI Development",
+      "description": "LangChain, Claude Code, Cursor Agents, GPT-4 - Integrating AI into smart solutions"
+    },
+    "backend": {
+      "title": "Backend APIs",
+      "description": "Node.js, Python, FastAPI, NestJS - Building fast, secure, and scalable APIs"
+    }
+  },
+  "skills": {
+    "title": "My Skills",
+    "nextjs": "Next.js",
+    "nestjs": "NestJS",
+    "claude": "Claude AI",
+    "cursor": "Cursor/AI Agents",
+    "python": "Python/LangChain",
+    "php": "PHP"
+  },
+  "testimonials": {
+    "title": "What They Say About Me",
+    "subtitle": "Reviews from satisfied clients on Upwork"
+  },
+  "experience": {
+    "title": "My Experience"
+  },
+  "contact": {
+    "title": "Let's Talk",
+    "subtitle": "Have a project? Let's build something amazing together!",
+    "email": "Email",
+    "upwork": "View My Profile",
+    "linkedin": "Connect With Me"
+  },
+  "footer": {
+    "rights": "All Rights Reserved © 2025 Sivan Wolberg"
+  },
+  "meta": {
+    "title": "Sivan Wolberg - Full Stack & AI Developer",
+    "description": "15+ Years Experience | Top Rated Plus on Upwork | React | Node.js | Python | LangChain | Claude Code"
+  }
+}
+
+
+
