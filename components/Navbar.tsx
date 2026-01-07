@@ -5,6 +5,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import { Link, usePathname, useRouter } from '@/i18n/routing';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiMenu, HiX } from 'react-icons/hi';
+import Image from 'next/image';
 
 export default function Navbar() {
   const t = useTranslations('nav');
@@ -50,9 +51,17 @@ export default function Navbar() {
           {/* Logo/Name */}
           <a
             href="#home"
-            className="text-lg xs:text-xl md:text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
+            className="flex items-center hover:opacity-80 transition-opacity"
           >
-            Sivan Wolberg
+            <Image
+              key={locale}
+              src={locale === 'he' ? '/logo-he.png' : '/logo.png'}
+              alt={locale === 'he' ? 'סיון וולברג' : 'Sivan Wolberg'}
+              width={240}
+              height={80}
+              className="h-14 xs:h-16 md:h-20 w-auto"
+              priority
+            />
           </a>
 
           {/* Desktop Navigation */}

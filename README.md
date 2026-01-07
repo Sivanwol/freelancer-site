@@ -1,6 +1,6 @@
 # Sivan Wolberg - Portfolio Website
 
-A modern, bilingual (Hebrew/English) freelancer portfolio site built with Next.js 15.
+A modern, bilingual (Hebrew/English) freelancer portfolio site built with Next.js 16.
 
 ## Features
 
@@ -13,7 +13,7 @@ A modern, bilingual (Hebrew/English) freelancer portfolio site built with Next.j
 
 ## Tech Stack
 
-- **Framework**: Next.js 15 (App Router)
+- **Framework**: Next.js 16 (App Router)
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
 - **Animations**: Framer Motion + tsParticles
@@ -34,7 +34,7 @@ A modern, bilingual (Hebrew/English) freelancer portfolio site built with Next.j
 
 ```bash
 # Install dependencies
-npm install
+pnpm install
 
 # Copy environment template and update with your domain
 cp .env.template .env.local
@@ -43,13 +43,13 @@ cp .env.template .env.local
 # NEXT_PUBLIC_SITE_URL=https://www.yourdomain.com
 
 # Run development server
-npm run dev
+pnpm dev
 
 # Build for production
-npm run build
+pnpm build
 
 # Start production server
-npm start
+pnpm start
 ```
 
 ## Environment Variables

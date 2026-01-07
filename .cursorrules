@@ -1,0 +1,199 @@
+# Sivan Wolberg Portfolio - Cursor Rules
+
+## Critical: Package Manager
+
+**ALWAYS use `pnpm` - NEVER use `npm` or `yarn`**
+
+This project uses pnpm 10.27.0 as the package manager. All commands must use pnpm:
+- ✅ `pnpm install`, `pnpm add`, `pnpm dev`, `pnpm build`
+- ❌ `npm install`, `yarn add`, `npm run dev`
+
+**ALWAYS use existing scripts from package.json - do not invent commands**
+
+Before running any command:
+1. **Scan the `package.json`** to check available scripts
+2. Use only the defined scripts - never invent or guess command names
+
+## Package & Dependency Management Rules
+
+### Adding New Packages
+
+**CRITICAL**: **NEVER add new packages without ensuring they are properly included and installed in `package.json`**
+
+**Requirements**:
+- ✅ **ALWAYS** add packages to the correct `package.json` file
+- ✅ **ALWAYS** use `pnpm add <package>` to add dependencies
+- ✅ **ALWAYS** verify the package appears in dependencies or devDependencies
+- ✅ **ALWAYS** check if the package already exists before adding
+- ❌ **NEVER** manually edit `package.json` without running `pnpm install`
+- ❌ **NEVER** add packages that conflict with existing dependencies
+
+### Removing Packages
+
+**CRITICAL**: **When removing a package from code, ALWAYS remove it from package.json**
+
+**Requirements**:
+- ✅ **ALWAYS** check if a package is still used before removing it
+- ✅ **ALWAYS** remove packages from package.json when no longer used
+- ✅ **ALWAYS** verify removal by searching codebase for imports
+- ❌ **NEVER** leave unused packages in package.json
+
+## Critical: Version Requirements
+
+**When creating new Next.js apps, use Next.js 16.0.10**
+
+```bash
+pnpm add next@16.0.10 react@19.1.0 react-dom@19.1.0
+```
+
+## Project Overview
+
+This is a **Sivan Wolberg Portfolio** website - a bilingual (Hebrew/English) freelancer portfolio site built with Next.js 16.
+
+## Repository Structure
+
+```
+freelanser-site/
+├── app/
+│   └── [locale]/           # i18n routes (he, en)
+│       ├── layout.tsx
+│       └── page.tsx
+├── components/             # React components
+├── i18n/
+│   ├── config.ts
+│   ├── messages/           # Translation files (en.json, he.json)
+│   ├── request.ts
+│   └── routing.ts
+├── public/                 # Static assets
+│   ├── favicon.png
+│   ├── logo.png            # English logo
+│   └── logo-he.png         # Hebrew logo
+└── .cursor/                # Cursor IDE rules and agents
+```
+
+## Tech Stack
+
+- **Framework**: Next.js 16.0.10 (App Router)
+- **Language**: TypeScript 5.5
+- **Styling**: Tailwind CSS 3.4
+- **Animations**: Framer Motion 11.3
+- **i18n**: next-intl 3.15
+- **Icons**: react-icons 5.4
+- **Particles**: @tsparticles 3.0
+- **Runtime**: Node.js 22+
+- **Package Manager**: pnpm 10.27
+
+## i18n Configuration
+
+### Locale-Aware Components
+
+**ALWAYS** use locale-aware components for visual content:
+
+```typescript
+// ✅ CORRECT - Locale-aware logo
+<Image
+  key={locale}
+  src={locale === 'he' ? '/logo-he.png' : '/logo.png'}
+  alt={locale === 'he' ? 'סיון וולברג' : 'Sivan Wolberg'}
+  width={120}
+  height={40}
+/>
+
+// ❌ INCORRECT - Hardcoded logo for all locales
+<Image src="/logo.png" alt="Sivan Wolberg" />
+```
+
+### Using next-intl
+
+```typescript
+import { useTranslations, useLocale } from 'next-intl';
+import { routing } from '@/i18n/routing';
+
+const t = useTranslations('namespace');
+const locale = useLocale(); // 'he' or 'en'
+```
+
+## Best Practices
+
+1. **Use pnpm** for all package management
+2. **Follow Next.js 16 conventions** - use App Router, Server Components
+3. **Use locale-aware components** for any locale-specific visual content
+4. **Keep components small** - single responsibility
+5. **Use semantic HTML** where possible
+6. **Add loading and error states** to data fetching components
+7. **Implement error handling** and error logging
+8. **Format with Prettier** before committing
+9. **Always verify packages are in package.json**
+10. **Always remove unused packages from package.json**
+11. **Always check for duplicate methods** before adding
+
+## Icon Standards
+
+**Use proper icon libraries for all icons**
+- Libraries: `react-icons` (Hi*, Fi*, etc.)
+- **DO NOT use**: Custom SVG components or inline SVGs for icons
+
+## Code Verification Standards
+
+### Build Verification Rule
+
+**CRITICAL**: Any change to code MUST verify that the build passes.
+
+**Requirements**:
+- ✅ **ALWAYS run `pnpm build`** after making code changes
+- ✅ **ALWAYS ensure build completes successfully**
+- ✅ **ALWAYS fix build errors**
+
+### Type-Check Verification Rule
+
+**CRITICAL**: Any change to code MUST verify that type-check passes.
+
+**Requirements**:
+- ✅ **ALWAYS run `pnpm type-check`** after making code changes
+- ✅ **ALWAYS ensure type-check completes successfully**
+- ✅ **ALWAYS fix type errors**
+
+## Code Cleanup Standards
+
+**CRITICAL**: Always keep the codebase clean.
+
+### Removing Unused Code
+
+**Requirements**:
+- ✅ **ALWAYS** remove dead code, commented-out code, unused imports
+- ✅ **ALWAYS** remove console.* statements
+- ❌ **NEVER** leave TODO comments in production code
+
+### Removing Unused Files
+
+**Requirements**:
+- ✅ **ALWAYS** delete orphaned files
+- ✅ **ALWAYS** remove test files when removing corresponding code
+- ❌ **NEVER** leave empty directories
+
+## Available MCP Tools
+
+MCP tools are configured and available. All follow the pattern: `mcp_<server-name>_<tool-name>`
+
+### Repository Management
+- **GitHub** (`mcp_github_*`) - PRs, issues, commits, files, branches
+- **Personal GitHub** (`mcp_github_personal_*`) - Personal account operations
+
+### Problem Solving & Planning
+- **Sequential Thinking** (`mcp_sequential-thinking_sequentialthinking`) - Structured reasoning
+- **Ref** (`mcp_Ref_*`) - Documentation lookup
+- **Context7** (`mcp_Context7_*`) - Library documentation
+
+### Web & Content
+- **Firecrawl** (`mcp_firecrawl_*`) - Web scraping, crawling, search
+- **Browser Extension** (`mcp_cursor-browser-extension_*`) - Browser automation
+
+### Design & UI
+- **Figma** (`mcp_Figma_*`) - Design operations, code generation
+
+### User Interaction
+- **Interactive** (`mcp_interactive_*`) - User input, notifications
+
+**Tool Naming Convention**:
+- Server names use hyphens: `github`, `sequential-thinking`
+- Tool names use underscores: `list_pull_requests`, `get_pull_request`

@@ -1,0 +1,45 @@
+---
+description: Git Specialist to check .env.template changes vs main
+globs: .env.template, .env*
+alwaysApply: false
+---
+# Role
+You are a **Git Configuration Specialist**. Your goal is to help the user manage environment variable templates by comparing the current branch against the `main` branch.
+
+# Trigger
+Activate when the user asks to:
+- "check dev env"
+- "check env dev"
+- "compare env dev"
+- "check dev .env.template"
+- "check .env.template dev"
+- "what changed in env dev"
+
+# Action
+When triggered, you must perform the following steps sequentially:
+
+1.  **Identify the File**: Locate `.env.template` in the current working directory.
+2.  **Run Git Diff**: Execute the following terminal command to compare the version in `develop` with the version in the current working directory:
+    ```bash
+    git diff develop -- .env.template
+    ```
+    *(Note: If the user calls the base branch "dev" instead of "develop", adjust the command accordingly).*
+
+3.  **Analyze Output**:
+    * If the command returns nothing, state that there are **no changes**.
+    * If there is output, parse the diff to see what was added (`+`) or removed (`-`).
+
+# Output Format
+You must structure your response exactly as follows:
+
+### 📂 App / Context
+**File:** `[Path to .env.template]`
+**Status:** [Modified / Identical / New File]
+
+### 📝 Changes (vs develop)
+[Insert a markdown block with the diff output here, using diff syntax highlighting]
+
+```diff
+- VARIABLE_OLD=value
++ VARIABLE_NEW=value
++ NEW_FEATURE_FLAG=true

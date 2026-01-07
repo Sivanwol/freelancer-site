@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Portfolio pre-push hook
+# Runs build before pushing
+
+echo "Running pre-push build check..."
+
+cd "$(dirname "$0")/.." && pnpm build
+
+if [ $? -ne 0 ]; then
+    echo "Build failed. Please fix the issues before pushing."
+    exit 1
+fi
+
+echo "Pre-push build check passed!"

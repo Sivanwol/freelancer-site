@@ -1,0 +1,10 @@
+{
+  "worktree.cleanup.enabled": true,
+  "worktree.cleanup.intervalHours": 6,
+  "worktree.cleanup.retentionDays": 7,
+  "setup-worktree": [
+    "pnpm install",
+    "pnpm build",
+    "pnpm test"
+  ]
+}

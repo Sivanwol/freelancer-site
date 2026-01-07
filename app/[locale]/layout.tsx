@@ -1,5 +1,5 @@
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, getTranslations } from 'next-intl/server';
+import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import '../globals.css';
@@ -8,6 +8,8 @@ import type { Metadata } from 'next';
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
+
+type Locale = (typeof routing.locales)[number];
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -57,6 +59,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         'max-snippet': -1,
       },
     },
+    icons: {
+      icon: '/favicon.png',
+      apple: '/favicon.png',
+    },
   };
 }
 
@@ -67,24 +73,17 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
-  let locale: string;
-  let messages: Awaited<ReturnType<typeof getMessages>>;
+  const { locale } = await params;
   
-  try {
-    const resolvedParams = await params;
-    locale = resolvedParams.locale;
-    
-    if (!routing.locales.includes(locale as typeof routing.locales[number])) {
-      notFound();
-    }
-
-    messages = await getMessages();
-  } catch (error) {
-    console.error('Error in LocaleLayout:', error);
-    // Fallback to default locale
-    locale = routing.defaultLocale;
-    messages = await getMessages({ locale });
+  // Validate locale
+  if (!routing.locales.includes(locale as Locale)) {
+    notFound();
   }
+
+  // Enable static rendering
+  setRequestLocale(locale);
+
+  const messages = await getMessages();
 
   const dir = locale === 'he' ? 'rtl' : 'ltr';
 
