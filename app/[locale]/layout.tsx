@@ -63,6 +63,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       icon: '/favicon.png',
       apple: '/favicon.png',
     },
+    verification: {
+      google: 'SLo_aGwT241-MU7vu68QtpEX4G8GXrlioxS8RBhJzEM',
+    },
   };
 }
 
