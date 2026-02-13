@@ -2,6 +2,8 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
+import { siteConfig, getBaseUrl } from '@/lib/config';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 import '../globals.css';
 import type { Metadata } from 'next';
 
@@ -18,15 +20,14 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'meta' });
-
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.devco-solution.online';
+  const baseUrl = getBaseUrl();
 
   return {
     title: t('title'),
     description: t('description'),
     keywords: ['Full Stack Developer', 'AI Developer', 'React', 'Node.js', 'Python', 'LangChain', 'Claude Code', 'Cursor', 'Freelancer', 'Haifa', 'Israel'],
-    authors: [{ name: 'Sivan Wolberg' }],
-    creator: 'Sivan Wolberg',
+    authors: [{ name: siteConfig.author }],
+    creator: siteConfig.author,
     metadataBase: new URL(baseUrl),
     alternates: {
       canonical: `/${locale}`,
@@ -39,14 +40,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: t('title'),
       description: t('description'),
       url: baseUrl,
-      siteName: 'Sivan Wolberg Portfolio',
+      siteName: siteConfig.name,
       locale: locale === 'he' ? 'he_IL' : 'en_US',
       type: 'website',
+      images: [
+        {
+          url: '/opengraph-image',
+          width: 1200,
+          height: 630,
+          alt: t('title'),
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: t('title'),
       description: t('description'),
+      images: ['/twitter-image'],
     },
     robots: {
       index: true,
@@ -64,7 +74,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       apple: '/favicon.png',
     },
     verification: {
-      google: 'SLo_aGwT241-MU7vu68QtpEX4G8GXrlioxS8RBhJzEM',
+      google: siteConfig.verification.google,
+    },
+    other: {
+      'theme-color': siteConfig.theme.background,
     },
   };
 }
@@ -77,7 +90,7 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  
+
   // Validate locale
   if (!routing.locales.includes(locale as Locale)) {
     notFound();
@@ -87,26 +100,26 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
 
   const messages = await getMessages();
-
   const dir = locale === 'he' ? 'rtl' : 'ltr';
+  const baseUrl = getBaseUrl();
 
-  // Structured data for SEO
-  const structuredData = {
+  // Structured data for SEO — all values are from trusted siteConfig constants, safe for injection
+  const personSchema = {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    name: 'Sivan Wolberg',
-    jobTitle: 'Full Stack & AI Developer',
+    name: siteConfig.author,
+    jobTitle: siteConfig.jobTitle,
     description: '15+ Years Full-Stack & AI Developer specializing in React, Node.js, Python, and LangChain',
-    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.devco-solution.online',
-    email: 'fastwings@gmail.com',
+    url: baseUrl,
+    email: siteConfig.email,
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Haifa',
       addressCountry: 'Israel',
     },
     sameAs: [
-      'https://www.linkedin.com/in/swolberg',
-      'https://upwork.com/freelancers/swolberg',
+      siteConfig.social.linkedin,
+      siteConfig.social.upwork,
     ],
     knowsAbout: [
       'Full Stack Development',
@@ -123,30 +136,68 @@ export default async function LocaleLayout({
     ],
   };
 
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: siteConfig.name,
+    url: baseUrl,
+    inLanguage: [locale === 'he' ? 'he-IL' : 'en-US'],
+    author: {
+      '@type': 'Person',
+      name: siteConfig.author,
+    },
+  };
+
+  const professionalServiceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    name: 'DevCo Solution',
+    provider: {
+      '@type': 'Person',
+      name: siteConfig.author,
+    },
+    areaServed: 'Worldwide',
+    serviceType: ['Full Stack Development', 'AI Development', 'Backend API Development'],
+    url: baseUrl,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Haifa',
+      addressCountry: 'Israel',
+    },
+  };
+
+  // Critical inline CSS uses only trusted constant values from siteConfig (no user input)
+  const criticalCss = `
+    body {
+      background-color: ${siteConfig.theme.background} !important;
+      color: ${siteConfig.theme.foreground} !important;
+      margin: 0;
+      padding: 0;
+    }
+    html {
+      background-color: ${siteConfig.theme.background} !important;
+    }
+  `;
+
   return (
     <html lang={locale} dir={dir} suppressHydrationWarning>
       <head>
-        {/* Critical CSS to prevent black screen if styles fail to load */}
-        <style dangerouslySetInnerHTML={{
-          __html: `
-            body { 
-              background-color: #111827 !important; 
-              color: #f0f6fc !important; 
-              margin: 0;
-              padding: 0;
-            }
-            html { 
-              background-color: #111827 !important; 
-            }
-          `
-        }} />
+        {/* Preconnect to external domains for performance */}
+        <link rel="preconnect" href="https://www.linkedin.com" />
+        <link rel="preconnect" href="https://upwork.com" />
+        <link rel="dns-prefetch" href="https://www.linkedin.com" />
+        <link rel="dns-prefetch" href="https://upwork.com" />
+        <meta name="theme-color" content={siteConfig.theme.background} />
+        {/* Critical CSS — values sourced from trusted siteConfig constants only */}
+        <style dangerouslySetInnerHTML={{ __html: criticalCss }} />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify([personSchema, websiteSchema, professionalServiceSchema]) }}
           suppressHydrationWarning
         />
       </head>
-      <body className="antialiased" suppressHydrationWarning style={{ backgroundColor: '#111827', color: '#f0f6fc' }}>
+      <body className="antialiased" suppressHydrationWarning style={{ backgroundColor: siteConfig.theme.background, color: siteConfig.theme.foreground }}>
+        <GoogleAnalytics />
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
@@ -154,6 +205,3 @@ export default async function LocaleLayout({
     </html>
   );
 }
-
-
-

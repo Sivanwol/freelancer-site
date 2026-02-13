@@ -1,7 +1,8 @@
 import { MetadataRoute } from 'next';
+import { getBaseUrl } from '@/lib/config';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.devco-solution.online';
+  const baseUrl = getBaseUrl();
 
   return [
     {
@@ -9,15 +10,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 1,
+      alternates: {
+        languages: {
+          he: `${baseUrl}/he`,
+          en: `${baseUrl}/en`,
+        },
+      },
     },
     {
       url: `${baseUrl}/en`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.9,
+      alternates: {
+        languages: {
+          he: `${baseUrl}/he`,
+          en: `${baseUrl}/en`,
+        },
+      },
     },
   ];
 }
-
-
-

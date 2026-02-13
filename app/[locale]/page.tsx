@@ -28,7 +28,13 @@ export default async function Home({ params }: Props) {
 
   return (
     <ErrorBoundary>
-      <main className="min-h-screen bg-[#0d1117]">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-purple-600 focus:text-white focus:rounded-lg focus:outline-none"
+      >
+        {locale === 'he' ? 'דלג לתוכן' : 'Skip to content'}
+      </a>
+      <main id="main-content" className="min-h-screen bg-[#0d1117]">
         <Navbar />
         <FloatingCTA />
         <Hero />

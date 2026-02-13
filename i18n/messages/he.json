@@ -8,7 +8,7 @@
     "contact": "צור קשר"
   },
   "hero": {
-    "greeting": "שלום! 👋🏻",
+    "greeting": "שלום! \ud83d\udc4b\ud83c\udffb",
     "name": "סיון וולברג",
     "title": "מפתח Full Stack & AI",
     "subtitle": "15+ שנות ניסיון | React | Node.js | Python | LangChain",
@@ -70,13 +70,16 @@
     "linkedin": "התחבר איתי"
   },
   "footer": {
-    "rights": "כל הזכויות שמורות © 2025 סיון וולברג"
+    "rights": "כל הזכויות שמורות © {year} סיון וולברג"
   },
+  "notFound": {
+    "title": "הדף לא נמצא",
+    "message": "הדף שחיפשת לא קיים או הועבר.",
+    "backHome": "חזרה לדף הבית"
+  },
+  "skipToContent": "דלג לתוכן הראשי",
   "meta": {
     "title": "סיון וולברג - מפתח Full Stack & AI",
     "description": "15+ שנות ניסיון | Top Rated Plus ב-Upwork | React | Node.js | Python | LangChain | Claude Code"
   }
 }
-
-
-

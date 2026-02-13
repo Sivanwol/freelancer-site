@@ -6,9 +6,10 @@ import { SiUpwork } from 'react-icons/si';
 
 export default function Footer() {
   const t = useTranslations('footer');
+  const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="py-8 px-4 bg-[#020617] border-t border-white/5 relative z-50">
+    <footer className="py-8 px-4 bg-[#020617] border-t border-white/5 relative z-50" role="contentinfo">
       <div className="container mx-auto max-w-4xl text-center">
         <div className="flex flex-col items-center justify-center gap-6">
           {/* Logo or Name */}
@@ -41,7 +42,7 @@ export default function Footer() {
           {/* Copyright & Credits */}
           <div className="space-y-2">
             <p className="text-gray-500 text-sm">
-              {t('rights')}
+              {t('rights', { year: currentYear })}
             </p>
             <p className="text-gray-600 text-xs">
               Developed by Sivan Wolberg - DevCo Solution
@@ -52,6 +53,3 @@ export default function Footer() {
     </footer>
   );
 }
-
-
-

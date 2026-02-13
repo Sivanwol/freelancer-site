@@ -116,8 +116,8 @@ export default function ParticleBackground() {
     return (
       <Particles
         id="tsparticles"
-        particlesLoaded={async (container?: Container) => {
-          console.log('Particles loaded', container);
+        particlesLoaded={async (_container?: Container) => {
+          // Particles initialized successfully — no-op callback
         }}
         options={options}
         className="absolute inset-0 z-0"

@@ -8,7 +8,7 @@
     "contact": "Contact"
   },
   "hero": {
-    "greeting": "Hi There! 👋🏻",
+    "greeting": "Hi There! \ud83d\udc4b\ud83c\udffb",
     "name": "Sivan Wolberg",
     "title": "Full Stack & AI Developer",
     "subtitle": "15+ Years Experience | React | Node.js | Python | LangChain",
@@ -24,12 +24,12 @@
   },
   "about": {
     "title": "Why Work With Me?",
-    "description": "I don't just write code — I deliver results. With 15+ years of hands-on experience, I've helped startups scale from MVP to millions of users, and enterprises modernize legacy systems into AI-powered platforms. My clients get clean, production-ready code that ships on time and performs under pressure.",
+    "description": "I don't just write code \u2014 I deliver results. With 15+ years of hands-on experience, I've helped startups scale from MVP to millions of users, and enterprises modernize legacy systems into AI-powered platforms. My clients get clean, production-ready code that ships on time and performs under pressure.",
     "experience": "15+",
     "experienceLabel": "Years Delivering Excellence",
     "highlight1": "100% Job Success on Upwork with Top Rated Plus status",
     "highlight2": "Expert in React, Node.js, Python & AI integration",
-    "highlight3": "From concept to deployment — full lifecycle delivery"
+    "highlight3": "From concept to deployment \u2014 full lifecycle delivery"
   },
   "services": {
     "title": "My Services",
@@ -70,13 +70,16 @@
     "linkedin": "Connect With Me"
   },
   "footer": {
-    "rights": "All Rights Reserved © 2025 Sivan Wolberg"
+    "rights": "All Rights Reserved \u00a9 {year} Sivan Wolberg"
   },
+  "notFound": {
+    "title": "Page Not Found",
+    "message": "The page you're looking for doesn't exist or has been moved.",
+    "backHome": "Back to Home"
+  },
+  "skipToContent": "Skip to main content",
   "meta": {
     "title": "Sivan Wolberg - Full Stack & AI Developer",
     "description": "15+ Years Experience | Top Rated Plus on Upwork | React | Node.js | Python | LangChain | Claude Code"
   }
 }
-
-
-
