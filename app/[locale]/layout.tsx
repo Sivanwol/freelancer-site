@@ -30,16 +30,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     creator: siteConfig.author,
     metadataBase: new URL(baseUrl),
     alternates: {
-      canonical: `/${locale}`,
+      canonical: `${baseUrl}/${locale}`,
       languages: {
-        'he': '/he',
-        'en': '/en',
+        'he': `${baseUrl}/he`,
+        'en': `${baseUrl}/en`,
+        'x-default': `${baseUrl}/he`,
       },
     },
     openGraph: {
       title: t('title'),
       description: t('description'),
-      url: baseUrl,
+      url: `${baseUrl}/${locale}`,
       siteName: siteConfig.name,
       locale: locale === 'he' ? 'he_IL' : 'en_US',
       type: 'website',
