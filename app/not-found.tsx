@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function NotFound() {
   return (
     <html lang="he" dir="rtl">
-      <body style={{ backgroundColor: '#111827', color: '#f0f6fc', margin: 0, fontFamily: 'system-ui, sans-serif' }}>
+      <body style={{ backgroundColor: '#07111f', color: '#f3f7fb', margin: 0, fontFamily: 'system-ui, sans-serif' }}>
         <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '16px' }}>
           <div style={{ textAlign: 'center' }}>
             <div style={{ fontSize: '96px', fontWeight: 800, opacity: 0.1, marginBottom: '16px' }}>404</div>
@@ -20,9 +20,9 @@ export default function NotFound() {
                 href="/he"
                 style={{
                   padding: '12px 24px',
-                  backgroundColor: '#7c3aed',
-                  color: 'white',
-                  borderRadius: '8px',
+                  backgroundColor: '#7dd3fc',
+                  color: '#07111f',
+                  borderRadius: '6px',
                   textDecoration: 'none',
                   fontSize: '14px',
                 }}
@@ -33,9 +33,9 @@ export default function NotFound() {
                 href="/en"
                 style={{
                   padding: '12px 24px',
-                  border: '1px solid #374151',
+                  border: '1px solid #284665',
                   color: '#d1d5db',
-                  borderRadius: '8px',
+                  borderRadius: '6px',
                   textDecoration: 'none',
                   fontSize: '14px',
                 }}
