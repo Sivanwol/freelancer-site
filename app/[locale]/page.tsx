@@ -20,12 +20,6 @@ export default async function Home({ params }: Props) {
 
   return (
     <ErrorBoundary>
-      <a
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-[6px] focus:bg-sky-500 focus:px-4 focus:py-2 focus:text-slate-950 focus:outline-none"
-      >
-        {locale === 'he' ? 'דלג לתוכן' : 'Skip to content'}
-      </a>
       <Navbar />
       <FloatingCTA />
       <HomePage locale={locale} />
