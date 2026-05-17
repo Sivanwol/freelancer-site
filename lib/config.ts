@@ -1,8 +1,10 @@
 export const siteConfig = {
-  name: 'Sivan Wolberg Portfolio',
+  name: 'DevCo Solutions',
+  legalName: 'DevCo Solution',
   author: 'Sivan Wolberg',
-  jobTitle: 'Full Stack & AI Developer',
-  email: 'fastwings@gmail.com',
+  jobTitle: 'CEO, DevCo Solutions',
+  email: 'info@devco-solution.online',
+  fallbackEmail: 'fastwings@gmail.com',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.devco-solution.online',
   social: {
     linkedin: 'https://www.linkedin.com/in/swolberg',
@@ -13,8 +15,8 @@ export const siteConfig = {
     supported: ['he', 'en'] as const,
   },
   theme: {
-    background: '#111827',
-    foreground: '#f0f6fc',
+    background: '#07111f',
+    foreground: '#f3f7fb',
   },
   verification: {
     google: 'SLo_aGwT241-MU7vu68QtpEX4G8GXrlioxS8RBhJzEM',

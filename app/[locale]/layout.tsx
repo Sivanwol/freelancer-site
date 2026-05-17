@@ -3,6 +3,7 @@ import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { siteConfig, getBaseUrl } from '@/lib/config';
+import { getCompanyContent } from '@/lib/company-content';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import '../globals.css';
 import type { Metadata } from 'next';
@@ -25,9 +26,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: t('title'),
     description: t('description'),
-    keywords: ['Full Stack Developer', 'AI Developer', 'React', 'Node.js', 'Python', 'LangChain', 'Claude Code', 'Cursor', 'Freelancer', 'Haifa', 'Israel'],
+    keywords: [
+      'Software Development Company',
+      'Custom Software Development',
+      'Business Automation',
+      'CRM Automation',
+      'AI Development',
+      'SaaS Development',
+      'MVP Development',
+      'Web Application Development',
+      'React',
+      'Node.js',
+      'Python',
+      'LangChain',
+      'n8n',
+      'Make',
+      'Zapier',
+      'HubSpot',
+      'Israel',
+    ],
     authors: [{ name: siteConfig.author }],
-    creator: siteConfig.author,
+    creator: siteConfig.name,
     metadataBase: new URL(baseUrl),
     alternates: {
       canonical: `${baseUrl}/${locale}`,
@@ -103,37 +122,34 @@ export default async function LocaleLayout({
   const messages = await getMessages();
   const dir = locale === 'he' ? 'rtl' : 'ltr';
   const baseUrl = getBaseUrl();
+  const content = getCompanyContent(locale);
 
-  // Structured data for SEO — all values are from trusted siteConfig constants, safe for injection
-  const personSchema = {
+  // Structured data for SEO. Values are trusted constants/content from this codebase.
+  const organizationSchema = {
     '@context': 'https://schema.org',
-    '@type': 'Person',
-    name: siteConfig.author,
-    jobTitle: siteConfig.jobTitle,
-    description: '15+ Years Full-Stack & AI Developer specializing in React, Node.js, Python, and LangChain',
+    '@type': 'Organization',
+    name: siteConfig.name,
+    legalName: siteConfig.legalName,
     url: baseUrl,
+    logo: `${baseUrl}/logo.png`,
     email: siteConfig.email,
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Haifa',
-      addressCountry: 'Israel',
-    },
     sameAs: [
       siteConfig.social.linkedin,
       siteConfig.social.upwork,
     ],
+    founder: {
+      '@type': 'Person',
+      name: siteConfig.author,
+      jobTitle: siteConfig.jobTitle,
+    },
     knowsAbout: [
-      'Full Stack Development',
+      'Custom Software Development',
+      'Business Automation',
       'AI Development',
-      'React',
-      'Node.js',
-      'Python',
-      'LangChain',
-      'Next.js',
-      'NestJS',
-      'TypeScript',
-      'Claude Code',
-      'Cursor AI',
+      'CRM Automation',
+      'SaaS Development',
+      'MVP Development',
+      'Workflow Automation',
     ],
   };
 
@@ -143,22 +159,23 @@ export default async function LocaleLayout({
     name: siteConfig.name,
     url: baseUrl,
     inLanguage: [locale === 'he' ? 'he-IL' : 'en-US'],
-    author: {
-      '@type': 'Person',
-      name: siteConfig.author,
+    publisher: {
+      '@type': 'Organization',
+      name: siteConfig.name,
     },
   };
 
   const professionalServiceSchema = {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
-    name: 'DevCo Solution',
+    name: siteConfig.name,
     provider: {
-      '@type': 'Person',
-      name: siteConfig.author,
+      '@type': 'Organization',
+      name: siteConfig.name,
     },
     areaServed: 'Worldwide',
-    serviceType: ['Full Stack Development', 'AI Development', 'Backend API Development'],
+    serviceType: ['Custom Software Development', 'Business Automation Solutions', 'AI Development', 'CRM Automation'],
+    description: content.meta.defaultDescription,
     url: baseUrl,
     address: {
       '@type': 'PostalAddress',
@@ -193,7 +210,7 @@ export default async function LocaleLayout({
         <style dangerouslySetInnerHTML={{ __html: criticalCss }} />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify([personSchema, websiteSchema, professionalServiceSchema]) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify([organizationSchema, websiteSchema, professionalServiceSchema]) }}
           suppressHydrationWarning
         />
       </head>

@@ -1,179 +1,166 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { useTranslations, useLocale } from 'next-intl';
-import { Link, usePathname, useRouter } from '@/i18n/routing';
-import { motion, AnimatePresence } from 'framer-motion';
-import { HiMenu, HiX } from 'react-icons/hi';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { useLocale } from 'next-intl';
+import { Link, usePathname, useRouter } from '@/i18n/routing';
+import { getCompanyContent } from '@/lib/company-content';
+import { HiMenu, HiX } from 'react-icons/hi';
 
 export default function Navbar() {
-  const t = useTranslations('nav');
   const locale = useLocale();
+  const content = getCompanyContent(locale);
   const pathname = usePathname();
   const router = useRouter();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    if (typeof window === 'undefined') return;
-    
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const navItems = [
+    { label: content.nav.home, href: '/' },
+    { label: content.nav.software, href: '/software-development' },
+    { label: content.nav.automation, href: '/automation' },
+    { label: content.nav.about, href: '/about' },
+  ];
 
   const changeLocale = (newLocale: string) => {
     router.replace(pathname, { locale: newLocale });
   };
 
-  const navItems = [
-    { key: 'home', href: '#home' },
-    { key: 'about', href: '#about' },
-    { key: 'services', href: '#services' },
-    { key: 'skills', href: '#skills' },
-    { key: 'testimonials', href: '#testimonials' },
-    { key: 'contact', href: '#contact' },
-  ];
+  const isActive = (href: string) => pathname === href;
 
   return (
     <nav
       role="navigation"
-      aria-label={locale === 'he' ? 'ניווט ראשי' : 'Main navigation'}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-[#0d1117]/95 backdrop-blur-md border-b border-gray-800'
-          : 'bg-transparent'
+      aria-label={content.nav.main}
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        isScrolled ? 'border-b border-[#dbe7f5] bg-[#f8fbff]/92 shadow-sm backdrop-blur-xl' : 'bg-[#f8fbff]/72 backdrop-blur-sm'
       }`}
     >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-14 xs:h-16 md:h-20">
-          {/* Logo/Name */}
-          <a
-            href="#home"
-            className="flex items-center hover:opacity-80 transition-opacity"
-          >
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-20 items-center justify-between gap-4">
+          <Link href="/" className="flex h-14 w-40 shrink-0 items-center overflow-hidden" aria-label={content.brand.name}>
             <Image
-              key={locale}
               src={locale === 'he' ? '/logo-he.png' : '/logo.png'}
-              alt={locale === 'he' ? 'סיון וולברג' : 'Sivan Wolberg'}
+              alt={content.brand.name}
               width={240}
               height={80}
-              className="h-14 xs:h-16 md:h-20 w-auto"
+              className="h-full w-full scale-[2.15] object-contain"
               priority
             />
-          </a>
+          </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-4 lg:gap-6">
+          <div className="hidden items-center gap-5 lg:flex">
             {navItems.map((item) => (
-              <a
-                key={item.key}
+              <Link
+                key={item.href}
                 href={item.href}
-                className="text-sm lg:text-base text-gray-300 hover:text-white transition-colors relative group"
+                className={`text-sm font-semibold transition ${
+                  isActive(item.href) ? 'text-[#1d72d2]' : 'text-[#526174] hover:text-[#0d1626]'
+                }`}
               >
-                {t(item.key)}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-300" />
-              </a>
+                {item.label}
+              </Link>
             ))}
-            
-            {/* Language Switcher */}
-            <div className="flex items-center gap-2 ms-4 border-s border-gray-700 ps-4">
+          </div>
+
+          <div className="hidden items-center gap-3 lg:flex">
+            <div className="flex rounded-full border border-[#c7d9ee] bg-white p-1 shadow-sm">
               <button
+                type="button"
                 onClick={() => changeLocale('he')}
-                className={`px-3 py-1 rounded ${
-                  locale === 'he'
-                    ? 'bg-purple-600 text-white'
-                    : 'text-gray-400 hover:text-white'
-                } transition-colors`}
+                className={`rounded-full px-3 py-1.5 text-sm font-extrabold transition ${
+                  locale === 'he' ? 'bg-[#4c9df2] text-white' : 'text-[#526174] hover:text-[#0d1626]'
+                }`}
               >
                 עברית
               </button>
               <button
+                type="button"
                 onClick={() => changeLocale('en')}
-                className={`px-3 py-1 rounded ${
-                  locale === 'en'
-                    ? 'bg-purple-600 text-white'
-                    : 'text-gray-400 hover:text-white'
-                } transition-colors`}
+                className={`rounded-full px-3 py-1.5 text-sm font-extrabold transition ${
+                  locale === 'en' ? 'bg-[#4c9df2] text-white' : 'text-[#526174] hover:text-[#0d1626]'
+                }`}
               >
                 EN
               </button>
             </div>
+            <a href={content.brand.whatsapp} target="_blank" rel="noopener noreferrer" className="btn-primary !px-4 !py-2.5">
+              {content.nav.contact}
+            </a>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-gray-300 hover:text-white"
-            aria-label="Toggle menu"
+            type="button"
+            onClick={() => setIsMobileMenuOpen((value) => !value)}
+            className="grid h-11 w-11 place-items-center rounded-full border border-[#c7d9ee] bg-white text-[#0d1626] shadow-sm lg:hidden"
+            aria-label={isMobileMenuOpen ? content.nav.close : content.nav.menu}
+            aria-expanded={isMobileMenuOpen}
           >
-            {isMobileMenuOpen ? (
-              <HiX className="w-6 h-6" />
-            ) : (
-              <HiMenu className="w-6 h-6" />
-            )}
+            {isMobileMenuOpen ? <HiX className="h-6 w-6" /> : <HiMenu className="h-6 w-6" />}
           </button>
         </div>
 
-        {/* Mobile Menu */}
-        <AnimatePresence>
-          {isMobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden border-t border-gray-800"
-            >
-              <div className="flex flex-col py-4 space-y-3">
-                {navItems.map((item) => (
-                  <a
-                    key={item.key}
-                    href={item.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-gray-300 hover:text-white px-4 py-2 transition-colors"
-                  >
-                    {t(item.key)}
-                  </a>
-                ))}
-                <div className="flex items-center gap-2 px-4 pt-2 border-t border-gray-800">
-                  <button
-                    onClick={() => {
-                      changeLocale('he');
-                      setIsMobileMenuOpen(false);
-                    }}
-                    className={`px-3 py-1 rounded ${
-                      locale === 'he'
-                        ? 'bg-purple-600 text-white'
-                        : 'text-gray-400'
-                    }`}
-                  >
-                    עברית
-                  </button>
-                  <button
-                    onClick={() => {
-                      changeLocale('en');
-                      setIsMobileMenuOpen(false);
-                    }}
-                    className={`px-3 py-1 rounded ${
-                      locale === 'en'
-                        ? 'bg-purple-600 text-white'
-                        : 'text-gray-400'
-                    }`}
-                  >
-                    EN
-                  </button>
-                </div>
+        {isMobileMenuOpen ? (
+          <div className="border-t border-[#dbe7f5] bg-[#f8fbff] py-4 lg:hidden">
+            <div className="grid gap-2">
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`rounded-2xl px-3 py-3 text-base font-extrabold ${
+                    isActive(item.href) ? 'bg-[#e7f2ff] text-[#1d72d2]' : 'text-[#526174]'
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              ))}
+              <a
+                href={content.brand.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="rounded-full bg-[#4c9df2] px-3 py-3 text-center text-base font-extrabold text-white"
+              >
+                {content.nav.contact}
+              </a>
+              <div className="mt-2 flex gap-2 border-t border-[#dbe7f5] pt-4">
+                <button
+                  type="button"
+                  onClick={() => {
+                    changeLocale('he');
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className={`rounded-full px-3 py-2 text-sm font-extrabold ${
+                    locale === 'he' ? 'bg-[#4c9df2] text-white' : 'border border-[#c7d9ee] text-[#526174]'
+                  }`}
+                >
+                  עברית
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    changeLocale('en');
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className={`rounded-full px-3 py-2 text-sm font-extrabold ${
+                    locale === 'en' ? 'bg-[#4c9df2] text-white' : 'border border-[#c7d9ee] text-[#526174]'
+                  }`}
+                >
+                  EN
+                </button>
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+            </div>
+          </div>
+        ) : null}
       </div>
     </nav>
   );
 }
-
-
-
