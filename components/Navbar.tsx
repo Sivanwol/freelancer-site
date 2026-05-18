@@ -6,6 +6,7 @@ import { useLocale } from 'next-intl';
 import { Link, usePathname, useRouter } from '@/i18n/routing';
 import { getCompanyContent } from '@/lib/company-content';
 import { HiMenu, HiX } from 'react-icons/hi';
+import CalBookingButton from './CalBookingButton';
 
 export default function Navbar() {
   const locale = useLocale();
@@ -91,9 +92,9 @@ export default function Navbar() {
                 EN
               </button>
             </div>
-            <a href={content.brand.whatsapp} target="_blank" rel="noopener noreferrer" className="btn-primary !px-4 !py-2.5">
+            <CalBookingButton calLink={content.brand.bookingCalLink} className="btn-primary !px-4 !py-2.5">
               {content.nav.contact}
-            </a>
+            </CalBookingButton>
           </div>
 
           <button
@@ -122,15 +123,13 @@ export default function Navbar() {
                   {item.label}
                 </Link>
               ))}
-              <a
-                href={content.brand.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setIsMobileMenuOpen(false)}
+              <CalBookingButton
+                calLink={content.brand.bookingCalLink}
+                onOpen={() => setIsMobileMenuOpen(false)}
                 className="rounded-full bg-[#4c9df2] px-3 py-3 text-center text-base font-extrabold text-white"
               >
                 {content.nav.contact}
-              </a>
+              </CalBookingButton>
               <div className="mt-2 flex gap-2 border-t border-[#dbe7f5] pt-4">
                 <button
                   type="button"

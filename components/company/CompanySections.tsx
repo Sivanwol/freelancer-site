@@ -17,10 +17,10 @@ import {
   FaRocket,
   FaShieldAlt,
   FaStar,
-  FaWhatsapp,
 } from 'react-icons/fa';
 import { SiUpwork } from 'react-icons/si';
 import HeroShowcaseCarousel from './HeroShowcaseCarousel';
+import CalBookingButton from '@/components/CalBookingButton';
 
 type PageProps = {
   locale: string;
@@ -106,18 +106,12 @@ function getAccent(locale: string, page: 'home' | 'software' | 'automation' | 'a
   return accents[page];
 }
 
-function HeroActions({
-  content,
-}: {
-  content: Content;
-  isRtl: boolean;
-}) {
+function HeroActions({ content }: { content: Content }) {
   return (
     <div className="flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-      <a href={content.brand.whatsapp} target="_blank" rel="noopener noreferrer" className="btn-primary">
+      <CalBookingButton calLink={content.brand.bookingCalLink}>
         {content.cta.primary}
-        <FaWhatsapp className="h-4 w-4" aria-hidden="true" />
-      </a>
+      </CalBookingButton>
     </div>
   );
 }
@@ -293,10 +287,9 @@ function ContactBand({ content }: { content: Content }) {
               <FaEnvelope aria-hidden="true" />
               <span>{content.contact.email}</span>
             </a>
-            <a href={content.brand.whatsapp} target="_blank" rel="noopener noreferrer" className="contact-link">
-              <FaWhatsapp aria-hidden="true" />
-              <span>{content.contact.whatsapp}</span>
-            </a>
+            <CalBookingButton calLink={content.brand.bookingCalLink} className="contact-link">
+              <span>{content.contact.booking}</span>
+            </CalBookingButton>
             <a href={content.brand.linkedin} target="_blank" rel="noopener noreferrer" className="contact-link">
               <FaLinkedinIn aria-hidden="true" />
               <span>{content.contact.linkedin}</span>
@@ -380,7 +373,7 @@ export function HomePage({ locale }: PageProps) {
           />
           <p className="mx-auto mt-8 max-w-3xl text-lg font-semibold leading-8 text-[#526174] md:text-2xl md:leading-10">{content.home.subtitle}</p>
           <div className="mt-8">
-            <HeroActions content={content} isRtl={isRtl} />
+            <HeroActions content={content} />
           </div>
           <ServiceChoiceBand content={content} isRtl={isRtl} />
           <div className="mx-auto mt-12 max-w-5xl">
@@ -404,7 +397,6 @@ export function ServicePage({
   type: 'software' | 'automation';
 }) {
   const content = getCompanyContent(locale);
-  const isRtl = localeValue(locale) === 'he';
   const page = type === 'software' ? content.softwarePage : content.automationPage;
   const heroImage = type === 'software' ? '/showcase-real-estate-platform.png' : '/showcase-delet-mobile-accessibility.png';
   const heroAlt = type === 'software' ? content.showcases[2].title : content.showcases[0].title;
@@ -423,7 +415,7 @@ export function ServicePage({
             />
             <p className="mt-7 max-w-3xl text-lg font-semibold leading-8 text-[#526174] md:text-xl md:leading-9">{page.subtitle}</p>
             <div className="mt-8">
-              <HeroActions content={content} isRtl={isRtl} />
+              <HeroActions content={content} />
             </div>
           </div>
           <div className="relative min-h-[340px] overflow-hidden rounded-[32px] bg-[#e7f2ff] shadow-2xl shadow-blue-950/10 md:min-h-[520px]">
@@ -474,7 +466,6 @@ export function ServicePage({
 
 export function AboutPage({ locale }: PageProps) {
   const content = getCompanyContent(locale);
-  const isRtl = localeValue(locale) === 'he';
 
   return (
     <PageFrame>
@@ -494,7 +485,7 @@ export function AboutPage({ locale }: PageProps) {
               <span className="proof-pill"><SiUpwork aria-hidden="true" />Top Rated Plus</span>
             </div>
             <div className="mt-8">
-              <HeroActions content={content} isRtl={isRtl} />
+              <HeroActions content={content} />
             </div>
           </div>
           <div className="relative min-h-[440px] overflow-hidden rounded-[36px] bg-[#e7f2ff] shadow-2xl shadow-blue-950/10 md:min-h-[620px]">

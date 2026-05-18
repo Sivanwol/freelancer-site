@@ -4,7 +4,8 @@ import Image from 'next/image';
 import { useLocale } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { getCompanyContent } from '@/lib/company-content';
-import { FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
+import { FaEnvelope, FaLinkedinIn } from 'react-icons/fa';
+import CalBookingButton from './CalBookingButton';
 
 export default function Footer() {
   const locale = useLocale();
@@ -28,14 +29,20 @@ export default function Footer() {
           <p className="mt-2 text-sm font-medium text-[#718198]">{content.footer.rights.replace('{year}', String(year))}</p>
         </div>
         <div className="flex items-center gap-4">
-          <a
-            href={content.brand.whatsapp}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="grid h-11 w-11 place-items-center rounded-full border border-[#c7d9ee] bg-[#f8fbff] text-[#0d1626] transition hover:border-[#25d366]/40 hover:text-[#25d366]"
-            aria-label="WhatsApp"
+          <CalBookingButton
+            calLink={content.brand.bookingCalLink}
+            className="grid h-11 w-11 place-items-center rounded-full border border-[#c7d9ee] bg-[#f8fbff] text-[#0d1626] transition hover:border-[#4c9df2]/40 hover:text-[#1d72d2]"
+            iconClassName="h-5 w-5"
+            ariaLabel={content.contact.booking}
           >
-            <FaWhatsapp className="h-5 w-5" />
+            <span className="sr-only">{content.contact.booking}</span>
+          </CalBookingButton>
+          <a
+            href={`mailto:${content.brand.email}`}
+            className="grid h-11 w-11 place-items-center rounded-full border border-[#c7d9ee] bg-[#f8fbff] text-[#0d1626] transition hover:border-[#4c9df2]/40 hover:text-[#1d72d2]"
+            aria-label={content.contact.email}
+          >
+            <FaEnvelope className="h-5 w-5" />
           </a>
           <a
             href={content.brand.linkedin}

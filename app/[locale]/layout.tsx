@@ -203,8 +203,12 @@ export default async function LocaleLayout({
         {/* Preconnect to external domains for performance */}
         <link rel="preconnect" href="https://www.linkedin.com" />
         <link rel="preconnect" href="https://upwork.com" />
+        <link rel="preconnect" href="https://cal.com" />
+        <link rel="preconnect" href="https://app.cal.com" />
         <link rel="dns-prefetch" href="https://www.linkedin.com" />
         <link rel="dns-prefetch" href="https://upwork.com" />
+        <link rel="dns-prefetch" href="https://cal.com" />
+        <link rel="dns-prefetch" href="https://app.cal.com" />
         <meta name="theme-color" content={siteConfig.theme.background} />
         {/* Critical CSS — values sourced from trusted siteConfig constants only */}
         <style dangerouslySetInnerHTML={{ __html: criticalCss }} />
