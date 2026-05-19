@@ -3,7 +3,7 @@ import { getBaseUrl } from '@/lib/config';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = getBaseUrl();
-  const paths = ['', '/software-development', '/automation', '/about'];
+  const paths = ['', '/software-development', '/automation', '/about', '/privacy'];
 
   return paths.flatMap((path) => [
     {

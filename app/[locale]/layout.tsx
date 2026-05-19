@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { siteConfig, getBaseUrl } from '@/lib/config';
 import { getCompanyContent } from '@/lib/company-content';
+import AccessibilityWidget from '@/components/AccessibilityWidget';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import '../globals.css';
 import type { Metadata } from 'next';
@@ -218,6 +219,7 @@ export default async function LocaleLayout({
         <GoogleAnalytics />
         <NextIntlClientProvider messages={messages}>
           {children}
+          <AccessibilityWidget />
         </NextIntlClientProvider>
       </body>
     </html>

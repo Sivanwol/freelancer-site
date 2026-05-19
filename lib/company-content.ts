@@ -36,6 +36,7 @@ export const companyContent = {
       automation: 'Automation',
       showcases: 'Showcases',
       about: 'About',
+      privacy: 'Privacy',
       contact: 'Book Call',
       menu: 'Open menu',
       close: 'Close menu',
@@ -242,6 +243,55 @@ export const companyContent = {
     footer: {
       rights: 'All rights reserved © {year} DevCo Solutions',
       credit: 'Custom software development and business automation',
+      privacy: 'Privacy Policy',
+    },
+    privacyPage: {
+      title: 'Privacy Policy',
+      updated: 'Last updated: May 19, 2026',
+      intro:
+        'This privacy policy explains how DevCo Solutions handles information when you visit this website, contact us, or use links to external services. It is written as a practical baseline for a company website and is not legal advice.',
+      sections: [
+        {
+          title: 'Who operates this website',
+          text:
+            'This website is operated by DevCo Solutions / DevCo Solution. You can contact us at info@devco-solution.online.',
+        },
+        {
+          title: 'Information we may receive',
+          text:
+            'We may receive information you choose to send by email, and we may see basic interaction data when you click links to WhatsApp, LinkedIn, Upwork, or other external services. If Google Analytics is enabled through NEXT_PUBLIC_GA_MEASUREMENT_ID, the site may also collect analytics data such as visited pages, device/browser information, approximate location, referral source, and usage events.',
+        },
+        {
+          title: 'How we use information',
+          text:
+            'We use information to respond to inquiries, understand which services and content are useful, improve the website, and manage reasonable business communication with potential clients and partners.',
+        },
+        {
+          title: 'Analytics, cookies, and similar technologies',
+          text:
+            'When Google Analytics is active, Google may use cookies or similar identifiers to help measure site traffic and usage. You can manage cookies through your browser settings and use Google tools or browser extensions to limit analytics tracking.',
+        },
+        {
+          title: 'External services',
+          text:
+            'The website links to services such as WhatsApp, LinkedIn, Upwork, and Google Analytics. When you open or use those services, their own privacy policies and terms apply.',
+        },
+        {
+          title: 'Retention',
+          text:
+            'We keep inquiry and business-contact information only for as long as reasonably needed to respond, manage the business relationship, maintain records, or meet legitimate operational needs.',
+        },
+        {
+          title: 'Your choices',
+          text:
+            'You can ask us to review, update, or delete personal information you previously sent to us by contacting info@devco-solution.online. Some information may need to be retained when required for legitimate business, security, or legal reasons.',
+        },
+        {
+          title: 'Policy updates',
+          text:
+            'We may update this page from time to time so it continues to reflect the website, tools, and contact options we use.',
+        },
+      ],
     },
     meta: {
       defaultTitle: 'DevCo Solutions - Custom Software Development and Business Automation',
@@ -259,6 +309,9 @@ export const companyContent = {
       aboutTitle: 'About DevCo Solutions',
       aboutDescription:
         'Learn about DevCo Solutions, Sivan Wolberg, 15+ years of software architecture experience, and the company delivery process.',
+      privacyTitle: 'Privacy Policy - DevCo Solutions',
+      privacyDescription:
+        'Privacy policy for DevCo Solutions, including website analytics, contact information, external links, retention, and user choices.',
     },
   },
   he: {
@@ -278,6 +331,7 @@ export const companyContent = {
       automation: 'אוטומציה',
       showcases: 'פרויקטים',
       about: 'אודות',
+      privacy: 'פרטיות',
       contact: 'שיחת ייעוץ',
       menu: 'פתיחת תפריט',
       close: 'סגירת תפריט',
@@ -484,6 +538,55 @@ export const companyContent = {
     footer: {
       rights: 'כל הזכויות שמורות © {year} DevCo Solutions',
       credit: 'פיתוח תוכנה מותאמת ואוטומציה עסקית',
+      privacy: 'מדיניות פרטיות',
+    },
+    privacyPage: {
+      title: 'מדיניות פרטיות',
+      updated: 'עודכן לאחרונה: 19 במאי 2026',
+      intro:
+        'מדיניות פרטיות זו מסבירה כיצד DevCo Solutions מטפלת במידע כאשר אתם מבקרים באתר, פונים אלינו או משתמשים בקישורים לשירותים חיצוניים. זהו נוסח בסיסי ופרקטי לאתר חברה, והוא אינו מהווה ייעוץ משפטי.',
+      sections: [
+        {
+          title: 'מי מפעיל את האתר',
+          text:
+            'האתר מופעל על ידי DevCo Solutions / DevCo Solution. ניתן ליצור איתנו קשר בכתובת info@devco-solution.online.',
+        },
+        {
+          title: 'איזה מידע עשוי להתקבל',
+          text:
+            'אנחנו עשויים לקבל מידע שאתם בוחרים לשלוח באימייל, וכן מידע בסיסי על אינטראקציה כאשר אתם לוחצים על קישורים ל-WhatsApp, LinkedIn, Upwork או שירותים חיצוניים אחרים. אם Google Analytics מופעל דרך NEXT_PUBLIC_GA_MEASUREMENT_ID, האתר עשוי לאסוף גם מידע אנליטי כגון עמודים שנצפו, מידע על דפדפן/מכשיר, מיקום משוער, מקור הגעה ואירועי שימוש.',
+        },
+        {
+          title: 'כיצד נעשה שימוש במידע',
+          text:
+            'המידע משמש למענה לפניות, להבנת השירותים והתכנים שמעניינים משתמשים, לשיפור האתר, ולניהול תקשורת עסקית סבירה עם לקוחות פוטנציאליים ושותפים.',
+        },
+        {
+          title: 'אנליטיקה, עוגיות וטכנולוגיות דומות',
+          text:
+            'כאשר Google Analytics פעיל, Google עשויה להשתמש בעוגיות או מזהים דומים כדי למדוד תנועה ושימוש באתר. ניתן לנהל עוגיות דרך הגדרות הדפדפן ולהשתמש בכלים של Google או תוספי דפדפן כדי להגביל מעקב אנליטי.',
+        },
+        {
+          title: 'שירותים חיצוניים',
+          text:
+            'האתר מקשר לשירותים כגון WhatsApp, LinkedIn, Upwork ו-Google Analytics. כאשר אתם פותחים או משתמשים בשירותים אלה, מדיניות הפרטיות והתנאים שלהם חלים.',
+        },
+        {
+          title: 'שמירת מידע',
+          text:
+            'אנחנו שומרים מידע מפניות וקשר עסקי רק למשך הזמן שנדרש באופן סביר כדי לענות, לנהל את הקשר העסקי, לשמור רשומות או לעמוד בצרכים תפעוליים לגיטימיים.',
+        },
+        {
+          title: 'הבחירות שלכם',
+          text:
+            'ניתן לבקש מאיתנו לבדוק, לעדכן או למחוק מידע אישי ששלחתם אלינו בעבר באמצעות פנייה ל-info@devco-solution.online. ייתכן שחלק מהמידע יישמר כאשר הדבר נדרש מסיבות עסקיות, אבטחתיות או משפטיות לגיטימיות.',
+        },
+        {
+          title: 'עדכוני מדיניות',
+          text:
+            'אנו עשויים לעדכן עמוד זה מעת לעת כדי שישקף את האתר, הכלים ואפשרויות יצירת הקשר שבהם אנחנו משתמשים.',
+        },
+      ],
     },
     meta: {
       defaultTitle: 'DevCo Solutions - פיתוח תוכנה ואוטומציה עסקית',
@@ -501,6 +604,9 @@ export const companyContent = {
       aboutTitle: 'אודות DevCo Solutions',
       aboutDescription:
         'הכירו את DevCo Solutions, סיון וולברג, 15+ שנות ניסיון בארכיטקטורת תוכנה ותהליך העבודה של החברה.',
+      privacyTitle: 'מדיניות פרטיות - DevCo Solutions',
+      privacyDescription:
+        'מדיניות הפרטיות של DevCo Solutions, כולל אנליטיקה באתר, פרטי קשר, קישורים חיצוניים, שמירת מידע ובחירות משתמשים.',
     },
   },
 } as const;

@@ -25,7 +25,13 @@ export default function Footer() {
             />
           </Link>
           <p className="mt-4 max-w-2xl text-sm font-semibold leading-7 text-[#526174]">{content.footer.credit}</p>
-          <p className="mt-2 text-sm font-medium text-[#718198]">{content.footer.rights.replace('{year}', String(year))}</p>
+          <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm font-medium text-[#718198]">
+            <p>{content.footer.rights.replace('{year}', String(year))}</p>
+            <span aria-hidden="true">/</span>
+            <Link href="/privacy" className="font-extrabold text-[#526174] transition hover:text-[#1d72d2]">
+              {content.footer.privacy}
+            </Link>
+          </div>
         </div>
         <div className="flex items-center gap-4">
           <a
