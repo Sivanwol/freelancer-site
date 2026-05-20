@@ -6,6 +6,7 @@ import { siteConfig, getBaseUrl } from '@/lib/config';
 import { getCompanyContent } from '@/lib/company-content';
 import AccessibilityWidget from '@/components/AccessibilityWidget';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+import { GoogleTagManagerHead, GoogleTagManagerNoScript } from '@/components/GoogleTagManager';
 import '../globals.css';
 import type { Metadata } from 'next';
 
@@ -201,6 +202,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} dir={dir} suppressHydrationWarning>
       <head>
+        <GoogleTagManagerHead />
         {/* Preconnect to external domains for performance */}
         <link rel="preconnect" href="https://www.linkedin.com" />
         <link rel="preconnect" href="https://upwork.com" />
@@ -216,6 +218,7 @@ export default async function LocaleLayout({
         />
       </head>
       <body className="antialiased" suppressHydrationWarning style={{ backgroundColor: siteConfig.theme.background, color: siteConfig.theme.foreground }}>
+        <GoogleTagManagerNoScript />
         <GoogleAnalytics />
         <NextIntlClientProvider messages={messages}>
           {children}
