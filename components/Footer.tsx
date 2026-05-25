@@ -31,6 +31,10 @@ export default function Footer() {
             <Link href="/privacy" className="font-extrabold text-[#526174] transition hover:text-[#1d72d2]">
               {content.footer.privacy}
             </Link>
+            <span aria-hidden="true">/</span>
+            <Link href="/accessibility" className="font-extrabold text-[#526174] transition hover:text-[#1d72d2]">
+              {content.footer.accessibility}
+            </Link>
           </div>
         </div>
         <div className="flex items-center gap-4">

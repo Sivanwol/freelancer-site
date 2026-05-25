@@ -244,6 +244,7 @@ export const companyContent = {
       rights: 'All rights reserved © {year} DevCo Solutions',
       credit: 'Custom software development and business automation',
       privacy: 'Privacy Policy',
+      accessibility: 'Accessibility Statement',
     },
     privacyPage: {
       title: 'Privacy Policy',
@@ -293,6 +294,44 @@ export const companyContent = {
         },
       ],
     },
+    accessibilityPage: {
+      title: 'Accessibility Statement',
+      updated: 'Last updated: May 25, 2026',
+      intro:
+        'DevCo Solutions is committed to making this website accessible, usable, and respectful for as many people as possible, including people who use assistive technologies. This statement describes the practical accessibility work on the site and how to report an issue.',
+      sections: [
+        {
+          title: 'Accessibility approach',
+          text:
+            'We aim to maintain this website in line with the principles of Israeli Standard SI 5568 and WCAG level AA guidance. This is an ongoing effort and should not be read as a formal external certification or legal opinion.',
+        },
+        {
+          title: 'Current accessibility features',
+          text:
+            'The site uses semantic page structure, clear headings, keyboard-accessible links and buttons, responsive layouts for desktop and mobile, visible focus states, and alternative text for meaningful images where relevant.',
+        },
+        {
+          title: 'Accessibility tools on the site',
+          text:
+            'A site-wide accessibility widget is available and includes controls for text size, high contrast, link highlighting, and reduced motion. These preferences are intended to make browsing more comfortable for different users.',
+        },
+        {
+          title: 'External services',
+          text:
+            'Some links open external services such as WhatsApp, LinkedIn, Upwork, Google Analytics, or booking tools. These services are operated by third parties, and their own accessibility support, privacy policies, and terms apply.',
+        },
+        {
+          title: 'Feedback and accessibility requests',
+          text:
+            'If you find an accessibility issue, missing alternative text, keyboard navigation problem, or content that is difficult to use, please contact us at info@devco-solution.online or by WhatsApp at +972545566786. We will review the request and make reasonable efforts to improve the experience.',
+        },
+        {
+          title: 'Statement updates',
+          text:
+            'This statement may be updated as the website changes, as new content is added, or as accessibility improvements are made.',
+        },
+      ],
+    },
     meta: {
       defaultTitle: 'DevCo Solutions - Custom Software Development and Business Automation',
       defaultDescription:
@@ -312,6 +351,9 @@ export const companyContent = {
       privacyTitle: 'Privacy Policy - DevCo Solutions',
       privacyDescription:
         'Privacy policy for DevCo Solutions, including website analytics, contact information, external links, retention, and user choices.',
+      accessibilityTitle: 'Accessibility Statement - DevCo Solutions',
+      accessibilityDescription:
+        'Accessibility statement for DevCo Solutions, including accessibility approach, site accommodations, accessibility widget, external services, and feedback contact details.',
     },
   },
   he: {
@@ -539,6 +581,7 @@ export const companyContent = {
       rights: 'כל הזכויות שמורות © {year} DevCo Solutions',
       credit: 'פיתוח תוכנה מותאמת ואוטומציה עסקית',
       privacy: 'מדיניות פרטיות',
+      accessibility: 'הצהרת נגישות',
     },
     privacyPage: {
       title: 'מדיניות פרטיות',
@@ -588,6 +631,44 @@ export const companyContent = {
         },
       ],
     },
+    accessibilityPage: {
+      title: 'הצהרת נגישות',
+      updated: 'עודכן לאחרונה: 25 במאי 2026',
+      intro:
+        'DevCo Solutions מחויבת לאפשר שימוש נגיש, מכבד ונוח באתר לכמה שיותר אנשים, כולל משתמשים הנעזרים בטכנולוגיות מסייעות. הצהרה זו מתארת את מאמצי הנגישות באתר ואת הדרך לדווח על בעיית נגישות.',
+      sections: [
+        {
+          title: 'גישת הנגישות באתר',
+          text:
+            'אנו שואפים לתחזק את האתר בהתאם לעקרונות התקן הישראלי ת"י 5568 ולהנחיות WCAG ברמת AA. מדובר במאמץ מתמשך, ואין לראות בהצהרה זו אישור הסמכה חיצוני או חוות דעת משפטית.',
+        },
+        {
+          title: 'התאמות נגישות קיימות',
+          text:
+            'האתר עושה שימוש במבנה סמנטי, כותרות ברורות, קישורים וכפתורים הניתנים להפעלה באמצעות מקלדת, פריסה רספונסיבית למחשב ולמובייל, סימון פוקוס גלוי וטקסט חלופי לתמונות משמעותיות כאשר הדבר רלוונטי.',
+        },
+        {
+          title: 'כלי נגישות באתר',
+          text:
+            'באתר קיים רכיב נגישות רוחבי הכולל אפשרויות להגדלת טקסט, ניגודיות גבוהה, הדגשת קישורים וצמצום אנימציות. ההעדפות נועדו לאפשר חוויית גלישה נוחה יותר למשתמשים שונים.',
+        },
+        {
+          title: 'שירותים חיצוניים',
+          text:
+            'חלק מהקישורים באתר מובילים לשירותים חיצוניים כגון WhatsApp, LinkedIn, Upwork, Google Analytics או כלי קביעת פגישות. שירותים אלה מופעלים על ידי צדדים שלישיים, והנגישות, מדיניות הפרטיות והתנאים שלהם חלים בנפרד.',
+        },
+        {
+          title: 'פניות ומשוב בנושא נגישות',
+          text:
+            'אם נתקלתם בבעיית נגישות, טקסט חלופי חסר, קושי בניווט מקלדת או תוכן שקשה להשתמש בו, ניתן לפנות אלינו בכתובת info@devco-solution.online או ב-WhatsApp במספר +972545566786. נבחן את הפנייה ונעשה מאמץ סביר לשפר את חוויית השימוש.',
+        },
+        {
+          title: 'עדכוני הצהרה',
+          text:
+            'הצהרה זו עשויה להתעדכן מעת לעת בהתאם לשינויים באתר, הוספת תכנים חדשים או ביצוע שיפורי נגישות.',
+        },
+      ],
+    },
     meta: {
       defaultTitle: 'DevCo Solutions - פיתוח תוכנה ואוטומציה עסקית',
       defaultDescription:
@@ -607,6 +688,9 @@ export const companyContent = {
       privacyTitle: 'מדיניות פרטיות - DevCo Solutions',
       privacyDescription:
         'מדיניות הפרטיות של DevCo Solutions, כולל אנליטיקה באתר, פרטי קשר, קישורים חיצוניים, שמירת מידע ובחירות משתמשים.',
+      accessibilityTitle: 'הצהרת נגישות - DevCo Solutions',
+      accessibilityDescription:
+        'הצהרת הנגישות של DevCo Solutions, כולל גישת הנגישות באתר, התאמות קיימות, רכיב הנגישות, שירותים חיצוניים ופרטי קשר למשוב.',
     },
   },
 } as const;
