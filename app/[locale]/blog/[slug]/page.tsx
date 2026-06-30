@@ -12,6 +12,7 @@ import Footer from '@/components/Footer';
 import FloatingCTA from '@/components/FloatingCTA';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import RichText from '@/components/blog/rich-text';
+import SoroEmbed from '@/components/blog/soro-embed';
 
 export const revalidate = 60;
 
@@ -123,6 +124,8 @@ export default async function BlogArticle({ params }: Props) {
           ) : null}
 
           <RichText content={post.content} />
+
+          <SoroEmbed />
         </article>
       </main>
       <Footer />

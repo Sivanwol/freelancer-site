@@ -10,6 +10,7 @@ import Footer from '@/components/Footer';
 import FloatingCTA from '@/components/FloatingCTA';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import PostCard from '@/components/blog/post-card';
+import SoroEmbed from '@/components/blog/soro-embed';
 
 export const revalidate = 60;
 
@@ -63,6 +64,8 @@ export default async function BlogIndex({ params }: Props) {
             <h1 className="text-3xl font-extrabold text-[#0d1626] md:text-4xl">{content.blog.title}</h1>
             <p className="mx-auto mt-3 max-w-2xl text-base text-[#526174]">{content.blog.subtitle}</p>
           </header>
+
+          <SoroEmbed />
 
           {posts.length === 0 ? (
             <p className="py-16 text-center text-[#526174]">{content.blog.empty}</p>
