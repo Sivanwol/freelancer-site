@@ -2,28 +2,10 @@ import createNextIntlPlugin from 'next-intl/plugin';
 
 const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 
-const payloadUrl = process.env.NEXT_PUBLIC_PAYLOAD_URL || 'http://localhost:3001';
-
-function payloadImagePattern() {
-  try {
-    const { protocol, hostname, port } = new URL(payloadUrl);
-    return [
-      {
-        protocol: protocol.replace(':', ''),
-        hostname,
-        ...(port ? { port } : {}),
-        pathname: '/**',
-      },
-    ];
-  } catch {
-    return [];
-  }
-}
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    remotePatterns: payloadImagePattern(),
+    domains: [],
   },
   reactStrictMode: true,
   async headers() {

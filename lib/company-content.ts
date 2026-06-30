@@ -46,10 +46,6 @@ export const companyContent = {
     blog: {
       title: 'Blog',
       subtitle: 'Insights on software development, automation, and AI.',
-      readMore: 'Read article',
-      publishedOn: 'Published on',
-      empty: 'No articles published yet. Check back soon.',
-      backToBlog: 'Back to blog',
     },
     cta: {
       primary: 'Book a Discovery Call',
@@ -392,10 +388,6 @@ export const companyContent = {
     blog: {
       title: 'בלוג',
       subtitle: 'תובנות על פיתוח תוכנה, אוטומציה ובינה מלאכותית.',
-      readMore: 'קריאת המאמר',
-      publishedOn: 'פורסם בתאריך',
-      empty: 'עדיין לא פורסמו מאמרים. חזרו בקרוב.',
-      backToBlog: 'חזרה לבלוג',
     },
     cta: {
       primary: 'קביעת שיחת Discovery',
