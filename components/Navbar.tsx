@@ -27,6 +27,7 @@ export default function Navbar() {
     { label: content.nav.software, href: '/software-development' },
     { label: content.nav.automation, href: '/automation' },
     { label: content.nav.about, href: '/about' },
+    { label: content.nav.blog, href: '/blog' },
     { label: content.nav.privacy, href: '/privacy' },
   ];
 
