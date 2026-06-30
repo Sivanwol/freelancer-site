@@ -25,7 +25,6 @@ const nextConfig = {
   images: {
     remotePatterns: payloadImagePattern(),
   },
-  output: 'standalone',
   reactStrictMode: true,
   async headers() {
     return [

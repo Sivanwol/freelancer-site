@@ -4,6 +4,10 @@ const PAYLOAD_URL = (process.env.NEXT_PUBLIC_PAYLOAD_URL || 'http://localhost:30
 
 const REVALIDATE_SECONDS = 60;
 
+// Node's fetch has no default timeout; cap requests so an unreachable
+// Payload backend can't hang static generation/builds indefinitely.
+const FETCH_TIMEOUT_MS = 5000;
+
 /**
  * Resolve a Payload media object (or relative url) to an absolute URL.
  * Prefers the requested size when available, falling back to the original.
@@ -42,18 +46,29 @@ async function fetchPosts(params: URLSearchParams): Promise<PaginatedDocs<Post>>
     prevPage: null,
   };
 
+  const url = `${PAYLOAD_URL}/api/posts?${params.toString()}`;
+  const started = Date.now();
+  console.info(`[payload] GET ${url} (base=${PAYLOAD_URL})`);
+
   try {
-    const res = await fetch(`${PAYLOAD_URL}/api/posts?${params.toString()}`, {
+    const res = await fetch(url, {
       next: { revalidate: REVALIDATE_SECONDS },
       headers: { Accept: 'application/json' },
+      signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
     });
 
     if (!res.ok) {
+      console.error(`[payload] ${res.status} ${res.statusText} ${url} (${Date.now() - started}ms)`);
       return empty;
     }
 
-    return (await res.json()) as PaginatedDocs<Post>;
-  } catch {
+    const json = (await res.json()) as PaginatedDocs<Post>;
+    console.info(
+      `[payload] ${res.status} ${url} docs=${json?.docs?.length ?? 0}/${json?.totalDocs ?? 0} (${Date.now() - started}ms)`
+    );
+    return json;
+  } catch (err) {
+    console.error(`[payload] FAILED ${url} after ${Date.now() - started}ms:`, err);
     return empty;
   }
 }
