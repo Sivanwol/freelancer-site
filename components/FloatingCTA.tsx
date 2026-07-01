@@ -1,12 +1,15 @@
 'use client';
 
 import { useLocale } from 'next-intl';
-import { getCompanyContent } from '@/lib/company-content';
+import type { ClientChromeContent } from '@/lib/company-content';
 import { FaEnvelope, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
 
-export default function FloatingCTA() {
+type FloatingCTAProps = {
+  content: ClientChromeContent;
+};
+
+export default function FloatingCTA({ content }: FloatingCTAProps) {
   const locale = useLocale();
-  const content = getCompanyContent(locale);
   const isRtl = locale === 'he';
 
   const links = [

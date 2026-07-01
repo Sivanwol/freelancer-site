@@ -1,6 +1,10 @@
-const GTM_ID = 'GTM-MN4LJ534';
+const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID ?? 'GTM-MN4LJ534';
 
 export function GoogleTagManagerHead() {
+  if (!GTM_ID) {
+    return null;
+  }
+
   return (
     <script
       dangerouslySetInnerHTML={{
@@ -17,6 +21,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 
 export function GoogleTagManagerNoScript() {
+  if (!GTM_ID) {
+    return null;
+  }
+
   return (
     <noscript>
       <iframe

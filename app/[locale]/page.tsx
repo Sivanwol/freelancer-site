@@ -1,9 +1,7 @@
 import { setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import FloatingCTA from '@/components/FloatingCTA';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
+import { SiteChrome } from '@/components/site-chrome';
 import { HomePage } from '@/components/company/CompanySections';
 
 type Props = {
@@ -20,10 +18,9 @@ export default async function Home({ params }: Props) {
 
   return (
     <ErrorBoundary>
-      <Navbar />
-      <FloatingCTA />
-      <HomePage locale={locale} />
-      <Footer />
+      <SiteChrome locale={locale}>
+        <HomePage locale={locale} />
+      </SiteChrome>
     </ErrorBoundary>
   );
 }

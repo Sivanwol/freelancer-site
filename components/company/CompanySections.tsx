@@ -262,7 +262,7 @@ function CompanyProof({ content }: { content: Content }) {
           </div>
           <div className="relative min-h-[420px] overflow-hidden rounded-[32px] bg-[#e7f2ff]">
             <Image
-              src="/sivan-devco-avatar.png"
+              src="/sivan-devco-avatar.webp"
               alt={`${content.aboutPage.bioTitle} - ${content.aboutPage.bioRole}`}
               fill
               sizes="(min-width: 1024px) 34vw, 100vw"
@@ -406,7 +406,7 @@ export function ServicePage({
   const content = getCompanyContent(locale);
   const isRtl = localeValue(locale) === 'he';
   const page = type === 'software' ? content.softwarePage : content.automationPage;
-  const heroImage = type === 'software' ? '/showcase-real-estate-platform.png' : '/showcase-delet-mobile-accessibility.png';
+  const heroImage = type === 'software' ? '/showcase-real-estate-platform.webp' : '/showcase-delet-mobile-accessibility.webp';
   const heroAlt = type === 'software' ? content.showcases[2].title : content.showcases[0].title;
 
   return (
@@ -499,7 +499,7 @@ export function AboutPage({ locale }: PageProps) {
           </div>
           <div className="relative min-h-[440px] overflow-hidden rounded-[36px] bg-[#e7f2ff] shadow-2xl shadow-blue-950/10 md:min-h-[620px]">
             <Image
-              src="/sivan-devco-avatar.png"
+              src="/sivan-devco-avatar.webp"
               alt={`${content.aboutPage.bioTitle} - ${content.aboutPage.bioRole}`}
               fill
               sizes="(min-width: 1024px) 48vw, 100vw"

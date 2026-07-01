@@ -1,25 +1,49 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { useLocale } from 'next-intl';
 import { Link, usePathname, useRouter } from '@/i18n/routing';
-import { getCompanyContent } from '@/lib/company-content';
+import type { ClientChromeContent } from '@/lib/company-content';
 import { HiMenu, HiX } from 'react-icons/hi';
 
-export default function Navbar() {
+type NavbarProps = {
+  content: ClientChromeContent;
+};
+
+export default function Navbar({ content }: NavbarProps) {
   const locale = useLocale();
-  const content = getCompanyContent(locale);
   const pathname = usePathname();
   const router = useRouter();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const scrollRafRef = useRef<number | null>(null);
+  const isScrolledRef = useRef(false);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    handleScroll();
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const updateScrollState = () => {
+      const nextIsScrolled = window.scrollY > 20;
+      if (nextIsScrolled !== isScrolledRef.current) {
+        isScrolledRef.current = nextIsScrolled;
+        setIsScrolled(nextIsScrolled);
+      }
+      scrollRafRef.current = null;
+    };
+
+    const handleScroll = () => {
+      if (scrollRafRef.current !== null) return;
+      scrollRafRef.current = window.requestAnimationFrame(updateScrollState);
+    };
+
+    updateScrollState();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (scrollRafRef.current !== null) {
+        window.cancelAnimationFrame(scrollRafRef.current);
+      }
+    };
   }, []);
 
   const navItems = [
@@ -47,13 +71,13 @@ export default function Navbar() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between gap-4">
-          <Link href="/" className="flex h-14 w-40 shrink-0 items-center overflow-hidden" aria-label={content.brand.name}>
+          <Link href="/" className="flex h-14 w-40 shrink-0 items-center" aria-label={content.brand.name}>
             <Image
               src={locale === 'he' ? '/logo-he.png' : '/logo.png'}
               alt={content.brand.name}
-              width={240}
-              height={80}
-              className="h-full w-full scale-[2.15] object-contain"
+              width={160}
+              height={56}
+              className="h-14 w-auto object-contain"
               priority
             />
           </Link>

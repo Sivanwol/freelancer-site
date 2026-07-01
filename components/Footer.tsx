@@ -3,25 +3,28 @@
 import Image from 'next/image';
 import { useLocale } from 'next-intl';
 import { Link } from '@/i18n/routing';
-import { getCompanyContent } from '@/lib/company-content';
+import type { ClientChromeContent } from '@/lib/company-content';
 import { FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
 
-export default function Footer() {
+type FooterProps = {
+  content: ClientChromeContent;
+};
+
+export default function Footer({ content }: FooterProps) {
   const locale = useLocale();
-  const content = getCompanyContent(locale);
   const year = new Date().getFullYear();
 
   return (
     <footer className="border-t border-[#dbe7f5] bg-white px-4 py-10" role="contentinfo">
       <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-[1fr_auto] md:items-center">
         <div>
-          <Link href="/" className="inline-flex h-14 w-40 items-center overflow-hidden">
+          <Link href="/" className="inline-flex h-14 w-40 items-center">
             <Image
               src={locale === 'he' ? '/logo-he.png' : '/logo.png'}
               alt={content.brand.name}
-              width={220}
-              height={72}
-              className="h-full w-full scale-[2.15] object-contain"
+              width={160}
+              height={56}
+              className="h-14 w-auto object-contain"
             />
           </Link>
           <p className="mt-4 max-w-2xl text-sm font-semibold leading-7 text-[#526174]">{content.footer.credit}</p>

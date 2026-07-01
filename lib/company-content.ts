@@ -177,7 +177,7 @@ export const companyContent = {
     showcases: [
       {
         slug: 'delet-platform-accessibility',
-        image: '/showcase-delet-mobile-accessibility.png',
+        image: '/showcase-delet-mobile-accessibility.webp',
         title: 'Delet real-estate operations and accessibility tooling',
         category: 'Web, mobile, and internal tools',
         summary:
@@ -191,7 +191,7 @@ export const companyContent = {
       },
       {
         slug: 'vme-mobile-app',
-        image: '/showcase-vme.png',
+        image: '/showcase-vme.webp',
         title: 'VME dating app for iOS and Android',
         category: 'Mobile product development',
         summary:
@@ -205,7 +205,7 @@ export const companyContent = {
       },
       {
         slug: 'real-estate-platform',
-        image: '/showcase-real-estate-platform.png',
+        image: '/showcase-real-estate-platform.webp',
         title: 'Real-estate booking and order platform',
         category: 'SaaS and operations platform',
         summary:
@@ -519,7 +519,7 @@ export const companyContent = {
     showcases: [
       {
         slug: 'delet-platform-accessibility',
-        image: '/showcase-delet-mobile-accessibility.png',
+        image: '/showcase-delet-mobile-accessibility.webp',
         title: 'מערכת נדל״ן וכלי נגישות של Delet',
         category: 'ווב, מובייל וכלים פנימיים',
         summary:
@@ -533,7 +533,7 @@ export const companyContent = {
       },
       {
         slug: 'vme-mobile-app',
-        image: '/showcase-vme.png',
+        image: '/showcase-vme.webp',
         title: 'אפליקציית ההיכרויות VME ל-iOS ו-Android',
         category: 'פיתוח מוצר מובייל',
         summary:
@@ -547,7 +547,7 @@ export const companyContent = {
       },
       {
         slug: 'real-estate-platform',
-        image: '/showcase-real-estate-platform.png',
+        image: '/showcase-real-estate-platform.webp',
         title: 'פלטפורמת הזמנות ותפעול נדל״ן',
         category: 'SaaS ומערכת תפעול',
         summary:
@@ -707,4 +707,68 @@ export const companyContent = {
 
 export function getCompanyContent(locale: string) {
   return companyContent[locale === 'en' ? 'en' : 'he'];
+}
+
+export type ClientChromeContent = {
+  brand: {
+    name: string;
+    email: string;
+    whatsapp: string;
+    linkedin: string;
+  };
+  nav: {
+    home: string;
+    software: string;
+    automation: string;
+    about: string;
+    blog: string;
+    privacy: string;
+    contact: string;
+    menu: string;
+    close: string;
+    main: string;
+  };
+  footer: {
+    credit: string;
+    rights: string;
+    privacy: string;
+    accessibility: string;
+  };
+  contact: {
+    email: string;
+  };
+};
+
+export function getClientChromeContent(locale: string): ClientChromeContent {
+  const content = getCompanyContent(locale);
+
+  return {
+    brand: {
+      name: content.brand.name,
+      email: content.brand.email,
+      whatsapp: content.brand.whatsapp,
+      linkedin: content.brand.linkedin,
+    },
+    nav: {
+      home: content.nav.home,
+      software: content.nav.software,
+      automation: content.nav.automation,
+      about: content.nav.about,
+      blog: content.nav.blog,
+      privacy: content.nav.privacy,
+      contact: content.nav.contact,
+      menu: content.nav.menu,
+      close: content.nav.close,
+      main: content.nav.main,
+    },
+    footer: {
+      credit: content.footer.credit,
+      rights: content.footer.rights,
+      privacy: content.footer.privacy,
+      accessibility: content.footer.accessibility,
+    },
+    contact: {
+      email: content.contact.email,
+    },
+  };
 }

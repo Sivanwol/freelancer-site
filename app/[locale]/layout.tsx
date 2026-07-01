@@ -4,8 +4,9 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { siteConfig, getBaseUrl } from '@/lib/config';
 import { getCompanyContent } from '@/lib/company-content';
-import AccessibilityWidget from '@/components/AccessibilityWidget';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+import WebVitalsReporter from '@/components/WebVitalsReporter';
+import LazyAccessibilityWidget from '@/components/lazy-accessibility-widget';
 import { GoogleTagManagerHead, GoogleTagManagerNoScript } from '@/components/GoogleTagManager';
 import '../globals.css';
 import type { Metadata } from 'next';
@@ -220,9 +221,10 @@ export default async function LocaleLayout({
       <body className="antialiased" suppressHydrationWarning style={{ backgroundColor: siteConfig.theme.background, color: siteConfig.theme.foreground }}>
         <GoogleTagManagerNoScript />
         <GoogleAnalytics />
+        <WebVitalsReporter />
         <NextIntlClientProvider messages={messages}>
           {children}
-          <AccessibilityWidget />
+          <LazyAccessibilityWidget />
         </NextIntlClientProvider>
       </body>
     </html>

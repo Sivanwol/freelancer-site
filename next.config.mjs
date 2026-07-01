@@ -6,6 +6,7 @@ const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 const nextConfig = {
   images: {
     domains: [],
+    formats: ['image/avif', 'image/webp'],
   },
   reactStrictMode: true,
   async headers() {

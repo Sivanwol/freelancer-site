@@ -3,11 +3,9 @@ import { setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import { getBaseUrl } from '@/lib/config';
 import { getCompanyContent } from '@/lib/company-content';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import FloatingCTA from '@/components/FloatingCTA';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
-import SoroEmbed from '@/components/blog/soro-embed';
+import { SiteChrome } from '@/components/site-chrome';
+import LazySoroEmbed from '@/components/blog/lazy-soro-embed';
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -48,14 +46,13 @@ export default async function BlogIndex({ params }: Props) {
 
   return (
     <ErrorBoundary>
-      <Navbar />
-      <FloatingCTA />
-      <main className="min-h-screen bg-[#f8fbff] pb-20 pt-32">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SoroEmbed />
-        </div>
-      </main>
-      <Footer />
+      <SiteChrome locale={locale}>
+        <main className="min-h-screen bg-[#f8fbff] pb-20 pt-32">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <LazySoroEmbed />
+          </div>
+        </main>
+      </SiteChrome>
     </ErrorBoundary>
   );
 }

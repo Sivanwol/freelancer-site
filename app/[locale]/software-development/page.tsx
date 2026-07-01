@@ -3,10 +3,8 @@ import { setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import { getBaseUrl } from '@/lib/config';
 import { getCompanyContent } from '@/lib/company-content';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import FloatingCTA from '@/components/FloatingCTA';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
+import { SiteChrome } from '@/components/site-chrome';
 import { ServicePage } from '@/components/company/CompanySections';
 
 type Props = {
@@ -42,10 +40,9 @@ export default async function SoftwareDevelopment({ params }: Props) {
 
   return (
     <ErrorBoundary>
-      <Navbar />
-      <FloatingCTA />
-      <ServicePage locale={locale} type="software" />
-      <Footer />
+      <SiteChrome locale={locale}>
+        <ServicePage locale={locale} type="software" />
+      </SiteChrome>
     </ErrorBoundary>
   );
 }
