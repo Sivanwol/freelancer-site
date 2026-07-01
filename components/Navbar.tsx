@@ -71,13 +71,13 @@ export default function Navbar({ content }: NavbarProps) {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between gap-4">
-          <Link href="/" className="flex h-14 w-40 shrink-0 items-center" aria-label={content.brand.name}>
+          <Link href="/" className="flex h-14 w-40 shrink-0 items-center overflow-hidden" aria-label={content.brand.name}>
             <Image
               src={locale === 'he' ? '/logo-he.png' : '/logo.png'}
               alt={content.brand.name}
-              width={160}
-              height={56}
-              className="h-14 w-auto object-contain"
+              width={240}
+              height={80}
+              className="h-full w-full scale-[2.15] object-contain"
               priority
             />
           </Link>
