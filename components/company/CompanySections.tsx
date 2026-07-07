@@ -13,6 +13,7 @@ import {
   FaEnvelope,
   FaLayerGroup,
   FaLinkedinIn,
+  FaPhone,
   FaQuoteLeft,
   FaRocket,
   FaShieldAlt,
@@ -288,10 +289,14 @@ function ContactBand({ content }: { content: Content }) {
           <p className="mb-4 text-sm font-extrabold uppercase tracking-[0.2em] text-[#1d72d2]">{content.cta.contact}</p>
           <h2 className="hero-display mx-auto max-w-4xl text-4xl font-black leading-[0.98] text-[#0d1626] md:text-6xl">{content.contact.title}</h2>
           <p className="mx-auto mt-6 max-w-3xl text-lg font-medium leading-8 text-[#526174]">{content.contact.subtitle}</p>
-          <div className="mx-auto mt-8 grid max-w-4xl gap-3 sm:grid-cols-3">
+          <div className="mx-auto mt-8 grid max-w-4xl gap-3 sm:grid-cols-2 lg:grid-cols-4">
             <a href={`mailto:${content.brand.email}`} className="contact-link">
               <FaEnvelope aria-hidden="true" />
               <span>{content.contact.email}</span>
+            </a>
+            <a href={`tel:${content.brand.phone}`} className="contact-link">
+              <FaPhone aria-hidden="true" />
+              <span>{content.contact.phone}</span>
             </a>
             <a href={content.brand.whatsapp} target="_blank" rel="noopener noreferrer" className="contact-link">
               <FaWhatsapp aria-hidden="true" />
@@ -346,6 +351,63 @@ function TestimonialsSection({ locale }: { locale: string }) {
   );
 }
 
+type FAQItem = {
+  question: string;
+  answer: string;
+};
+
+function FAQSection({
+  eyebrow,
+  title,
+  items,
+}: {
+  eyebrow: string;
+  title: string;
+  items: readonly FAQItem[];
+}) {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: items.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  };
+
+  return (
+    <section className="site-section bg-[#f8fbff]">
+      <div className="site-container">
+        <SectionIntro eyebrow={eyebrow} title={title} centered />
+        <div className="mx-auto grid max-w-4xl gap-4">
+          {items.map((item) => (
+            <details
+              key={item.question}
+              className="group rounded-[24px] border border-[#dbe7f5] bg-white p-5 shadow-sm open:shadow-md md:p-6"
+            >
+              <summary className="cursor-pointer list-none text-lg font-black leading-8 text-[#0d1626] marker:content-none md:text-xl">
+                <span className="flex items-start justify-between gap-4">
+                  <span>{item.question}</span>
+                  <FaArrowDown className="mt-1 h-4 w-4 shrink-0 text-[#1d72d2] transition group-open:rotate-180" aria-hidden="true" />
+                </span>
+              </summary>
+              <p className="mt-4 text-base font-medium leading-8 text-[#526174]">{item.answer}</p>
+            </details>
+          ))}
+        </div>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+          suppressHydrationWarning
+        />
+      </div>
+    </section>
+  );
+}
+
 function ServiceChoiceBand({ content, isRtl }: { content: Content; isRtl: boolean }) {
   return (
     <div className="mx-auto mt-10 grid max-w-4xl gap-3 md:grid-cols-2">
@@ -391,6 +453,11 @@ export function HomePage({ locale }: PageProps) {
       <SplitPaths content={content} isRtl={isRtl} />
       <ProcessSection content={content} />
       <TestimonialsSection locale={locale} />
+      <FAQSection
+        eyebrow={content.home.faq.eyebrow}
+        title={content.home.faq.title}
+        items={content.home.faq.items}
+      />
       <CompanyProof content={content} />
       <ContactBand content={content} />
     </PageFrame>
@@ -466,6 +533,11 @@ export function ServicePage({
           </div>
         </div>
       </section>
+      <FAQSection
+        eyebrow={page.faq.eyebrow}
+        title={page.faq.title}
+        items={page.faq.items}
+      />
       <ProcessSection content={content} />
       <ContactBand content={content} />
     </PageFrame>

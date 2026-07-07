@@ -140,6 +140,16 @@ export default async function LocaleLayout({
       siteConfig.social.linkedin,
       siteConfig.social.upwork,
     ],
+    contactPoint: [
+      {
+        '@type': 'ContactPoint',
+        telephone: siteConfig.phone,
+        email: siteConfig.email,
+        contactType: 'customer service',
+        areaServed: 'Worldwide',
+        availableLanguage: ['English', 'Hebrew'],
+      },
+    ],
     founder: {
       '@type': 'Person',
       name: siteConfig.author,
@@ -180,6 +190,7 @@ export default async function LocaleLayout({
     serviceType: ['Custom Software Development', 'Business Automation Solutions', 'AI Development', 'CRM Automation'],
     description: content.meta.defaultDescription,
     url: baseUrl,
+    telephone: siteConfig.phone,
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Haifa',
@@ -203,6 +214,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} dir={dir} suppressHydrationWarning>
       <head>
+        <meta charSet="utf-8" />
         <GoogleTagManagerHead />
         {/* Preconnect to external domains for performance */}
         <link rel="preconnect" href="https://www.linkedin.com" />

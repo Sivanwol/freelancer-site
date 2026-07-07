@@ -3,8 +3,9 @@
 import Image from 'next/image';
 import { useLocale } from 'next-intl';
 import { Link } from '@/i18n/routing';
+import { sitePaths } from '@/lib/site-paths';
 import type { ClientChromeContent } from '@/lib/company-content';
-import { FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
+import { FaLinkedinIn, FaPhone, FaWhatsapp } from 'react-icons/fa';
 
 type FooterProps = {
   content: ClientChromeContent;
@@ -31,16 +32,23 @@ export default function Footer({ content }: FooterProps) {
           <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm font-medium text-[#718198]">
             <p>{content.footer.rights.replace('{year}', String(year))}</p>
             <span aria-hidden="true">/</span>
-            <Link href="/privacy" className="font-extrabold text-[#526174] transition hover:text-[#1d72d2]">
+            <Link href={sitePaths.privacyPolicy} className="font-extrabold text-[#526174] transition hover:text-[#1d72d2]">
               {content.footer.privacy}
             </Link>
             <span aria-hidden="true">/</span>
-            <Link href="/accessibility" className="font-extrabold text-[#526174] transition hover:text-[#1d72d2]">
+            <Link href={sitePaths.accessibilityStatement} className="font-extrabold text-[#526174] transition hover:text-[#1d72d2]">
               {content.footer.accessibility}
             </Link>
           </div>
         </div>
         <div className="flex items-center gap-4">
+          <a
+            href={`tel:${content.brand.phone}`}
+            className="grid h-11 w-11 place-items-center rounded-full border border-[#c7d9ee] bg-[#f8fbff] text-[#0d1626] transition hover:border-[#1d72d2]/40 hover:text-[#1d72d2]"
+            aria-label={content.brand.phoneDisplay}
+          >
+            <FaPhone className="h-5 w-5" />
+          </a>
           <a
             href={content.brand.whatsapp}
             target="_blank"

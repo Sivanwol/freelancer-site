@@ -1,3 +1,5 @@
+import { sitePaths } from '@/lib/site-paths';
+
 export type Locale = 'he' | 'en';
 
 export type Showcase = {
@@ -13,9 +15,9 @@ export type Showcase = {
 };
 
 export const serviceRoutes = {
-  software: '/software-development',
-  automation: '/automation',
-  about: '/about',
+  software: sitePaths.softwareDevelopment,
+  automation: sitePaths.businessAutomation,
+  about: sitePaths.aboutUs,
 } as const;
 
 export const companyContent = {
@@ -26,6 +28,8 @@ export const companyContent = {
       tagline: 'Innovate Now',
       email: 'info@devco-solution.online',
       fallbackEmail: 'fastwings@gmail.com',
+      phone: '+972545566786',
+      phoneDisplay: '+972 54-556-6786',
       whatsapp: 'https://wa.me/972545566786',
       upwork: 'https://upwork.com/freelancers/swolberg',
       linkedin: 'https://www.linkedin.com/in/swolberg',
@@ -83,6 +87,37 @@ export const companyContent = {
       proofTitle: 'Built around senior execution',
       proofText:
         'DevCo combines senior architecture, hands-on delivery, and practical automation thinking so every build has a path from discovery to launch and scale.',
+      faq: {
+        eyebrow: 'FAQ',
+        title: 'Common questions about working with DevCo',
+        items: [
+          {
+            question: 'Who is DevCo Solutions and who leads the work?',
+            answer:
+              'DevCo Solutions is a software development and business automation company led by Sivan Wolberg, with 15+ years of experience in architecture, full-stack delivery, AI integration, and complex system builds.',
+          },
+          {
+            question: 'How does pricing work?',
+            answer:
+              'Projects typically start with a focused discovery session, then move into a scoped proposal with milestones, priorities, and clear deliverables. Pricing depends on scope, integrations, and timeline rather than a one-size-fits-all package.',
+          },
+          {
+            question: 'How long does a typical project take?',
+            answer:
+              'Timelines vary by scope. MVPs and focused automation flows can move quickly after discovery, while larger platforms usually follow a phased plan with a first valuable release before broader scale work.',
+          },
+          {
+            question: 'Do you work with remote teams and international clients?',
+            answer:
+              'Yes. DevCo works with startups, agencies, and businesses worldwide through structured discovery, planning, delivery updates, and launch support.',
+          },
+          {
+            question: 'What technologies and tools do you cover?',
+            answer:
+              'DevCo covers custom software with React, Next.js, Node.js, Python, .NET, React Native, and AI tooling, plus business automation with n8n, Make, Zapier, HubSpot, Zoho, Monday, APIs, and CRM workflows.',
+          },
+        ],
+      },
     },
     process: [
       {
@@ -141,6 +176,27 @@ export const companyContent = {
       ],
       stackTitle: 'Technology coverage',
       stack: ['React', 'Next.js', 'Node.js', 'Python', 'C#', '.NET', 'React Native', 'TypeScript', 'LangChain', 'OpenAI', 'Claude', 'Codex', 'PostgreSQL', 'MongoDB'],
+      faq: {
+        eyebrow: 'Software FAQ',
+        title: 'Questions about custom software development',
+        items: [
+          {
+            question: 'How long does an MVP or SaaS build usually take?',
+            answer:
+              'After discovery and planning, many MVPs move in phased releases so the first production-ready version can launch with the highest-value features first. Larger platforms are usually delivered in milestones rather than one long block.',
+          },
+          {
+            question: 'Can you work with our existing stack or recommend one?',
+            answer:
+              'Yes. DevCo can extend an existing codebase or recommend a practical stack based on product goals, team constraints, integrations, and long-term maintainability.',
+          },
+          {
+            question: 'Do you provide support after launch?',
+            answer:
+              'Yes. Launch support, monitoring, fixes, and post-release improvements are part of the delivery model, with a clear path toward scale, performance, and product velocity.',
+          },
+        ],
+      },
     },
     automationPage: {
       eyebrow: 'Business Automation Solutions',
@@ -167,6 +223,27 @@ export const companyContent = {
       ],
       stackTitle: 'Automation stack',
       stack: ['n8n', 'Make', 'Zapier', 'Monday', 'Zoho', 'HubSpot', 'APIs', 'Webhooks', 'Chatbots', 'Dashboards', 'Slack', 'Email'],
+      faq: {
+        eyebrow: 'Automation FAQ',
+        title: 'Questions about business automation',
+        items: [
+          {
+            question: 'Which CRMs and automation tools do you support?',
+            answer:
+              'DevCo works with HubSpot, Zoho, Monday, custom CRMs, and automation platforms such as n8n, Make, and Zapier, plus direct APIs, webhooks, Slack, email, and reporting flows.',
+          },
+          {
+            question: 'How quickly can an automation project start delivering value?',
+            answer:
+              'Many automation projects begin with one high-impact workflow such as lead routing, CRM sync, or internal approvals. After discovery, the first useful automation can often be implemented in a focused first phase.',
+          },
+          {
+            question: 'Do you maintain automations after they go live?',
+            answer:
+              'Yes. DevCo can monitor workflows, improve reliability, extend coverage, and adjust automations as tools, teams, and business processes evolve.',
+          },
+        ],
+      },
     },
     showcasesPage: {
       eyebrow: 'Selected work',
@@ -242,6 +319,7 @@ export const companyContent = {
       subtitle:
         'Start with a focused discovery conversation. We will map the product, automation, integration, or workflow and decide the first practical delivery step.',
       email: 'Email DevCo',
+      phone: 'Call DevCo',
       whatsapp: 'WhatsApp',
       linkedin: 'Connect on LinkedIn',
     },
@@ -368,6 +446,8 @@ export const companyContent = {
       tagline: 'לחשוב, ליצור, להוביל',
       email: 'info@devco-solution.online',
       fallbackEmail: 'fastwings@gmail.com',
+      phone: '+972545566786',
+      phoneDisplay: '+972 54-556-6786',
       whatsapp: 'https://wa.me/972545566786',
       upwork: 'https://upwork.com/freelancers/swolberg',
       linkedin: 'https://www.linkedin.com/in/swolberg',
@@ -425,6 +505,37 @@ export const companyContent = {
       proofTitle: 'בנוי סביב ביצוע בכיר',
       proofText:
         'DevCo משלבת ארכיטקטורה בכירה, פיתוח Hands-on וחשיבה אוטומטית פרקטית, כדי שלכל בנייה יהיה מסלול ברור מ-Discovery ועד Scale.',
+      faq: {
+        eyebrow: 'שאלות נפוצות',
+        title: 'שאלות נפוצות על העבודה עם DevCo',
+        items: [
+          {
+            question: 'מי זו DevCo Solutions ומי מוביל את העבודה?',
+            answer:
+              'DevCo Solutions היא חברת פיתוח תוכנה ואוטומציה עסקית שמובלת על ידי סיון וולברג, עם 15+ שנות ניסיון בארכיטקטורה, פיתוח Full Stack, אינטגרציות AI ובניית מערכות מורכבות.',
+          },
+          {
+            question: 'איך עובדת התמחור?',
+            answer:
+              'פרויקטים מתחילים בדרך כלל בשיחת Discovery ממוקדת, ואחר כך מקבלים הצעה עם Scope, אבני דרך, סדרי עדיפויות ותוצרים ברורים. התמחור תלוי בהיקף, באינטגרציות ובלוח הזמנים.',
+          },
+          {
+            question: 'כמה זמן לוקח פרויקט טיפוסי?',
+            answer:
+              'לוחות הזמנים משתנים לפי ההיקף. MVP או אוטומציה ממוקדת יכולים להתקדם מהר אחרי Discovery, בעוד שפלטפורמות גדולות יותר נבנות לרוב בשלבים עם גרסה ראשונה בעלת ערך.',
+          },
+          {
+            question: 'האם אתם עובדים עם צוותים מרוחקים ולקוחות בינלאומיים?',
+            answer:
+              'כן. DevCo עובדת עם סטארטאפים, סוכנויות ועסקים ברחבי העולם דרך Discovery, תכנון, עדכוני התקדמות ותמיכה בהשקה.',
+          },
+          {
+            question: 'באילו טכנולוגיות וכלים אתם מתמחים?',
+            answer:
+              'DevCo מכסה פיתוח תוכנה עם React, Next.js, Node.js, Python, .NET, React Native וכלי AI, וגם אוטומציה עסקית עם n8n, Make, Zapier, HubSpot, Zoho, Monday, APIs ו-Workflows של CRM.',
+          },
+        ],
+      },
     },
     process: [
       {
@@ -483,6 +594,27 @@ export const companyContent = {
       ],
       stackTitle: 'טכנולוגיות',
       stack: ['React', 'Next.js', 'Node.js', 'Python', 'C#', '.NET', 'React Native', 'TypeScript', 'LangChain', 'OpenAI', 'Claude', 'Codex', 'PostgreSQL', 'MongoDB'],
+      faq: {
+        eyebrow: 'שאלות על תוכנה',
+        title: 'שאלות על פיתוח תוכנה מותאם',
+        items: [
+          {
+            question: 'כמה זמן לוקח בדרך כלל MVP או SaaS?',
+            answer:
+              'אחרי Discovery ו-Planning, רבים מה-MVPים מתקדמים בשלבים כדי שהגרסה הראשונה לפרודקשן תכלול קודם את הפיצ\'רים בעלי הערך הגבוה ביותר. פלטפורמות גדולות יותר נמסרות לרוב באבני דרך.',
+          },
+          {
+            question: 'האם אתם יכולים לעבוד עם הסטאק הקיים או להמליץ על אחד?',
+            answer:
+              'כן. DevCo יכולה להרחיב קוד קיים או להמליץ על סטאק פרקטי לפי מטרות המוצר, מגבלות הצוות, אינטגרציות ותחזוקה לטווח ארוך.',
+          },
+          {
+            question: 'האם אתם מספקים תמיכה אחרי ההשקה?',
+            answer:
+              'כן. תמיכה בהשקה, ניטור, תיקונים ושיפורים אחרי העלייה לאוויר הם חלק מהמודל, עם מסלול ברור ל-Scale, ביצועים ומהירות פיתוח.',
+          },
+        ],
+      },
     },
     automationPage: {
       eyebrow: 'פתרונות אוטומציה לעסקים',
@@ -509,6 +641,27 @@ export const companyContent = {
       ],
       stackTitle: 'כלי אוטומציה',
       stack: ['n8n', 'Make', 'Zapier', 'Monday', 'Zoho', 'HubSpot', 'APIs', 'Webhooks', 'Chatbots', 'Dashboards', 'Slack', 'Email'],
+      faq: {
+        eyebrow: 'שאלות על אוטומציה',
+        title: 'שאלות על אוטומציה עסקית',
+        items: [
+          {
+            question: 'באילו CRMים וכלי אוטומציה אתם עובדים?',
+            answer:
+              'DevCo עובדת עם HubSpot, Zoho, Monday, CRMים מותאמים ופלטפורמות כמו n8n, Make ו-Zapier, לצד APIs, Webhooks, Slack, אימייל וזרימות דיווח.',
+          },
+          {
+            question: 'כמה מהר אוטומציה יכולה להתחיל לייצר ערך?',
+            answer:
+              'רבים מהפרויקטים מתחילים ב-Workflow אחד בעל השפעה גבוהה, כמו ניתוב לידים, סנכרון CRM או אישורים פנימיים. אחרי Discovery, האוטומציה הראשונה יכולה לרוב לצאת לדרך בשלב ראשון ממוקד.',
+          },
+          {
+            question: 'האם אתם מטפלים באוטומציות גם אחרי שהן עולות לאוויר?',
+            answer:
+              'כן. DevCo יכולה לנטר Workflows, לשפר אמינות, להרחיב כיסוי ולהתאים אוטומציות כשהכלים, הצוותים והתהליכים משתנים.',
+          },
+        ],
+      },
     },
     showcasesPage: {
       eyebrow: 'עבודות נבחרות',
@@ -584,6 +737,7 @@ export const companyContent = {
       subtitle:
         'מתחילים בשיחת Discovery ממוקדת. נמפה את המוצר, האוטומציה, האינטגרציה או ה-Workflow ונבחר את שלב המסירה הראשון.',
       email: 'אימייל ל-DevCo',
+      phone: 'התקשרו ל-DevCo',
       whatsapp: 'WhatsApp',
       linkedin: 'LinkedIn',
     },
@@ -713,6 +867,8 @@ export type ClientChromeContent = {
   brand: {
     name: string;
     email: string;
+    phone: string;
+    phoneDisplay: string;
     whatsapp: string;
     linkedin: string;
   };
@@ -746,6 +902,8 @@ export function getClientChromeContent(locale: string): ClientChromeContent {
     brand: {
       name: content.brand.name,
       email: content.brand.email,
+      phone: content.brand.phone,
+      phoneDisplay: content.brand.phoneDisplay,
       whatsapp: content.brand.whatsapp,
       linkedin: content.brand.linkedin,
     },

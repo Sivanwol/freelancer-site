@@ -5,6 +5,8 @@ export const siteConfig = {
   jobTitle: 'CEO, DevCo Solutions',
   email: 'info@devco-solution.online',
   fallbackEmail: 'fastwings@gmail.com',
+  phone: '+972545566786',
+  phoneDisplay: '+972 54-556-6786',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.devco-solution.online',
   social: {
     linkedin: 'https://www.linkedin.com/in/swolberg',
