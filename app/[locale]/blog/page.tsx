@@ -3,6 +3,7 @@ import { setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import { getBaseUrl } from '@/lib/config';
 import { getCompanyContent } from '@/lib/company-content';
+import { sitePaths } from '@/lib/site-paths';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { SiteChrome } from '@/components/site-chrome';
 import LazySoroEmbed from '@/components/blog/lazy-soro-embed';
@@ -25,16 +26,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: content.blog.subtitle,
     metadataBase: new URL(baseUrl),
     alternates: {
-      canonical: `${baseUrl}/${locale}/blog`,
+      canonical: `${baseUrl}/${locale}${sitePaths.blog}`,
       languages: {
-        he: `${baseUrl}/he/blog`,
-        en: `${baseUrl}/en/blog`,
+        he: `${baseUrl}/he${sitePaths.blog}`,
+        en: `${baseUrl}/en${sitePaths.blog}`,
       },
     },
     openGraph: {
       title: content.blog.title,
       description: content.blog.subtitle,
-      url: `${baseUrl}/${locale}/blog`,
+      url: `${baseUrl}/${locale}${sitePaths.blog}`,
       type: 'website',
     },
   };

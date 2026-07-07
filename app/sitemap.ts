@@ -1,16 +1,16 @@
 import { MetadataRoute } from 'next';
 import { getBaseUrl } from '@/lib/config';
+import { publicSitemapPaths, sitePaths } from '@/lib/site-paths';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = getBaseUrl();
-  const paths = ['', '/software-development', '/automation', '/about', '/privacy', '/accessibility'];
 
-  return paths.flatMap((path) => [
+  return publicSitemapPaths.flatMap((path) => [
     {
       url: `${baseUrl}/he${path}`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
-      priority: path === '' ? 1 : 0.85,
+      priority: path === sitePaths.home ? 1 : 0.85,
       alternates: {
         languages: {
           he: `${baseUrl}/he${path}`,
@@ -22,7 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/en${path}`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
-      priority: path === '' ? 0.95 : 0.8,
+      priority: path === sitePaths.home ? 0.95 : 0.8,
       alternates: {
         languages: {
           he: `${baseUrl}/he${path}`,

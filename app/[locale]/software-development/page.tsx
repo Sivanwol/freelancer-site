@@ -3,6 +3,7 @@ import { setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import { getBaseUrl } from '@/lib/config';
 import { getCompanyContent } from '@/lib/company-content';
+import { sitePaths } from '@/lib/site-paths';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { SiteChrome } from '@/components/site-chrome';
 import { ServicePage } from '@/components/company/CompanySections';
@@ -25,10 +26,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: content.meta.softwareDescription,
     metadataBase: new URL(baseUrl),
     alternates: {
-      canonical: `${baseUrl}/${locale}/software-development`,
+      canonical: `${baseUrl}/${locale}${sitePaths.softwareDevelopment}`,
       languages: {
-        he: `${baseUrl}/he/software-development`,
-        en: `${baseUrl}/en/software-development`,
+        he: `${baseUrl}/he${sitePaths.softwareDevelopment}`,
+        en: `${baseUrl}/en${sitePaths.softwareDevelopment}`,
       },
     },
   };

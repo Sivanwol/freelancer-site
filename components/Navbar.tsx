@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { useLocale } from 'next-intl';
 import { Link, usePathname, useRouter } from '@/i18n/routing';
+import { sitePaths } from '@/lib/site-paths';
 import type { ClientChromeContent } from '@/lib/company-content';
 import { HiMenu, HiX } from 'react-icons/hi';
 
@@ -47,12 +48,12 @@ export default function Navbar({ content }: NavbarProps) {
   }, []);
 
   const navItems = [
-    { label: content.nav.home, href: '/' },
-    { label: content.nav.software, href: '/software-development' },
-    { label: content.nav.automation, href: '/automation' },
-    { label: content.nav.about, href: '/about' },
-    { label: content.nav.blog, href: '/blog' },
-    { label: content.nav.privacy, href: '/privacy' },
+    { label: content.nav.home, href: sitePaths.home },
+    { label: content.nav.software, href: sitePaths.softwareDevelopment },
+    { label: content.nav.automation, href: sitePaths.businessAutomation },
+    { label: content.nav.about, href: sitePaths.aboutUs },
+    { label: content.nav.blog, href: sitePaths.blog },
+    { label: content.nav.privacy, href: sitePaths.privacyPolicy },
   ];
 
   const changeLocale = (newLocale: string) => {

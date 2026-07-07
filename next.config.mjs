@@ -9,6 +9,30 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'],
   },
   reactStrictMode: true,
+  async redirects() {
+    return [
+      {
+        source: '/:locale(he|en)/automation',
+        destination: '/:locale/business-automation',
+        permanent: true,
+      },
+      {
+        source: '/:locale(he|en)/about',
+        destination: '/:locale/about-us',
+        permanent: true,
+      },
+      {
+        source: '/:locale(he|en)/privacy',
+        destination: '/:locale/privacy-policy',
+        permanent: true,
+      },
+      {
+        source: '/:locale(he|en)/accessibility',
+        destination: '/:locale/accessibility-statement',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
