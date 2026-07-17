@@ -2,6 +2,7 @@ import { getClientChromeContent } from '@/lib/company-content';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import LazyFloatingCTA from '@/components/lazy-floating-cta';
+import CookieConsentBanner from '@/components/cookie-consent-banner';
 
 type SiteChromeProps = {
   locale: string;
@@ -17,6 +18,7 @@ export function SiteChrome({ locale, children }: SiteChromeProps) {
       <LazyFloatingCTA content={content} />
       {children}
       <Footer content={content} />
+      <CookieConsentBanner />
     </>
   );
 }

@@ -118,9 +118,6 @@ export default function Navbar({ content }: NavbarProps) {
                 EN
               </button>
             </div>
-            <a href={content.brand.whatsapp} target="_blank" rel="noopener noreferrer" className="btn-primary !px-4 !py-2.5">
-              {content.nav.contact}
-            </a>
           </div>
 
           <button
@@ -149,15 +146,6 @@ export default function Navbar({ content }: NavbarProps) {
                   {item.label}
                 </Link>
               ))}
-              <a
-                href={content.brand.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="rounded-full bg-[#4c9df2] px-3 py-3 text-center text-base font-extrabold text-white"
-              >
-                {content.nav.contact}
-              </a>
               <div className="mt-2 flex gap-2 border-t border-[#dbe7f5] pt-4">
                 <button
                   type="button"

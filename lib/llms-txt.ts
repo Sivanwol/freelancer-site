@@ -39,6 +39,11 @@ export function generateLlmsTxt(): string {
       description: content.blog.subtitle,
     },
     {
+      title: 'Contact',
+      path: sitePaths.contact,
+      description: content.meta.contactDescription,
+    },
+    {
       title: 'Privacy Policy',
       path: sitePaths.privacyPolicy,
       description: content.meta.privacyDescription,
@@ -92,11 +97,11 @@ ${automationServices}
 - **Location**: Haifa, Israel
 - **Email**: ${siteConfig.email}
 - **Phone**: ${siteConfig.phoneDisplay}
-- **WhatsApp**: ${content.brand.whatsapp}
 - **LinkedIn**: ${content.brand.linkedin}
 - **Upwork**: ${content.brand.upwork}
 - **Default locale**: Hebrew (\`/he\`, x-default)
 - **English mirror**: \`${baseUrl}/en\`
+- **Contact page**: ${pageUrl(sitePaths.contact)}
 - **Contact section**: ${pageUrl(sitePaths.home)}#contact
 
 ## Core Topics
@@ -105,7 +110,7 @@ ${automationServices}
 - SaaS and MVP development
 - Web and mobile applications
 - Backend APIs and scalable platforms
-- AI and agentic workflows
+- AI agents, smarter bots, and agentic workflows
 - Business automation and CRM integrations
 - Workflow automation with n8n, Make, and Zapier
 

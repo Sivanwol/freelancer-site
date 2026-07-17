@@ -1,26 +1,33 @@
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import { getCompanyContent, type Locale } from '@/lib/company-content';
+import ContactForm from '@/components/contact-form';
 import {
   FaArrowDown,
   FaArrowRight,
   FaBolt,
   FaBrain,
+  FaCalendarAlt,
   FaChartLine,
   FaCheck,
   FaCode,
+  FaComments,
   FaDatabase,
   FaEnvelope,
   FaLayerGroup,
   FaLinkedinIn,
-  FaPhone,
+  FaMicrophone,
   FaQuoteLeft,
+  FaWhatsapp,
   FaRocket,
   FaShieldAlt,
+  FaShoppingCart,
   FaStar,
-  FaWhatsapp,
+  FaStore,
+  FaUserFriends,
 } from 'react-icons/fa';
 import { SiUpwork } from 'react-icons/si';
+import { buildWhatsAppUrl } from '@/lib/whatsapp';
 import HeroShowcaseCarousel from './HeroShowcaseCarousel';
 
 type PageProps = {
@@ -30,8 +37,21 @@ type PageProps = {
 type Content = ReturnType<typeof getCompanyContent>;
 
 const pathIcons = [FaCode, FaBolt];
-const serviceIcons = [FaLayerGroup, FaDatabase, FaBrain, FaShieldAlt];
-const processIcons = [FaShieldAlt, FaLayerGroup, FaCode, FaRocket, FaChartLine];
+const serviceIcons = [
+  FaLayerGroup,
+  FaDatabase,
+  FaBrain,
+  FaComments,
+  FaShieldAlt,
+  FaStore,
+  FaChartLine,
+  FaCalendarAlt,
+  FaRocket,
+  FaMicrophone,
+  FaUserFriends,
+  FaShoppingCart,
+];
+const processIcons = [FaShieldAlt, FaLayerGroup, FaCode, FaRocket];
 const sourceTestimonials = [
   {
     text: 'It was a pleasure working with Sivan Wolberg. He quickly understood our web app setup and was very responsive in fixing bugs and adding new features. His work was efficient and professional.',
@@ -107,47 +127,71 @@ function getAccent(locale: string, page: 'home' | 'software' | 'automation' | 'a
   return accents[page];
 }
 
-function HeroActions({
-  content,
+function ScrollDownLink({
+  href,
+  label,
 }: {
-  content: Content;
-  isRtl: boolean;
+  href: string;
+  label: string;
 }) {
   return (
-    <div className="flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-      <a href={content.brand.whatsapp} target="_blank" rel="noopener noreferrer" className="btn-primary">
-        {content.cta.primary}
-        <FaWhatsapp className="h-4 w-4" aria-hidden="true" />
-      </a>
-    </div>
+    <a
+      href={href}
+      className="mx-auto mt-6 inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#d5e4f4] bg-white text-[#1d72d2] shadow-sm transition hover:border-[#9cc7f0] hover:bg-[#f3f8fd]"
+      aria-label={label}
+    >
+      <FaArrowDown className="h-4 w-4" aria-hidden="true" />
+    </a>
+  );
+}
+
+function ContactCta({ content }: { content: Content }) {
+  return (
+    <a href="#contact" className="btn-primary">
+      {content.cta.primary}
+    </a>
   );
 }
 
 function SectionIntro({
+  content,
   eyebrow,
   title,
   subtitle,
   centered = false,
+  scrollTo,
 }: {
+  content: Content;
   eyebrow: string;
   title: string;
   subtitle?: string;
   centered?: boolean;
+  scrollTo?: string;
 }) {
   return (
     <div className={`mb-10 ${centered ? 'mx-auto max-w-4xl text-center' : 'max-w-4xl'}`}>
       <p className="mb-4 text-sm font-extrabold uppercase tracking-[0.2em] text-[#1d72d2]">{eyebrow}</p>
       <h2 className="hero-display text-4xl font-black leading-[0.98] text-[#0d1626] md:text-6xl">{title}</h2>
       {subtitle ? <p className="mt-6 text-lg font-medium leading-8 text-[#526174] md:text-xl">{subtitle}</p> : null}
+      <div className={`mt-6 flex flex-col gap-3 ${centered ? 'items-center' : 'items-start'}`}>
+        <ContactCta content={content} />
+        {scrollTo ? <ScrollDownLink href={scrollTo} label={content.cta.primary} /> : null}
+      </div>
     </div>
   );
 }
 
 function SplitPaths({ content, isRtl }: { content: Content; isRtl: boolean }) {
   return (
-    <section className="site-section bg-white">
+    <section id="paths" className="site-section bg-white">
       <div className="site-container">
-        <SectionIntro eyebrow={content.brand.name} title={content.home.pathsTitle} centered />
+        <SectionIntro
+          content={content}
+          eyebrow={content.brand.name}
+          title={content.home.pathsTitle}
+          centered
+          scrollTo="#process"
+        />
         <div className="grid gap-5 lg:grid-cols-2">
           {content.home.paths.map((path, index) => {
             const Icon = pathIcons[index] ?? FaCode;
@@ -186,17 +230,19 @@ function SplitPaths({ content, isRtl }: { content: Content; isRtl: boolean }) {
   );
 }
 
-function ProcessSection({ content }: { content: Content }) {
+function ProcessSection({ content, nextHref = '#contact' }: { content: Content; nextHref?: string }) {
   return (
-    <section className="site-section soft-lines bg-[#f8fbff]">
+    <section id="process" className="site-section soft-lines bg-[#f8fbff]">
       <div className="site-container">
         <SectionIntro
+          content={content}
           eyebrow={content.brand.tagline}
           title={content.home.processTitle}
           subtitle={content.home.processSubtitle}
           centered
+          scrollTo={nextHref}
         />
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {content.process.map((step, index) => {
             const Icon = processIcons[index] ?? FaCheck;
             const isLast = index === content.process.length - 1;
@@ -247,11 +293,17 @@ function ProcessSection({ content }: { content: Content }) {
 
 function CompanyProof({ content }: { content: Content }) {
   return (
-    <section className="site-section bg-white">
+    <section id="proof" className="site-section bg-white">
       <div className="site-container">
         <div className="grid gap-10 lg:grid-cols-[1fr_0.75fr] lg:items-end">
           <div>
-            <SectionIntro eyebrow="DevCo" title={content.home.proofTitle} subtitle={content.home.proofText} />
+            <SectionIntro
+              content={content}
+              eyebrow="DevCo"
+              title={content.home.proofTitle}
+              subtitle={content.home.proofText}
+              scrollTo="#contact"
+            />
             <div className="grid gap-4 sm:grid-cols-3">
               {content.home.proof.map((item, index) => (
                 <div key={item} className="rounded-[24px] border border-[#dbe7f5] bg-[#f8fbff] p-5 shadow-sm">
@@ -281,31 +333,40 @@ function CompanyProof({ content }: { content: Content }) {
   );
 }
 
-function ContactBand({ content }: { content: Content }) {
+function ContactBand({ content, source }: { content: Content; source: string }) {
   return (
     <section id="contact" className="site-section bg-[#f8fbff]">
       <div className="site-container">
-        <div className="rounded-[32px] border border-[#dbe7f5] bg-white p-6 text-center shadow-2xl shadow-blue-950/5 md:p-10">
-          <p className="mb-4 text-sm font-extrabold uppercase tracking-[0.2em] text-[#1d72d2]">{content.cta.contact}</p>
-          <h2 className="hero-display mx-auto max-w-4xl text-4xl font-black leading-[0.98] text-[#0d1626] md:text-6xl">{content.contact.title}</h2>
-          <p className="mx-auto mt-6 max-w-3xl text-lg font-medium leading-8 text-[#526174]">{content.contact.subtitle}</p>
-          <div className="mx-auto mt-8 grid max-w-4xl gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            <a href={`mailto:${content.brand.email}`} className="contact-link">
-              <FaEnvelope aria-hidden="true" />
-              <span>{content.contact.email}</span>
-            </a>
-            <a href={`tel:${content.brand.phone}`} className="contact-link">
-              <FaPhone aria-hidden="true" />
-              <span>{content.contact.phone}</span>
-            </a>
-            <a href={content.brand.whatsapp} target="_blank" rel="noopener noreferrer" className="contact-link">
-              <FaWhatsapp aria-hidden="true" />
-              <span>{content.contact.whatsapp}</span>
-            </a>
-            <a href={content.brand.linkedin} target="_blank" rel="noopener noreferrer" className="contact-link">
-              <FaLinkedinIn aria-hidden="true" />
-              <span>{content.contact.linkedin}</span>
-            </a>
+        <div className="rounded-[32px] border border-[#dbe7f5] bg-white p-6 shadow-2xl shadow-blue-950/5 md:p-10">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="mb-4 text-sm font-extrabold uppercase tracking-[0.2em] text-[#1d72d2]">{content.cta.contact}</p>
+            <h2 className="hero-display mx-auto max-w-4xl text-4xl font-black leading-[0.98] text-[#0d1626] md:text-6xl">
+              {content.contact.title}
+            </h2>
+            <p className="mx-auto mt-6 max-w-3xl text-lg font-medium leading-8 text-[#526174]">{content.contact.subtitle}</p>
+            <div className="mx-auto mt-8 grid max-w-3xl gap-3 sm:grid-cols-3">
+              <a href={`mailto:${content.brand.email}`} className="contact-link">
+                <FaEnvelope aria-hidden="true" />
+                <span>{content.contact.email}</span>
+              </a>
+              <a
+                href={buildWhatsAppUrl(content.brand.whatsappMessage)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contact-link"
+              >
+                <FaWhatsapp aria-hidden="true" />
+                <span>{content.contact.whatsapp}</span>
+              </a>
+              <a href={content.brand.linkedin} target="_blank" rel="noopener noreferrer" className="contact-link">
+                <FaLinkedinIn aria-hidden="true" />
+                <span>{content.contact.linkedin}</span>
+              </a>
+            </div>
+          </div>
+          <div className="mx-auto mt-10 max-w-3xl text-start">
+            <h3 className="mb-5 text-2xl font-black text-[#0d1626]">{content.contact.form.title}</h3>
+            <ContactForm source={source} compact />
           </div>
         </div>
       </div>
@@ -313,8 +374,9 @@ function ContactBand({ content }: { content: Content }) {
   );
 }
 
-function TestimonialsSection({ locale }: { locale: string }) {
+function TestimonialsSection({ locale, nextHref = '#faq' }: { locale: string; nextHref?: string }) {
   const isHebrew = localeValue(locale) === 'he';
+  const content = getCompanyContent(locale);
   const title = isHebrew ? 'לקוחות מספרים על העבודה' : 'Client feedback from real work';
   const subtitle = isHebrew
     ? 'העדויות כאן נשענות על טקסט קיים באתר בלבד, בלי שמות, מדדים או ציטוטים שהומצאו.'
@@ -322,9 +384,16 @@ function TestimonialsSection({ locale }: { locale: string }) {
   const eyebrow = isHebrew ? 'הוכחות ועדויות' : 'Testimonials';
 
   return (
-    <section className="site-section bg-white">
+    <section id="testimonials" className="site-section bg-white">
       <div className="site-container">
-        <SectionIntro eyebrow={eyebrow} title={title} subtitle={subtitle} centered />
+        <SectionIntro
+          content={content}
+          eyebrow={eyebrow}
+          title={title}
+          subtitle={subtitle}
+          centered
+          scrollTo={nextHref}
+        />
         <div className="grid gap-5 lg:grid-cols-3">
           {sourceTestimonials.map((testimonial) => (
             <article key={testimonial.project} className="flex h-full flex-col rounded-[28px] border border-[#dbe7f5] bg-[#f8fbff] p-6 shadow-sm">
@@ -357,13 +426,17 @@ type FAQItem = {
 };
 
 function FAQSection({
+  content,
   eyebrow,
   title,
   items,
+  nextHref = '#proof',
 }: {
+  content: Content;
   eyebrow: string;
   title: string;
   items: readonly FAQItem[];
+  nextHref?: string;
 }) {
   const faqSchema = {
     '@context': 'https://schema.org',
@@ -379,9 +452,15 @@ function FAQSection({
   };
 
   return (
-    <section className="site-section bg-[#f8fbff]">
+    <section id="faq" className="site-section bg-[#f8fbff]">
       <div className="site-container">
-        <SectionIntro eyebrow={eyebrow} title={title} centered />
+        <SectionIntro
+          content={content}
+          eyebrow={eyebrow}
+          title={title}
+          centered
+          scrollTo={nextHref}
+        />
         <div className="mx-auto grid max-w-4xl gap-4">
           {items.map((item) => (
             <details
@@ -431,7 +510,7 @@ export function HomePage({ locale }: PageProps) {
 
   return (
     <PageFrame>
-      <section className="relative min-h-screen bg-[#f8fbff] pt-24">
+      <section id="hero" className="relative min-h-screen bg-[#f8fbff] pt-24">
         <div className="tech-grid" aria-hidden="true" />
         <div className="site-container relative z-10 pb-16 pt-12 text-center">
           <p className="mx-auto mb-6 max-w-3xl text-sm font-extrabold uppercase tracking-[0.2em] text-[#1d72d2]">{content.home.eyebrow}</p>
@@ -441,8 +520,9 @@ export function HomePage({ locale }: PageProps) {
             className="hero-display mx-auto max-w-6xl text-5xl font-black leading-[0.9] text-[#0d1626] sm:text-6xl md:text-8xl lg:text-[7.5rem]"
           />
           <p className="mx-auto mt-8 max-w-3xl text-lg font-semibold leading-8 text-[#526174] md:text-2xl md:leading-10">{content.home.subtitle}</p>
-          <div className="mt-8">
-            <HeroActions content={content} isRtl={isRtl} />
+          <div className="mt-8 flex flex-col items-center gap-3">
+            <ContactCta content={content} />
+            <ScrollDownLink href="#paths" label={content.cta.primary} />
           </div>
           <ServiceChoiceBand content={content} isRtl={isRtl} />
           <div className="mx-auto mt-12 max-w-5xl">
@@ -451,15 +531,17 @@ export function HomePage({ locale }: PageProps) {
         </div>
       </section>
       <SplitPaths content={content} isRtl={isRtl} />
-      <ProcessSection content={content} />
-      <TestimonialsSection locale={locale} />
+      <ProcessSection content={content} nextHref="#testimonials" />
+      <TestimonialsSection locale={locale} nextHref="#faq" />
       <FAQSection
+        content={content}
         eyebrow={content.home.faq.eyebrow}
         title={content.home.faq.title}
         items={content.home.faq.items}
+        nextHref="#proof"
       />
       <CompanyProof content={content} />
-      <ContactBand content={content} />
+      <ContactBand content={content} source="home-contact-band" />
     </PageFrame>
   );
 }
@@ -473,12 +555,10 @@ export function ServicePage({
   const content = getCompanyContent(locale);
   const isRtl = localeValue(locale) === 'he';
   const page = type === 'software' ? content.softwarePage : content.automationPage;
-  const heroImage = type === 'software' ? '/showcase-real-estate-platform.webp' : '/showcase-delet-mobile-accessibility.webp';
-  const heroAlt = type === 'software' ? content.showcases[2].title : content.showcases[0].title;
 
   return (
     <PageFrame>
-      <section className="relative bg-[#f8fbff] pt-28">
+      <section id="hero" className="relative bg-[#f8fbff] pt-28">
         <div className="tech-grid" aria-hidden="true" />
         <div className="site-container relative z-10 grid gap-10 pb-16 pt-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div>
@@ -489,25 +569,22 @@ export function ServicePage({
               className="hero-display max-w-5xl text-5xl font-black leading-[0.9] text-[#0d1626] md:text-7xl"
             />
             <p className="mt-7 max-w-3xl text-lg font-semibold leading-8 text-[#526174] md:text-xl md:leading-9">{page.subtitle}</p>
-            <div className="mt-8">
-              <HeroActions content={content} isRtl={isRtl} />
-            </div>
           </div>
-          <div className="relative min-h-[340px] overflow-hidden rounded-[32px] bg-[#e7f2ff] shadow-2xl shadow-blue-950/10 md:min-h-[520px]">
-            <Image
-              src={heroImage}
-              alt={heroAlt}
-              fill
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-cover"
-              priority
-            />
+          <div className="min-w-0">
+            <HeroShowcaseCarousel items={content.showcases} isRtl={isRtl} />
           </div>
         </div>
       </section>
-      <section className="site-section bg-white">
+      <section id="services" className="site-section bg-white">
         <div className="site-container">
-          <div className="grid gap-5 md:grid-cols-2">
+          <SectionIntro
+            content={content}
+            eyebrow={content.brand.name}
+            title={page.eyebrow}
+            centered
+            scrollTo="#stack"
+          />
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {page.services.map((service, index) => {
               const Icon = serviceIcons[index] ?? FaCheck;
               return (
@@ -521,9 +598,15 @@ export function ServicePage({
           </div>
         </div>
       </section>
-      <section className="site-section bg-[#f8fbff]">
+      <section id="stack" className="site-section bg-[#f8fbff]">
         <div className="site-container">
-          <SectionIntro eyebrow="DevCo" title={page.stackTitle} centered />
+          <SectionIntro
+            content={content}
+            eyebrow="DevCo"
+            title={page.stackTitle}
+            centered
+            scrollTo="#faq"
+          />
           <div className="mx-auto flex max-w-5xl flex-wrap justify-center gap-3">
             {page.stack.map((item) => (
               <span key={item} className="rounded-full border border-[#c7d9ee] bg-white px-4 py-2 text-sm font-extrabold text-[#0d1626] shadow-sm">
@@ -534,23 +617,24 @@ export function ServicePage({
         </div>
       </section>
       <FAQSection
+        content={content}
         eyebrow={page.faq.eyebrow}
         title={page.faq.title}
         items={page.faq.items}
+        nextHref="#process"
       />
-      <ProcessSection content={content} />
-      <ContactBand content={content} />
+      <ProcessSection content={content} nextHref="#contact" />
+      <ContactBand content={content} source={`${type}-contact-band`} />
     </PageFrame>
   );
 }
 
 export function AboutPage({ locale }: PageProps) {
   const content = getCompanyContent(locale);
-  const isRtl = localeValue(locale) === 'he';
 
   return (
     <PageFrame>
-      <section className="relative min-h-screen bg-[#f8fbff] pt-28">
+      <section id="hero" className="relative min-h-screen bg-[#f8fbff] pt-28">
         <div className="tech-grid" aria-hidden="true" />
         <div className="site-container relative z-10 grid gap-10 pb-16 pt-10 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
           <div>
@@ -564,9 +648,6 @@ export function AboutPage({ locale }: PageProps) {
             <div className="mt-8 flex flex-wrap gap-3">
               <span className="proof-pill"><FaStar aria-hidden="true" />100% Job Success</span>
               <span className="proof-pill"><SiUpwork aria-hidden="true" />Top Rated Plus</span>
-            </div>
-            <div className="mt-8">
-              <HeroActions content={content} isRtl={isRtl} />
             </div>
           </div>
           <div className="relative min-h-[440px] overflow-hidden rounded-[36px] bg-[#e7f2ff] shadow-2xl shadow-blue-950/10 md:min-h-[620px]">
@@ -585,7 +666,7 @@ export function AboutPage({ locale }: PageProps) {
           </div>
         </div>
       </section>
-      <section className="site-section bg-white">
+      <section id="about-bio" className="site-section bg-white">
         <div className="site-container grid gap-8 lg:grid-cols-[1fr_0.8fr]">
           <article>
             <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-[#1d72d2]">{content.aboutPage.bioRole}</p>
@@ -602,8 +683,8 @@ export function AboutPage({ locale }: PageProps) {
           </aside>
         </div>
       </section>
-      <TestimonialsSection locale={locale} />
-      <section className="site-section dark-band">
+      <TestimonialsSection locale={locale} nextHref="#values" />
+      <section id="values" className="site-section dark-band">
         <div className="site-container">
           <div className="grid gap-4 md:grid-cols-4">
             {content.aboutPage.values.map((value, index) => (
@@ -615,8 +696,8 @@ export function AboutPage({ locale }: PageProps) {
           </div>
         </div>
       </section>
-      <ProcessSection content={content} />
-      <ContactBand content={content} />
+      <ProcessSection content={content} nextHref="#contact" />
+      <ContactBand content={content} source="about-contact-band" />
     </PageFrame>
   );
 }

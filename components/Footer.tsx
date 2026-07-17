@@ -5,7 +5,7 @@ import { useLocale } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { sitePaths } from '@/lib/site-paths';
 import type { ClientChromeContent } from '@/lib/company-content';
-import { FaLinkedinIn, FaPhone, FaWhatsapp } from 'react-icons/fa';
+import { FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
 
 type FooterProps = {
   content: ClientChromeContent;
@@ -32,6 +32,10 @@ export default function Footer({ content }: FooterProps) {
           <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm font-medium text-[#718198]">
             <p>{content.footer.rights.replace('{year}', String(year))}</p>
             <span aria-hidden="true">/</span>
+            <Link href={sitePaths.termsOfUse} className="font-extrabold text-[#526174] transition hover:text-[#1d72d2]">
+              {content.footer.terms}
+            </Link>
+            <span aria-hidden="true">/</span>
             <Link href={sitePaths.privacyPolicy} className="font-extrabold text-[#526174] transition hover:text-[#1d72d2]">
               {content.footer.privacy}
             </Link>
@@ -43,17 +47,10 @@ export default function Footer({ content }: FooterProps) {
         </div>
         <div className="flex items-center gap-4">
           <a
-            href={`tel:${content.brand.phone}`}
-            className="grid h-11 w-11 place-items-center rounded-full border border-[#c7d9ee] bg-[#f8fbff] text-[#0d1626] transition hover:border-[#1d72d2]/40 hover:text-[#1d72d2]"
-            aria-label={content.brand.phoneDisplay}
-          >
-            <FaPhone className="h-5 w-5" />
-          </a>
-          <a
-            href={content.brand.whatsapp}
+            href={content.brand.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="grid h-11 w-11 place-items-center rounded-full border border-[#c7d9ee] bg-[#f8fbff] text-[#0d1626] transition hover:border-[#25d366]/40 hover:text-[#25d366]"
+            className="grid h-11 w-11 place-items-center rounded-full border border-[#c7d9ee] bg-[#f8fbff] text-[#0d1626] transition hover:border-[#1d72d2]/40 hover:text-[#1d72d2]"
             aria-label="WhatsApp"
           >
             <FaWhatsapp className="h-5 w-5" />
