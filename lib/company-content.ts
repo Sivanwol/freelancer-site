@@ -323,34 +323,6 @@ export const companyContent = {
         result: 'A polished mobile product direction ready for real audience validation.',
       },
       {
-        slug: 'vme-gallery',
-        image: '/showcase-vme-gallery.png',
-        title: 'VME product gallery',
-        category: 'Mobile product development',
-        summary:
-          'Expanded VME surfaces across splash, home navigation, and content gallery screens for modern matching flows.',
-        problem:
-          'The product needed more visual coverage of the core mobile journeys beyond a single hero frame.',
-        solution:
-          'DevCo delivered a multi-screen gallery that shows onboarding, vibe navigation, and profile content in one scrollable showcase.',
-        technologies: ['React Native', 'Mobile UX', 'iOS', 'Android', 'Hebrew RTL'],
-        result: 'A clearer product story with scrollable visual proof of the app experience.',
-      },
-      {
-        slug: 'delet-gallery',
-        image: '/showcase-delet-gallery.png',
-        title: 'Delet property flows and accessibility tooling',
-        category: 'Web, mobile, and internal tools',
-        summary:
-          'Property browsing on mobile alongside desktop accessibility simulation tooling for real operational work.',
-        problem:
-          'Teams needed both customer-facing property flows and internal tooling for accessibility-focused product decisions.',
-        solution:
-          'DevCo built complementary surfaces for property discovery and accessibility simulation in one delivery track.',
-        technologies: ['React', 'Node.js', 'Mobile UI', 'Accessibility', 'Internal tools'],
-        result: 'A broader visual record of the Delet ecosystem across mobile and desktop.',
-      },
-      {
         slug: 'real-estate-platform',
         image: '/showcase-real-estate-platform.webp',
         title: 'Real-estate booking and order platform',
@@ -402,7 +374,10 @@ export const companyContent = {
         servicePlaceholder: 'Select an option',
         submit: "Let's Talk",
         submitting: 'Sending…',
-        success: 'Thanks — we received your message and will get back to you soon.',
+        successTitle: 'We received your message',
+        success:
+          'Hi — thanks for reaching out. We got your inquiry and will get back to you within 24 to 48 hours.',
+        successClose: 'Got it',
         error: 'Something went wrong. Please try again in a moment.',
         required: 'Required field',
         serviceOptions: [
@@ -887,34 +862,6 @@ export const companyContent = {
         result: 'כיוון מוצר מובייל מלוטש שמוכן לוולידציה מול קהל אמיתי.',
       },
       {
-        slug: 'vme-gallery',
-        image: '/showcase-vme-gallery.png',
-        title: 'גלריית מוצר VME',
-        category: 'פיתוח מוצר מובייל',
-        summary:
-          'מסכי VME מורחבים: splash, ניווט בית וגלריית תוכן לחוויית חיבור מודרנית.',
-        problem:
-          'היה צורך בכיסוי ויזואלי רחב יותר של מסעות המובייל מעבר לפריים אחד.',
-        solution:
-          'DevCo הציגה גלריה רב-מסכית של אונבורדינג, ניווט ופרופילים בתוך showcase שניתן לגלול.',
-        technologies: ['React Native', 'Mobile UX', 'iOS', 'Android', 'Hebrew RTL'],
-        result: 'סיפור מוצר ברור יותר עם הוכחה ויזואלית מתגלגלת של האפליקציה.',
-      },
-      {
-        slug: 'delet-gallery',
-        image: '/showcase-delet-gallery.png',
-        title: 'זרימות נכסים וכלי נגישות של Delet',
-        category: 'ווב, מובייל וכלים פנימיים',
-        summary:
-          'גלישת נכסים במובייל לצד כלי סימולציית נגישות בדסקטופ לעבודה תפעולית אמיתית.',
-        problem:
-          'הצוותים היו צריכים גם זרימות נכסים מול לקוחות וגם כלים פנימיים להחלטות נגישות.',
-        solution:
-          'DevCo בנתה משטחים משלימים לגילוי נכסים ולסימולציית נגישות במסלול מסירה אחד.',
-        technologies: ['React', 'Node.js', 'Mobile UI', 'Accessibility', 'Internal tools'],
-        result: 'תיעוד ויזואלי רחב יותר של אקוסיסטם Delet במובייל ובדסקטופ.',
-      },
-      {
         slug: 'real-estate-platform',
         image: '/showcase-real-estate-platform.webp',
         title: 'פלטפורמת הזמנות ותפעול נדל״ן',
@@ -966,7 +913,10 @@ export const companyContent = {
         servicePlaceholder: 'בחרו אפשרות',
         submit: 'בואו נדבר',
         submitting: 'שולחים…',
-        success: 'תודה — קיבלנו את הפנייה ונחזור אליכם בהקדם.',
+        successTitle: 'קיבלנו את הפנייה',
+        success:
+          'היי — תודה שפניתם. קיבלנו את ההודעה ונחזור אליכם תוך 24 עד 48 שעות.',
+        successClose: 'הבנתי',
         error: 'משהו השתבש. נסו שוב בעוד רגע.',
         required: 'שדה חובה',
         serviceOptions: [

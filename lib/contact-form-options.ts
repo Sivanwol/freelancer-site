@@ -3,7 +3,8 @@ export const SERVICE_TYPE_VALUES = [
   'Custom-developed SaaS',
 ] as const;
 
-export const LANGUAGE_VALUES = ['English', 'Hebrew'] as const;
+/** Attio `language` select option titles */
+export const LANGUAGE_VALUES = ['en', 'he'] as const;
 
 export type ServiceTypeValue = (typeof SERVICE_TYPE_VALUES)[number];
 export type LanguageValue = (typeof LANGUAGE_VALUES)[number];
@@ -17,4 +18,8 @@ export function isServiceTypeValue(value: string): value is ServiceTypeValue {
 
 export function isLanguageValue(value: string): value is LanguageValue {
   return (LANGUAGE_VALUES as readonly string[]).includes(value);
+}
+
+export function languageLabel(language: LanguageValue): string {
+  return language === 'he' ? 'Hebrew' : 'English';
 }
