@@ -116,7 +116,12 @@ export const companyContent = {
           {
             question: 'What technologies and tools do you cover?',
             answer:
-              'DevCo covers custom software with React, Next.js, Node.js, Python, .NET, React Native, and AI tooling, plus business automation with n8n, Make, Zapier, HubSpot, Zoho, Monday, APIs, and CRM workflows.',
+              'DevCo covers custom software with React, Next.js, Node.js, Python, .NET, and React Native, plus business automation with n8n, Make, Zapier, HubSpot, Zoho, Monday, APIs, and CRM workflows — and modern AI systems on top of that stack.',
+          },
+          {
+            question: 'Do you build with the latest AI tools and models?',
+            answer:
+              'Yes. DevCo designs and ships production AI workflows with LangChain and LangGraph, multi-model setups (OpenAI, Claude, Gemini, and others), retrieval/RAG pipelines, agents, tool calling, and cloud AI platforms. The focus is practical product outcomes — assistants, automation, and intelligent features that stay maintainable after launch — not demos.',
           },
         ],
       },
@@ -191,8 +196,13 @@ export const companyContent = {
         'React Native',
         'TypeScript',
         'LangChain',
+        'LangGraph',
         'OpenAI',
         'Claude',
+        'Gemini',
+        'Codex',
+        'RAG',
+        'AI Agents',
         'n8n',
         'APIs',
         'PostgreSQL',
@@ -216,6 +226,11 @@ export const companyContent = {
             question: 'Do you provide support after launch?',
             answer:
               'Yes. Launch support, monitoring, fixes, and post-release improvements are part of the delivery model, with a clear path toward scale, performance, and product velocity.',
+          },
+          {
+            question: 'What AI frameworks and models do you work with?',
+            answer:
+              'DevCo builds with LangChain and LangGraph for agent and workflow orchestration, connects to leading models and providers (OpenAI, Claude, Gemini, Codex, and others), and implements RAG, tool calling, evaluation, and cloud AI integrations so the product can evolve with the latest AI capabilities.',
           },
         ],
       },
@@ -655,7 +670,12 @@ export const companyContent = {
           {
             question: 'באילו טכנולוגיות וכלים אתם מתמחים?',
             answer:
-              'DevCo מכסה פיתוח תוכנה עם React, Next.js, Node.js, Python, .NET, React Native וכלי AI, וגם אוטומציה עסקית עם n8n, Make, Zapier, HubSpot, Zoho, Monday, APIs ו-Workflows של CRM.',
+              'DevCo מכסה פיתוח תוכנה עם React, Next.js, Node.js, Python, .NET ו-React Native, וגם אוטומציה עסקית עם n8n, Make, Zapier, HubSpot, Zoho, Monday, APIs ו-Workflows של CRM — ומערכות AI מודרניות מעל הסטאק הזה.',
+          },
+          {
+            question: 'האם אתם עובדים עם כלי AI ומודלים עדכניים?',
+            answer:
+              'כן. DevCo מתכננת ומספקת זרימות AI לפרודקשן עם LangChain ו-LangGraph, עבודה עם מודלים שונים (OpenAI, Claude, Gemini ועוד), צינורות RAG, סוכנים, Tool calling ופלטפורמות AI בענן. הדגש הוא על תוצאות מוצר פרקטיות — עוזרים, אוטומציה ופיצ׳רים חכמים שנשארים תחזוקתיים אחרי ההשקה — לא רק דמואים.',
           },
         ],
       },
@@ -730,8 +750,13 @@ export const companyContent = {
         'React Native',
         'TypeScript',
         'LangChain',
+        'LangGraph',
         'OpenAI',
         'Claude',
+        'Gemini',
+        'Codex',
+        'RAG',
+        'AI Agents',
         'n8n',
         'APIs',
         'PostgreSQL',
@@ -755,6 +780,11 @@ export const companyContent = {
             question: 'האם אתם מספקים תמיכה אחרי ההשקה?',
             answer:
               'כן. תמיכה בהשקה, ניטור, תיקונים ושיפורים אחרי העלייה לאוויר הם חלק מהמודל, עם מסלול ברור ל-Scale, ביצועים ומהירות פיתוח.',
+          },
+          {
+            question: 'באילו מסגרות ומודלי AI אתם עובדים?',
+            answer:
+              'DevCo בונה עם LangChain ו-LangGraph לאורקסטרציה של סוכנים וזרימות, מתחברת למודלים וספקים מובילים (OpenAI, Claude, Gemini, Codex ועוד), ומממשת RAG, Tool calling, הערכה ואינטגרציות AI בענן — כדי שהמוצר יוכל להתקדם עם יכולות ה-AI העדכניות.',
           },
         ],
       },
