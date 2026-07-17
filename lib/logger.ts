@@ -1,13 +1,17 @@
 type LogLevel = 'info' | 'warn' | 'error';
 
 function write(level: LogLevel, scope: string, message: string, data?: Record<string, unknown>) {
-  const payload = {
-    ts: new Date().toISOString(),
+  // Railway requires a single-line JSON object with `message` (+ optional `level`).
+  // Any other top-level keys become searchable Attributes (@key:value).
+  // Docs: https://docs.railway.com/observability/logs
+  const payload: Record<string, unknown> = {
     level,
-    scope,
     message,
+    scope,
+    ts: new Date().toISOString(),
     ...data,
   };
+
   const line = JSON.stringify(payload);
 
   if (level === 'error') {

@@ -128,10 +128,26 @@ export function logPageAccess(request: Request): void {
   const entry = buildAccessLogEntry(request);
   if (!entry) return;
 
-  // Use console.log so Coolify/Dokploy and similar hosts capture the line
-  // (some log pipelines drop console.info).
+  // Railway structured logs: the entire stdout line must be minified JSON.
+  // Docs: https://docs.railway.com/observability/logs
+  // Search examples: @type:page_access  @path:/he  @trafficSource:google  @ip:1.2.3.4
   console.log(
-    `[access] ${entry.method} ${entry.path}${entry.query} ip=${entry.ip} source=${entry.trafficSource} bot=${entry.isBot} referer=${entry.referer ?? '-'} ua=${entry.userAgent ?? '-'}`,
+    JSON.stringify({
+      level: 'info',
+      message: `${entry.method} ${entry.path}${entry.query}`,
+      type: entry.type,
+      method: entry.method,
+      path: entry.path,
+      query: entry.query || undefined,
+      ip: entry.ip,
+      forwardedFor: entry.forwardedFor ?? undefined,
+      realIp: entry.realIp ?? undefined,
+      cfConnectingIp: entry.cfConnectingIp ?? undefined,
+      referer: entry.referer ?? undefined,
+      trafficSource: entry.trafficSource,
+      userAgent: entry.userAgent ?? undefined,
+      isBot: entry.isBot,
+      host: entry.host ?? undefined,
+    }),
   );
-  console.log(`[access:json] ${JSON.stringify(entry)}`);
 }
