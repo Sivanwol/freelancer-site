@@ -127,5 +127,11 @@ export function buildAccessLogEntry(request: Request): AccessLogEntry | null {
 export function logPageAccess(request: Request): void {
   const entry = buildAccessLogEntry(request);
   if (!entry) return;
-  console.info('[access]', JSON.stringify(entry));
+
+  // Use console.log so Coolify/Dokploy and similar hosts capture the line
+  // (some log pipelines drop console.info).
+  console.log(
+    `[access] ${entry.method} ${entry.path}${entry.query} ip=${entry.ip} source=${entry.trafficSource} bot=${entry.isBot} referer=${entry.referer ?? '-'} ua=${entry.userAgent ?? '-'}`,
+  );
+  console.log(`[access:json] ${JSON.stringify(entry)}`);
 }

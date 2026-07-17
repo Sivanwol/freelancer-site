@@ -30,7 +30,7 @@
     "typescript": "^5.5.3"
   },
   "engines": {
-    "node": ">=22.0.0"
+    "node": ">=20.0.0"
   },
   "packageManager": "pnpm@10.27.0"
 }

@@ -20,7 +20,7 @@ function write(level: LogLevel, scope: string, message: string, data?: Record<st
     return;
   }
 
-  console.info(line);
+  console.log(line);
 }
 
 export const logger = {
