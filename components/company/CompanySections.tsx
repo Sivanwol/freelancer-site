@@ -29,6 +29,8 @@ import {
 import { SiUpwork } from 'react-icons/si';
 import { buildWhatsAppUrl } from '@/lib/whatsapp';
 import HeroShowcaseCarousel from './HeroShowcaseCarousel';
+import SoftwareServicesAccordion from './software-services-accordion';
+import VibeCodingGrid from './vibe-coding-grid';
 
 type PageProps = {
   locale: string;
@@ -121,7 +123,7 @@ function getAccent(locale: string, page: 'home' | 'software' | 'automation' | 'a
     home: isHebrew ? 'לעסקים' : 'built to scale',
     software: isHebrew ? 'מערכות AI לעסקים' : 'scalable platforms',
     automation: isHebrew ? 'לידים, צוותים ותפעול' : 'CRM, leads, teams, and operations',
-    about: isHebrew ? 'תהליך עבודה של חברה' : 'company-level process',
+    about: isHebrew ? 'סקייל של פרודקשן' : 'production scale',
   };
 
   return accents[page];
@@ -307,7 +309,7 @@ function CompanyProof({ content }: { content: Content }) {
             <div className="grid gap-4 sm:grid-cols-3">
               {content.home.proof.map((item, index) => (
                 <div key={item} className="rounded-[24px] border border-[#dbe7f5] bg-[#f8fbff] p-5 shadow-sm">
-                  <p className="text-5xl font-black leading-none text-[#1d72d2]">{index === 0 ? '15+' : index === 1 ? 'Top' : 'AI'}</p>
+                  <p className="text-5xl font-black leading-none text-[#1d72d2]">{index === 0 ? '17+' : index === 1 ? 'Top' : 'AI'}</p>
                   <p className="mt-4 text-sm font-extrabold leading-6 text-[#0d1626]">{item}</p>
                 </div>
               ))}
@@ -554,7 +556,8 @@ export function ServicePage({
 }) {
   const content = getCompanyContent(locale);
   const isRtl = localeValue(locale) === 'he';
-  const page = type === 'software' ? content.softwarePage : content.automationPage;
+  const isSoftware = type === 'software';
+  const page = isSoftware ? content.softwarePage : content.automationPage;
 
   return (
     <PageFrame>
@@ -575,6 +578,13 @@ export function ServicePage({
           </div>
         </div>
       </section>
+      {isSoftware ? (
+        <VibeCodingGrid
+          eyebrow={content.softwarePage.vibeCoding.eyebrow}
+          title={content.softwarePage.vibeCoding.title}
+          items={content.softwarePage.vibeCoding.items}
+        />
+      ) : null}
       <section id="services" className="site-section bg-white">
         <div className="site-container">
           <SectionIntro
@@ -584,18 +594,27 @@ export function ServicePage({
             centered
             scrollTo="#stack"
           />
-          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {page.services.map((service, index) => {
-              const Icon = serviceIcons[index] ?? FaCheck;
-              return (
-                <article key={service.title} className="rounded-[28px] border border-[#dbe7f5] bg-[#f8fbff] p-6 shadow-sm md:p-8">
-                  <Icon className="mb-6 h-7 w-7 text-[#1d72d2]" aria-hidden="true" />
-                  <h2 className="text-3xl font-black leading-tight text-[#0d1626]">{service.title}</h2>
-                  <p className="mt-4 text-base font-medium leading-8 text-[#526174]">{service.text}</p>
-                </article>
-              );
-            })}
-          </div>
+          {isSoftware ? (
+            <SoftwareServicesAccordion
+              services={content.softwarePage.services}
+              technologiesLabel={content.softwarePage.technologiesLabel}
+              outcomesLabel={content.softwarePage.outcomesLabel}
+              ctaLabel={content.cta.primary}
+            />
+          ) : (
+            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+              {content.automationPage.services.map((service, index) => {
+                const Icon = serviceIcons[index] ?? FaCheck;
+                return (
+                  <article key={service.title} className="rounded-[28px] border border-[#dbe7f5] bg-[#f8fbff] p-6 shadow-sm md:p-8">
+                    <Icon className="mb-6 h-7 w-7 text-[#1d72d2]" aria-hidden="true" />
+                    <h2 className="text-3xl font-black leading-tight text-[#0d1626]">{service.title}</h2>
+                    <p className="mt-4 text-base font-medium leading-8 text-[#526174]">{service.text}</p>
+                  </article>
+                );
+              })}
+            </div>
+          )}
         </div>
       </section>
       <section id="stack" className="site-section bg-[#f8fbff]">
@@ -671,7 +690,21 @@ export function AboutPage({ locale }: PageProps) {
           <article>
             <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-[#1d72d2]">{content.aboutPage.bioRole}</p>
             <h2 className="hero-display mt-4 text-4xl font-black leading-none text-[#0d1626] md:text-6xl">{content.aboutPage.bioTitle}</h2>
-            <p className="mt-6 text-lg font-medium leading-9 text-[#526174]">{content.aboutPage.bio}</p>
+            <div className="mt-6 space-y-5 text-lg font-medium leading-9 text-[#526174]">
+              {content.aboutPage.bioParagraphs.map((paragraph) => (
+                <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+              ))}
+            </div>
+            <div className="mt-8 flex flex-wrap gap-2">
+              {content.aboutPage.personalTags.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full border border-[#c7d9ee] bg-[#f8fbff] px-4 py-2 text-sm font-extrabold text-[#0d1626]"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
           </article>
           <aside className="rounded-[28px] border border-[#dbe7f5] bg-[#f8fbff] p-6 shadow-sm md:p-8">
             <h2 className="text-3xl font-black text-[#0d1626]">{content.aboutPage.upworkTitle}</h2>

@@ -180,3 +180,18 @@ html.a11y-high-contrast :is(p, span, h1, h2, h3, h4, h5, h6, li, blockquote, lab
 html.a11y-high-contrast :is(a, button) {
   color: #0033cc !important;
 }
+
+@keyframes vibe-pop {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.vibe-popover {
+  animation: vibe-pop 180ms ease-out;
+}

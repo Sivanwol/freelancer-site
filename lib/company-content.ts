@@ -65,7 +65,7 @@ export const companyContent = {
       title: 'Software and automation systems built to scale',
       subtitle:
         'DevCo Solutions designs, builds, and modernizes custom software, AI products, CRM automations, and business workflows for teams that need reliable systems, not just code.',
-      proof: ['15+ years of architecture experience', 'Top Rated Plus Upwork proof', 'AI, web, mobile, backend, and automation delivery'],
+      proof: ['17+ years of architecture experience', 'Top Rated Plus Upwork proof', 'AI, web, mobile, backend, and automation delivery'],
       pathsTitle: 'Choose the track that fits your next move',
       paths: [
         {
@@ -73,7 +73,7 @@ export const companyContent = {
           description:
             'Full product delivery for SaaS, MVPs, web platforms, mobile apps, APIs, AI features, and scalable backend systems.',
           href: serviceRoutes.software,
-          tags: ['React', 'Node.js', 'Python', '.NET', 'React Native', 'AI'],
+          tags: ['React', 'Node.js', 'Python', 'TypeScript', 'React Native', 'AI'],
         },
         {
           title: 'Business Automation',
@@ -96,7 +96,7 @@ export const companyContent = {
           {
             question: 'Who is DevCo Solutions and who leads the work?',
             answer:
-              'DevCo Solutions is a software development and business automation company led by Sivan Wolberg, with 15+ years of experience in architecture, full-stack delivery, AI integration, and complex system builds.',
+              'DevCo Solutions is a software development and business automation company led by Sivan Wolberg, with 17+ years of experience in architecture, full-stack delivery, AI integration, and complex system builds.',
           },
           {
             question: 'How does pricing work?',
@@ -116,7 +116,7 @@ export const companyContent = {
           {
             question: 'What technologies and tools do you cover?',
             answer:
-              'DevCo covers custom software with React, Next.js, Node.js, Python, .NET, and React Native, plus business automation with n8n, Make, Zapier, HubSpot, Zoho, Monday, APIs, and CRM workflows — and modern AI systems on top of that stack.',
+              'DevCo covers custom software with React, Next.js, Node.js, Python, TypeScript, and React Native, plus business automation with n8n, Make, Zapier, HubSpot, Zoho, Monday, APIs, and CRM workflows — and modern AI systems on top of that stack.',
           },
           {
             question: 'Do you build with the latest AI tools and models?',
@@ -159,42 +159,174 @@ export const companyContent = {
       title: 'Custom software, AI products, and scalable platforms',
       subtitle:
         'You are not hiring another vendor to talk technology. You get a senior partner who owns architecture, delivery judgment, and the systems that keep the business moving — the trusted technical lead behind the product.',
+      vibeCoding: {
+        eyebrow: 'Sound familiar?',
+        title: 'Vibe coding works… until it doesn’t.',
+        items: [
+          {
+            id: 'small-change',
+            label: 'A small change breaks something else',
+            icon: 'shuffle',
+            problem:
+              'Without clear boundaries, every tweak ripples through the system. You ship a “tiny” fix and suddenly login, billing, or a core flow fails — because nothing was designed to change safely.',
+          },
+          {
+            id: 'fixing-bugs',
+            label: 'Fixing bugs instead of building forward',
+            icon: 'bug',
+            problem:
+              'Velocity dies when the team spends sprints firefighting. New features wait while you chase regressions that keep coming back because root causes were never owned.',
+          },
+          {
+            id: 'nobody-understands',
+            label: 'The code works, but nobody understands it',
+            icon: 'question',
+            problem:
+              'If only the model (or one freelancer) “knows” the codebase, every change is a gamble. Readable architecture and ownership are what keep products alive after the demo.',
+          },
+          {
+            id: 'feature-risk',
+            label: 'Every new feature feels like a risk',
+            icon: 'warning',
+            problem:
+              'When the foundation is fragile, product decisions turn into fear. Teams stop shipping because they cannot predict what will break — and growth stalls.',
+          },
+          {
+            id: 'ai-dependent',
+            label: 'Dependent on AI for everything',
+            icon: 'robot',
+            problem:
+              'AI is a force multiplier when you already understand the system. Blind generation creates chaotic diffs, hidden debt, and code nobody can defend in production.',
+          },
+          {
+            id: 'fragile-system',
+            label: 'The system feels fragile',
+            icon: 'heart',
+            problem:
+              'Fragile products fail under real load, edge cases, and messy data. What looked fine in a happy-path demo does not survive customers, integrations, or scale.',
+          },
+          {
+            id: 'demo-fails',
+            label: 'Works in demo, fails with real users',
+            icon: 'flask',
+            problem:
+              'Demos hide auth edge cases, empty states, concurrency, and ops reality. Production needs structure, testing, and judgment — not a one-time generated UI.',
+          },
+          {
+            id: 'no-architecture',
+            label: 'No architecture — only slides on slides',
+            icon: 'layers',
+            problem:
+              'Pretty decks are not a system. Without domain boundaries, data models, and delivery plans, you rebuild the same product every quarter under a new name.',
+          },
+          {
+            id: 'slow-changes',
+            label: 'Simple changes take hours',
+            icon: 'hourglass',
+            problem:
+              'When everything is tangled, a copy change or a field rename becomes archaeology. Maintainable systems make small work stay small.',
+          },
+          {
+            id: 'no-trust',
+            label: 'You don’t trust your own product',
+            icon: 'shield',
+            problem:
+              'If shipping feels like crossing your fingers, customers feel it too. Trust comes from predictable releases, ownership, and systems you can explain.',
+          },
+          {
+            id: 'no-owner',
+            label: 'Nobody truly owns the code',
+            icon: 'users',
+            problem:
+              'Orphaned codebases stall hiring and burn budget. You need someone who can read the system, stabilize it, and make the next person faster — not restart from zero.',
+          },
+          {
+            id: 'freelancer-zero',
+            label: 'Every new freelancer starts from zero',
+            icon: 'refresh',
+            problem:
+              'Without documentation, conventions, and architecture, each handoff resets context. That is expensive, slow, and the opposite of a production-ready product.',
+          },
+        ],
+      },
       services: [
         {
           title: 'SaaS and MVP Development',
-          text: 'From first version to production platform: product architecture, data models, admin tools, payments, and launch readiness with a clear path after release.',
+          summary:
+            'From first version to production platform: product architecture, data models, admin tools, payments, and launch readiness with a clear path after release.',
+          technologies: ['React', 'Next.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'Stripe'],
+          outcomes: [
+            'A scoped MVP or SaaS core ready for real users',
+            'Clear data models, admin flows, and launch checklist',
+            'A path from first release to scale — not a throwaway demo',
+          ],
         },
         {
           title: 'Web and Mobile Applications',
-          text: 'React, Next.js, React Native, and modern frontend systems built for usability, speed, and maintainable growth across real user journeys.',
+          summary:
+            'React, Next.js, React Native, and modern frontend systems built for usability, speed, and maintainable growth across real user journeys.',
+          technologies: ['React', 'Next.js', 'React Native', 'TypeScript', 'Tailwind CSS', 'Vite'],
+          outcomes: [
+            'Fast, usable interfaces across web and mobile',
+            'Maintainable UI architecture that can grow with the product',
+            'Consistent journeys from first visit to core actions',
+          ],
         },
         {
           title: 'Backend and API Systems',
-          text: 'Node.js, Python, C#, .NET, NestJS, FastAPI, queues, databases, and secure service boundaries that hold up under real load.',
+          summary:
+            'Node.js, Python, NestJS, FastAPI, queues, databases, and secure service boundaries that hold up under real load.',
+          technologies: ['Node.js', 'Python', 'NestJS', 'FastAPI', 'PostgreSQL', 'MongoDB', 'APIs'],
+          outcomes: [
+            'Stable APIs and service boundaries under real traffic',
+            'Queues, auth, and data layers designed for ownership',
+            'Integrations that stay reliable after launch',
+          ],
         },
         {
           title: 'Smarter Bots and Agentic Workflows',
-          text: 'AI assistants, internal agents, and retrieval pipelines that handle defined tasks — routing, drafting, qualifying — before a human takes over.',
+          summary:
+            'AI assistants, internal agents, and retrieval pipelines that handle defined tasks — routing, drafting, qualifying — before a human takes over.',
+          technologies: ['LangChain', 'LangGraph', 'OpenAI', 'Claude', 'Gemini', 'RAG', 'AI Agents'],
+          outcomes: [
+            'Agents with clear tasks, handoffs, and guardrails',
+            'RAG and tool calling wired into your product — not chaos',
+            'AI that expands capability without losing ownership of the system',
+          ],
         },
         {
           title: 'Automation and System Integration',
-          text: 'Connect CRMs, ops tools, APIs, and custom services so product software and business workflows move as one system, not disconnected apps.',
+          summary:
+            'Connect CRMs, ops tools, APIs, and custom services so product software and business workflows move as one system, not disconnected apps.',
+          technologies: ['n8n', 'APIs', 'Webhooks', 'HubSpot', 'Zoho', 'Node.js'],
+          outcomes: [
+            'Connected systems instead of copy-paste between tools',
+            'Observable workflows your team can trust',
+            'Less manual ops between product and business process',
+          ],
         },
         {
           title: 'Information Systems that Scale',
-          text: 'Structured platforms for operations, customer data, and internal tooling — designed for clarity, ownership, and long-term evolution without BI fluff.',
+          summary:
+            'Structured platforms for operations, customer data, and internal tooling — designed for clarity, ownership, and long-term evolution without BI fluff.',
+          technologies: ['TypeScript', 'Next.js', 'PostgreSQL', 'APIs', 'Auth', 'Admin tools'],
+          outcomes: [
+            'Internal platforms people actually use day to day',
+            'Clear ownership of data and workflows',
+            'Room to evolve without rewriting everything yearly',
+          ],
         },
       ],
+      technologiesLabel: 'Technologies',
+      outcomesLabel: 'What you get',
       stackTitle: 'Technology coverage',
       stack: [
         'React',
         'Next.js',
         'Node.js',
         'Python',
-        'C#',
-        '.NET',
-        'React Native',
         'TypeScript',
+        'React Native',
         'LangChain',
         'LangGraph',
         'OpenAI',
@@ -354,13 +486,19 @@ export const companyContent = {
     ] satisfies Showcase[],
     aboutPage: {
       eyebrow: 'About DevCo',
-      title: 'A senior software partner with company-level process',
+      title: 'I help build products the way they should ship — to production scale',
       subtitle:
-        'DevCo Solutions is led by Sivan Wolberg and built around senior engineering, automation thinking, and reliable delivery for custom software and business systems.',
+        'DevCo Solutions is led by Sivan Wolberg: senior engineering judgment, clear process, and systems that hold up after the demo looks good.',
       bioTitle: 'Sivan Wolberg',
       bioRole: 'CEO, DevCo Solutions',
-      bio:
-        'Sivan brings 15+ years of experience in software architecture, full-stack development, AI integration, and complex system delivery. The site now speaks as a company because the work is handled with company-level process: discovery, planning, build, and launch.',
+      bioParagraphs: [
+        'I am Sivan Wolberg. I help turn product ideas into systems that work at production scale — not just screens that look nice.',
+        'I have been in the field for more than 17 years: complex web platforms, Unity systems, and full-stack product work from invention to delivery. I know how to take broken or fragile codebases and bring them to a stable state.',
+        'I work across a wide range of stacks — frontend, backend, and the seams between them — so the product does not fall apart when parts meet. I also use AI to expand what I can ship, without letting it create chaos. I do not blindly trust what a model generates.',
+        'My philosophy is simple: if you do not understand it, you do not own it. That is how products stay trustworthy after launch.',
+        'Outside of work I love dogs, games, and traveling.',
+      ],
+      personalTags: ['Dogs', 'Games', 'Travel', 'Full-Stack Systems', 'AI-Powered Products', 'System Architecture'],
       values: [
         'Architecture before shortcuts',
         'Clear process before unclear scope',
@@ -562,7 +700,7 @@ export const companyContent = {
         'Selected DevCo software and automation showcase work using real product visuals.',
       aboutTitle: 'About DevCo Solutions',
       aboutDescription:
-        'Learn about DevCo Solutions, Sivan Wolberg, 15+ years of software architecture experience, and the company delivery process.',
+        'Learn about DevCo Solutions, Sivan Wolberg, 17+ years of software architecture experience, and the company delivery process.',
       contactTitle: 'Contact DevCo Solutions',
       contactDescription:
         'Contact DevCo Solutions about custom software, business automation, SaaS, integrations, and architecture support.',
@@ -619,7 +757,7 @@ export const companyContent = {
       title: 'פיתוח מערכות תוכנה ואוטומציה לעסקים',
       subtitle:
         'אנחנו מתכננים, בונים ומשדרגים מערכות תוכנה מותאמות אישית, מוצרי AI, אוטומציות CRM ותהליכים עסקיים לצוותים שצריכים מערכת אמינה ולא רק קוד.',
-      proof: ['15+ שנות ניסיון בארכיטקטורה', 'הוכחת Upwork ו-Top Rated Plus', 'פיתוח AI, ווב, מובייל, Backend ואוטומציה'],
+      proof: ['17+ שנות ניסיון בארכיטקטורה', 'הוכחת Upwork ו-Top Rated Plus', 'פיתוח AI, ווב, מובייל, Backend ואוטומציה'],
       pathsTitle: 'בחרו את המסלול שמתאים לשלב הבא',
       paths: [
         {
@@ -627,7 +765,7 @@ export const companyContent = {
           description:
             'פיתוח מוצר מלא עבור SaaS, MVP, פלטפורמות ווב, אפליקציות מובייל, APIs, יכולות AI ומערכות Backend סקיילביליות.',
           href: serviceRoutes.software,
-          tags: ['React', 'Node.js', 'Python', '.NET', 'React Native', 'AI'],
+          tags: ['React', 'Node.js', 'Python', 'TypeScript', 'React Native', 'AI'],
         },
         {
           title: 'אוטומציה עסקית',
@@ -650,7 +788,7 @@ export const companyContent = {
           {
             question: 'מי זו DevCo Solutions ומי מוביל את העבודה?',
             answer:
-              'DevCo Solutions היא חברת פיתוח תוכנה ואוטומציה עסקית שמובלת על ידי סיון וולברג, עם 15+ שנות ניסיון בארכיטקטורה, פיתוח Full Stack, אינטגרציות AI ובניית מערכות מורכבות.',
+              'DevCo Solutions היא חברת פיתוח תוכנה ואוטומציה עסקית שמובלת על ידי סיון וולברג, עם 17+ שנות ניסיון בארכיטקטורה, פיתוח Full Stack, אינטגרציות AI ובניית מערכות מורכבות.',
           },
           {
             question: 'איך עובדת התמחור?',
@@ -670,7 +808,7 @@ export const companyContent = {
           {
             question: 'באילו טכנולוגיות וכלים אתם מתמחים?',
             answer:
-              'DevCo מכסה פיתוח תוכנה עם React, Next.js, Node.js, Python, .NET ו-React Native, וגם אוטומציה עסקית עם n8n, Make, Zapier, HubSpot, Zoho, Monday, APIs ו-Workflows של CRM — ומערכות AI מודרניות מעל הסטאק הזה.',
+              'DevCo מכסה פיתוח תוכנה עם React, Next.js, Node.js, Python, TypeScript ו-React Native, וגם אוטומציה עסקית עם n8n, Make, Zapier, HubSpot, Zoho, Monday, APIs ו-Workflows של CRM — ומערכות AI מודרניות מעל הסטאק הזה.',
           },
           {
             question: 'האם אתם עובדים עם כלי AI ומודלים עדכניים?',
@@ -713,42 +851,174 @@ export const companyContent = {
       title: 'פיתוח תוכנה מותאמת אישית ומערכות AI לעסקים',
       subtitle:
         'אתם לא שוכרים עוד ספק שמדבר טכנולוגיה. אתם מקבלים שותף בכיר שמחזיק ארכיטקטורה, שיקול דעת במסירה, ומערכות שמזיזות את העסק — האבא הטכני של המוצר.',
+      vibeCoding: {
+        eyebrow: 'נשמע מוכר?',
+        title: 'וויב קודינג עובד… עד שלא.',
+        items: [
+          {
+            id: 'small-change',
+            label: 'שינוי קטן → שובר משהו אחר',
+            icon: 'shuffle',
+            problem:
+              'בלי גבולות ברורים, כל תיקון קטן מתגלגל במערכת. משחררים “פיקס קטן” ופתאום התחברות, תשלום או זרימה מרכזית נשברים — כי שום דבר לא תוכנן להשתנות בבטחה.',
+          },
+          {
+            id: 'fixing-bugs',
+            label: 'מתקנים באגים במקום לבנות קדימה',
+            icon: 'bug',
+            problem:
+              'המהירות מתה כשהצוות מבלה ספרינטים בכיבוי שריפות. פיצ׳רים חדשים מחכים בזמן שרגרסיות חוזרות — כי אף פעם לא לקחו בעלות על שורש הבעיה.',
+          },
+          {
+            id: 'nobody-understands',
+            label: 'הקוד עובד, אבל אף אחד לא מבין אותו',
+            icon: 'question',
+            problem:
+              'אם רק המודל (או פרילנסר אחד) “מכיר” את הקוד, כל שינוי הוא הימור. ארכיטקטורה קריאה ובעלות הן מה שמשאיר מוצרים בחיים אחרי הדמו.',
+          },
+          {
+            id: 'feature-risk',
+            label: 'כל פיצ׳ר חדש מרגיש כמו סיכון',
+            icon: 'warning',
+            problem:
+              'כשהיסוד שברירי, החלטות מוצר הופכות לפחד. הצוות מפסיק לשחרר כי אי אפשר לחזות מה יישבר — והצמיחה נעצרת.',
+          },
+          {
+            id: 'ai-dependent',
+            label: 'תלויים ב-AI בשביל הכל',
+            icon: 'robot',
+            problem:
+              'AI הוא מכפיל כוח כשכבר מבינים את המערכת. יצירה עיוורת מייצרת דיפים כאוטיים, חוב נסתר וקוד שאי אפשר להגן עליו בפרודקשן.',
+          },
+          {
+            id: 'fragile-system',
+            label: 'המערכת מרגישה שברירית',
+            icon: 'heart',
+            problem:
+              'מוצרים שברירים נשברים תחת עומס אמיתי, מקרי קצה ודאטה מלוכלך. מה שנראה טוב בדמו של happy path לא שורד לקוחות, אינטגרציות או Scale.',
+          },
+          {
+            id: 'demo-fails',
+            label: 'עובד בדמו, נכשל עם משתמשים אמיתיים',
+            icon: 'flask',
+            problem:
+              'דמואים מסתירים מקרי קצה של Auth, מצבים ריקים, מקביליות ומציאות תפעולית. פרודקשן דורש מבנה, בדיקות ושיקול דעת — לא UI שנוצר פעם אחת.',
+          },
+          {
+            id: 'no-architecture',
+            label: 'אין ארכיטקטורה – רק סליידים על סליידים',
+            icon: 'layers',
+            problem:
+              'מצגות יפות הן לא מערכת. בלי גבולות דומיין, מודלי דאטה ותוכנית מסירה, בונים מחדש את אותו מוצר כל רבעון בשם אחר.',
+          },
+          {
+            id: 'slow-changes',
+            label: 'שינויים פשוטים לוקחים שעות',
+            icon: 'hourglass',
+            problem:
+              'כשהכל סבוך, שינוי טקסט או שדה הופך לארכיאולוגיה. מערכות תחזוקתיות שומרות על עבודה קטנה — קטנה.',
+          },
+          {
+            id: 'no-trust',
+            label: 'אתם לא סומכים על המוצר שלכם',
+            icon: 'shield',
+            problem:
+              'אם שחרור מרגיש כמו הצלבת אצבעות, גם הלקוחות מרגישים את זה. אמון מגיע משחרורים צפויים, בעלות ומערכות שאפשר להסביר.',
+          },
+          {
+            id: 'no-owner',
+            label: 'אין לכם מי שבאמת מבין את הקוד',
+            icon: 'users',
+            problem:
+              'קוד יתום עוצר גיוס ושורף תקציב. צריך מישהו שיודע לקרוא את המערכת, לייצב אותה ולהאיץ את הבא בתור — לא להתחיל מאפס.',
+          },
+          {
+            id: 'freelancer-zero',
+            label: 'כל פרילנסר חדש מתחיל מאפס',
+            icon: 'refresh',
+            problem:
+              'בלי תיעוד, מוסכמות וארכיטקטורה, כל העברה מאפסת קונטקסט. זה יקר, איטי וההפך ממוצר מוכן לפרודקשן.',
+          },
+        ],
+      },
       services: [
         {
           title: 'פיתוח SaaS ו-MVP',
-          text: 'מהגרסה הראשונה ועד פלטפורמת פרודקשן: ארכיטקטורה, מודלי דאטה, כלי ניהול, תשלומים והכנה להשקה עם מסלול ברור אחרי העלייה לאוויר.',
+          summary:
+            'מהגרסה הראשונה ועד פלטפורמת פרודקשן: ארכיטקטורה, מודלי דאטה, כלי ניהול, תשלומים והכנה להשקה עם מסלול ברור אחרי העלייה לאוויר.',
+          technologies: ['React', 'Next.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'Stripe'],
+          outcomes: [
+            'MVP או ליבת SaaS מוכנים למשתמשים אמיתיים',
+            'מודלי דאטה ברורים, זרימות אדמין ורשימת השקה',
+            'מסלול מהגרסה הראשונה ל-Scale — לא דמו חד־פעמי',
+          ],
         },
         {
           title: 'אפליקציות ווב ומובייל',
-          text: 'React, Next.js, React Native ומערכות Frontend מודרניות שנבנות לשימושיות, מהירות וצמיחה תחזוקתית לאורך מסעות משתמש אמיתיים.',
+          summary:
+            'React, Next.js, React Native ומערכות Frontend מודרניות שנבנות לשימושיות, מהירות וצמיחה תחזוקתית לאורך מסעות משתמש אמיתיים.',
+          technologies: ['React', 'Next.js', 'React Native', 'TypeScript', 'Tailwind CSS', 'Vite'],
+          outcomes: [
+            'ממשקים מהירים ושימושיים בווב ובמובייל',
+            'ארכיטקטורת UI שגדלה עם המוצר',
+            'מסעות עקביים מהביקור הראשון לפעולות הליבה',
+          ],
         },
         {
           title: 'Backend ו-APIs',
-          text: 'Node.js, Python, C#, .NET, NestJS, FastAPI, תורים, מסדי נתונים וגבולות שירות מאובטחים שעומדים בעומס אמיתי.',
+          summary:
+            'Node.js, Python, NestJS, FastAPI, תורים, מסדי נתונים וגבולות שירות מאובטחים שעומדים בעומס אמיתי.',
+          technologies: ['Node.js', 'Python', 'NestJS', 'FastAPI', 'PostgreSQL', 'MongoDB', 'APIs'],
+          outcomes: [
+            'APIs יציבים וגבולות שירות תחת תעבורה אמיתית',
+            'תורים, Auth ושכבות דאטה עם בעלות ברורה',
+            'אינטגרציות שנשארות אמינות אחרי ההשקה',
+          ],
         },
         {
           title: 'בוטים חכמים ותהליכי Agent',
-          text: 'עוזרי AI, סוכנים פנימיים וצינורות Retrieval שמבצעים משימות מוגדרות — ניתוב, ניסוח, סינון — לפני שמעבירים לאדם.',
+          summary:
+            'עוזרי AI, סוכנים פנימיים וצינורות Retrieval שמבצעים משימות מוגדרות — ניתוב, ניסוח, סינון — לפני שמעבירים לאדם.',
+          technologies: ['LangChain', 'LangGraph', 'OpenAI', 'Claude', 'Gemini', 'RAG', 'AI Agents'],
+          outcomes: [
+            'סוכנים עם משימות, העברות וגבולות ברורים',
+            'RAG ו-Tool calling מחוברים למוצר — לא כאוס',
+            'AI שמרחיב יכולת בלי לאבד בעלות על המערכת',
+          ],
         },
         {
           title: 'אוטומציה ואינטגרציות מערכות',
-          text: 'מחברים CRM, כלי תפעול, APIs ושירותים מותאמים כדי שתוכנת המוצר ותהליכי העסק יזוזו כמערכת אחת, לא כאפליקציות מנותקות.',
+          summary:
+            'מחברים CRM, כלי תפעול, APIs ושירותים מותאמים כדי שתוכנת המוצר ותהליכי העסק יזוזו כמערכת אחת, לא כאפליקציות מנותקות.',
+          technologies: ['n8n', 'APIs', 'Webhooks', 'HubSpot', 'Zoho', 'Node.js'],
+          outcomes: [
+            'מערכות מחוברות במקום העתקה בין כלים',
+            'זרימות מדידות שהצוות יכול לסמוך עליהן',
+            'פחות תפעול ידני בין המוצר לתהליך העסקי',
+          ],
         },
         {
           title: 'מערכות מידע שגדלות איתכם',
-          text: 'פלטפורמות מובנות לתפעול, נתוני לקוחות וכלים פנימיים — עם בהירות, בעלות ואבולוציה לטווח ארוך, בלי BI שלא מטפלים בו.',
+          summary:
+            'פלטפורמות מובנות לתפעול, נתוני לקוחות וכלים פנימיים — עם בהירות, בעלות ואבולוציה לטווח ארוך, בלי BI שלא מטפלים בו.',
+          technologies: ['TypeScript', 'Next.js', 'PostgreSQL', 'APIs', 'Auth', 'Admin tools'],
+          outcomes: [
+            'פלטפורמות פנימיות שבאמת משתמשים בהן יום־יום',
+            'בעלות ברורה על דאטה ותהליכים',
+            'מקום להתפתח בלי לשכתב הכל כל שנה',
+          ],
         },
       ],
+      technologiesLabel: 'טכנולוגיות',
+      outcomesLabel: 'מה תקבלו',
       stackTitle: 'טכנולוגיות',
       stack: [
         'React',
         'Next.js',
         'Node.js',
         'Python',
-        'C#',
-        '.NET',
-        'React Native',
         'TypeScript',
+        'React Native',
         'LangChain',
         'LangGraph',
         'OpenAI',
@@ -908,13 +1178,19 @@ export const companyContent = {
     ] satisfies Showcase[],
     aboutPage: {
       eyebrow: 'אודות DevCo',
-      title: 'שותף תוכנה בכיר עם תהליך עבודה של חברה',
+      title: 'אני עוזר לבנות מוצרים כמו שצריך — עד סקייל של פרודקשן',
       subtitle:
-        'DevCo Solutions מובלת על ידי סיון וולברג ונבנתה סביב הנדסה בכירה, חשיבה אוטומטית ומסירה אמינה של תוכנה ותהליכים עסקיים.',
+        'DevCo Solutions מובלת על ידי סיון וולברג: שיקול דעת הנדסי בכיר, תהליך ברור, ומערכות שעומדות אחרי שהדמו כבר נראה טוב.',
       bioTitle: 'סיון וולברג',
       bioRole: 'CEO, DevCo Solutions',
-      bio:
-        'סיון מביא 15+ שנות ניסיון בארכיטקטורת תוכנה, פיתוח Full Stack, אינטגרציות AI ובניית מערכות מורכבות. האתר מדבר עכשיו כחברה כי העבודה מתנהלת בתהליך של חברה: Discovery, Planning, Build ו-Launch.',
+      bioParagraphs: [
+        'אני סיון וולברג. אני עוזר להפוך רעיונות למוצרים למערכות שעובדות בסקייל של פרודקשן — לא רק מסכים שנראים יפים.',
+        'אני בתחום יותר מ־17 שנים: פלטפורמות ווב מורכבות, מערכות Unity, ועבודה Full Stack מהמצאה ועד מסירה. אני יודע לקחת מערכות שבורות או שברירות ולהביא אותן למצב יציב.',
+        'אני עובד על מגוון רחב של סטאקים — Frontend, Backend והחיבורים ביניהם — כדי שהמוצר לא יתפרק כשהחלקים נפגשים. אני גם משתמש ב-AI כדי להרחיב מה שאני יכול למסור, בלי לתת לו ליצור כאוס. אני לא סומך בעיניים עצומות על מה שמודל מייצר.',
+        'הפילוסופיה שלי פשוטה: אם אתה לא מבין את זה, אתה לא באמת בעל המערכת. ככה מוצרים נשארים אמינים אחרי ההשקה.',
+        'מחוץ לעבודה אני אוהב כלבים, משחקים וטיולים.',
+      ],
+      personalTags: ['כלבים', 'משחקים', 'טיולים', 'מערכות Full-Stack', 'מוצרי AI', 'ארכיטקטורת מערכות'],
       values: [
         'ארכיטקטורה לפני קיצורי דרך',
         'תהליך ברור לפני Scope מעורפל',
@@ -1116,7 +1392,7 @@ export const companyContent = {
         'עבודות נבחרות של DevCo בפיתוח תוכנה ואוטומציה, על בסיס תמונות מוצר אמיתיות.',
       aboutTitle: 'אודות DevCo Solutions',
       aboutDescription:
-        'הכירו את DevCo Solutions, סיון וולברג, 15+ שנות ניסיון בארכיטקטורת תוכנה ותהליך העבודה של החברה.',
+        'הכירו את DevCo Solutions, סיון וולברג, 17+ שנות ניסיון בארכיטקטורת תוכנה ותהליך העבודה של החברה.',
       contactTitle: 'יצירת קשר - DevCo Solutions',
       contactDescription:
         'צרו קשר עם DevCo Solutions בנושא פיתוח תוכנה, אוטומציה עסקית, SaaS, אינטגרציות וליווי ארכיטקטורה.',

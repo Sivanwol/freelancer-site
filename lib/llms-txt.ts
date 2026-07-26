@@ -63,7 +63,7 @@ export function generateLlmsTxt(): string {
     .join('\n');
 
   const softwareServices = content.softwarePage.services
-    .map((service) => `- **${service.title}**: ${service.text}`)
+    .map((service) => `- **${service.title}**: ${service.summary}`)
     .join('\n');
 
   const automationServices = content.automationPage.services
