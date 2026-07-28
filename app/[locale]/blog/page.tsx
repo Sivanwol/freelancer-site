@@ -3,6 +3,7 @@ import { setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import { getBaseUrl } from '@/lib/config';
 import { getCompanyContent } from '@/lib/company-content';
+import { getLocaleAlternates } from '@/lib/seo';
 import { sitePaths } from '@/lib/site-paths';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { SiteChrome } from '@/components/site-chrome';
@@ -25,13 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: content.blog.title,
     description: content.blog.subtitle,
     metadataBase: new URL(baseUrl),
-    alternates: {
-      canonical: `${baseUrl}/${locale}${sitePaths.blog}`,
-      languages: {
-        he: `${baseUrl}/he${sitePaths.blog}`,
-        en: `${baseUrl}/en${sitePaths.blog}`,
-      },
-    },
+    alternates: getLocaleAlternates(locale, sitePaths.blog),
     openGraph: {
       title: content.blog.title,
       description: content.blog.subtitle,

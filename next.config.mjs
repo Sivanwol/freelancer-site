@@ -2,6 +2,24 @@ import createNextIntlPlugin from 'next-intl/plugin';
 
 const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 
+const legacyUnprefixedRedirects = {
+  '/automation': '/he/business-automation',
+  '/about': '/he/about-us',
+  '/privacy': '/he/privacy-policy',
+  '/accessibility': '/he/accessibility-statement',
+};
+
+const currentUnprefixedPaths = [
+  '/software-development',
+  '/business-automation',
+  '/about-us',
+  '/blog',
+  '/contact',
+  '/terms-of-use',
+  '/privacy-policy',
+  '/accessibility-statement',
+];
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -11,6 +29,16 @@ const nextConfig = {
   reactStrictMode: true,
   async redirects() {
     return [
+      ...currentUnprefixedPaths.map((path) => ({
+        source: path,
+        destination: `/he${path}`,
+        permanent: true,
+      })),
+      ...Object.entries(legacyUnprefixedRedirects).map(([source, destination]) => ({
+        source,
+        destination,
+        permanent: true,
+      })),
       {
         source: '/:locale(he|en)/automation',
         destination: '/:locale/business-automation',

@@ -3,6 +3,7 @@ import { setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import { getBaseUrl } from '@/lib/config';
 import { getCompanyContent } from '@/lib/company-content';
+import { getLocaleAlternates } from '@/lib/seo';
 import { sitePaths } from '@/lib/site-paths';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { SiteChrome } from '@/components/site-chrome';
@@ -28,13 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: content.meta.contactTitle,
     description: content.meta.contactDescription,
     metadataBase: new URL(baseUrl),
-    alternates: {
-      canonical: `${baseUrl}/${locale}${sitePaths.contact}`,
-      languages: {
-        he: `${baseUrl}/he${sitePaths.contact}`,
-        en: `${baseUrl}/en${sitePaths.contact}`,
-      },
-    },
+    alternates: getLocaleAlternates(locale, sitePaths.contact),
   };
 }
 

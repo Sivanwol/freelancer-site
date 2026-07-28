@@ -4,6 +4,8 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { siteConfig, getBaseUrl } from '@/lib/config';
 import { getCompanyContent } from '@/lib/company-content';
+import { getLocaleAlternates } from '@/lib/seo';
+import { sitePaths } from '@/lib/site-paths';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import WebVitalsReporter from '@/components/WebVitalsReporter';
 import LazyAccessibilityWidget from '@/components/lazy-accessibility-widget';
@@ -51,14 +53,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     authors: [{ name: siteConfig.author }],
     creator: siteConfig.name,
     metadataBase: new URL(baseUrl),
-    alternates: {
-      canonical: `${baseUrl}/${locale}`,
-      languages: {
-        'he': `${baseUrl}/he`,
-        'en': `${baseUrl}/en`,
-        'x-default': `${baseUrl}/he`,
-      },
-    },
+    alternates: getLocaleAlternates(locale, sitePaths.home),
     openGraph: {
       title: t('title'),
       description: t('description'),
