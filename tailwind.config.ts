@@ -22,6 +22,9 @@ const config: Config = {
         'slide-down': 'slideDown 0.6s ease-out',
         'scale-in': 'scaleIn 0.5s ease-out',
         'float': 'float 3s ease-in-out infinite',
+        'testimonials-marquee': 'testimonialsMarquee 55s linear infinite',
+        'testimonials-marquee-rtl': 'testimonialsMarqueeRtl 55s linear infinite',
+        'testimonial-zoom-in': 'testimonialZoomIn 0.38s cubic-bezier(0.22, 1, 0.36, 1) both',
       },
       keyframes: {
         fadeIn: {
@@ -43,6 +46,18 @@ const config: Config = {
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-10px)' },
+        },
+        testimonialsMarquee: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+        testimonialsMarqueeRtl: {
+          '0%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
+        testimonialZoomIn: {
+          '0%': { transform: 'scale(0.72)', opacity: '0' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
         },
       },
     },

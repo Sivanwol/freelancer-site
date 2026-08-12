@@ -17,7 +17,6 @@ import {
   FaLayerGroup,
   FaLinkedinIn,
   FaMicrophone,
-  FaQuoteLeft,
   FaWhatsapp,
   FaRocket,
   FaShieldAlt,
@@ -30,6 +29,7 @@ import { SiUpwork } from 'react-icons/si';
 import { buildWhatsAppUrl } from '@/lib/whatsapp';
 import HeroShowcaseCarousel from './HeroShowcaseCarousel';
 import SoftwareServicesAccordion from './software-services-accordion';
+import TestimonialsCarousel from './testimonials-carousel';
 import VibeCodingGrid from './vibe-coding-grid';
 
 type PageProps = {
@@ -55,6 +55,11 @@ const serviceIcons = [
 ];
 const processIcons = [FaShieldAlt, FaLayerGroup, FaCode, FaRocket];
 const sourceTestimonials = [
+  {
+    text: 'We’ve had an excellent experience working with Sivan Wolberg, our Senior Developer. He joined us August 2025 and took on the significant task of rebuilding our platform. Since then, he has become an incredibly valuable part of our team. What sets him apart is that he doesn’t just focus on writing code, he takes the time to truly understand our business, our Clients, and the problems we are trying to solve. He approaches development with a business mindset, thinking through how technology can better meet the needs of our clients and improve the overall product. He is thoughtful, dependable, solutions-oriented, and a strong technical partner. We’ve been extremely pleased with both the platform he has built and his continued commitment to making it better. He has become a trusted and highly valued member of our team, and we look forward to continuing to work with him.',
+    project: 'Platform Rebuild',
+    date: 'Aug 2026',
+  },
   {
     text: 'It was a pleasure working with Sivan Wolberg. He quickly understood our web app setup and was very responsive in fixing bugs and adding new features. His work was efficient and professional.',
     project: 'Web App Specialist - Node.js/React Project',
@@ -396,27 +401,13 @@ function TestimonialsSection({ locale, nextHref = '#faq' }: { locale: string; ne
           centered
           scrollTo={nextHref}
         />
-        <div className="grid gap-5 lg:grid-cols-3">
-          {sourceTestimonials.map((testimonial) => (
-            <article key={testimonial.project} className="flex h-full flex-col rounded-[28px] border border-[#dbe7f5] bg-[#f8fbff] p-6 shadow-sm">
-              <div className="mb-5 flex items-center justify-between gap-4">
-                <FaQuoteLeft className="h-7 w-7 text-[#1d72d2]/30" aria-hidden="true" />
-                <div className="flex gap-1 text-[#1d72d2]" aria-label="5 stars">
-                  {[0, 1, 2, 3, 4].map((star) => (
-                    <FaStar key={star} className="h-4 w-4" aria-hidden="true" />
-                  ))}
-                </div>
-              </div>
-              <blockquote className="text-base font-semibold leading-8 text-[#0d1626]">
-                “{testimonial.text}”
-              </blockquote>
-              <div className="mt-auto pt-6">
-                <p className="text-sm font-extrabold text-[#0d1626]">{testimonial.project}</p>
-                <p className="mt-1 text-sm font-semibold text-[#526174]">{testimonial.date}</p>
-              </div>
-            </article>
-          ))}
-        </div>
+        <TestimonialsCarousel
+          testimonials={sourceTestimonials}
+          isRtl={isHebrew}
+          labels={{
+            stars: isHebrew ? '5 כוכבים' : '5 stars',
+          }}
+        />
       </div>
     </section>
   );
