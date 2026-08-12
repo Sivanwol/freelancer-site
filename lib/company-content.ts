@@ -42,6 +42,7 @@ export const companyContent = {
       automation: 'Automation',
       showcases: 'Showcases',
       about: 'About',
+      testimonials: 'Testimonials',
       blog: 'Blog',
       privacy: 'Privacy',
       contact: "Let's Talk",
@@ -734,6 +735,7 @@ export const companyContent = {
       automation: 'אוטומציה',
       showcases: 'פרויקטים',
       about: 'אודות',
+      testimonials: 'המלצות',
       blog: 'בלוג',
       privacy: 'פרטיות',
       contact: 'בואו נדבר',
@@ -1427,6 +1429,7 @@ export type ClientChromeContent = {
     software: string;
     automation: string;
     about: string;
+    testimonials: string;
     blog: string;
     privacy: string;
     contact: string;
@@ -1463,6 +1466,7 @@ export function getClientChromeContent(locale: string): ClientChromeContent {
       software: content.nav.software,
       automation: content.nav.automation,
       about: content.nav.about,
+      testimonials: content.nav.testimonials,
       blog: content.nav.blog,
       privacy: content.nav.privacy,
       contact: content.nav.contact,

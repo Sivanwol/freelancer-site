@@ -52,6 +52,7 @@ export default function Navbar({ content }: NavbarProps) {
     { label: content.nav.software, href: sitePaths.softwareDevelopment },
     { label: content.nav.automation, href: sitePaths.businessAutomation },
     { label: content.nav.about, href: sitePaths.aboutUs },
+    { label: content.nav.testimonials, href: `${sitePaths.home}#testimonials` },
     { label: content.nav.blog, href: sitePaths.blog },
     { label: content.nav.privacy, href: sitePaths.privacyPolicy },
   ];
@@ -60,7 +61,31 @@ export default function Navbar({ content }: NavbarProps) {
     router.replace(pathname, { locale: newLocale });
   };
 
-  const isActive = (href: string) => pathname === href;
+  const isActive = (href: string) => {
+    const pathOnly = href.split('#')[0] || href;
+    if (href.includes('#testimonials')) {
+      return pathname === sitePaths.home;
+    }
+    return pathname === pathOnly;
+  };
+
+  const scrollToHash = (href: string) => {
+    const hashIndex = href.indexOf('#');
+    if (hashIndex === -1) {
+      return false;
+    }
+    const pathOnly = href.slice(0, hashIndex) || sitePaths.home;
+    const hash = href.slice(hashIndex + 1);
+    if (pathname !== pathOnly) {
+      return false;
+    }
+    const target = document.getElementById(hash);
+    if (!target) {
+      return false;
+    }
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    return true;
+  };
 
   return (
     <nav
@@ -88,6 +113,11 @@ export default function Navbar({ content }: NavbarProps) {
               <Link
                 key={item.href}
                 href={item.href}
+                onClick={(event) => {
+                  if (scrollToHash(item.href)) {
+                    event.preventDefault();
+                  }
+                }}
                 className={`text-sm font-semibold transition ${
                   isActive(item.href) ? 'text-[#1d72d2]' : 'text-[#526174] hover:text-[#0d1626]'
                 }`}
@@ -138,7 +168,12 @@ export default function Navbar({ content }: NavbarProps) {
                 <Link
                   key={item.href}
                   href={item.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={(event) => {
+                    if (scrollToHash(item.href)) {
+                      event.preventDefault();
+                    }
+                    setIsMobileMenuOpen(false);
+                  }}
                   className={`rounded-2xl px-3 py-3 text-base font-extrabold ${
                     isActive(item.href) ? 'bg-[#e7f2ff] text-[#1d72d2]' : 'text-[#526174]'
                   }`}

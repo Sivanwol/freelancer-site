@@ -412,9 +412,53 @@ function TestimonialsSection({ locale, nextHref = '#faq' }: { locale: string; ne
     ? 'העדויות מוצגות כלשונן, באנגלית המקורית, בלי שמות, מדדים או ציטוטים שהומצאו.'
     : 'These testimonials are shown as written, in the original English, with no invented names, metrics, or quotes.';
   const eyebrow = isHebrew ? 'הוכחות ועדויות' : 'Testimonials';
+  const localizedTestimonials = sourceTestimonials.map((testimonial) => ({
+    ...testimonial,
+    date: formatTestimonialDate(testimonial.date, isHebrew),
+  }));
+  const reviewsSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: sourceTestimonials.map((testimonial, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'Review',
+        reviewBody: testimonial.text,
+        name: testimonial.project,
+        datePublished:
+          testimonial.date === 'Aug 2026'
+            ? '2026-08-01'
+            : testimonial.date === 'Oct 2025'
+              ? '2025-10-01'
+              : testimonial.date === 'Jun 2025'
+                ? '2025-06-01'
+                : testimonial.date === 'Mar 2025'
+                  ? '2025-03-01'
+                  : testimonial.date,
+        reviewRating: {
+          '@type': 'Rating',
+          ratingValue: '5',
+          bestRating: '5',
+        },
+        author: {
+          '@type': 'Organization',
+          name: 'Upwork client',
+        },
+        itemReviewed: {
+          '@type': 'Person',
+          name: 'Sivan Wolberg',
+        },
+      },
+    })),
+  };
 
   return (
     <section id="testimonials" className="site-section bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewsSchema) }}
+      />
       <div className="site-container">
         <SectionIntro
           content={content}
@@ -425,13 +469,12 @@ function TestimonialsSection({ locale, nextHref = '#faq' }: { locale: string; ne
           scrollTo={nextHref}
         />
         <TestimonialsCarousel
-          testimonials={sourceTestimonials.map((testimonial) => ({
-            ...testimonial,
-            date: formatTestimonialDate(testimonial.date, isHebrew),
-          }))}
+          testimonials={localizedTestimonials}
           isRtl={isHebrew}
           labels={{
             stars: isHebrew ? '5 כוכבים' : '5 stars',
+            readFull: isHebrew ? 'קרא את העדות המלאה' : 'Read full testimonial',
+            close: isHebrew ? 'סגור' : 'Close',
           }}
         />
       </div>
