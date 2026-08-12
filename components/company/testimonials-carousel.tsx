@@ -263,11 +263,13 @@ export default function TestimonialsCarousel({ testimonials, isRtl, labels }: Pr
     >
       <div
         ref={viewportRef}
+        dir="ltr"
         className="relative -mx-4 h-[320px] overflow-hidden px-4 sm:-mx-6 sm:px-6 lg:mx-0 lg:px-0"
       >
         <div
           ref={trackRef}
-          className={`flex h-full w-max gap-5 will-change-transform ${
+          dir="ltr"
+          className={`flex h-full w-max flex-row gap-5 will-change-transform ${
             marqueeRunning && !preferReducedMotion
               ? isRtl
                 ? 'animate-testimonials-marquee-rtl'
@@ -316,12 +318,16 @@ export default function TestimonialsCarousel({ testimonials, isRtl, labels }: Pr
                 </div>
                 <blockquote
                   id={seoQuoteId}
-                  className="line-clamp-5 overflow-hidden text-base font-semibold leading-8 text-[#0d1626]"
+                  lang="en"
+                  dir="ltr"
+                  className="line-clamp-5 overflow-hidden text-start text-base font-semibold leading-8 text-[#0d1626]"
                 >
                   “{testimonial.text}”
                 </blockquote>
                 <div className="mt-auto pt-6">
-                  <p className="text-sm font-extrabold text-[#0d1626]">{testimonial.project}</p>
+                  <p lang="en" dir="ltr" className="text-start text-sm font-extrabold text-[#0d1626]">
+                    {testimonial.project}
+                  </p>
                   <p className="mt-1 text-sm font-semibold text-[#526174]">{testimonial.date}</p>
                 </div>
               </article>
@@ -357,12 +363,14 @@ export default function TestimonialsCarousel({ testimonials, isRtl, labels }: Pr
           </div>
           <blockquote
             id={bodyId}
-            className="text-base font-semibold leading-8 text-[#0d1626] sm:text-lg sm:leading-9"
+            lang="en"
+            dir="ltr"
+            className="text-start text-base font-semibold leading-8 text-[#0d1626] sm:text-lg sm:leading-9"
           >
             “{active.text}”
           </blockquote>
           <div className="mt-6 border-t border-[#dbe7f5] pt-5">
-            <p id={titleId} className="text-sm font-extrabold text-[#0d1626]">
+            <p id={titleId} lang="en" dir="ltr" className="text-start text-sm font-extrabold text-[#0d1626]">
               {active.project}
             </p>
             <p className="mt-1 text-sm font-semibold text-[#526174]">{active.date}</p>

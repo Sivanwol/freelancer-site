@@ -77,8 +77,31 @@ const sourceTestimonials = [
   },
 ];
 
+const testimonialMonthsHe: Record<string, string> = {
+  Jan: 'ינואר',
+  Feb: 'פברואר',
+  Mar: 'מרץ',
+  Apr: 'אפריל',
+  May: 'מאי',
+  Jun: 'יוני',
+  Jul: 'יולי',
+  Aug: 'אוגוסט',
+  Sep: 'ספטמבר',
+  Oct: 'אוקטובר',
+  Nov: 'נובמבר',
+  Dec: 'דצמבר',
+};
+
 function localeValue(locale: string): Locale {
   return locale === 'en' ? 'en' : 'he';
+}
+
+function formatTestimonialDate(date: string, isHebrew: boolean): string {
+  if (!isHebrew) {
+    return date;
+  }
+  const [month, year] = date.split(' ');
+  return `${testimonialMonthsHe[month] ?? month} ${year}`;
 }
 
 function ArrowIcon({ isRtl }: { isRtl: boolean }) {
@@ -384,10 +407,10 @@ function ContactBand({ content, source }: { content: Content; source: string }) 
 function TestimonialsSection({ locale, nextHref = '#faq' }: { locale: string; nextHref?: string }) {
   const isHebrew = localeValue(locale) === 'he';
   const content = getCompanyContent(locale);
-  const title = isHebrew ? 'לקוחות מספרים על העבודה' : 'Client feedback from real work';
+  const title = isHebrew ? 'משוב מלקוחות אמיתיים' : 'Client feedback from real clients';
   const subtitle = isHebrew
-    ? 'העדויות כאן נשענות על טקסט קיים באתר בלבד, בלי שמות, מדדים או ציטוטים שהומצאו.'
-    : 'These testimonials use existing site text only, with no invented names, metrics, or quotes.';
+    ? 'העדויות מוצגות כלשונן, באנגלית המקורית, בלי שמות, מדדים או ציטוטים שהומצאו.'
+    : 'These testimonials are shown as written, in the original English, with no invented names, metrics, or quotes.';
   const eyebrow = isHebrew ? 'הוכחות ועדויות' : 'Testimonials';
 
   return (
@@ -402,7 +425,10 @@ function TestimonialsSection({ locale, nextHref = '#faq' }: { locale: string; ne
           scrollTo={nextHref}
         />
         <TestimonialsCarousel
-          testimonials={sourceTestimonials}
+          testimonials={sourceTestimonials.map((testimonial) => ({
+            ...testimonial,
+            date: formatTestimonialDate(testimonial.date, isHebrew),
+          }))}
           isRtl={isHebrew}
           labels={{
             stars: isHebrew ? '5 כוכבים' : '5 stars',
