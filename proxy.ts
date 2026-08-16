@@ -1,5 +1,6 @@
 import createMiddleware from 'next-intl/middleware';
-import type { NextRequest } from 'next/server';
+import { NextResponse, type NextRequest } from 'next/server';
+import { englishLocaleEnabled } from './i18n/config';
 import { routing } from './i18n/routing';
 import { logPageAccess } from './lib/access-log';
 
@@ -13,6 +14,16 @@ export default function proxy(request: NextRequest) {
       '[access] failed_to_log',
       error instanceof Error ? error.message : String(error),
     );
+  }
+
+  if (!englishLocaleEnabled) {
+    const { pathname } = request.nextUrl;
+    if (pathname === '/en' || pathname.startsWith('/en/')) {
+      const url = request.nextUrl.clone();
+      url.pathname = pathname.replace(/^\/en(?=\/|$)/, '/he');
+      // 301 preserves query strings (e.g. ?post=slug) so Google consolidates /en SEO to /he.
+      return NextResponse.redirect(url, 301);
+    }
   }
 
   return handleI18nRouting(request);

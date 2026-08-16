@@ -15,34 +15,19 @@ export default function NotFound() {
               <br />
               הדף שחיפשת לא קיים.
             </p>
-            <div style={{ display: 'flex', gap: '16px', justifyContent: 'center' }}>
-              <Link
-                href="/he"
-                style={{
-                  padding: '12px 24px',
-                  backgroundColor: '#7dd3fc',
-                  color: '#07111f',
-                  borderRadius: '6px',
-                  textDecoration: 'none',
-                  fontSize: '14px',
-                }}
-              >
-                חזרה לדף הבית
-              </Link>
-              <Link
-                href="/en"
-                style={{
-                  padding: '12px 24px',
-                  border: '1px solid #284665',
-                  color: '#d1d5db',
-                  borderRadius: '6px',
-                  textDecoration: 'none',
-                  fontSize: '14px',
-                }}
-              >
-                Back to Home
-              </Link>
-            </div>
+            <Link
+              href="/he"
+              style={{
+                padding: '12px 24px',
+                backgroundColor: '#7dd3fc',
+                color: '#07111f',
+                borderRadius: '6px',
+                textDecoration: 'none',
+                fontSize: '14px',
+              }}
+            >
+              חזרה לדף הבית
+            </Link>
           </div>
         </div>
       </body>

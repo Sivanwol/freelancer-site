@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { useLocale } from 'next-intl';
+import { englishLocaleEnabled } from '@/i18n/config';
 import { Link, usePathname, useRouter } from '@/i18n/routing';
 import { sitePaths } from '@/lib/site-paths';
 import type { ClientChromeContent } from '@/lib/company-content';
@@ -58,6 +59,9 @@ export default function Navbar({ content }: NavbarProps) {
   ];
 
   const changeLocale = (newLocale: string) => {
+    if (!englishLocaleEnabled && newLocale !== 'he') {
+      return;
+    }
     router.replace(pathname, { locale: newLocale });
   };
 
@@ -127,28 +131,30 @@ export default function Navbar({ content }: NavbarProps) {
             ))}
           </div>
 
-          <div className="hidden items-center gap-3 lg:flex">
-            <div className="flex rounded-full border border-[#c7d9ee] bg-white p-1 shadow-sm">
-              <button
-                type="button"
-                onClick={() => changeLocale('he')}
-                className={`rounded-full px-3 py-1.5 text-sm font-extrabold transition ${
-                  locale === 'he' ? 'bg-[#4c9df2] text-white' : 'text-[#526174] hover:text-[#0d1626]'
-                }`}
-              >
-                עברית
-              </button>
-              <button
-                type="button"
-                onClick={() => changeLocale('en')}
-                className={`rounded-full px-3 py-1.5 text-sm font-extrabold transition ${
-                  locale === 'en' ? 'bg-[#4c9df2] text-white' : 'text-[#526174] hover:text-[#0d1626]'
-                }`}
-              >
-                EN
-              </button>
+          {englishLocaleEnabled ? (
+            <div className="hidden items-center gap-3 lg:flex">
+              <div className="flex rounded-full border border-[#c7d9ee] bg-white p-1 shadow-sm">
+                <button
+                  type="button"
+                  onClick={() => changeLocale('he')}
+                  className={`rounded-full px-3 py-1.5 text-sm font-extrabold transition ${
+                    locale === 'he' ? 'bg-[#4c9df2] text-white' : 'text-[#526174] hover:text-[#0d1626]'
+                  }`}
+                >
+                  עברית
+                </button>
+                <button
+                  type="button"
+                  onClick={() => changeLocale('en')}
+                  className={`rounded-full px-3 py-1.5 text-sm font-extrabold transition ${
+                    locale === 'en' ? 'bg-[#4c9df2] text-white' : 'text-[#526174] hover:text-[#0d1626]'
+                  }`}
+                >
+                  EN
+                </button>
+              </div>
             </div>
-          </div>
+          ) : null}
 
           <button
             type="button"
@@ -181,32 +187,34 @@ export default function Navbar({ content }: NavbarProps) {
                   {item.label}
                 </Link>
               ))}
-              <div className="mt-2 flex gap-2 border-t border-[#dbe7f5] pt-4">
-                <button
-                  type="button"
-                  onClick={() => {
-                    changeLocale('he');
-                    setIsMobileMenuOpen(false);
-                  }}
-                  className={`rounded-full px-3 py-2 text-sm font-extrabold ${
-                    locale === 'he' ? 'bg-[#4c9df2] text-white' : 'border border-[#c7d9ee] text-[#526174]'
-                  }`}
-                >
-                  עברית
-                </button>
-                <button
-                  type="button"
-                  onClick={() => {
-                    changeLocale('en');
-                    setIsMobileMenuOpen(false);
-                  }}
-                  className={`rounded-full px-3 py-2 text-sm font-extrabold ${
-                    locale === 'en' ? 'bg-[#4c9df2] text-white' : 'border border-[#c7d9ee] text-[#526174]'
-                  }`}
-                >
-                  EN
-                </button>
-              </div>
+              {englishLocaleEnabled ? (
+                <div className="mt-2 flex gap-2 border-t border-[#dbe7f5] pt-4">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      changeLocale('he');
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className={`rounded-full px-3 py-2 text-sm font-extrabold ${
+                      locale === 'he' ? 'bg-[#4c9df2] text-white' : 'border border-[#c7d9ee] text-[#526174]'
+                    }`}
+                  >
+                    עברית
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      changeLocale('en');
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className={`rounded-full px-3 py-2 text-sm font-extrabold ${
+                      locale === 'en' ? 'bg-[#4c9df2] text-white' : 'border border-[#c7d9ee] text-[#526174]'
+                    }`}
+                  >
+                    EN
+                  </button>
+                </div>
+              ) : null}
             </div>
           </div>
         ) : null}

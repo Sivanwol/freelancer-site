@@ -2,7 +2,7 @@ import { siteConfig, getBaseUrl } from '@/lib/config';
 import { companyContent } from '@/lib/company-content';
 import { sitePaths } from '@/lib/site-paths';
 
-function pageUrl(path: string, locale: 'en' | 'he' = 'en'): string {
+function pageUrl(path: string, locale: 'en' | 'he' = 'he'): string {
   const baseUrl = getBaseUrl();
   const normalizedPath = path === '/' ? '' : path;
   return `${baseUrl}/${locale}${normalizedPath}`;
@@ -58,7 +58,7 @@ export function generateLlmsTxt(): string {
   const pageLines = pages
     .map(
       (page) =>
-        `- [${page.title}](${pageUrl(page.path)}): ${page.description} (Hebrew: ${pageUrl(page.path, 'he')})`,
+        `- [${page.title}](${pageUrl(page.path)}): ${page.description}`,
     )
     .join('\n');
 
@@ -100,7 +100,7 @@ ${automationServices}
 - **LinkedIn**: ${content.brand.linkedin}
 - **Upwork**: ${content.brand.upwork}
 - **Default locale**: Hebrew (\`/he\`, x-default)
-- **English mirror**: \`${baseUrl}/en\`
+- **English**: paused (not currently served)
 - **Contact page**: ${pageUrl(sitePaths.contact)}
 - **Contact section**: ${pageUrl(sitePaths.home)}#contact
 

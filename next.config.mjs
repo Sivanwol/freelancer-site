@@ -1,6 +1,22 @@
 import createNextIntlPlugin from 'next-intl/plugin';
+import { englishLocaleEnabled } from './i18n/locale-flags.mjs';
 
 const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
+
+const englishPausedRedirects = englishLocaleEnabled
+  ? []
+  : [
+      {
+        source: '/en',
+        destination: '/he',
+        statusCode: 301,
+      },
+      {
+        source: '/en/:path*',
+        destination: '/he/:path*',
+        statusCode: 301,
+      },
+    ];
 
 const legacyUnprefixedRedirects = {
   '/automation': '/he/business-automation',
@@ -29,6 +45,7 @@ const nextConfig = {
   reactStrictMode: true,
   async redirects() {
     return [
+      ...englishPausedRedirects,
       ...currentUnprefixedPaths.map((path) => ({
         source: path,
         destination: `/he${path}`,

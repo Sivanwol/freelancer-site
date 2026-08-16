@@ -5,6 +5,7 @@ export const routing = defineRouting({
   locales: ['he', 'en'],
   defaultLocale: 'he',
   localePrefix: 'always',
+  localeDetection: false,
   // next-intl's Link header builds x-default without the locale prefix, which
   // conflicts with localePrefix: 'always' and our HTML canonicals (/he/...).
   alternateLinks: false,
