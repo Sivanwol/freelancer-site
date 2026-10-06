@@ -1,3 +1,5 @@
+import { logger } from '@/lib/logger';
+
 export const WAVE1_SLUGS = [
   'operational-ai-agents',
   'skirat-platformot-lepituach-chatbot-irgoni',
@@ -11,6 +13,12 @@ export const WAVE1_SLUGS = [
 const REVALIDATE_SECONDS = 3600;
 const TIMEOUT_MS = 8000;
 const ARTICLES_MARKER = 'var SORO_ARTICLES = ';
+/**
+ * Public Soro embed id from `.env.example`. Image builds often run without
+ * `SORO_EMBED_TOKEN`, and `generateStaticParams` still has to finish.
+ * A non-empty env value overrides this id.
+ */
+const PUBLIC_EMBED_TOKEN = 'cba1e92c-70c0-4f06-9f93-6fc454e7a2d0';
 
 export type SoroArticleMeta = {
   id: string;
@@ -27,11 +35,12 @@ type SoroArticle = SoroArticleMeta & {
 };
 
 function getSoroToken(): string {
-  const token = process.env.SORO_EMBED_TOKEN;
-  if (!token) {
-    throw new Error('SORO_EMBED_TOKEN is not set');
-  }
-  return token;
+  const configured = process.env.SORO_EMBED_TOKEN?.trim();
+  return configured || PUBLIC_EMBED_TOKEN;
+}
+
+function isProductionBuild(): boolean {
+  return process.env.NEXT_PHASE === 'phase-production-build';
 }
 
 function soroBase(): string {
@@ -173,8 +182,19 @@ export function stripArticleScripts(html: string): string {
 }
 
 export async function getSoroArticles(): Promise<SoroArticleMeta[]> {
-  const script = await soroFetch(soroBase());
-  return dedupeArticlesBySlug(parseArticleList(script));
+  try {
+    const script = await soroFetch(soroBase());
+    return dedupeArticlesBySlug(parseArticleList(script));
+  } catch (error) {
+    // A Soro outage must not fail the image build. Runtime requests still throw
+    // so ISR keeps the last successful page instead of caching an empty list.
+    if (!isProductionBuild()) {
+      throw error;
+    }
+    const message = error instanceof Error ? error.message : String(error);
+    logger.warn('soro', 'Soro article list skipped during build', { error: message });
+    return [];
+  }
 }
 
 export async function getSoroArticleBySlug(slug: string): Promise<SoroArticle | null> {
@@ -184,21 +204,30 @@ export async function getSoroArticleBySlug(slug: string): Promise<SoroArticle | 
     return null;
   }
 
-  const bodyText = await soroFetch(`${soroBase()}/article/${encodeURIComponent(meta.id)}`);
-  let parsed: unknown;
   try {
-    parsed = JSON.parse(bodyText);
+    const bodyText = await soroFetch(`${soroBase()}/article/${encodeURIComponent(meta.id)}`);
+    let parsed: unknown;
+    try {
+      parsed = JSON.parse(bodyText);
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      throw new Error(`Soro article ${meta.id} was not JSON: ${message}`);
+    }
+
+    if (!parsed || typeof parsed !== 'object' || typeof (parsed as { content?: unknown }).content !== 'string') {
+      throw new Error(`Soro article ${meta.id} did not include an HTML content string`);
+    }
+
+    return {
+      ...meta,
+      html: stripArticleScripts((parsed as { content: string }).content),
+    };
   } catch (error) {
+    if (!isProductionBuild()) {
+      throw error;
+    }
     const message = error instanceof Error ? error.message : String(error);
-    throw new Error(`Soro article ${meta.id} was not JSON: ${message}`);
+    logger.warn('soro', 'Soro article skipped during build', { id: meta.id, error: message });
+    return null;
   }
-
-  if (!parsed || typeof parsed !== 'object' || typeof (parsed as { content?: unknown }).content !== 'string') {
-    throw new Error(`Soro article ${meta.id} did not include an HTML content string`);
-  }
-
-  return {
-    ...meta,
-    html: stripArticleScripts((parsed as { content: string }).content),
-  };
 }

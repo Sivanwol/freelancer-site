@@ -5,6 +5,8 @@ import { blogPostPath } from '@/lib/seo';
 import { publicSitemapPaths, sitemapPriority, staticContentUpdatedAt } from '@/lib/site-paths';
 import { getSoroArticles, isWave1Slug } from '@/lib/soro';
 
+export const revalidate = 3600;
+
 function languageAlternates(heUrl: string, enUrl: string) {
   return englishLocaleEnabled
     ? { he: heUrl, en: enUrl, 'x-default': heUrl }
