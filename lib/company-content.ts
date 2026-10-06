@@ -27,7 +27,7 @@ export const companyContent = {
     brand: {
       name: 'DevCo Solutions',
       legalName: 'DevCo Solutions',
-      tagline: 'Innovate Now',
+      tagline: 'Think, create, lead.',
       email: 'info@devco-solution.online',
       fallbackEmail: 'fastwings@gmail.com',
       phone: '+972545566786',
@@ -604,7 +604,7 @@ export const companyContent = {
     },
     footer: {
       rights: 'All rights reserved © {year} DevCo Solutions',
-      credit: 'Until it is live.',
+      credit: 'Think, create, lead.',
       privacy: 'Privacy Policy',
       terms: 'Terms of Use',
       accessibility: 'Accessibility Statement',
@@ -1378,7 +1378,7 @@ export const companyContent = {
     },
     footer: {
       rights: 'כל הזכויות שמורות © {year} DevCo Solutions',
-      credit: 'עד שזה חי.',
+      credit: 'לחשוב, ליצור, להוביל',
       privacy: 'מדיניות פרטיות',
       terms: 'תנאי שימוש',
       accessibility: 'הצהרת נגישות',
