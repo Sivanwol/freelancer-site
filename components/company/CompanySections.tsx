@@ -1,11 +1,12 @@
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import { getCompanyContent, type Locale } from '@/lib/company-content';
+import { siteConfig, getBaseUrl } from '@/lib/config';
+import { sitePaths } from '@/lib/site-paths';
 import ContactForm from '@/components/contact-form';
 import {
   FaArrowDown,
   FaArrowRight,
-  FaBolt,
   FaBrain,
   FaCalendarAlt,
   FaChartLine,
@@ -38,7 +39,7 @@ type PageProps = {
 
 type Content = ReturnType<typeof getCompanyContent>;
 
-const pathIcons = [FaCode, FaBolt];
+const pathIcons = [FaComments, FaCode];
 const serviceIcons = [
   FaLayerGroup,
   FaDatabase,
@@ -145,13 +146,14 @@ function HighlightTitle({
   );
 }
 
-function getAccent(locale: string, page: 'home' | 'software' | 'automation' | 'about') {
+function getAccent(locale: string, page: 'home' | 'software' | 'automation' | 'about' | 'rag') {
   const isHebrew = localeValue(locale) === 'he';
   const accents = {
-    home: isHebrew ? 'לעסקים' : 'built to scale',
-    software: isHebrew ? 'מערכות AI לעסקים' : 'scalable platforms',
-    automation: isHebrew ? 'לידים, צוותים ותפעול' : 'CRM, leads, teams, and operations',
-    about: isHebrew ? 'סקייל של פרודקשן' : 'production scale',
+    home: 'AI',
+    software: isHebrew ? 'ארכיטקטורה' : 'architecture',
+    automation: isHebrew ? 'מערכות AI' : 'AI systems',
+    about: 'AI',
+    rag: isHebrew ? 'צ\'אט' : 'chat',
   };
 
   return accents[page];
@@ -237,7 +239,7 @@ function SplitPaths({ content, isRtl }: { content: Content; isRtl: boolean }) {
                       <Icon className="h-6 w-6" aria-hidden="true" />
                     </span>
                     <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-extrabold text-[#1d72d2] shadow-sm">
-                      {index === 0 ? content.cta.software : content.cta.automation}
+                      {path.label}
                       <ArrowIcon isRtl={isRtl} />
                     </span>
                   </div>
@@ -416,49 +418,8 @@ function TestimonialsSection({ locale, nextHref = '#faq' }: { locale: string; ne
     ...testimonial,
     date: formatTestimonialDate(testimonial.date, isHebrew),
   }));
-  const reviewsSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'ItemList',
-    itemListElement: sourceTestimonials.map((testimonial, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      item: {
-        '@type': 'Review',
-        reviewBody: testimonial.text,
-        name: testimonial.project,
-        datePublished:
-          testimonial.date === 'Aug 2026'
-            ? '2026-08-01'
-            : testimonial.date === 'Oct 2025'
-              ? '2025-10-01'
-              : testimonial.date === 'Jun 2025'
-                ? '2025-06-01'
-                : testimonial.date === 'Mar 2025'
-                  ? '2025-03-01'
-                  : testimonial.date,
-        reviewRating: {
-          '@type': 'Rating',
-          ratingValue: '5',
-          bestRating: '5',
-        },
-        author: {
-          '@type': 'Organization',
-          name: 'Upwork client',
-        },
-        itemReviewed: {
-          '@type': 'Person',
-          name: 'Sivan Wolberg',
-        },
-      },
-    })),
-  };
-
   return (
     <section id="testimonials" className="site-section bg-white">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewsSchema) }}
-      />
       <div className="site-container">
         <SectionIntro
           content={content}
@@ -632,6 +593,9 @@ export function ServicePage({
               className="hero-display max-w-5xl text-5xl font-black leading-[0.9] text-[#0d1626] md:text-7xl"
             />
             <p className="mt-7 max-w-3xl text-lg font-semibold leading-8 text-[#526174] md:text-xl md:leading-9">{page.subtitle}</p>
+            {isSoftware ? (
+              <p className="mt-5 max-w-3xl text-base font-medium leading-8 text-[#526174]">{content.softwarePage.aiNote}</p>
+            ) : null}
           </div>
           <div className="min-w-0">
             <HeroShowcaseCarousel items={content.showcases} isRtl={isRtl} />
@@ -791,6 +755,99 @@ export function AboutPage({ locale }: PageProps) {
       </section>
       <ProcessSection content={content} nextHref="#contact" />
       <ContactBand content={content} source="about-contact-band" />
+    </PageFrame>
+  );
+}
+
+export function RagProductionPage({ locale }: PageProps) {
+  const content = getCompanyContent(locale);
+  const page = content.ragPage;
+  const baseUrl = getBaseUrl();
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: page.title,
+    description: content.meta.ragDescription,
+    serviceType: 'RAG chat repair',
+    provider: {
+      '@type': 'Organization',
+      name: siteConfig.name,
+      url: baseUrl,
+    },
+    areaServed: 'Worldwide',
+    url: `${baseUrl}/${locale}${sitePaths.ragProduction}`,
+  };
+
+  return (
+    <PageFrame>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <section id="hero" className="relative bg-[#f8fbff] pt-28">
+        <div className="tech-grid" aria-hidden="true" />
+        <div className="site-container relative z-10 pb-16 pt-10">
+          <p className="mb-5 text-sm font-extrabold uppercase tracking-[0.2em] text-[#1d72d2]">{page.eyebrow}</p>
+          <HighlightTitle
+            text={page.title}
+            accent={getAccent(locale, 'rag')}
+            className="hero-display max-w-5xl text-5xl font-black leading-[0.95] text-[#0d1626] md:text-7xl"
+          />
+          <p className="mt-7 max-w-3xl text-lg font-semibold leading-8 text-[#526174] md:text-xl md:leading-9">{page.subtitle}</p>
+        </div>
+      </section>
+      <section id="problems" className="site-section bg-white">
+        <div className="site-container">
+          <h2 className="mb-8 text-3xl font-black text-[#0d1626] md:text-4xl">{page.problemsTitle}</h2>
+          <div className="grid gap-5 md:grid-cols-2">
+            {page.problems.map((problem) => (
+              <article
+                key={problem.title}
+                className="rounded-[28px] border border-[#dbe7f5] bg-[#f8fbff] p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-[#4c9df2] md:p-8"
+              >
+                <h3 className="text-2xl font-black text-[#0d1626]">{problem.title}</h3>
+                <p className="mt-4 text-base font-medium leading-8 text-[#526174]">{problem.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section id="work" className="site-section bg-[#f8fbff]">
+        <div className="site-container max-w-4xl">
+          <h2 className="text-3xl font-black text-[#0d1626] md:text-4xl">{page.workTitle}</h2>
+          <p className="mt-5 text-lg font-medium leading-9 text-[#526174]">{page.workText}</p>
+        </div>
+      </section>
+      <section id="process" className="site-section bg-white">
+        <div className="site-container">
+          <h2 className="mb-8 text-3xl font-black text-[#0d1626] md:text-4xl">{page.processTitle}</h2>
+          <ol className="grid gap-4 md:grid-cols-5">
+            {page.steps.map((step, index) => (
+              <li key={step.title} className="rounded-[24px] border border-[#dbe7f5] bg-[#f8fbff] p-5">
+                <p className="text-sm font-black text-[#1d72d2]">{String(index + 1).padStart(2, '0')}</p>
+                <h3 className="mt-3 text-xl font-black text-[#0d1626]">{step.title}</h3>
+                <p className="mt-3 text-sm font-medium leading-7 text-[#526174]">{step.text}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+      <FAQSection
+        content={content}
+        eyebrow={page.faq.eyebrow}
+        title={page.faq.title}
+        items={page.faq.items}
+        nextHref="#rag-contact"
+      />
+      <section id="rag-contact" className="site-section dark-band">
+        <div className="site-container max-w-3xl">
+          <h2 className="text-3xl font-black md:text-5xl">{page.ctaTitle}</h2>
+          <p className="mt-5 text-lg font-medium leading-8 text-white/80">{page.ctaText}</p>
+          <Link href={sitePaths.contact} className="btn-primary mt-8 inline-flex">
+            {content.cta.contact}
+          </Link>
+        </div>
+      </section>
     </PageFrame>
   );
 }

@@ -27,6 +27,7 @@ const legacyUnprefixedRedirects = {
 
 const currentUnprefixedPaths = [
   '/software-development',
+  '/rag-production',
   '/business-automation',
   '/about-us',
   '/blog',
@@ -43,6 +44,13 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'],
   },
   reactStrictMode: true,
+  async rewrites() {
+    return [
+      { source: '/favicon.ico', destination: '/favicon.png' },
+      { source: '/apple-touch-icon', destination: '/favicon.png' },
+      { source: '/apple-touch-icon.png', destination: '/favicon.png' },
+    ];
+  },
   async redirects() {
     return [
       ...englishPausedRedirects,

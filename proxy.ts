@@ -6,6 +6,33 @@ import { logPageAccess } from './lib/access-log';
 
 const handleI18nRouting = createMiddleware(routing);
 
+const SKIP_LOCALE_PREFIX = new Set(['/opengraph-image', '/twitter-image', '/apple-touch-icon']);
+
+function redirectLegacyBlogPost(request: NextRequest): NextResponse | null {
+  const { pathname } = request.nextUrl;
+  const post = request.nextUrl.searchParams.get('post');
+  if (!post) {
+    return null;
+  }
+
+  const isBlogIndex =
+    pathname === '/blog' ||
+    pathname === '/blog/' ||
+    pathname === '/he/blog' ||
+    pathname === '/he/blog/' ||
+    pathname === '/en/blog' ||
+    pathname === '/en/blog/';
+
+  if (!isBlogIndex) {
+    return null;
+  }
+
+  const url = request.nextUrl.clone();
+  url.pathname = `/he/blog/${encodeURIComponent(post)}`;
+  url.search = '';
+  return NextResponse.redirect(url, 301);
+}
+
 export default function proxy(request: NextRequest) {
   try {
     logPageAccess(request);
@@ -14,6 +41,15 @@ export default function proxy(request: NextRequest) {
       '[access] failed_to_log',
       error instanceof Error ? error.message : String(error),
     );
+  }
+
+  const blogRedirect = redirectLegacyBlogPost(request);
+  if (blogRedirect) {
+    return blogRedirect;
+  }
+
+  if (SKIP_LOCALE_PREFIX.has(request.nextUrl.pathname)) {
+    return NextResponse.next();
   }
 
   if (!englishLocaleEnabled) {

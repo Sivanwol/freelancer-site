@@ -17,6 +17,7 @@ export type Showcase = {
 
 export const serviceRoutes = {
   software: sitePaths.softwareDevelopment,
+  ragProduction: sitePaths.ragProduction,
   automation: sitePaths.businessAutomation,
   about: sitePaths.aboutUs,
 } as const;
@@ -25,8 +26,8 @@ export const companyContent = {
   en: {
     brand: {
       name: 'DevCo Solutions',
-      legalName: 'DevCo Solution',
-      tagline: 'Innovate Now',
+      legalName: 'DevCo Solutions',
+      tagline: 'Think, create, lead.',
       email: 'info@devco-solution.online',
       fallbackEmail: 'fastwings@gmail.com',
       phone: '+972545566786',
@@ -38,7 +39,8 @@ export const companyContent = {
     },
     nav: {
       home: 'Home',
-      software: 'Software',
+      software: 'Build from scratch',
+      rag: 'Fix the chat',
       automation: 'Automation',
       showcases: 'Showcases',
       about: 'About',
@@ -51,8 +53,8 @@ export const companyContent = {
       main: 'Main navigation',
     },
     blog: {
-      title: 'Blog',
-      subtitle: 'Insights on software development, automation, and AI.',
+      title: 'AI in production blog | DevCo Solutions',
+      subtitle: 'Notes on chat in a product, smart agents, and the systems that hold them after launch.',
     },
     cta: {
       primary: "Let's Talk",
@@ -62,26 +64,28 @@ export const companyContent = {
       contact: 'Talk With Our Team',
     },
     home: {
-      eyebrow: 'Software development company and automation partner',
-      title: 'Software and automation systems built to scale',
+      eyebrow: 'Software architect and CTO for product work',
+      title: 'Software architect for product and AI in production',
       subtitle:
-        'DevCo Solutions designs, builds, and modernizes custom software, AI products, CRM automations, and business workflows for teams that need reliable systems, not just code.',
+        'Two products. If the chat in your product is already running and getting things wrong, we fix it. If you need a new product, we build it from scratch until it is live.',
       proof: ['17+ years of architecture experience', 'Top Rated Plus Upwork proof', 'AI, web, mobile, backend, and automation delivery'],
       pathsTitle: 'Choose the track that fits your next move',
       paths: [
         {
-          title: 'Custom Software Development',
+          label: 'Fix the chat',
+          title: 'A chat that is already live and wrong',
           description:
-            'Full product delivery for SaaS, MVPs, web platforms, mobile apps, APIs, AI features, and scalable backend systems.',
-          href: serviceRoutes.software,
-          tags: ['React', 'Node.js', 'Python', 'TypeScript', 'React Native', 'AI'],
+            'The chat is already in the product, but it invents answers, the conversation goes bad, the information is a mess, or there are no rules. We check that and fix it in your code.',
+          href: serviceRoutes.ragProduction,
+          tags: ['Wrong answers', 'Memory', 'Information', 'Rules'],
         },
         {
-          title: 'Business Automation',
+          label: 'Build the product',
+          title: 'A new product, from scratch until it is live',
           description:
-            'Workflow automation, CRM integration, dashboards, chatbots, lead routing, and multi-system operations with tools like n8n, Make, Zapier, Monday, Zoho, and HubSpot.',
-          href: serviceRoutes.automation,
-          tags: ['n8n', 'Make', 'Zapier', 'HubSpot', 'Zoho', 'Monday'],
+            'There is no product yet, or only an idea. We build it from scratch, screens, server, and information, until real people are using it.',
+          href: serviceRoutes.software,
+          tags: ['From scratch', 'Screens', 'Server', 'Live product'],
         },
       ],
       processTitle: 'A clear development process',
@@ -89,7 +93,7 @@ export const companyContent = {
         'The onboarding flow from the Canva deck becomes the operating model clients can understand before the first sprint begins.',
       proofTitle: 'Built around senior execution',
       proofText:
-        'DevCo combines senior architecture, hands-on delivery, and practical automation thinking so every build has a path from discovery to launch and scale.',
+        'Two products. Fix a chat that is already live and wrong, or build a new product from scratch until people are using it.',
       faq: {
         eyebrow: 'FAQ',
         title: 'Common questions about working with DevCo',
@@ -97,7 +101,7 @@ export const companyContent = {
           {
             question: 'Who is DevCo Solutions and who leads the work?',
             answer:
-              'DevCo Solutions is a software development and business automation company led by Sivan Wolberg, with 17+ years of experience in architecture, full-stack delivery, AI integration, and complex system builds.',
+              'DevCo Solutions is led by Sivan Wolberg, a software architect and CTO, with 17+ years of experience. The work covers product development, AI agents, and integrations. Repairing a live chat that gives wrong answers, skips sources, or shows the wrong person the wrong information is one of those services.',
           },
           {
             question: 'How does pricing work?',
@@ -156,10 +160,12 @@ export const companyContent = {
       ],
     },
     softwarePage: {
-      eyebrow: 'Software Development Company',
-      title: 'Custom software, AI products, and scalable platforms',
+      eyebrow: 'A new product, from scratch',
+      title: 'Build a product from scratch until it is live | DevCo',
       subtitle:
-        'You are not hiring another vendor to talk technology. You get a senior partner who owns architecture, delivery judgment, and the systems that keep the business moving — the trusted technical lead behind the product.',
+        'This is the path for a product that does not exist yet. We build it from scratch, screens, server, and information, until it is live and people are using it.',
+      aiNote:
+        'If you already have a chat in the product and it is wrong, that is the other path. This page is for building the product itself.',
       vibeCoding: {
         eyebrow: 'Sound familiar?',
         title: 'Vibe coding works… until it doesn’t.',
@@ -369,10 +375,10 @@ export const companyContent = {
       },
     },
     automationPage: {
-      eyebrow: 'Business Automation Solutions',
-      title: 'Automation that connects your CRM, leads, teams, and operations',
+      eyebrow: 'Supporting integrations',
+      title: 'Integrations and automation around AI systems',
       subtitle:
-        'DevCo builds practical automations that remove manual work, connect the tools your team already uses, and make business processes observable — from smart CRM to appointments, sales, and ops.',
+        'When the product needs a connection to a CRM, a data source, or a process you already run, that integration is part of the build.',
       services: [
         {
           title: 'AI Agents for Business',
@@ -487,11 +493,10 @@ export const companyContent = {
     ] satisfies Showcase[],
     aboutPage: {
       eyebrow: 'About DevCo',
-      title: 'I help build products the way they should ship — to production scale',
-      subtitle:
-        'DevCo Solutions is led by Sivan Wolberg: senior engineering judgment, clear process, and systems that hold up after the demo looks good.',
+      title: 'Sivan Wolberg, senior software engineer for AI in production',
+      subtitle: '17+ years of experience, now building AI in production.',
       bioTitle: 'Sivan Wolberg',
-      bioRole: 'CEO, DevCo Solutions',
+      bioRole: 'Software architect and CTO',
       bioParagraphs: [
         'I am Sivan Wolberg. I help turn product ideas into systems that work at production scale — not just screens that look nice.',
         'I have been in the field for more than 17 years: complex web platforms, Unity systems, and full-stack product work from invention to delivery. I know how to take broken or fragile codebases and bring them to a stable state.',
@@ -511,9 +516,9 @@ export const companyContent = {
         'The existing site includes Upwork proof such as 100% Job Success and Top Rated Plus status. Exact testimonials are kept only where source text or assets are provided.',
     },
     contact: {
-      title: 'Ready to plan the system?',
+      title: 'Contact',
       subtitle:
-        'Tell us what you need. We will map the product, automation, integration, or workflow and decide the first practical delivery step.',
+        'A short intro call about an existing AI chat, RAG, or product engineering.',
       email: 'Email DevCo',
       whatsapp: 'WhatsApp DevCo',
       linkedin: 'Connect on LinkedIn',
@@ -536,12 +541,16 @@ export const companyContent = {
         required: 'Required field',
         serviceOptions: [
           {
-            value: 'Business automation',
-            label: 'Business automation',
+            value: 'RAG chat repair',
+            label: 'RAG chat repair',
           },
           {
             value: 'Custom-developed SaaS',
             label: 'Custom-developed SaaS',
+          },
+          {
+            value: 'Business automation',
+            label: 'Integrations and automation',
           },
         ],
       },
@@ -595,7 +604,7 @@ export const companyContent = {
     },
     footer: {
       rights: 'All rights reserved © {year} DevCo Solutions',
-      credit: 'Custom software development and business automation',
+      credit: 'Think, create, lead.',
       privacy: 'Privacy Policy',
       terms: 'Terms of Use',
       accessibility: 'Accessibility Statement',
@@ -609,7 +618,7 @@ export const companyContent = {
         {
           title: 'Who operates this website',
           text:
-            'This website is operated by DevCo Solutions / DevCo Solution. You can contact us at info@devco-solution.online.',
+            'This website is operated by DevCo Solutions. You can contact us at info@devco-solution.online.',
         },
         {
           title: 'Information we may receive',
@@ -677,7 +686,7 @@ export const companyContent = {
         {
           title: 'Feedback and accessibility requests',
           text:
-            'If you find an accessibility issue, missing alternative text, keyboard navigation problem, or content that is difficult to use, please contact us at info@devco-solution.online or through the contact form on this website. We will review the request and make reasonable efforts to improve the experience.',
+            'Accessibility coordinator: Sivan Wolberg. Phone: +972 54-556-6786. Email: info@devco-solution.online. If you find an accessibility issue, missing alternative text, a keyboard problem, or content that is hard to use, contact the coordinator by phone, email, or the contact form. We will review the request and make a reasonable effort to improve the experience.',
         },
         {
           title: 'Statement updates',
@@ -686,25 +695,99 @@ export const companyContent = {
         },
       ],
     },
+    ragPage: {
+      eyebrow: 'Live product AI chat',
+      title: 'Repair the chat already running in your product',
+      subtitle:
+        'If the chat is already in your product and it is wrong, this is the page for that. It invents answers, the conversation goes bad, the information is a mess, or there are no rules. We check it and fix it in your code.',
+      problemsTitle: 'What shows up in a live chat',
+      problems: [
+        {
+          title: 'Wrong answers',
+          text: 'The bot answers confidently when retrieval missed the passage, or when the prompt allows it to guess.',
+        },
+        {
+          title: 'No citations',
+          text: 'A user cannot see which source the answer came from, so a wrong answer looks the same as a grounded one.',
+        },
+        {
+          title: 'No ACL',
+          text: 'Retrieval ignores the permissions the product already uses, so the model can surface another user’s data.',
+        },
+        {
+          title: 'No check before launch',
+          text: 'Nothing stops a release when a known question starts getting a wrong answer, or an answer with no source.',
+        },
+        {
+          title: 'The conversation goes bad',
+          text: 'Over a longer chat the bot forgets, mixes things up, or keeps old details that no longer belong. The memory of the conversation itself has gone bad.',
+        },
+        {
+          title: 'The information is a mess',
+          text: 'The chat leans on information that was never organized, so it cannot find a straight answer even when the fact exists.',
+        },
+        {
+          title: 'No clear rules',
+          text: 'Nobody wrote down what the chat is allowed to do and what it must refuse, so it makes up its own rules.',
+        },
+      ],
+      workTitle: 'What we do',
+      workText:
+        'We look at where the answer comes from, whether the conversation is still reliable, whether the information is organized, and whether the rules are written down. Then we fix that in your code. The fix follows the chat you have now. It is not a fixed list promised in advance.',
+      processTitle: 'Process',
+      steps: [
+        { title: 'See what is happening', text: 'Map the live chat, the information it relies on, the rules, and the answers that are already wrong.' },
+        { title: 'Reproduce the failure', text: 'Reproduce the bad answer and record what it saw, what it was allowed to do, and where the conversation started to go bad.' },
+        { title: 'Fix', text: 'Change the information, the rules, or what the chat remembers, in the code you already run.' },
+        { title: 'Check before release', text: 'The same questions have to pass, including cases the chat must refuse, before the change ships.' },
+        { title: 'Hand off', text: 'You keep the failing cases and the notes for the next change.' },
+      ],
+      faq: {
+        eyebrow: 'FAQ',
+        title: 'Questions about a live RAG chat',
+        items: [
+          {
+            question: 'Why does the AI chat in our product invent answers?',
+            answer:
+              'When retrieval misses the right passage, the model fills the gap from general training. We reproduce the wrong answer, inspect what was retrieved, and check whether the prompt requires a citation and whether the source is in the index. The fix is in retrieval and grounding, plus an eval that fails when the bot answers without a source.',
+          },
+          {
+            question: 'How do you check that RAG answers correctly before customers hit a mistake?',
+            answer:
+              'We assemble real questions from the product, with the expected source and the expected behavior when that source is missing. Every retrieval or prompt change runs against that set. A release goes out only when the eval gate passes, including cases that must refuse or say they do not know.',
+          },
+          {
+            question: 'How do you stop the bot from showing information a user is not allowed to see?',
+            answer:
+              'Filtering after the model has written the answer is too late. We apply the product’s own permission rules when selecting documents, so a user only retrieves chunks they are allowed to see. We test that with users in different roles before the change ships.',
+          },
+        ],
+      },
+      ctaTitle: 'Bring the broken answer',
+      ctaText: 'A short call is enough to see whether the failure is retrieval, permissions, or the lack of an eval.',
+    },
     meta: {
-      defaultTitle: 'DevCo Solutions - Custom Software Development and Business Automation',
+      defaultTitle: 'Software architect for product and AI in production | DevCo Solutions',
       defaultDescription:
-        'DevCo Solutions builds custom software, AI products, web and mobile apps, CRM automations, dashboards, integrations, and business workflow systems.',
-      softwareTitle: 'Custom Software Development - DevCo Solutions',
+        'Two products. Fix a chat that is already live and wrong, or build a new product from scratch until it is live.',
+      softwareTitle: 'Build a product from scratch until it is live | DevCo',
       softwareDescription:
-        'Senior software development for SaaS, MVPs, AI products, web apps, mobile apps, backend APIs, and scalable platforms.',
-      automationTitle: 'Business Automation Solutions - DevCo Solutions',
+        'Build a new product from scratch, screens, server, and information, until it is live and people are using it.',
+      automationTitle: 'Integrations and automation around AI systems | DevCo',
       automationDescription:
-        'Business automation with n8n, Make, Zapier, Monday, Zoho, HubSpot, APIs, workflows, chatbots, dashboards, and CRM integrations.',
+        'APIs and connections around the product when it needs them.',
       showcasesTitle: 'Showcases - DevCo Solutions',
       showcasesDescription:
         'Selected DevCo software and automation showcase work using real product visuals.',
-      aboutTitle: 'About DevCo Solutions',
+      ragTitle: 'Repair the chat in an existing product | DevCo',
+      ragDescription:
+        'Your bot invents answers or exposes information? We check where the answer comes from, who can see what, and fix it in code.',
+      aboutTitle: 'Sivan Wolberg, senior software engineer for AI in production | DevCo',
       aboutDescription:
-        'Learn about DevCo Solutions, Sivan Wolberg, 17+ years of software architecture experience, and the company delivery process.',
-      contactTitle: 'Contact DevCo Solutions',
+        '17+ years of experience, now building AI in production. Sivan Wolberg checks and repairs live product AI chat.',
+      contactTitle: 'Contact | DevCo Solutions',
       contactDescription:
-        'Contact DevCo Solutions about custom software, business automation, SaaS, integrations, and architecture support.',
+        'A short intro call about an existing chat and product development.',
       termsTitle: 'Terms of Use - DevCo Solutions',
       termsDescription:
         'Terms of Use for the DevCo Solutions website, including acceptance, contact submissions, cookies, and external links.',
@@ -719,7 +802,7 @@ export const companyContent = {
   he: {
     brand: {
       name: 'DevCo Solutions',
-      legalName: 'DevCo Solution',
+      legalName: 'DevCo Solutions',
       tagline: 'לחשוב, ליצור, להוביל',
       email: 'info@devco-solution.online',
       fallbackEmail: 'fastwings@gmail.com',
@@ -731,7 +814,8 @@ export const companyContent = {
     },
     nav: {
       home: 'בית',
-      software: 'תוכנה',
+      software: 'פיתוח מאפס',
+      rag: 'תיקון צ\'אט',
       automation: 'אוטומציה',
       showcases: 'פרויקטים',
       about: 'אודות',
@@ -744,8 +828,8 @@ export const companyContent = {
       main: 'ניווט ראשי',
     },
     blog: {
-      title: 'בלוג',
-      subtitle: 'תובנות על פיתוח תוכנה, אוטומציה ובינה מלאכותית.',
+      title: 'בלוג AI בפרודקשן | DevCo Solutions',
+      subtitle: 'מאמרים על צ\'אט במוצר, סוכנים חכמים, והמערכות שמחזיקות אותם אחרי ההשקה.',
     },
     cta: {
       primary: 'בואו נדבר',
@@ -755,26 +839,28 @@ export const companyContent = {
       contact: 'דברו עם הצוות',
     },
     home: {
-      eyebrow: 'חברת פיתוח תוכנה ושותף לאוטומציה עסקית',
-      title: 'פיתוח מערכות תוכנה ואוטומציה לעסקים',
+      eyebrow: 'ארכיטקט תוכנה ו-CTO למוצר',
+      title: 'ארכיטקט תוכנה למוצר ול-AI בפרודקשן',
       subtitle:
-        'אנחנו מתכננים, בונים ומשדרגים מערכות תוכנה מותאמות אישית, מוצרי AI, אוטומציות CRM ותהליכים עסקיים לצוותים שצריכים מערכת אמינה ולא רק קוד.',
+        'שני מוצרים. אם הצ\'אט במוצר כבר רץ וטועה, מתקנים אותו. אם צריך מוצר חדש, בונים אותו מאפס עד שהוא חי.',
       proof: ['17+ שנות ניסיון בארכיטקטורה', 'הוכחת Upwork ו-Top Rated Plus', 'פיתוח AI, ווב, מובייל, Backend ואוטומציה'],
       pathsTitle: 'בחרו את המסלול שמתאים לשלב הבא',
       paths: [
         {
-          title: 'פיתוח תוכנה מותאמת אישית',
+          label: 'תיקון צ\'אט',
+          title: 'צ\'אט שכבר רץ וטועה',
           description:
-            'פיתוח מוצר מלא עבור SaaS, MVP, פלטפורמות ווב, אפליקציות מובייל, APIs, יכולות AI ומערכות Backend סקיילביליות.',
-          href: serviceRoutes.software,
-          tags: ['React', 'Node.js', 'Python', 'TypeScript', 'React Native', 'AI'],
+            'הצ\'אט כבר בתוך המוצר, אבל הוא ממציא תשובות, השיחה מתקלקלת, המידע לא מאורגן, או שאין הנחיות. בודקים את זה ומתקנים בקוד שלכם.',
+          href: serviceRoutes.ragProduction,
+          tags: ['תשובות שגויות', 'זיכרון', 'מידע', 'הנחיות'],
         },
         {
-          title: 'אוטומציה עסקית',
+          label: 'פיתוח מוצר',
+          title: 'מוצר חדש מאפס עד שהוא חי',
           description:
-            'אוטומציית תהליכים, אינטגרציות CRM, דשבורדים, צ׳אטבוטים, ניתוב לידים ותפעול רב-מערכתי עם n8n, Make, Zapier, Monday, Zoho ו-HubSpot.',
-          href: serviceRoutes.automation,
-          tags: ['n8n', 'Make', 'Zapier', 'HubSpot', 'Zoho', 'Monday'],
+            'אין עדיין מוצר, או שיש רק רעיון. בונים אותו מאפס, מסכים, שרת ומידע, עד שאנשים אמיתיים משתמשים בו.',
+          href: serviceRoutes.software,
+          tags: ['מאפס', 'מסכים', 'שרת', 'מוצר חי'],
         },
       ],
       processTitle: 'תהליך פיתוח ברור',
@@ -782,7 +868,7 @@ export const companyContent = {
         'תהליך האונבורדינג מהמצגת הופך למודל עבודה שהלקוח מבין לפני תחילת הספרינט הראשון.',
       proofTitle: 'בנוי סביב ביצוע בכיר',
       proofText:
-        'DevCo משלבת ארכיטקטורה בכירה, פיתוח Hands-on וחשיבה אוטומטית פרקטית, כדי שלכל בנייה יהיה מסלול ברור מ-Discovery ועד Scale.',
+        'שני מוצרים. מתקנים צ\'אט שכבר רץ וטועה, או בונים מוצר חדש מאפס עד שאנשים משתמשים בו.',
       faq: {
         eyebrow: 'שאלות נפוצות',
         title: 'שאלות נפוצות על העבודה עם DevCo',
@@ -790,7 +876,7 @@ export const companyContent = {
           {
             question: 'מי זו DevCo Solutions ומי מוביל את העבודה?',
             answer:
-              'DevCo Solutions היא חברת פיתוח תוכנה ואוטומציה עסקית שמובלת על ידי סיון וולברג, עם 17+ שנות ניסיון בארכיטקטורה, פיתוח Full Stack, אינטגרציות AI ובניית מערכות מורכבות.',
+              'DevCo Solutions מובלת על ידי סיון וולברג, ארכיטקט תוכנה ו-CTO, עם 17+ שנות ניסיון. העבודה כוללת פיתוח מוצר, סוכנים חכמים ואינטגרציות. תיקון צ\'אט שכבר באוויר, כשהוא טועה, לא מראה מקור או חושף מידע לאדם הלא נכון, הוא אחד השירותים.',
           },
           {
             question: 'איך עובדת התמחור?',
@@ -849,10 +935,12 @@ export const companyContent = {
       ],
     },
     softwarePage: {
-      eyebrow: 'חברת פיתוח תוכנה',
-      title: 'פיתוח תוכנה מותאמת אישית ומערכות AI לעסקים',
+      eyebrow: 'מוצר חדש מאפס',
+      title: 'פיתוח מוצר מאפס עד שהוא חי | DevCo',
       subtitle:
-        'אתם לא שוכרים עוד ספק שמדבר טכנולוגיה. אתם מקבלים שותף בכיר שמחזיק ארכיטקטורה, שיקול דעת במסירה, ומערכות שמזיזות את העסק — האבא הטכני של המוצר.',
+        'זה המסלול למוצר שעדיין אין. בונים אותו מאפס, מסכים, שרת ומידע, עד שהוא חי ואנשים משתמשים בו.',
+      aiNote:
+        'אם כבר יש צ\'אט במוצר והוא טועה, זה המסלול השני. העמוד הזה הוא לבניית המוצר עצמו.',
       vibeCoding: {
         eyebrow: 'נשמע מוכר?',
         title: 'וויב קודינג עובד… עד שלא.',
@@ -1062,10 +1150,10 @@ export const companyContent = {
       },
     },
     automationPage: {
-      eyebrow: 'פתרונות אוטומציה לעסקים',
-      title: 'אוטומציה שמחברת CRM, לידים, צוותים ותפעול',
+      eyebrow: 'אינטגרציות תומכות',
+      title: 'אינטגרציות ואוטומציה סביב מערכות AI',
       subtitle:
-        'DevCo בונה אוטומציות פרקטיות שמורידות עבודה ידנית, מחברות את הכלים שהצוות כבר משתמש בהם, והופכות תהליכים עסקיים למדידים — מ-Smart CRM ועד קביעת תורים, מכירה ושירות.',
+        'כשהמוצר צריך חיבור ל-CRM, למקור נתונים או לתהליך שכבר רץ, האינטגרציה היא חלק מהבנייה.',
       services: [
         {
           title: 'סוכני AI לעסקים',
@@ -1180,11 +1268,10 @@ export const companyContent = {
     ] satisfies Showcase[],
     aboutPage: {
       eyebrow: 'אודות DevCo',
-      title: 'אני עוזר לבנות מוצרים כמו שצריך — עד סקייל של פרודקשן',
-      subtitle:
-        'DevCo Solutions מובלת על ידי סיון וולברג: שיקול דעת הנדסי בכיר, תהליך ברור, ומערכות שעומדות אחרי שהדמו כבר נראה טוב.',
+      title: 'סיון וולברג, מהנדס תוכנה בכיר ו-AI בפרודקשן',
+      subtitle: '17+ שנות ניסיון, היום בונה AI בפרודקשן',
       bioTitle: 'סיון וולברג',
-      bioRole: 'CEO, DevCo Solutions',
+      bioRole: 'ארכיטקט תוכנה ו-CTO',
       bioParagraphs: [
         'אני סיון וולברג. אני עוזר להפוך רעיונות למוצרים למערכות שעובדות בסקייל של פרודקשן — לא רק מסכים שנראים יפים.',
         'אני בתחום יותר מ־17 שנים: פלטפורמות ווב מורכבות, מערכות Unity, ועבודה Full Stack מהמצאה ועד מסירה. אני יודע לקחת מערכות שבורות או שברירות ולהביא אותן למצב יציב.',
@@ -1204,9 +1291,8 @@ export const companyContent = {
         'האתר הקיים כולל הוכחות Upwork כמו 100% Job Success ו-Top Rated Plus. המלצות מדויקות נשמרות רק כאשר יש טקסט מקור או נכס שסופק.',
     },
     contact: {
-      title: 'מוכנים לתכנן את המערכת?',
-      subtitle:
-        'ספרו לנו מה צריך. נמפה את המוצר, האוטומציה, האינטגרציה או ה-Workflow ונבחר את שלב המסירה הראשון.',
+      title: 'יצירת קשר',
+      subtitle: 'בדיקת צ\'אט AI קיים, RAG ופיתוח מוצר. שיחת היכרות קצרה.',
       email: 'אימייל ל-DevCo',
       whatsapp: 'WhatsApp ל-DevCo',
       linkedin: 'LinkedIn',
@@ -1229,12 +1315,16 @@ export const companyContent = {
         required: 'שדה חובה',
         serviceOptions: [
           {
-            value: 'Business automation',
-            label: 'אוטומציה עסקית',
+            value: 'RAG chat repair',
+            label: 'תיקון צ\'אט',
           },
           {
             value: 'Custom-developed SaaS',
             label: 'פיתוח SaaS מותאם',
+          },
+          {
+            value: 'Business automation',
+            label: 'אינטגרציות ואוטומציה',
           },
         ],
       },
@@ -1288,7 +1378,7 @@ export const companyContent = {
     },
     footer: {
       rights: 'כל הזכויות שמורות © {year} DevCo Solutions',
-      credit: 'פיתוח תוכנה מותאמת ואוטומציה עסקית',
+      credit: 'לחשוב, ליצור, להוביל',
       privacy: 'מדיניות פרטיות',
       terms: 'תנאי שימוש',
       accessibility: 'הצהרת נגישות',
@@ -1302,7 +1392,7 @@ export const companyContent = {
         {
           title: 'מי מפעיל את האתר',
           text:
-            'האתר מופעל על ידי DevCo Solutions / DevCo Solution. ניתן ליצור איתנו קשר בכתובת info@devco-solution.online.',
+            'האתר מופעל על ידי DevCo Solutions. ניתן ליצור איתנו קשר בכתובת info@devco-solution.online.',
         },
         {
           title: 'איזה מידע עשוי להתקבל',
@@ -1370,7 +1460,7 @@ export const companyContent = {
         {
           title: 'פניות ומשוב בנושא נגישות',
           text:
-            'אם נתקלתם בבעיית נגישות, טקסט חלופי חסר, קושי בניווט מקלדת או תוכן שקשה להשתמש בו, ניתן לפנות אלינו בכתובת info@devco-solution.online או דרך טופס יצירת הקשר באתר. נבחן את הפנייה ונעשה מאמץ סביר לשפר את חוויית השימוש.',
+            'רכז הנגישות: סיון וולברג. טלפון: +972 54-556-6786. אימייל: info@devco-solution.online. אם נתקלתם בבעיית נגישות, טקסט חלופי חסר, קושי בניווט מקלדת או תוכן שקשה להשתמש בו, ניתן לפנות לרכז בטלפון, באימייל או דרך טופס יצירת הקשר באתר. נבחן את הפנייה ונעשה מאמץ סביר לשפר את חוויית השימוש.',
         },
         {
           title: 'עדכוני הצהרה',
@@ -1379,25 +1469,98 @@ export const companyContent = {
         },
       ],
     },
+    ragPage: {
+      eyebrow: 'צ\'אט שכבר באוויר',
+      title: 'תיקון צ\'אט במוצר שכבר באוויר',
+      subtitle:
+        'אם הצ\'אט כבר במוצר והוא טועה, זה העמוד בשביל זה. הוא ממציא תשובות, השיחה מתקלקלת, המידע לא מאורגן, או שאין הנחיות. בודקים את זה ומתקנים בקוד שלכם.',
+      problemsTitle: 'מה רואים בצ\'אט חי',
+      problems: [
+        {
+          title: 'תשובות שגויות',
+          text: 'הבוט עונה בביטחון כשהשליפה פספסה את הקטע, או כשהפרומפט מרשה לו לנחש.',
+        },
+        {
+          title: 'בלי ציטוטים',
+          text: 'המשתמש לא רואה מאיזה מקור הגיעה התשובה, אז תשובה שגויה נראית כמו תשובה מעוגנת.',
+        },
+        {
+          title: 'בלי הרשאות',
+          text: 'השליפה מתעלמת מההרשאות שהמוצר כבר אוכף, והמודל יכול להציג מידע של משתמש אחר.',
+        },
+        {
+          title: 'בלי בדיקה לפני עלייה לאוויר',
+          text: 'שום דבר לא עוצר שחרור כששאלה מוכרת מתחילה לקבל תשובה שגויה או בלי מקור.',
+        },
+        {
+          title: 'השיחה מתקלקלת',
+          text: 'לאורך שיחה ארוכה הצ\'אט שוכח, מערבב, או סוחב פרטים ישנים שכבר לא שייכים. הזיכרון של השיחה עצמו התקלקל.',
+        },
+        {
+          title: 'המידע לא מאורגן',
+          text: 'הצ\'אט נשען על מידע שלא סודר, אז הוא לא מוצא תשובה ישרה גם כשהעובדה קיימת.',
+        },
+        {
+          title: 'אין הנחיות',
+          text: 'אף אחד לא כתב מה מותר לצ\'אט לעשות ומה הוא חייב לסרב, אז הוא ממציא לעצמו כללים.',
+        },
+      ],
+      workTitle: 'מה עושים',
+      workText:
+        'בודקים מאיפה התשובה מגיעה, אם השיחה עדיין אמינה, אם המידע מאורגן, ואם יש הנחיות כתובות. אחר כך מתקנים את זה בקוד שלכם. התיקון הוא לפי הצ\'אט שרץ עכשיו, לא רשימה קבועה שאפשר להבטיח מראש.',
+      processTitle: 'תהליך',
+      steps: [
+        { title: 'מבינים מה קורה', text: 'ממפים את הצ\'אט שרץ, את המידע שהוא נשען עליו, את הכללים, ואת התשובות שכבר שגויות.' },
+        { title: 'משחזרים את התקלה', text: 'משחזרים את התשובה הרעה ורושמים מה הוא ראה, מה הותר לו, ואיפה השיחה התחילה להתקלקל.' },
+        { title: 'מתקנים', text: 'משנים את המידע, את הכללים, או את מה שהצ\'אט זוכר, בקוד שכבר רץ אצלכם.' },
+        { title: 'בודקים לפני שחרור', text: 'אותן שאלות חייבות לעבור, כולל מקרים שהצ\'אט חייב לסרב בהם, לפני שהשינוי עולה.' },
+        { title: 'מוסרים', text: 'נשארים אצלכם המקרים שנכשלו וההערות לשינוי הבא.' },
+      ],
+      faq: {
+        eyebrow: 'שאלות',
+        title: 'שאלות על צ\'אט שכבר באוויר',
+        items: [
+          {
+            question: 'למה הצ\'אט AI במוצר שלנו ממציא תשובות?',
+            answer:
+              'כשהשליפה מפספסת את הקטע הנכון, המודל משלים מהידע הכללי שלו. משחזרים את התשובה השגויה, בודקים מה נשלף, אם הפרומפט דורש ציטוט, ואם המקור בכלל באינדקס. התיקון הוא בשליפה ובעיגון, וב-eval שנופל כשהבוט עונה בלי מקור.',
+          },
+          {
+            question: 'איך בודקים אם RAG עונה נכון לפני שלקוחות נתקלים בטעות?',
+            answer:
+              'אוספים שאלות אמיתיות מהמוצר, עם המקור הצפוי ועם ההתנהגות הצפויה כשאין מקור. כל שינוי בשליפה או בפרומפט רץ מול הסט הזה. שחרור יוצא רק כששער ה-eval עובר, כולל מקרים שבהם הבוט חייב לסרב או לומר שאינו יודע.',
+          },
+          {
+            question: 'איך מונעים מהבוט להציג מידע למשתמש שאין לו הרשאה?',
+            answer:
+              'סינון אחרי שהמודל כבר כתב תשובה מגיע מאוחר מדי. מיישמים את כללי ההרשאה של המוצר בזמן בחירת המסמכים, כך שמשתמש שולף רק קטעים שמותר לו לראות. בודקים את זה עם משתמשים מתפקידים שונים לפני שהשינוי עולה.',
+          },
+        ],
+      },
+      ctaTitle: 'תביאו תשובה שבורה',
+      ctaText: 'שיחה קצרה מספיקה כדי לראות אם הכשל הוא בשליפה, בהרשאות, או בחסרון של eval.',
+    },
     meta: {
-      defaultTitle: 'DevCo Solutions - פיתוח תוכנה ואוטומציה עסקית',
+      defaultTitle: 'ארכיטקט תוכנה למוצר ול-AI בפרודקשן | DevCo Solutions',
       defaultDescription:
-        'DevCo Solutions בונה תוכנה מותאמת אישית, מוצרי AI, אפליקציות ווב ומובייל, אוטומציות CRM, דשבורדים, אינטגרציות ותהליכים עסקיים.',
-      softwareTitle: 'פיתוח תוכנה מותאמת - DevCo Solutions',
+        'שני מוצרים. מתקנים צ\'אט שכבר רץ וטועה, או בונים מוצר חדש מאפס עד שהוא חי.',
+      softwareTitle: 'פיתוח מוצר מאפס עד שהוא חי | DevCo',
       softwareDescription:
-        'פיתוח תוכנה בכיר עבור SaaS, MVP, מוצרי AI, אפליקציות ווב, מובייל, Backend APIs ופלטפורמות סקיילביליות.',
-      automationTitle: 'פתרונות אוטומציה לעסקים - DevCo Solutions',
+        'בונים מוצר חדש מאפס, מסכים, שרת ומידע, עד שהוא חי ואנשים משתמשים בו.',
+      automationTitle: 'אינטגרציות ואוטומציה סביב מערכות AI | DevCo',
       automationDescription:
-        'אוטומציה עסקית עם n8n, Make, Zapier, Monday, Zoho, HubSpot, APIs, Workflows, צ׳אטבוטים, דשבורדים ואינטגרציות CRM.',
+        'APIs וחיבורים סביב המוצר כשהוא צריך אותם.',
       showcasesTitle: 'פרויקטים - DevCo Solutions',
       showcasesDescription:
         'עבודות נבחרות של DevCo בפיתוח תוכנה ואוטומציה, על בסיס תמונות מוצר אמיתיות.',
-      aboutTitle: 'אודות DevCo Solutions',
+      ragTitle: 'תיקון צ\'אט במוצר קיים | DevCo',
+      ragDescription:
+        'הבוט שלכם ממציא תשובות או חושף מידע? בודקים מאיפה הוא עונה, מי רואה מה, ומתקנים בקוד.',
+      aboutTitle: 'סיון וולברג, מהנדס תוכנה בכיר ו-AI בפרודקשן | DevCo',
       aboutDescription:
-        'הכירו את DevCo Solutions, סיון וולברג, 17+ שנות ניסיון בארכיטקטורת תוכנה ותהליך העבודה של החברה.',
-      contactTitle: 'יצירת קשר - DevCo Solutions',
-      contactDescription:
-        'צרו קשר עם DevCo Solutions בנושא פיתוח תוכנה, אוטומציה עסקית, SaaS, אינטגרציות וליווי ארכיטקטורה.',
+        '17+ שנות ניסיון, היום בונה AI בפרודקשן. סיון וולברג בודק ומתקן צ\'אט AI שכבר באוויר.',
+      contactTitle: 'יצירת קשר | DevCo Solutions',
+      contactDescription: 'בדיקת צ\'אט קיים ופיתוח מוצר. שיחת היכרות קצרה.',
       termsTitle: 'תנאי שימוש - DevCo Solutions',
       termsDescription:
         'תנאי השימוש של אתר DevCo Solutions, כולל הסכמה, פניות, עוגיות וקישורים חיצוניים.',
@@ -1427,6 +1590,7 @@ export type ClientChromeContent = {
   nav: {
     home: string;
     software: string;
+    rag: string;
     automation: string;
     about: string;
     testimonials: string;
@@ -1464,6 +1628,7 @@ export function getClientChromeContent(locale: string): ClientChromeContent {
     nav: {
       home: content.nav.home,
       software: content.nav.software,
+      rag: content.nav.rag,
       automation: content.nav.automation,
       about: content.nav.about,
       testimonials: content.nav.testimonials,
