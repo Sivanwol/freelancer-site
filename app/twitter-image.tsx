@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
-export const alt = 'DevCo Solutions — checks and repairs live product AI chat (RAG)';
+export const alt = 'DevCo Solutions — checks and repairs an AI chat already in the product';
 export const size = { width: 1200, height: 628 };
 export const contentType = 'image/png';
 
@@ -25,7 +25,7 @@ export default async function Image() {
           DEVCO SOLUTIONS
         </div>
         <div style={{ display: 'flex', marginTop: 28, maxWidth: 980, fontSize: 64, lineHeight: 1.05, fontWeight: 800 }}>
-          Checks and repairs live AI chat (RAG)
+          Checks and repairs an AI chat already in the product
         </div>
         <div style={{ display: 'flex', marginTop: 32, color: '#b8c6d8', fontSize: 26 }}>
           Next.js · NestJS · Python · Evals · ACL · Citations

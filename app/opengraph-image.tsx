@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
-export const alt = 'DevCo Solutions — checks and repairs live product AI chat (RAG)';
+export const alt = 'DevCo Solutions — checks and repairs an AI chat already in the product';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -28,10 +28,10 @@ export default async function Image() {
           Senior engineer for AI in production
         </div>
         <div style={{ display: 'flex', marginTop: 28, maxWidth: 860, color: '#b8c6d8', fontSize: 28, lineHeight: 1.35 }}>
-          Checks and repairs live product AI chat (RAG): wrong answers, missing citations, missing ACL, missing evals.
+          Checks and repairs an AI chat already in the product: wrong answers, missing sources, and the wrong person seeing the wrong information.
         </div>
         <div style={{ display: 'flex', gap: 14, marginTop: 42 }}>
-          {['RAG repair', 'Citations', 'ACL and evals'].map((item) => (
+          {['Chat repair', 'Sources', 'Who can see what'].map((item) => (
             <div
               key={item}
               style={{

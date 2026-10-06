@@ -153,7 +153,7 @@ function getAccent(locale: string, page: 'home' | 'software' | 'automation' | 'a
     software: isHebrew ? 'ארכיטקטורה' : 'architecture',
     automation: isHebrew ? 'מערכות AI' : 'AI systems',
     about: 'AI',
-    rag: 'RAG',
+    rag: isHebrew ? 'צ\'אט' : 'chat',
   };
 
   return accents[page];

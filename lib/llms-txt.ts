@@ -14,7 +14,7 @@ export function generateLlmsTxt(): string {
 
   return `# ${siteConfig.name}
 
-> DevCo Solutions / Sivan Wolberg — software architect and CTO for product systems and AI in production. Full-stack product work in Next.js, React, Node.js, NestJS, Laravel, and Python/FastAPI. RAG chat repair (hallucinations, citations, ACL, evals) is one of the services.
+> DevCo Solutions / Sivan Wolberg — software architect and CTO for product systems and AI in production. Full-stack product work in Next.js, React, Node.js, NestJS, Laravel, and Python/FastAPI. Repairing a live chat is one of the services.
 
 ${he.home.subtitle}
 
