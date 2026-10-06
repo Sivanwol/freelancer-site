@@ -604,7 +604,7 @@ export const companyContent = {
     },
     footer: {
       rights: 'All rights reserved © {year} DevCo Solutions',
-      credit: 'Two paths: fix a chat that is already live and wrong, or build a new product from scratch until it is live.',
+      credit: 'Until it is live.',
       privacy: 'Privacy Policy',
       terms: 'Terms of Use',
       accessibility: 'Accessibility Statement',
@@ -1378,7 +1378,7 @@ export const companyContent = {
     },
     footer: {
       rights: 'כל הזכויות שמורות © {year} DevCo Solutions',
-      credit: 'שני מסלולים: תיקון צ\'אט שכבר רץ וטועה, ופיתוח מוצר חדש מאפס עד שהוא חי.',
+      credit: 'עד שזה חי.',
       privacy: 'מדיניות פרטיות',
       terms: 'תנאי שימוש',
       accessibility: 'הצהרת נגישות',
