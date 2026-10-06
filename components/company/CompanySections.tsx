@@ -39,7 +39,7 @@ type PageProps = {
 
 type Content = ReturnType<typeof getCompanyContent>;
 
-const pathIcons = [FaCode, FaBrain, FaComments, FaDatabase];
+const pathIcons = [FaComments, FaCode];
 const serviceIcons = [
   FaLayerGroup,
   FaDatabase,

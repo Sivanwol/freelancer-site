@@ -14,7 +14,7 @@ export function generateLlmsTxt(): string {
 
   return `# ${siteConfig.name}
 
-> DevCo Solutions / Sivan Wolberg — software architect and CTO for product systems and AI in production. Full-stack product work in Next.js, React, Node.js, NestJS, Laravel, and Python/FastAPI. Repairing a live chat is one of the services.
+> DevCo Solutions / Sivan Wolberg — two products. Fix a chat that is already live and wrong, or build a new product from scratch until it is live.
 
 ${he.home.subtitle}
 
@@ -26,7 +26,7 @@ ${he.home.subtitle}
 - [About Sivan Wolberg](${pageUrl(sitePaths.aboutUs)}): ${he.aboutPage.subtitle}
 - [Blog](${pageUrl(sitePaths.blog)}): ${he.blog.subtitle}
 - [Contact](${pageUrl(sitePaths.contact)}): ${he.meta.contactDescription}
-- [Integrations around AI systems](${pageUrl(sitePaths.businessAutomation)}): Supporting integrations only, when a live AI system needs a connection to an existing process. Not the lead offer.
+- [Integrations](${pageUrl(sitePaths.businessAutomation)}): Connections around a product, when the product needs them. Not one of the two main products.
 - [Privacy Policy](${pageUrl(sitePaths.privacyPolicy)}): ${he.meta.privacyDescription}
 - [Accessibility Statement](${pageUrl(sitePaths.accessibilityStatement)}): ${he.meta.accessibilityDescription}
 

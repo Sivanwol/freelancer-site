@@ -39,8 +39,8 @@ export const companyContent = {
     },
     nav: {
       home: 'Home',
-      software: 'Software',
-      rag: 'RAG repair',
+      software: 'Build from scratch',
+      rag: 'Fix the chat',
       automation: 'Automation',
       showcases: 'Showcases',
       about: 'About',
@@ -67,41 +67,25 @@ export const companyContent = {
       eyebrow: 'Software architect and CTO for product work',
       title: 'Software architect for product and AI in production',
       subtitle:
-        'Builds full product systems, websites and servers, and also checks and repairs an AI chat that is already running. Chat repair is one service, not the whole practice.',
+        'Two products. If the chat in your product is already running and getting things wrong, we fix it. If you need a new product, we build it from scratch until it is live.',
       proof: ['17+ years of architecture experience', 'Top Rated Plus Upwork proof', 'AI, web, mobile, backend, and automation delivery'],
       pathsTitle: 'Choose the track that fits your next move',
       paths: [
         {
-          label: 'Software development',
-          title: 'Product systems and architecture',
+          label: 'Fix the chat',
+          title: 'A chat that is already live and wrong',
           description:
-            'SaaS, web, mobile, backend, and APIs in the stack delivered on Upwork: Next.js, React, Node.js, NestJS, Laravel, Python, and FastAPI.',
-          href: serviceRoutes.software,
-          tags: ['Next.js', 'React', 'NestJS', 'Laravel', 'Python'],
-        },
-        {
-          label: 'AI agents',
-          title: 'AI agents and features inside the product',
-          description:
-            'Agents and smart features inside an existing system, including who can see what and what the agent is allowed to do.',
-          href: `${serviceRoutes.software}#services`,
-          tags: ['AI Agents', 'LangChain', 'Tool calling'],
-        },
-        {
-          label: 'Chat repair',
-          title: 'Repair a chat already in the product',
-          description:
-            'Check and fix a chat that is already live: wrong answers, a conversation that goes bad, messy information, or no clear rules.',
+            'The chat is already in the product, but it invents answers, the conversation goes bad, the information is a mess, or there are no rules. We check that and fix it in your code.',
           href: serviceRoutes.ragProduction,
-          tags: ['Answers', 'Memory', 'Information', 'Rules'],
+          tags: ['Wrong answers', 'Memory', 'Information', 'Rules'],
         },
         {
-          label: 'Integrations',
-          title: 'Integrations and APIs',
+          label: 'Build the product',
+          title: 'A new product, from scratch until it is live',
           description:
-            'Connect systems, CRM, and data when the product needs it. Part of the work, not the whole practice.',
-          href: serviceRoutes.automation,
-          tags: ['APIs', 'PostgreSQL', 'AWS'],
+            'There is no product yet, or only an idea. We build it from scratch, screens, server, and information, until real people are using it.',
+          href: serviceRoutes.software,
+          tags: ['From scratch', 'Screens', 'Server', 'Live product'],
         },
       ],
       processTitle: 'A clear development process',
@@ -109,7 +93,7 @@ export const companyContent = {
         'The onboarding flow from the Canva deck becomes the operating model clients can understand before the first sprint begins.',
       proofTitle: 'Built around senior execution',
       proofText:
-        'DevCo brings product architecture and senior delivery: full systems, AI agents, and integrations. RAG chat repair is one service when the chat is already live.',
+        'Two products. Fix a chat that is already live and wrong, or build a new product from scratch until people are using it.',
       faq: {
         eyebrow: 'FAQ',
         title: 'Common questions about working with DevCo',
@@ -176,12 +160,12 @@ export const companyContent = {
       ],
     },
     softwarePage: {
-      eyebrow: 'Software development and architecture',
-      title: 'Software development and product architecture | DevCo',
+      eyebrow: 'A new product, from scratch',
+      title: 'Build a product from scratch until it is live | DevCo',
       subtitle:
-        'Product development covers SaaS, web, mobile, backend, and APIs in Next.js, React, Node.js, NestJS, Laravel, and Python/FastAPI.',
+        'This is the path for a product that does not exist yet. We build it from scratch, screens, server, and information, until it is live and people are using it.',
       aiNote:
-        'Checking the chat, what it is allowed to see, and what it is allowed to answer is one part of that work, inside the system you already run.',
+        'If you already have a chat in the product and it is wrong, that is the other path. This page is for building the product itself.',
       vibeCoding: {
         eyebrow: 'Sound familiar?',
         title: 'Vibe coding works… until it doesn’t.',
@@ -620,7 +604,7 @@ export const companyContent = {
     },
     footer: {
       rights: 'All rights reserved © {year} DevCo Solutions',
-      credit: 'Checks and repairs an AI chat already in the product',
+      credit: 'Two paths: fix a chat that is already live and wrong, or build a new product from scratch until it is live.',
       privacy: 'Privacy Policy',
       terms: 'Terms of Use',
       accessibility: 'Accessibility Statement',
@@ -715,7 +699,7 @@ export const companyContent = {
       eyebrow: 'Live product AI chat',
       title: 'Repair the chat already running in your product',
       subtitle:
-        'If the chat in your product invents answers, the conversation goes bad, the information is a mess, or there are no clear rules for what it may do, we check it and fix it in your code.',
+        'If the chat is already in your product and it is wrong, this is the page for that. It invents answers, the conversation goes bad, the information is a mess, or there are no rules. We check it and fix it in your code.',
       problemsTitle: 'What shows up in a live chat',
       problems: [
         {
@@ -785,10 +769,10 @@ export const companyContent = {
     meta: {
       defaultTitle: 'Software architect for product and AI in production | DevCo Solutions',
       defaultDescription:
-        'Full product systems, AI agents, and integrations. RAG chat repair is one of the services. 17+ years of experience.',
-      softwareTitle: 'Software development and product architecture | DevCo',
+        'Two products. Fix a chat that is already live and wrong, or build a new product from scratch until it is live.',
+      softwareTitle: 'Build a product from scratch until it is live | DevCo',
       softwareDescription:
-        'SaaS, web, mobile, backend, and APIs in Next.js, NestJS, Laravel, and Python/FastAPI. RAG repair is one part of the work.',
+        'Build a new product from scratch, screens, server, and information, until it is live and people are using it.',
       automationTitle: 'Integrations and automation around AI systems | DevCo',
       automationDescription:
         'APIs and connections around the product when it needs them.',
@@ -830,7 +814,7 @@ export const companyContent = {
     },
     nav: {
       home: 'בית',
-      software: 'תוכנה',
+      software: 'פיתוח מאפס',
       rag: 'תיקון צ\'אט',
       automation: 'אוטומציה',
       showcases: 'פרויקטים',
@@ -858,41 +842,25 @@ export const companyContent = {
       eyebrow: 'ארכיטקט תוכנה ו-CTO למוצר',
       title: 'ארכיטקט תוכנה למוצר ול-AI בפרודקשן',
       subtitle:
-        'בונה מערכות מוצר מלאות, אתרים ושרתים, וגם בודק ומתקן צ\'אט בינה מלאכותית שכבר רץ במוצר. תיקון הצ\'אט הוא אחד השירותים, לא כולם.',
+        'שני מוצרים. אם הצ\'אט במוצר כבר רץ וטועה, מתקנים אותו. אם צריך מוצר חדש, בונים אותו מאפס עד שהוא חי.',
       proof: ['17+ שנות ניסיון בארכיטקטורה', 'הוכחת Upwork ו-Top Rated Plus', 'פיתוח AI, ווב, מובייל, Backend ואוטומציה'],
       pathsTitle: 'בחרו את המסלול שמתאים לשלב הבא',
       paths: [
         {
-          label: 'פיתוח תוכנה',
-          title: 'מערכות מוצר וארכיטקטורה',
-          description:
-            'SaaS, ווב, מובייל, Backend ו-APIs בסטאק שנמסר ב-Upwork: Next.js, React, Node.js, NestJS, Laravel, Python ו-FastAPI.',
-          href: serviceRoutes.software,
-          tags: ['Next.js', 'React', 'NestJS', 'Laravel', 'Python'],
-        },
-        {
-          label: 'סוכני AI',
-          title: 'סוכני AI ופיצ\'רים בתוך המוצר',
-          description:
-            'סוכנים ופיצ\'רים חכמים בתוך מערכת קיימת, כולל מי רואה מה ומה מותר לסוכן לעשות.',
-          href: `${serviceRoutes.software}#services`,
-          tags: ['AI Agents', 'LangChain', 'Tool calling'],
-        },
-        {
           label: 'תיקון צ\'אט',
-          title: 'תיקון צ\'אט שכבר רץ במוצר',
+          title: 'צ\'אט שכבר רץ וטועה',
           description:
-            'בודקים ומתקנים צ\'אט שכבר רץ במוצר: תשובות שגויות, שיחה שמתקלקלת, מידע לא מאורגן, או חוסר הנחיות.',
+            'הצ\'אט כבר בתוך המוצר, אבל הוא ממציא תשובות, השיחה מתקלקלת, המידע לא מאורגן, או שאין הנחיות. בודקים את זה ומתקנים בקוד שלכם.',
           href: serviceRoutes.ragProduction,
-          tags: ['תשובות', 'זיכרון', 'מידע', 'הנחיות'],
+          tags: ['תשובות שגויות', 'זיכרון', 'מידע', 'הנחיות'],
         },
         {
-          label: 'אינטגרציות',
-          title: 'אינטגרציות ו-APIs',
+          label: 'פיתוח מוצר',
+          title: 'מוצר חדש מאפס עד שהוא חי',
           description:
-            'חיבור מערכות, CRM ודאטה כשהמוצר צריך את זה. חלק מהעבודה, לא כל העבודה.',
-          href: serviceRoutes.automation,
-          tags: ['APIs', 'PostgreSQL', 'AWS'],
+            'אין עדיין מוצר, או שיש רק רעיון. בונים אותו מאפס, מסכים, שרת ומידע, עד שאנשים אמיתיים משתמשים בו.',
+          href: serviceRoutes.software,
+          tags: ['מאפס', 'מסכים', 'שרת', 'מוצר חי'],
         },
       ],
       processTitle: 'תהליך פיתוח ברור',
@@ -900,7 +868,7 @@ export const companyContent = {
         'תהליך האונבורדינג מהמצגת הופך למודל עבודה שהלקוח מבין לפני תחילת הספרינט הראשון.',
       proofTitle: 'בנוי סביב ביצוע בכיר',
       proofText:
-        'DevCo מביאה ארכיטקטורת מוצר וביצוע בכיר: מערכות מלאות, סוכני AI ואינטגרציות. תיקון צ\'אט RAG הוא אחד השירותים כשהצ\'אט כבר באוויר.',
+        'שני מוצרים. מתקנים צ\'אט שכבר רץ וטועה, או בונים מוצר חדש מאפס עד שאנשים משתמשים בו.',
       faq: {
         eyebrow: 'שאלות נפוצות',
         title: 'שאלות נפוצות על העבודה עם DevCo',
@@ -967,12 +935,12 @@ export const companyContent = {
       ],
     },
     softwarePage: {
-      eyebrow: 'פיתוח תוכנה וארכיטקטורה',
-      title: 'פיתוח תוכנה וארכיטקטורה למוצר | DevCo',
+      eyebrow: 'מוצר חדש מאפס',
+      title: 'פיתוח מוצר מאפס עד שהוא חי | DevCo',
       subtitle:
-        'פיתוח מוצר כולל SaaS, ווב, מובייל, Backend ו-APIs ב-Next.js, React, Node.js, NestJS, Laravel ו-Python/FastAPI.',
+        'זה המסלול למוצר שעדיין אין. בונים אותו מאפס, מסכים, שרת ומידע, עד שהוא חי ואנשים משתמשים בו.',
       aiNote:
-        'בדיקה של הצ\'אט, מה מותר לו לראות ומה מותר לו לענות, היא חלק אחד מהעבודה הזו בתוך המערכת שכבר רצה אצלכם.',
+        'אם כבר יש צ\'אט במוצר והוא טועה, זה המסלול השני. העמוד הזה הוא לבניית המוצר עצמו.',
       vibeCoding: {
         eyebrow: 'נשמע מוכר?',
         title: 'וויב קודינג עובד… עד שלא.',
@@ -1410,7 +1378,7 @@ export const companyContent = {
     },
     footer: {
       rights: 'כל הזכויות שמורות © {year} DevCo Solutions',
-      credit: 'בדיקה ותיקון של צ\'אט במוצר קיים',
+      credit: 'שני מסלולים: תיקון צ\'אט שכבר רץ וטועה, ופיתוח מוצר חדש מאפס עד שהוא חי.',
       privacy: 'מדיניות פרטיות',
       terms: 'תנאי שימוש',
       accessibility: 'הצהרת נגישות',
@@ -1505,7 +1473,7 @@ export const companyContent = {
       eyebrow: 'צ\'אט שכבר באוויר',
       title: 'תיקון צ\'אט במוצר שכבר באוויר',
       subtitle:
-        'אם הצ\'אט ממציא תשובות, השיחה מתקלקלת, המידע לא מאורגן, או שאין הנחיות ברורות למה מותר לו לעשות, בודקים את זה ומתקנים בקוד שלכם.',
+        'אם הצ\'אט כבר במוצר והוא טועה, זה העמוד בשביל זה. הוא ממציא תשובות, השיחה מתקלקלת, המידע לא מאורגן, או שאין הנחיות. בודקים את זה ומתקנים בקוד שלכם.',
       problemsTitle: 'מה רואים בצ\'אט חי',
       problems: [
         {
@@ -1575,10 +1543,10 @@ export const companyContent = {
     meta: {
       defaultTitle: 'ארכיטקט תוכנה למוצר ול-AI בפרודקשן | DevCo Solutions',
       defaultDescription:
-        'פיתוח מערכות מלאות, סוכנים חכמים ואינטגרציות. תיקון צ\'אט הוא אחד השירותים. 17+ שנות ניסיון.',
-      softwareTitle: 'פיתוח תוכנה וארכיטקטורה למוצר | DevCo',
+        'שני מוצרים. מתקנים צ\'אט שכבר רץ וטועה, או בונים מוצר חדש מאפס עד שהוא חי.',
+      softwareTitle: 'פיתוח מוצר מאפס עד שהוא חי | DevCo',
       softwareDescription:
-        'SaaS, ווב, מובייל, Backend ו-APIs ב-Next.js, NestJS, Laravel ו-Python/FastAPI. תיקון RAG הוא חלק אחד מהעבודה.',
+        'בונים מוצר חדש מאפס, מסכים, שרת ומידע, עד שהוא חי ואנשים משתמשים בו.',
       automationTitle: 'אינטגרציות ואוטומציה סביב מערכות AI | DevCo',
       automationDescription:
         'APIs וחיבורים סביב המוצר כשהוא צריך אותם.',
