@@ -1,6 +1,7 @@
 export const SERVICE_TYPE_VALUES = [
-  'Business automation',
+  'RAG chat repair',
   'Custom-developed SaaS',
+  'Business automation',
 ] as const;
 
 /** Attio `language` select option titles */

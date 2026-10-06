@@ -2,121 +2,60 @@ import { siteConfig, getBaseUrl } from '@/lib/config';
 import { companyContent } from '@/lib/company-content';
 import { sitePaths } from '@/lib/site-paths';
 
-function pageUrl(path: string, locale: 'en' | 'he' = 'he'): string {
+function pageUrl(path: string): string {
   const baseUrl = getBaseUrl();
   const normalizedPath = path === '/' ? '' : path;
-  return `${baseUrl}/${locale}${normalizedPath}`;
+  return `${baseUrl}/he${normalizedPath}`;
 }
 
 export function generateLlmsTxt(): string {
-  const content = companyContent.en;
+  const he = companyContent.he;
   const baseUrl = getBaseUrl();
-
-  const pages = [
-    {
-      title: 'Home',
-      path: sitePaths.home,
-      description: content.meta.defaultDescription,
-    },
-    {
-      title: 'Custom Software Development',
-      path: sitePaths.softwareDevelopment,
-      description: content.meta.softwareDescription,
-    },
-    {
-      title: 'Business Automation Solutions',
-      path: sitePaths.businessAutomation,
-      description: content.meta.automationDescription,
-    },
-    {
-      title: 'About DevCo Solutions',
-      path: sitePaths.aboutUs,
-      description: content.meta.aboutDescription,
-    },
-    {
-      title: 'Blog',
-      path: sitePaths.blog,
-      description: content.blog.subtitle,
-    },
-    {
-      title: 'Contact',
-      path: sitePaths.contact,
-      description: content.meta.contactDescription,
-    },
-    {
-      title: 'Privacy Policy',
-      path: sitePaths.privacyPolicy,
-      description: content.meta.privacyDescription,
-    },
-    {
-      title: 'Accessibility Statement',
-      path: sitePaths.accessibilityStatement,
-      description: content.meta.accessibilityDescription,
-    },
-  ];
-
-  const pageLines = pages
-    .map(
-      (page) =>
-        `- [${page.title}](${pageUrl(page.path)}): ${page.description}`,
-    )
-    .join('\n');
-
-  const softwareServices = content.softwarePage.services
-    .map((service) => `- **${service.title}**: ${service.summary}`)
-    .join('\n');
-
-  const automationServices = content.automationPage.services
-    .map((service) => `- **${service.title}**: ${service.text}`)
-    .join('\n');
 
   return `# ${siteConfig.name}
 
-> ${content.meta.defaultDescription}
+> DevCo Solutions / Sivan Wolberg — checks and repairs live SaaS AI chat (RAG): hallucinations, citations, ACL, and evals. Senior full-stack around that work. Automation only when the product needs integrations.
 
-${content.home.subtitle}
+${he.home.subtitle}
 
 ## Pages
 
-${pageLines}
+- [Home](${pageUrl(sitePaths.home)}): ${he.meta.defaultDescription}
+- [RAG production repair](${pageUrl(sitePaths.ragProduction)}): ${he.meta.ragDescription}
+- [AI features in an existing product](${pageUrl(sitePaths.softwareDevelopment)}): ${he.meta.softwareDescription}
+- [About Sivan Wolberg](${pageUrl(sitePaths.aboutUs)}): ${he.aboutPage.subtitle}
+- [Blog](${pageUrl(sitePaths.blog)}): ${he.blog.subtitle}
+- [Contact](${pageUrl(sitePaths.contact)}): ${he.meta.contactDescription}
+- [Integrations around AI systems](${pageUrl(sitePaths.businessAutomation)}): Supporting integrations only, when a live AI system needs a connection to an existing process. Not the lead offer.
+- [Privacy Policy](${pageUrl(sitePaths.privacyPolicy)}): ${he.meta.privacyDescription}
+- [Accessibility Statement](${pageUrl(sitePaths.accessibilityStatement)}): ${he.meta.accessibilityDescription}
 
-## Services
+## Core Topics
 
-### Custom Software Development
-
-${softwareServices}
-
-### Business Automation
-
-${automationServices}
+- RAG repair for a chat already in production
+- LLM evals and release gates
+- ACL for retrieval
+- AI agents in production
+- NestJS, Next.js, and Python/FastAPI
 
 ## Company
 
 - **Legal name**: ${siteConfig.legalName}
-- **Founder / CEO**: ${siteConfig.author}
+- **Founder**: ${siteConfig.author}
+- **Role**: ${he.home.title}
 - **Location**: Haifa, Israel
 - **Email**: ${siteConfig.email}
 - **Phone**: ${siteConfig.phoneDisplay}
-- **LinkedIn**: ${content.brand.linkedin}
-- **Upwork**: ${content.brand.upwork}
+- **LinkedIn**: ${he.brand.linkedin}
+- **Upwork**: ${he.brand.upwork}
 - **Default locale**: Hebrew (\`/he\`, x-default)
 - **English**: paused (not currently served)
 - **Contact page**: ${pageUrl(sitePaths.contact)}
-- **Contact section**: ${pageUrl(sitePaths.home)}#contact
-
-## Core Topics
-
-- Custom software development
-- SaaS and MVP development
-- Web and mobile applications
-- Backend APIs and scalable platforms
-- AI agents, smarter bots, and agentic workflows
-- Business automation and CRM integrations
-- Workflow automation with n8n, Make, and Zapier
 
 ## Legal
 
 - [Privacy Policy](${pageUrl(sitePaths.privacyPolicy)})
+- [Terms of Use](${pageUrl(sitePaths.termsOfUse)})
 - [Accessibility Statement](${pageUrl(sitePaths.accessibilityStatement)})
 
 ## Sitemap

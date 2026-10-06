@@ -1,9 +1,8 @@
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
-import { getBaseUrl } from '@/lib/config';
 import { getCompanyContent } from '@/lib/company-content';
-import { getLocaleAlternates } from '@/lib/seo';
+import { buildPageMetadata } from '@/lib/seo';
 import { sitePaths } from '@/lib/site-paths';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { SiteChrome } from '@/components/site-chrome';
@@ -19,14 +18,14 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const content = getCompanyContent(locale);
-  const baseUrl = getBaseUrl();
 
-  return {
+  return buildPageMetadata({
+    locale,
+    path: sitePaths.accessibilityStatement,
     title: content.meta.accessibilityTitle,
     description: content.meta.accessibilityDescription,
-    metadataBase: new URL(baseUrl),
-    alternates: getLocaleAlternates(locale, sitePaths.accessibilityStatement),
-  };
+    imageAlt: content.meta.accessibilityTitle,
+  });
 }
 
 export default async function Accessibility({ params }: Props) {

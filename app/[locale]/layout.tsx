@@ -1,10 +1,10 @@
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
+import { getMessages, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { siteConfig, getBaseUrl } from '@/lib/config';
 import { getCompanyContent } from '@/lib/company-content';
-import { getLocaleAlternates } from '@/lib/seo';
+import { buildPageMetadata } from '@/lib/seo';
 import { sitePaths } from '@/lib/site-paths';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import WebVitalsReporter from '@/components/WebVitalsReporter';
@@ -25,57 +25,31 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'meta' });
-  const baseUrl = getBaseUrl();
+  const content = getCompanyContent(locale);
 
   return {
-    title: t('title'),
-    description: t('description'),
+    ...buildPageMetadata({
+      locale,
+      path: sitePaths.home,
+      title: content.meta.defaultTitle,
+      description: content.meta.defaultDescription,
+      imageAlt: content.meta.defaultTitle,
+    }),
     keywords: [
-      'Software Development Company',
-      'Custom Software Development',
-      'Business Automation',
-      'CRM Automation',
-      'AI Development',
-      'SaaS Development',
-      'MVP Development',
-      'Web Application Development',
-      'React',
-      'Node.js',
+      'RAG',
+      'LLM evals',
+      'AI agents',
+      'tool calling',
+      'ACL',
+      'retrieval security',
+      'Next.js',
+      'NestJS',
       'Python',
-      'LangChain',
-      'n8n',
-      'Make',
-      'Zapier',
-      'HubSpot',
-      'Israel',
+      'FastAPI',
+      'AI in production',
     ],
     authors: [{ name: siteConfig.author }],
     creator: siteConfig.name,
-    metadataBase: new URL(baseUrl),
-    alternates: getLocaleAlternates(locale, sitePaths.home),
-    openGraph: {
-      title: t('title'),
-      description: t('description'),
-      url: `${baseUrl}/${locale}`,
-      siteName: siteConfig.name,
-      locale: locale === 'he' ? 'he_IL' : 'en_US',
-      type: 'website',
-      images: [
-        {
-          url: '/opengraph-image',
-          width: 1200,
-          height: 630,
-          alt: t('title'),
-        },
-      ],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: t('title'),
-      description: t('description'),
-      images: ['/twitter-image'],
-    },
     robots: {
       index: true,
       follow: true,
@@ -145,19 +119,36 @@ export default async function LocaleLayout({
         availableLanguage: ['English', 'Hebrew'],
       },
     ],
+    description: content.meta.defaultDescription,
     founder: {
       '@type': 'Person',
       name: siteConfig.author,
-      jobTitle: siteConfig.jobTitle,
+      jobTitle: content.home.title,
+      description: content.home.subtitle,
+      knowsAbout: [
+        'RAG',
+        'LLM evals',
+        'AI agents',
+        'tool calling',
+        'Next.js',
+        'NestJS',
+        'Python',
+        'FastAPI',
+        'ACL',
+        'retrieval security',
+      ],
     },
     knowsAbout: [
-      'Custom Software Development',
-      'Business Automation',
-      'AI Development',
-      'CRM Automation',
-      'SaaS Development',
-      'MVP Development',
-      'Workflow Automation',
+      'RAG',
+      'LLM evals',
+      'AI agents',
+      'tool calling',
+      'Next.js',
+      'NestJS',
+      'Python',
+      'FastAPI',
+      'ACL',
+      'retrieval security',
     ],
   };
 
@@ -182,7 +173,13 @@ export default async function LocaleLayout({
       name: siteConfig.name,
     },
     areaServed: 'Worldwide',
-    serviceType: ['Custom Software Development', 'Business Automation Solutions', 'AI Development', 'CRM Automation'],
+    serviceType: [
+      'RAG chat repair',
+      'AI in production',
+      'LLM evals',
+      'Retrieval ACL',
+      'Product engineering',
+    ],
     description: content.meta.defaultDescription,
     url: baseUrl,
     telephone: siteConfig.phone,

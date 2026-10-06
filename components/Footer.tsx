@@ -43,6 +43,10 @@ export default function Footer({ content }: FooterProps) {
             <Link href={sitePaths.accessibilityStatement} className="font-extrabold text-[#526174] transition hover:text-[#1d72d2]">
               {content.footer.accessibility}
             </Link>
+            <span aria-hidden="true">/</span>
+            <Link href={sitePaths.businessAutomation} className="font-extrabold text-[#526174] transition hover:text-[#1d72d2]">
+              {content.nav.automation}
+            </Link>
           </div>
         </div>
         <div className="flex items-center gap-4">

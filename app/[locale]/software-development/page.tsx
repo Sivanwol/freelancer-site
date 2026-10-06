@@ -1,9 +1,8 @@
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
-import { getBaseUrl } from '@/lib/config';
 import { getCompanyContent } from '@/lib/company-content';
-import { getLocaleAlternates } from '@/lib/seo';
+import { buildPageMetadata } from '@/lib/seo';
 import { sitePaths } from '@/lib/site-paths';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { SiteChrome } from '@/components/site-chrome';
@@ -20,14 +19,14 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const content = getCompanyContent(locale);
-  const baseUrl = getBaseUrl();
 
-  return {
+  return buildPageMetadata({
+    locale,
+    path: sitePaths.softwareDevelopment,
     title: content.meta.softwareTitle,
     description: content.meta.softwareDescription,
-    metadataBase: new URL(baseUrl),
-    alternates: getLocaleAlternates(locale, sitePaths.softwareDevelopment),
-  };
+    imageAlt: content.meta.softwareTitle,
+  });
 }
 
 export default async function SoftwareDevelopment({ params }: Props) {

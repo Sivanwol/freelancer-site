@@ -6,7 +6,7 @@ import { buildPageMetadata } from '@/lib/seo';
 import { sitePaths } from '@/lib/site-paths';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { SiteChrome } from '@/components/site-chrome';
-import { AboutPage } from '@/components/company/CompanySections';
+import { RagProductionPage } from '@/components/company/CompanySections';
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -22,21 +22,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return buildPageMetadata({
     locale,
-    path: sitePaths.aboutUs,
-    title: content.meta.aboutTitle,
-    description: content.meta.aboutDescription,
-    imageAlt: content.meta.aboutTitle,
+    path: sitePaths.ragProduction,
+    title: content.meta.ragTitle,
+    description: content.meta.ragDescription,
+    imageAlt: content.meta.ragTitle,
   });
 }
 
-export default async function About({ params }: Props) {
+export default async function RagProduction({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
 
   return (
     <ErrorBoundary>
       <SiteChrome locale={locale}>
-        <AboutPage locale={locale} />
+        <RagProductionPage locale={locale} />
       </SiteChrome>
     </ErrorBoundary>
   );

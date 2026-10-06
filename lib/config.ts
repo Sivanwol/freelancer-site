@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: 'DevCo Solutions',
-  legalName: 'DevCo Solution',
+  legalName: 'DevCo Solutions',
   author: 'Sivan Wolberg',
-  jobTitle: 'CEO, DevCo Solutions',
+  jobTitle: 'Senior software engineer for AI in production',
   email: 'info@devco-solution.online',
   fallbackEmail: 'fastwings@gmail.com',
   phone: '+972545566786',

@@ -51,7 +51,7 @@ export default function Navbar({ content }: NavbarProps) {
   const navItems = [
     { label: content.nav.home, href: sitePaths.home },
     { label: content.nav.software, href: sitePaths.softwareDevelopment },
-    { label: content.nav.automation, href: sitePaths.businessAutomation },
+    { label: content.nav.rag, href: sitePaths.ragProduction },
     { label: content.nav.about, href: sitePaths.aboutUs },
     { label: content.nav.testimonials, href: `${sitePaths.home}#testimonials` },
     { label: content.nav.blog, href: sitePaths.blog },

@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
-export const alt = 'DevCo Solutions - Software and automation systems built to scale';
+export const alt = 'DevCo Solutions — checks and repairs live product AI chat (RAG)';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -24,14 +24,14 @@ export default async function Image() {
         <div style={{ display: 'flex', color: '#75b7ff', fontSize: 30, fontWeight: 700, letterSpacing: 4 }}>
           DEVCO SOLUTIONS
         </div>
-        <div style={{ display: 'flex', marginTop: 28, maxWidth: 900, fontSize: 70, lineHeight: 1.05, fontWeight: 800 }}>
-          Software and automation systems built to scale
+        <div style={{ display: 'flex', marginTop: 28, maxWidth: 980, fontSize: 64, lineHeight: 1.05, fontWeight: 800 }}>
+          Senior engineer for AI in production
         </div>
-        <div style={{ display: 'flex', marginTop: 28, maxWidth: 820, color: '#b8c6d8', fontSize: 28, lineHeight: 1.35 }}>
-          Custom software, AI products, CRM automation, integrations, and business workflows.
+        <div style={{ display: 'flex', marginTop: 28, maxWidth: 860, color: '#b8c6d8', fontSize: 28, lineHeight: 1.35 }}>
+          Checks and repairs live product AI chat (RAG): wrong answers, missing citations, missing ACL, missing evals.
         </div>
         <div style={{ display: 'flex', gap: 14, marginTop: 42 }}>
-          {['Software Development', 'Business Automation', 'AI Systems'].map((item) => (
+          {['RAG repair', 'Citations', 'ACL and evals'].map((item) => (
             <div
               key={item}
               style={{
