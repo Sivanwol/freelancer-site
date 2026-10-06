@@ -64,14 +64,31 @@ export const companyContent = {
       contact: 'Talk With Our Team',
     },
     home: {
-      eyebrow: 'Checks and repairs AI already running in your product',
-      title: 'Senior software engineer for AI in production',
+      eyebrow: 'Software architect and CTO for product work',
+      title: 'Software architect for product and AI in production',
       subtitle:
-        'Checks and repairs live product AI chat (RAG): wrong answers, missing citations, and missing permissions.',
+        'Builds full product systems — web, backend, and APIs — and also checks and repairs live AI chat (RAG) when that chat is already running. Chat repair is one service, not the whole practice.',
       proof: ['17+ years of architecture experience', 'Top Rated Plus Upwork proof', 'AI, web, mobile, backend, and automation delivery'],
       pathsTitle: 'Choose the track that fits your next move',
       paths: [
         {
+          label: 'Software development',
+          title: 'Product systems and architecture',
+          description:
+            'SaaS, web, mobile, backend, and APIs in the stack delivered on Upwork: Next.js, React, Node.js, NestJS, Laravel, Python, and FastAPI.',
+          href: serviceRoutes.software,
+          tags: ['Next.js', 'React', 'NestJS', 'Laravel', 'Python'],
+        },
+        {
+          label: 'AI agents',
+          title: 'AI agents and features inside the product',
+          description:
+            'Agents, tool calling, and AI features inside an existing system, with permissions and evals.',
+          href: `${serviceRoutes.software}#services`,
+          tags: ['AI Agents', 'LangChain', 'Tool calling'],
+        },
+        {
+          label: 'Chat repair',
           title: 'RAG chat repair',
           description:
             'Audit and fix a chat that is already live: wrong answers, missing citations, retrieval permissions, and evals before the change ships.',
@@ -79,18 +96,12 @@ export const companyContent = {
           tags: ['RAG', 'Citations', 'ACL', 'Evals'],
         },
         {
-          title: 'AI features in an existing product',
+          label: 'Integrations',
+          title: 'Integrations and APIs',
           description:
-            'Add RAG, permissions, and quality checks inside the product you already run, in your stack.',
-          href: serviceRoutes.software,
-          tags: ['Next.js', 'NestJS', 'Python', 'FastAPI'],
-        },
-        {
-          title: 'Integrations around AI systems',
-          description:
-            'Connections to systems you already run, when the product needs them. Supporting work, not the lead offer.',
+            'Connect systems, CRM, and data when the product needs it. Part of the work, not the whole practice.',
           href: serviceRoutes.automation,
-          tags: ['APIs', 'CRM', 'Webhooks'],
+          tags: ['APIs', 'PostgreSQL', 'AWS'],
         },
       ],
       processTitle: 'A clear development process',
@@ -98,7 +109,7 @@ export const companyContent = {
         'The onboarding flow from the Canva deck becomes the operating model clients can understand before the first sprint begins.',
       proofTitle: 'Built around senior execution',
       proofText:
-        'DevCo brings senior engineering judgment to AI that is already in production: stabilize the live chat first, then build the product features and integrations around it.',
+        'DevCo brings product architecture and senior delivery: full systems, AI agents, and integrations. RAG chat repair is one service when the chat is already live.',
       faq: {
         eyebrow: 'FAQ',
         title: 'Common questions about working with DevCo',
@@ -106,7 +117,7 @@ export const companyContent = {
           {
             question: 'Who is DevCo Solutions and who leads the work?',
             answer:
-              'DevCo Solutions is led by Sivan Wolberg, a senior software engineer for AI in production, with 17+ years of experience. The lead work is checking and repairing live product AI chat (RAG): wrong answers, citations, permissions, and evals. Product engineering and integrations sit around that.',
+              'DevCo Solutions is led by Sivan Wolberg, a software architect and CTO, with 17+ years of experience. The work covers product development, AI agents, and integrations. Repairing a live AI chat (RAG) — wrong answers, citations, permissions, and evals — is one of those services.',
           },
           {
             question: 'How does pricing work?',
@@ -165,12 +176,12 @@ export const companyContent = {
       ],
     },
     softwarePage: {
-      eyebrow: 'AI inside the product you already run',
-      title: 'AI features inside an existing product | DevCo',
+      eyebrow: 'Software development and architecture',
+      title: 'Software development and product architecture | DevCo',
       subtitle:
-        'AI features inside an existing product include RAG, permissions on what the model can retrieve, and evals before a release — in the system you already run.',
+        'Product development covers SaaS, web, mobile, backend, and APIs in Next.js, React, Node.js, NestJS, Laravel, and Python/FastAPI.',
       aiNote:
-        'The work lands in your stack: retrieval, prompts, access checks, and a repeatable eval gate, then the fixes ship in the product.',
+        'RAG, retrieval permissions, and evals are one part of that work, inside the system you already run.',
       vibeCoding: {
         eyebrow: 'Sound familiar?',
         title: 'Vibe coding works… until it doesn’t.',
@@ -383,7 +394,7 @@ export const companyContent = {
       eyebrow: 'Supporting integrations',
       title: 'Integrations and automation around AI systems',
       subtitle:
-        'When an AI system in the product needs a connection to a CRM, a data source, or a process you already run, that integration is built around it. This is supporting work, not the lead offer.',
+        'When the product needs a connection to a CRM, a data source, or a process you already run, that integration is part of the build.',
       services: [
         {
           title: 'AI Agents for Business',
@@ -501,7 +512,7 @@ export const companyContent = {
       title: 'Sivan Wolberg, senior software engineer for AI in production',
       subtitle: '17+ years of experience, now building AI in production.',
       bioTitle: 'Sivan Wolberg',
-      bioRole: 'Senior software engineer for AI in production',
+      bioRole: 'Software architect and CTO',
       bioParagraphs: [
         'I am Sivan Wolberg. I help turn product ideas into systems that work at production scale — not just screens that look nice.',
         'I have been in the field for more than 17 years: complex web platforms, Unity systems, and full-stack product work from invention to delivery. I know how to take broken or fragile codebases and bring them to a stable state.',
@@ -760,15 +771,15 @@ export const companyContent = {
       ctaText: 'A short call is enough to see whether the failure is retrieval, permissions, or the lack of an eval.',
     },
     meta: {
-      defaultTitle: 'Senior software engineer for AI in production | DevCo Solutions',
+      defaultTitle: 'Software architect for product and AI in production | DevCo Solutions',
       defaultDescription:
-        'Checks and repairs live product AI chat (RAG): wrong answers, missing citations, missing ACL, and missing evals. 17+ years of experience.',
-      softwareTitle: 'AI features inside an existing product | DevCo',
+        'Full product systems, AI agents, and integrations. RAG chat repair is one of the services. 17+ years of experience.',
+      softwareTitle: 'Software development and product architecture | DevCo',
       softwareDescription:
-        'RAG, retrieval permissions, and evals inside the product you already run. Senior engineering in your stack.',
+        'SaaS, web, mobile, backend, and APIs in Next.js, NestJS, Laravel, and Python/FastAPI. RAG repair is one part of the work.',
       automationTitle: 'Integrations and automation around AI systems | DevCo',
       automationDescription:
-        'Supporting integrations around an AI system already in the product. Not the lead offer.',
+        'APIs and connections around the product when it needs them.',
       showcasesTitle: 'Showcases - DevCo Solutions',
       showcasesDescription:
         'Selected DevCo software and automation showcase work using real product visuals.',
@@ -832,14 +843,31 @@ export const companyContent = {
       contact: 'דברו עם הצוות',
     },
     home: {
-      eyebrow: 'בדיקה ותיקון של AI שכבר רץ במוצר',
-      title: 'מהנדס תוכנה בכיר ל-AI בפרודקשן',
+      eyebrow: 'ארכיטקט תוכנה ו-CTO למוצר',
+      title: 'ארכיטקט תוכנה למוצר ול-AI בפרודקשן',
       subtitle:
-        'בודק ומתקן צ\'אט AI (RAG) שכבר באוויר במוצר שלכם: תשובות שגויות, בלי ציטוטים, בלי הרשאות',
+        'בונה מערכות מוצר מלאות — ווב, Backend ו-APIs — וגם בודק ומתקן צ\'אט AI (RAG) כשזה כבר רץ במוצר. תיקון הצ\'אט הוא אחד השירותים, לא כולם.',
       proof: ['17+ שנות ניסיון בארכיטקטורה', 'הוכחת Upwork ו-Top Rated Plus', 'פיתוח AI, ווב, מובייל, Backend ואוטומציה'],
       pathsTitle: 'בחרו את המסלול שמתאים לשלב הבא',
       paths: [
         {
+          label: 'פיתוח תוכנה',
+          title: 'מערכות מוצר וארכיטקטורה',
+          description:
+            'SaaS, ווב, מובייל, Backend ו-APIs בסטאק שנמסר ב-Upwork: Next.js, React, Node.js, NestJS, Laravel, Python ו-FastAPI.',
+          href: serviceRoutes.software,
+          tags: ['Next.js', 'React', 'NestJS', 'Laravel', 'Python'],
+        },
+        {
+          label: 'סוכני AI',
+          title: 'סוכני AI ופיצ\'רים בתוך המוצר',
+          description:
+            'סוכנים, tool calling ופיצ\'רי AI בתוך מערכת קיימת, עם הרשאות ו-evals.',
+          href: `${serviceRoutes.software}#services`,
+          tags: ['AI Agents', 'LangChain', 'Tool calling'],
+        },
+        {
+          label: 'תיקון צ\'אט',
           title: 'תיקון צ\'אט AI (RAG)',
           description:
             'בודקים ומתקנים צ\'אט שכבר רץ במוצר: תשובות שגויות, ציטוטים חסרים, הרשאות על השליפה, ו-evals לפני שהשינוי עולה.',
@@ -847,18 +875,12 @@ export const companyContent = {
           tags: ['RAG', 'Citations', 'ACL', 'Evals'],
         },
         {
-          title: 'פיצ\'רי AI בתוך מוצר קיים',
+          label: 'אינטגרציות',
+          title: 'אינטגרציות ו-APIs',
           description:
-            'מוסיפים RAG, הרשאות ובקרת איכות למוצר שכבר באוויר, בסטאק שלכם.',
-          href: serviceRoutes.software,
-          tags: ['Next.js', 'NestJS', 'Python', 'FastAPI'],
-        },
-        {
-          title: 'אינטגרציות סביב מערכות AI',
-          description:
-            'חיבורים למערכות שכבר רצות, כשהמוצר צריך אותם. זה מסלול תומך, לא ההצעה המרכזית.',
+            'חיבור מערכות, CRM ודאטה כשהמוצר צריך את זה. חלק מהעבודה, לא כל העבודה.',
           href: serviceRoutes.automation,
-          tags: ['APIs', 'CRM', 'Webhooks'],
+          tags: ['APIs', 'PostgreSQL', 'AWS'],
         },
       ],
       processTitle: 'תהליך פיתוח ברור',
@@ -866,7 +888,7 @@ export const companyContent = {
         'תהליך האונבורדינג מהמצגת הופך למודל עבודה שהלקוח מבין לפני תחילת הספרינט הראשון.',
       proofTitle: 'בנוי סביב ביצוע בכיר',
       proofText:
-        'DevCo מביאה שיקול דעת הנדסי בכיר ל-AI שכבר בפרודקשן: קודם מייצבים את הצ\'אט החי, ואחר כך בונים את פיצ\'רי המוצר והחיבורים סביבו.',
+        'DevCo מביאה ארכיטקטורת מוצר וביצוע בכיר: מערכות מלאות, סוכני AI ואינטגרציות. תיקון צ\'אט RAG הוא אחד השירותים כשהצ\'אט כבר באוויר.',
       faq: {
         eyebrow: 'שאלות נפוצות',
         title: 'שאלות נפוצות על העבודה עם DevCo',
@@ -874,7 +896,7 @@ export const companyContent = {
           {
             question: 'מי זו DevCo Solutions ומי מוביל את העבודה?',
             answer:
-              'DevCo Solutions מובלת על ידי סיון וולברג, מהנדס תוכנה בכיר ל-AI בפרודקשן, עם 17+ שנות ניסיון. העבודה המרכזית היא בדיקה ותיקון של צ\'אט AI (RAG) שכבר באוויר: תשובות שגויות, ציטוטים, הרשאות ו-evals. פיתוח מוצר ואינטגרציות באים סביב זה.',
+              'DevCo Solutions מובלת על ידי סיון וולברג, ארכיטקט תוכנה ו-CTO, עם 17+ שנות ניסיון. העבודה כוללת פיתוח מוצר, סוכני AI ואינטגרציות. תיקון צ\'אט AI (RAG) שכבר באוויר — תשובות שגויות, ציטוטים, הרשאות ו-evals — הוא אחד השירותים.',
           },
           {
             question: 'איך עובדת התמחור?',
@@ -933,12 +955,12 @@ export const companyContent = {
       ],
     },
     softwarePage: {
-      eyebrow: 'AI בתוך המוצר שכבר רץ',
-      title: 'פיצ\'רי AI בתוך מוצר קיים | DevCo',
+      eyebrow: 'פיתוח תוכנה וארכיטקטורה',
+      title: 'פיתוח תוכנה וארכיטקטורה למוצר | DevCo',
       subtitle:
-        'פיצ\'רי AI בתוך מוצר קיים כוללים RAG, הרשאות על מה שהמודל שולף, ובקרת איכות (evals) לפני שחרור — בתוך המערכת שכבר רצה אצלכם.',
+        'פיתוח מוצר כולל SaaS, ווב, מובייל, Backend ו-APIs ב-Next.js, React, Node.js, NestJS, Laravel ו-Python/FastAPI.',
       aiNote:
-        'העבודה נכנסת לסטאק שלכם: שליפה, פרומפטים, בדיקת הרשאות ושער eval שחוזר על עצמו, ואז התיקונים עולים במוצר.',
+        'RAG, הרשאות על השליפה ו-evals הם חלק אחד מהעבודה הזו, בתוך המערכת שכבר רצה אצלכם.',
       vibeCoding: {
         eyebrow: 'נשמע מוכר?',
         title: 'וויב קודינג עובד… עד שלא.',
@@ -1151,7 +1173,7 @@ export const companyContent = {
       eyebrow: 'אינטגרציות תומכות',
       title: 'אינטגרציות ואוטומציה סביב מערכות AI',
       subtitle:
-        'כשמערכת AI במוצר צריכה חיבור ל-CRM, למקור נתונים או לתהליך שכבר רץ, בונים את האינטגרציה סביבה. זה מסלול תומך, לא ההצעה המרכזית.',
+        'כשהמוצר צריך חיבור ל-CRM, למקור נתונים או לתהליך שכבר רץ, האינטגרציה היא חלק מהבנייה.',
       services: [
         {
           title: 'סוכני AI לעסקים',
@@ -1269,7 +1291,7 @@ export const companyContent = {
       title: 'סיון וולברג, מהנדס תוכנה בכיר ו-AI בפרודקשן',
       subtitle: '17+ שנות ניסיון, היום בונה AI בפרודקשן',
       bioTitle: 'סיון וולברג',
-      bioRole: 'מהנדס תוכנה בכיר ל-AI בפרודקשן',
+      bioRole: 'ארכיטקט תוכנה ו-CTO',
       bioParagraphs: [
         'אני סיון וולברג. אני עוזר להפוך רעיונות למוצרים למערכות שעובדות בסקייל של פרודקשן — לא רק מסכים שנראים יפים.',
         'אני בתחום יותר מ־17 שנים: פלטפורמות ווב מורכבות, מערכות Unity, ועבודה Full Stack מהמצאה ועד מסירה. אני יודע לקחת מערכות שבורות או שברירות ולהביא אותן למצב יציב.',
@@ -1527,15 +1549,15 @@ export const companyContent = {
       ctaText: 'שיחה קצרה מספיקה כדי לראות אם הכשל הוא בשליפה, בהרשאות, או בחסרון של eval.',
     },
     meta: {
-      defaultTitle: 'מהנדס תוכנה בכיר ל-AI בפרודקשן | DevCo Solutions',
+      defaultTitle: 'ארכיטקט תוכנה למוצר ול-AI בפרודקשן | DevCo Solutions',
       defaultDescription:
-        'בדיקה ותיקון של צ\'אט AI (RAG) שכבר באוויר במוצר שלכם: תשובות שגויות, ציטוטים, הרשאות ו-evals. 17+ שנות ניסיון.',
-      softwareTitle: 'פיצ\'רי AI בתוך מוצר קיים | DevCo',
+        'פיתוח מערכות מלאות, סוכני AI ואינטגרציות. תיקון צ\'אט AI (RAG) הוא אחד השירותים. 17+ שנות ניסיון.',
+      softwareTitle: 'פיתוח תוכנה וארכיטקטורה למוצר | DevCo',
       softwareDescription:
-        'RAG, הרשאות על השליפה ו-evals בתוך המוצר שכבר רץ. הנדסה בכירה בסטאק שלכם.',
+        'SaaS, ווב, מובייל, Backend ו-APIs ב-Next.js, NestJS, Laravel ו-Python/FastAPI. תיקון RAG הוא חלק אחד מהעבודה.',
       automationTitle: 'אינטגרציות ואוטומציה סביב מערכות AI | DevCo',
       automationDescription:
-        'אינטגרציות תומכות סביב מערכת AI שכבר במוצר. לא ההצעה המרכזית.',
+        'APIs וחיבורים סביב המוצר כשהוא צריך אותם.',
       showcasesTitle: 'פרויקטים - DevCo Solutions',
       showcasesDescription:
         'עבודות נבחרות של DevCo בפיתוח תוכנה ואוטומציה, על בסיס תמונות מוצר אמיתיות.',

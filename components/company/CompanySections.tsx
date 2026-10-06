@@ -7,7 +7,6 @@ import ContactForm from '@/components/contact-form';
 import {
   FaArrowDown,
   FaArrowRight,
-  FaBolt,
   FaBrain,
   FaCalendarAlt,
   FaChartLine,
@@ -40,7 +39,7 @@ type PageProps = {
 
 type Content = ReturnType<typeof getCompanyContent>;
 
-const pathIcons = [FaCode, FaBolt];
+const pathIcons = [FaCode, FaBrain, FaComments, FaDatabase];
 const serviceIcons = [
   FaLayerGroup,
   FaDatabase,
@@ -151,7 +150,7 @@ function getAccent(locale: string, page: 'home' | 'software' | 'automation' | 'a
   const isHebrew = localeValue(locale) === 'he';
   const accents = {
     home: 'AI',
-    software: 'AI',
+    software: isHebrew ? 'ארכיטקטורה' : 'architecture',
     automation: isHebrew ? 'מערכות AI' : 'AI systems',
     about: 'AI',
     rag: 'RAG',
@@ -240,7 +239,7 @@ function SplitPaths({ content, isRtl }: { content: Content; isRtl: boolean }) {
                       <Icon className="h-6 w-6" aria-hidden="true" />
                     </span>
                     <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-extrabold text-[#1d72d2] shadow-sm">
-                      {index === 0 ? content.cta.software : content.cta.automation}
+                      {path.label}
                       <ArrowIcon isRtl={isRtl} />
                     </span>
                   </div>
