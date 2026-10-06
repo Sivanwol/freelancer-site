@@ -91,9 +91,9 @@ export const companyContent = {
           label: 'Chat repair',
           title: 'Repair a chat already in the product',
           description:
-            'Check and fix a chat that is already live: wrong answers, no source, or information shown to the wrong person.',
+            'Check and fix a chat that is already live: wrong answers, a conversation that goes bad, messy information, or no clear rules.',
           href: serviceRoutes.ragProduction,
-          tags: ['RAG', 'Citations', 'ACL', 'Evals'],
+          tags: ['Answers', 'Memory', 'Information', 'Rules'],
         },
         {
           label: 'Integrations',
@@ -715,7 +715,7 @@ export const companyContent = {
       eyebrow: 'Live product AI chat',
       title: 'Repair the chat already running in your product',
       subtitle:
-        'If the chat in your product invents answers, does not show where the information came from, or shows things a user should not see, we check it and fix it in your code.',
+        'If the chat in your product invents answers, the conversation goes bad, the information is a mess, or there are no clear rules for what it may do, we check it and fix it in your code.',
       problemsTitle: 'What shows up in a live chat',
       problems: [
         {
@@ -734,17 +734,29 @@ export const companyContent = {
           title: 'No check before launch',
           text: 'Nothing stops a release when a known question starts getting a wrong answer, or an answer with no source.',
         },
+        {
+          title: 'The conversation goes bad',
+          text: 'Over a longer chat the bot forgets, mixes things up, or keeps old details that no longer belong. The memory of the conversation itself has gone bad.',
+        },
+        {
+          title: 'The information is a mess',
+          text: 'The chat leans on information that was never organized, so it cannot find a straight answer even when the fact exists.',
+        },
+        {
+          title: 'No clear rules',
+          text: 'Nobody wrote down what the chat is allowed to do and what it must refuse, so it makes up its own rules.',
+        },
       ],
       workTitle: 'What we do',
       workText:
-        'We audit retrieval, prompts, and permissions, put an eval harness around the questions the product actually gets, and ship the fixes in your stack.',
+        'We look at where the answer comes from, whether the conversation is still reliable, whether the information is organized, and whether the rules are written down. Then we fix that in your code. The fix follows the chat you have now. It is not a fixed list promised in advance.',
       processTitle: 'Process',
       steps: [
-        { title: 'Discovery', text: 'Map the live chat, the corpus, the permission model, and the answers that are already wrong.' },
-        { title: 'Repro', text: 'Reproduce the bad answer and record what was retrieved, what the prompt allowed, and who was allowed to see it.' },
-        { title: 'Fix', text: 'Change retrieval, grounding, or access checks in the codebase you already run.' },
-        { title: 'Eval gate', text: 'The same question set has to pass, including cases that must refuse, before the change ships.' },
-        { title: 'Handoff', text: 'You keep the harness, the failing cases, and the notes for the next change.' },
+        { title: 'See what is happening', text: 'Map the live chat, the information it relies on, the rules, and the answers that are already wrong.' },
+        { title: 'Reproduce the failure', text: 'Reproduce the bad answer and record what it saw, what it was allowed to do, and where the conversation started to go bad.' },
+        { title: 'Fix', text: 'Change the information, the rules, or what the chat remembers, in the code you already run.' },
+        { title: 'Check before release', text: 'The same questions have to pass, including cases the chat must refuse, before the change ships.' },
+        { title: 'Hand off', text: 'You keep the failing cases and the notes for the next change.' },
       ],
       faq: {
         eyebrow: 'FAQ',
@@ -870,9 +882,9 @@ export const companyContent = {
           label: 'תיקון צ\'אט',
           title: 'תיקון צ\'אט שכבר רץ במוצר',
           description:
-            'בודקים ומתקנים צ\'אט שכבר רץ במוצר: תשובות שגויות, בלי מקור, או מידע שנחשף לאדם הלא נכון.',
+            'בודקים ומתקנים צ\'אט שכבר רץ במוצר: תשובות שגויות, שיחה שמתקלקלת, מידע לא מאורגן, או חוסר הנחיות.',
           href: serviceRoutes.ragProduction,
-          tags: ['RAG', 'Citations', 'ACL', 'Evals'],
+          tags: ['תשובות', 'זיכרון', 'מידע', 'הנחיות'],
         },
         {
           label: 'אינטגרציות',
@@ -1493,7 +1505,7 @@ export const companyContent = {
       eyebrow: 'צ\'אט שכבר באוויר',
       title: 'תיקון צ\'אט במוצר שכבר באוויר',
       subtitle:
-        'אם הצ\'אט במוצר ממציא תשובות, לא מראה מאיפה המידע הגיע, או מציג דברים שמשתמש לא אמור לראות, בודקים את זה ומתקנים בקוד שלכם.',
+        'אם הצ\'אט ממציא תשובות, השיחה מתקלקלת, המידע לא מאורגן, או שאין הנחיות ברורות למה מותר לו לעשות, בודקים את זה ומתקנים בקוד שלכם.',
       problemsTitle: 'מה רואים בצ\'אט חי',
       problems: [
         {
@@ -1512,21 +1524,33 @@ export const companyContent = {
           title: 'בלי בדיקה לפני עלייה לאוויר',
           text: 'שום דבר לא עוצר שחרור כששאלה מוכרת מתחילה לקבל תשובה שגויה או בלי מקור.',
         },
+        {
+          title: 'השיחה מתקלקלת',
+          text: 'לאורך שיחה ארוכה הצ\'אט שוכח, מערבב, או סוחב פרטים ישנים שכבר לא שייכים. הזיכרון של השיחה עצמו התקלקל.',
+        },
+        {
+          title: 'המידע לא מאורגן',
+          text: 'הצ\'אט נשען על מידע שלא סודר, אז הוא לא מוצא תשובה ישרה גם כשהעובדה קיימת.',
+        },
+        {
+          title: 'אין הנחיות',
+          text: 'אף אחד לא כתב מה מותר לצ\'אט לעשות ומה הוא חייב לסרב, אז הוא ממציא לעצמו כללים.',
+        },
       ],
       workTitle: 'מה עושים',
       workText:
-        'בודקים מאיפה התשובה מגיעה, מה מותר להראות, ובודקים את זה שוב לפני שחרור. התיקון נכנס לקוד שלכם.',
+        'בודקים מאיפה התשובה מגיעה, אם השיחה עדיין אמינה, אם המידע מאורגן, ואם יש הנחיות כתובות. אחר כך מתקנים את זה בקוד שלכם. התיקון הוא לפי הצ\'אט שרץ עכשיו, לא רשימה קבועה שאפשר להבטיח מראש.',
       processTitle: 'תהליך',
       steps: [
-        { title: 'Discovery', text: 'ממפים את הצ\'אט החי, את הקורפוס, את מודל ההרשאות, ואת התשובות שכבר שגויות.' },
-        { title: 'Repro', text: 'משחזרים את התשובה הרעה ורושמים מה נשלף, מה הפרומפט הרשה, ולמי מותר היה לראות את זה.' },
-        { title: 'Fix', text: 'משנים שליפה, עיגון או בדיקת גישה בקוד שכבר רץ אצלכם.' },
-        { title: 'Eval gate', text: 'אותו סט שאלות חייב לעבור, כולל מקרים שהבוט חייב לסרב בהם, לפני שהשינוי עולה.' },
-        { title: 'Handoff', text: 'נשארים אצלכם ה-harness, המקרים שנכשלים, וההערות לשינוי הבא.' },
+        { title: 'מבינים מה קורה', text: 'ממפים את הצ\'אט שרץ, את המידע שהוא נשען עליו, את הכללים, ואת התשובות שכבר שגויות.' },
+        { title: 'משחזרים את התקלה', text: 'משחזרים את התשובה הרעה ורושמים מה הוא ראה, מה הותר לו, ואיפה השיחה התחילה להתקלקל.' },
+        { title: 'מתקנים', text: 'משנים את המידע, את הכללים, או את מה שהצ\'אט זוכר, בקוד שכבר רץ אצלכם.' },
+        { title: 'בודקים לפני שחרור', text: 'אותן שאלות חייבות לעבור, כולל מקרים שהצ\'אט חייב לסרב בהם, לפני שהשינוי עולה.' },
+        { title: 'מוסרים', text: 'נשארים אצלכם המקרים שנכשלו וההערות לשינוי הבא.' },
       ],
       faq: {
         eyebrow: 'שאלות',
-        title: 'שאלות על צ\'אט RAG חי',
+        title: 'שאלות על צ\'אט שכבר באוויר',
         items: [
           {
             question: 'למה הצ\'אט AI במוצר שלנו ממציא תשובות?',
