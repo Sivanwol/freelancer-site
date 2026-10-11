@@ -13,7 +13,7 @@ export default function LocaleNotFound() {
         </p>
         <Link
           href="/he"
-          className="px-6 py-3 bg-sky-300 text-slate-950 rounded-[6px] hover:bg-white transition-colors text-sm font-semibold"
+          className="px-6 py-3 bg-sky-300 text-slate-950 rounded-[6px] hover:bg-stone-900/75 transition-colors text-sm font-semibold"
         >
           חזרה לדף הבית
         </Link>

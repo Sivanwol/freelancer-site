@@ -1,7 +1,7 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
-import { FaQuoteLeft, FaStar, FaTimes } from 'react-icons/fa';
+import { useCallback, useEffect, useId, useRef, useState } from 'react';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 export type Testimonial = {
   text: string;
@@ -13,47 +13,30 @@ type Props = {
   testimonials: readonly Testimonial[];
   isRtl: boolean;
   labels: {
-    stars: string;
-    readFull: string;
-    close: string;
+    previous: string;
+    next: string;
+    slide: string;
   };
+  ctaHref: string;
+  ctaLabel: string;
 };
 
-function Stars({ label }: { label: string }) {
-  return (
-    <div className="flex gap-1 text-[#1d72d2]" aria-label={label}>
-      {[0, 1, 2, 3, 4].map((star) => (
-        <FaStar key={star} className="h-4 w-4" aria-hidden="true" />
-      ))}
-    </div>
-  );
-}
-
-export default function TestimonialsCarousel({ testimonials, isRtl, labels }: Props) {
-  const closeButtonRef = useRef<HTMLButtonElement>(null);
-  const triggerRef = useRef<HTMLButtonElement | null>(null);
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+export default function TestimonialsCarousel({ testimonials, isRtl, labels, ctaHref, ctaLabel }: Props) {
+  const trackId = useId();
+  const regionLabel = isRtl ? 'לקוחות ממליצים' : 'Client testimonials';
+  const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const [preferReducedMotion, setPreferReducedMotion] = useState(false);
+  const sectionRef = useRef<HTMLElement | null>(null);
 
-  const looped = [...testimonials, ...testimonials];
-  const active = activeIndex === null ? null : testimonials[activeIndex];
-  const titleId = 'testimonial-dialog-title';
-  const bodyId = 'testimonial-dialog-body';
+  const count = testimonials.length;
 
-  const open = useCallback((index: number, trigger?: HTMLButtonElement | null) => {
-    triggerRef.current = trigger ?? null;
-    setActiveIndex(index % testimonials.length);
-    setPaused(true);
-  }, [testimonials.length]);
-
-  const close = useCallback(() => {
-    setActiveIndex(null);
-    setPaused(false);
-    window.requestAnimationFrame(() => {
-      triggerRef.current?.focus();
-    });
-  }, []);
+  const go = useCallback(
+    (next: number) => {
+      setIndex((next + count) % count);
+    },
+    [count],
+  );
 
   useEffect(() => {
     const media = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -64,151 +47,137 @@ export default function TestimonialsCarousel({ testimonials, isRtl, labels }: Pr
   }, []);
 
   useEffect(() => {
-    if (window.location.hash !== '#testimonials') {
-      return;
+    if (preferReducedMotion || paused || count <= 1) {
+      return undefined;
     }
-    const frame = window.requestAnimationFrame(() => {
-      document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-    return () => window.cancelAnimationFrame(frame);
-  }, []);
+    const timer = window.setInterval(() => {
+      setIndex((current) => (current + 1) % count);
+    }, 5000);
+    return () => window.clearInterval(timer);
+  }, [preferReducedMotion, paused, count]);
 
   useEffect(() => {
-    if (activeIndex === null) {
-      return;
-    }
-
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-    closeButtonRef.current?.focus();
-
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
+      if (!sectionRef.current?.contains(document.activeElement) && document.activeElement !== document.body) {
+        return;
+      }
+      if (event.key === 'ArrowRight') {
         event.preventDefault();
-        close();
+        go(isRtl ? index - 1 : index + 1);
+      }
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        go(isRtl ? index + 1 : index - 1);
       }
     };
-
     window.addEventListener('keydown', onKeyDown);
-    return () => {
-      document.body.style.overflow = previousOverflow;
-      window.removeEventListener('keydown', onKeyDown);
-    };
-  }, [activeIndex, close]);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [go, index, isRtl]);
 
   return (
-    <>
-      <div
-        dir="ltr"
-        className="relative -mx-4 h-[320px] overflow-hidden px-4 sm:-mx-6 sm:px-6 lg:mx-0 lg:px-0"
-        onMouseEnter={() => {
-          if (activeIndex === null) {
-            setPaused(true);
-          }
-        }}
-        onMouseLeave={() => {
-          if (activeIndex === null) {
-            setPaused(false);
-          }
-        }}
-      >
-        <div
-          dir="ltr"
-          className={`flex h-full w-max flex-row gap-5 ${
-            preferReducedMotion
-              ? ''
-              : isRtl
-                ? 'animate-testimonials-marquee-rtl'
-                : 'animate-testimonials-marquee'
-          } ${paused || preferReducedMotion ? '[animation-play-state:paused]' : '[animation-play-state:running]'}`}
-        >
-          {looped.map((testimonial, index) => {
-            const sourceIndex = index % testimonials.length;
-            const seoQuoteId =
-              index < testimonials.length ? `testimonial-seo-${sourceIndex}` : undefined;
+    <section
+      ref={sectionRef}
+      id="testimonials"
+      className="relative overflow-hidden py-24 md:py-32"
+      tabIndex={0}
+      aria-roledescription="carousel"
+      aria-label={regionLabel}
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onFocusCapture={() => setPaused(true)}
+      onBlurCapture={(event) => {
+        if (!sectionRef.current?.contains(event.relatedTarget as Node)) {
+          setPaused(false);
+        }
+      }}
+    >
+      <div className="site-container">
+        <h2 className="mb-12 text-center text-4xl font-bold italic text-white md:text-6xl">
+          {isRtl ? 'לקוחות ממליצים' : 'Client testimonials'}
+        </h2>
 
-            return (
-              <button
-                key={`${testimonial.project}-${index}`}
-                type="button"
-                className="flex h-[320px] w-[min(100vw-2.5rem,22rem)] shrink-0 flex-col rounded-[28px] border border-[#dbe7f5] bg-white p-6 text-start shadow-sm outline-none transition hover:border-[#9cc7f0] hover:shadow-md focus-visible:border-[#1d72d2] sm:w-[22rem]"
-                aria-label={`${labels.readFull}: ${testimonial.project}`}
-                onClick={(event) => open(sourceIndex, event.currentTarget)}
-              >
-                <div className="mb-5 flex items-center justify-between gap-4">
-                  <FaQuoteLeft className="h-7 w-7 text-[#1d72d2]/30" aria-hidden="true" />
-                  <Stars label={labels.stars} />
-                </div>
-                <blockquote
-                  id={seoQuoteId}
-                  lang="en"
-                  dir="ltr"
-                  className="line-clamp-5 overflow-hidden text-start text-base font-semibold leading-8 text-[#0d1626]"
-                >
-                  “{testimonial.text}”
-                </blockquote>
-                <div className="mt-auto pt-6">
-                  <p lang="en" dir="ltr" className="text-start text-sm font-extrabold text-[#0d1626]">
-                    {testimonial.project}
-                  </p>
-                  <p className="mt-1 text-sm font-semibold text-[#526174]">{testimonial.date}</p>
-                </div>
-              </button>
-            );
-          })}
-        </div>
-      </div>
-
-      {active ? (
-        <div className="fixed inset-0 z-[80] flex items-center justify-center p-4" role="presentation">
-          <button
-            type="button"
-            className="absolute inset-0 bg-[#0a1423]/45 backdrop-blur-[1px]"
-            aria-label={labels.close}
-            onClick={close}
-          />
-          <div
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby={titleId}
-            aria-describedby={bodyId}
-            className={`relative z-10 flex max-h-[min(90vh,42rem)] w-full max-w-2xl flex-col overflow-hidden rounded-[28px] border border-[#dbe7f5] bg-white p-6 shadow-2xl shadow-blue-950/20 sm:p-8 ${
-              preferReducedMotion ? '' : 'animate-scale-in'
-            }`}
-          >
-            <button
-              ref={closeButtonRef}
-              type="button"
-              onClick={close}
-              className="absolute top-4 grid h-9 w-9 place-items-center rounded-full border border-[#d5e4f4] bg-white text-[#526174] transition hover:border-[#9cc7f0] hover:text-[#1d72d2] ltr:right-4 rtl:left-4"
-              aria-label={labels.close}
-            >
-              <FaTimes className="h-4 w-4" aria-hidden="true" />
-            </button>
-
-            <div className="mb-5 flex items-center justify-between gap-4 pe-10">
-              <FaQuoteLeft className="h-7 w-7 text-[#1d72d2]/30" aria-hidden="true" />
-              <Stars label={labels.stars} />
-            </div>
-
-            <blockquote
-              id={bodyId}
-              lang="en"
+        <div className="relative px-2 sm:px-12">
+          <div className="overflow-hidden">
+            <div
+              id={trackId}
               dir="ltr"
-              className="overflow-y-auto text-start text-base font-semibold leading-8 text-[#0d1626] sm:text-lg sm:leading-9"
+              className="flex transition-transform duration-500 ease-out motion-reduce:transition-none"
+              style={{ transform: `translateX(-${index * 100}%)` }}
+              aria-live="polite"
             >
-              “{active.text}”
-            </blockquote>
-
-            <div className="mt-6 border-t border-[#dbe7f5] pt-5">
-              <p id={titleId} lang="en" dir="ltr" className="text-start text-sm font-extrabold text-[#0d1626]">
-                {active.project}
-              </p>
-              <p className="mt-1 text-sm font-semibold text-[#526174]">{active.date}</p>
+              {testimonials.map((testimonial, slideIndex) => (
+                <article
+                  key={`${testimonial.project}-${slideIndex}`}
+                  className="min-w-full shrink-0 px-2"
+                  role="group"
+                  aria-roledescription="slide"
+                  aria-label={`${labels.slide} ${slideIndex + 1} ${isRtl ? 'מתוך' : 'of'} ${count}`}
+                  aria-hidden={slideIndex !== index}
+                >
+                  <div className="glass-card mx-auto max-w-4xl rounded-[3rem] p-8 md:p-12">
+                    <blockquote lang="en" dir="ltr" className="text-lg italic leading-relaxed text-stone-300 md:text-xl">
+                      &ldquo;{testimonial.text}&rdquo;
+                    </blockquote>
+                    <footer className="mt-8 border-t border-stone-800 pt-8">
+                      <p lang="en" dir="ltr" className="text-lg font-bold text-white">
+                        {testimonial.project}
+                      </p>
+                      <p className="text-stone-500">{testimonial.date}</p>
+                    </footer>
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
+
+          {count > 1 ? (
+            <>
+              <button
+                type="button"
+                onClick={() => go(isRtl ? index + 1 : index - 1)}
+                className="absolute top-1/2 hidden -translate-y-1/2 rounded-full border border-stone-800 bg-stone-900 p-4 text-amber-500 opacity-80 transition hover:border-amber-600 hover:opacity-100 focus-visible:opacity-100 sm:grid ltr:left-0 rtl:right-0"
+                aria-label={labels.previous}
+                aria-controls={trackId}
+              >
+                {isRtl ? <FaChevronRight aria-hidden="true" /> : <FaChevronLeft aria-hidden="true" />}
+              </button>
+              <button
+                type="button"
+                onClick={() => go(isRtl ? index - 1 : index + 1)}
+                className="absolute top-1/2 hidden -translate-y-1/2 rounded-full border border-stone-800 bg-stone-900 p-4 text-amber-500 opacity-80 transition hover:border-amber-600 hover:opacity-100 focus-visible:opacity-100 sm:grid ltr:right-0 rtl:left-0"
+                aria-label={labels.next}
+                aria-controls={trackId}
+              >
+                {isRtl ? <FaChevronLeft aria-hidden="true" /> : <FaChevronRight aria-hidden="true" />}
+              </button>
+            </>
+          ) : null}
+
+          {count > 1 ? (
+            <div className="mt-10 flex justify-center gap-3" role="tablist" aria-label={isRtl ? 'בחירת עדות' : 'Choose testimonial'}>
+              {testimonials.map((testimonial, dotIndex) => (
+                <button
+                  key={`dot-${testimonial.project}`}
+                  type="button"
+                  role="tab"
+                  aria-selected={dotIndex === index}
+                  aria-label={`${labels.slide} ${dotIndex + 1}`}
+                  onClick={() => setIndex(dotIndex)}
+                  className={`h-3 rounded-full transition-all ${
+                    dotIndex === index ? 'w-9 bg-amber-600' : 'w-3 bg-stone-700 hover:bg-stone-500'
+                  }`}
+                />
+              ))}
+            </div>
+          ) : null}
         </div>
-      ) : null}
-    </>
+
+        <div className="mt-12 text-center">
+          <a href={ctaHref} className="btn-primary px-10 py-4">
+            {ctaLabel}
+          </a>
+        </div>
+      </div>
+    </section>
   );
 }

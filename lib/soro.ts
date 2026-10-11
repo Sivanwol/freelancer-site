@@ -1,4 +1,5 @@
 import { logger } from '@/lib/logger';
+import fallbackArticles from '@/lib/soro-fallback-articles.json';
 
 export const WAVE1_SLUGS = [
   'operational-ai-agents',
@@ -181,19 +182,22 @@ export function stripArticleScripts(html: string): string {
   return html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '');
 }
 
+function fallbackArticleList(): SoroArticleMeta[] {
+  return dedupeArticlesBySlug(fallbackArticles as SoroArticleMeta[]);
+}
+
 export async function getSoroArticles(): Promise<SoroArticleMeta[]> {
   try {
     const script = await soroFetch(soroBase());
     return dedupeArticlesBySlug(parseArticleList(script));
   } catch (error) {
-    // A Soro outage must not fail the image build. Runtime requests still throw
-    // so ISR keeps the last successful page instead of caching an empty list.
-    if (!isProductionBuild()) {
-      throw error;
-    }
     const message = error instanceof Error ? error.message : String(error);
-    logger.warn('soro', 'Soro article list skipped during build', { error: message });
-    return [];
+    if (isProductionBuild()) {
+      logger.warn('soro', 'Soro article list skipped during build; using fallback cache', { error: message });
+      return fallbackArticleList();
+    }
+    logger.warn('soro', 'Soro article list unavailable; using fallback cache', { error: message });
+    return fallbackArticleList();
   }
 }
 

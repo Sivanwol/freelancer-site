@@ -29,6 +29,8 @@ import {
 import { SiUpwork } from 'react-icons/si';
 import { buildWhatsAppUrl } from '@/lib/whatsapp';
 import HeroShowcaseCarousel from './HeroShowcaseCarousel';
+import { HomeMarketingPage } from './home-marketing-page';
+import { SectionTalkCta } from '@/components/section-talk-cta';
 import SoftwareServicesAccordion from './software-services-accordion';
 import TestimonialsCarousel from './testimonials-carousel';
 import VibeCodingGrid from './vibe-coding-grid';
@@ -111,7 +113,7 @@ function ArrowIcon({ isRtl }: { isRtl: boolean }) {
 
 function PageFrame({ children }: { children: React.ReactNode }) {
   return (
-    <main id="main-content" className="min-h-screen overflow-hidden bg-[#f8fbff] text-[#0d1626]">
+    <main id="main-content" className="page-surface">
       {children}
     </main>
   );
@@ -140,7 +142,7 @@ function HighlightTitle({
   return (
     <Tag className={className}>
       {before ? <>{before} </> : null}
-      <span className="text-[#1d72d2]">{accent}</span>
+      <span className="text-[#e8b56a]">{accent}</span>
       {after ? <> {after}</> : null}
     </Tag>
   );
@@ -169,7 +171,7 @@ function ScrollDownLink({
   return (
     <a
       href={href}
-      className="mx-auto mt-6 inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#d5e4f4] bg-white text-[#1d72d2] shadow-sm transition hover:border-[#9cc7f0] hover:bg-[#f3f8fd]"
+      className="mx-auto mt-6 inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/25 bg-stone-900/75/10 text-[#e8b56a] shadow-sm backdrop-blur transition hover:border-[#e8b56a] hover:bg-stone-900/75/15"
       aria-label={label}
     >
       <FaArrowDown className="h-4 w-4" aria-hidden="true" />
@@ -202,9 +204,9 @@ function SectionIntro({
 }) {
   return (
     <div className={`mb-10 ${centered ? 'mx-auto max-w-4xl text-center' : 'max-w-4xl'}`}>
-      <p className="mb-4 text-sm font-extrabold uppercase tracking-[0.2em] text-[#1d72d2]">{eyebrow}</p>
-      <h2 className="hero-display text-4xl font-black leading-[0.98] text-[#0d1626] md:text-6xl">{title}</h2>
-      {subtitle ? <p className="mt-6 text-lg font-medium leading-8 text-[#526174] md:text-xl">{subtitle}</p> : null}
+      <p className="mb-4 text-sm font-extrabold uppercase tracking-[0.2em] text-amber-500">{eyebrow}</p>
+      <h2 className="hero-display text-4xl font-black leading-[0.98] text-stone-100 md:text-6xl">{title}</h2>
+      {subtitle ? <p className="mt-6 text-lg font-medium leading-8 text-stone-400 md:text-xl">{subtitle}</p> : null}
       <div className={`mt-6 flex flex-col gap-3 ${centered ? 'items-center' : 'items-start'}`}>
         <ContactCta content={content} />
         {scrollTo ? <ScrollDownLink href={scrollTo} label={content.cta.primary} /> : null}
@@ -215,7 +217,7 @@ function SectionIntro({
 
 function SplitPaths({ content, isRtl }: { content: Content; isRtl: boolean }) {
   return (
-    <section id="paths" className="site-section bg-white">
+    <section id="paths" className="site-section bg-stone-900/75">
       <div className="site-container">
         <SectionIntro
           content={content}
@@ -231,24 +233,24 @@ function SplitPaths({ content, isRtl }: { content: Content; isRtl: boolean }) {
               <Link
                 key={path.href}
                 href={path.href}
-                className="group flex min-h-[320px] flex-col justify-between rounded-[28px] border border-[#dbe7f5] bg-[#f8fbff] p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[#4c9df2] hover:shadow-2xl hover:shadow-blue-500/10 md:p-8"
+                className="group flex min-h-[320px] flex-col justify-between rounded-[28px] border border-stone-800 bg-stone-950/40 p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-amber-600 hover:shadow-2xl hover:shadow-brand/10 md:p-8"
               >
                 <div>
                   <div className="mb-8 flex items-center justify-between gap-4">
-                    <span className="grid h-14 w-14 place-items-center rounded-2xl bg-[#e7f2ff] text-[#1d72d2]">
+                    <span className="grid h-14 w-14 place-items-center rounded-2xl bg-stone-900 text-amber-500">
                       <Icon className="h-6 w-6" aria-hidden="true" />
                     </span>
-                    <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-extrabold text-[#1d72d2] shadow-sm">
+                    <span className="inline-flex items-center gap-2 rounded-full bg-stone-900/75 px-4 py-2 text-sm font-extrabold text-amber-500 shadow-sm">
                       {path.label}
                       <ArrowIcon isRtl={isRtl} />
                     </span>
                   </div>
-                  <h3 className="hero-display text-3xl font-black leading-none text-[#0d1626] md:text-5xl">{path.title}</h3>
-                  <p className="mt-5 text-base font-medium leading-8 text-[#526174] md:text-lg">{path.description}</p>
+                  <h3 className="hero-display text-3xl font-black leading-none text-stone-100 md:text-5xl">{path.title}</h3>
+                  <p className="mt-5 text-base font-medium leading-8 text-stone-400 md:text-lg">{path.description}</p>
                 </div>
                 <div className="mt-8 flex flex-wrap gap-2">
                   {path.tags.map((tag) => (
-                    <span key={tag} className="rounded-full border border-[#c7d9ee] bg-white px-3 py-1 text-xs font-extrabold text-[#526174]">
+                    <span key={tag} className="rounded-full border border-stone-700 bg-stone-900/75 px-3 py-1 text-xs font-extrabold text-stone-400">
                       {tag}
                     </span>
                   ))}
@@ -257,6 +259,7 @@ function SplitPaths({ content, isRtl }: { content: Content; isRtl: boolean }) {
             );
           })}
         </div>
+        <SectionTalkCta label={content.cta.primary} />
       </div>
     </section>
   );
@@ -264,7 +267,7 @@ function SplitPaths({ content, isRtl }: { content: Content; isRtl: boolean }) {
 
 function ProcessSection({ content, nextHref = '#contact' }: { content: Content; nextHref?: string }) {
   return (
-    <section id="process" className="site-section soft-lines bg-[#f8fbff]">
+    <section id="process" className="site-section soft-lines bg-stone-950/40">
       <div className="site-container">
         <SectionIntro
           content={content}
@@ -280,20 +283,20 @@ function ProcessSection({ content, nextHref = '#contact' }: { content: Content; 
             const isLast = index === content.process.length - 1;
             return (
               <div key={step.title} className="relative">
-                <article className="h-full rounded-[24px] border border-[#dbe7f5] bg-white p-5 shadow-sm">
+                <article className="h-full rounded-[24px] border border-stone-800 bg-stone-900/75 p-5 shadow-sm">
                   <div className="mb-6 flex items-center justify-between">
-                    <span className="text-sm font-black text-[#1d72d2]">0{index + 1}</span>
-                    <Icon className="h-5 w-5 text-[#1d72d2]" aria-hidden="true" />
+                    <span className="text-sm font-black text-amber-500">0{index + 1}</span>
+                    <Icon className="h-5 w-5 text-amber-500" aria-hidden="true" />
                   </div>
-                  <h3 className="text-xl font-black leading-tight text-[#0d1626] xl:text-2xl">{step.title}</h3>
-                  <p className="mt-4 text-sm font-medium leading-7 text-[#526174]">{step.text}</p>
+                  <h3 className="text-xl font-black leading-tight text-stone-100 xl:text-2xl">{step.title}</h3>
+                  <p className="mt-4 text-sm font-medium leading-7 text-stone-400">{step.text}</p>
                 </article>
                 {!isLast ? (
                   <>
-                    <div className="pointer-events-none absolute top-1/2 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-[#c7d9ee] bg-[#4c9df2] text-white shadow-lg shadow-blue-500/20 xl:flex ltr:-right-[28px] rtl:-left-[28px]">
+                    <div className="pointer-events-none absolute top-1/2 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-stone-700 bg-amber-600 text-white shadow-lg shadow-brand/20 xl:flex ltr:-right-[28px] rtl:-left-[28px]">
                       <FaArrowRight className="h-4 w-4 rtl:rotate-180" aria-hidden="true" />
                     </div>
-                    <div className="mx-auto my-3 flex h-10 w-10 items-center justify-center rounded-full border border-[#c7d9ee] bg-[#4c9df2] text-white shadow-lg shadow-blue-500/20 xl:hidden">
+                    <div className="mx-auto my-3 flex h-10 w-10 items-center justify-center rounded-full border border-stone-700 bg-amber-600 text-white shadow-lg shadow-brand/20 xl:hidden">
                       <FaArrowDown className="h-4 w-4" aria-hidden="true" />
                     </div>
                   </>
@@ -302,7 +305,7 @@ function ProcessSection({ content, nextHref = '#contact' }: { content: Content; 
             );
           })}
         </div>
-        <div className="mt-8 rounded-[28px] bg-[#0a1423] p-6 text-white shadow-2xl shadow-slate-950/10 md:p-8">
+        <div className="mt-8 rounded-[28px] bg-stone-900 p-6 text-white shadow-2xl shadow-black/30 md:p-8">
           <div className="grid gap-7 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
             <div>
               <h3 className="hero-display text-3xl font-black leading-none md:text-5xl">{content.processExpectations.title}</h3>
@@ -311,13 +314,14 @@ function ProcessSection({ content, nextHref = '#contact' }: { content: Content; 
             <div className="grid gap-3">
               {content.processExpectations.points.map((point) => (
                 <div key={point} className="flex gap-3 rounded-2xl border border-white/10 bg-white/[0.06] p-4 text-sm font-medium leading-7 text-slate-200">
-                  <FaCheck className="mt-1 h-4 w-4 shrink-0 text-[#75b7ff]" aria-hidden="true" />
+                  <FaCheck className="mt-1 h-4 w-4 shrink-0 text-[#e8b56a]" aria-hidden="true" />
                   <span>{point}</span>
                 </div>
               ))}
             </div>
           </div>
         </div>
+        <SectionTalkCta label={content.cta.primary} />
       </div>
     </section>
   );
@@ -325,7 +329,7 @@ function ProcessSection({ content, nextHref = '#contact' }: { content: Content; 
 
 function CompanyProof({ content }: { content: Content }) {
   return (
-    <section id="proof" className="site-section bg-white">
+    <section id="proof" className="site-section bg-stone-900/75">
       <div className="site-container">
         <div className="grid gap-10 lg:grid-cols-[1fr_0.75fr] lg:items-end">
           <div>
@@ -338,14 +342,14 @@ function CompanyProof({ content }: { content: Content }) {
             />
             <div className="grid gap-4 sm:grid-cols-3">
               {content.home.proof.map((item, index) => (
-                <div key={item} className="rounded-[24px] border border-[#dbe7f5] bg-[#f8fbff] p-5 shadow-sm">
-                  <p className="text-5xl font-black leading-none text-[#1d72d2]">{index === 0 ? '17+' : index === 1 ? 'Top' : 'AI'}</p>
-                  <p className="mt-4 text-sm font-extrabold leading-6 text-[#0d1626]">{item}</p>
+                <div key={item} className="rounded-[24px] border border-stone-800 bg-stone-950/40 p-5 shadow-sm">
+                  <p className="text-5xl font-black leading-none text-amber-500">{index === 0 ? '17+' : index === 1 ? 'Top' : 'AI'}</p>
+                  <p className="mt-4 text-sm font-extrabold leading-6 text-stone-100">{item}</p>
                 </div>
               ))}
             </div>
           </div>
-          <div className="relative min-h-[420px] overflow-hidden rounded-[32px] bg-[#e7f2ff]">
+          <div className="relative min-h-[420px] overflow-hidden rounded-[32px] bg-stone-900">
             <Image
               src="/sivan-devco-avatar.webp"
               alt={`${content.aboutPage.bioTitle} - ${content.aboutPage.bioRole}`}
@@ -354,8 +358,8 @@ function CompanyProof({ content }: { content: Content }) {
               className="object-cover object-center"
               loading="lazy"
             />
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0a1423]/85 to-transparent p-6 text-white">
-              <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-[#75b7ff]">{content.aboutPage.bioRole}</p>
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0c0e14]/85 to-transparent p-6 text-white">
+              <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-[#e8b56a]">{content.aboutPage.bioRole}</p>
               <p className="mt-2 text-3xl font-black">{content.aboutPage.bioTitle}</p>
             </div>
           </div>
@@ -367,15 +371,15 @@ function CompanyProof({ content }: { content: Content }) {
 
 function ContactBand({ content, source }: { content: Content; source: string }) {
   return (
-    <section id="contact" className="site-section bg-[#f8fbff]">
+    <section id="contact" className="site-section bg-stone-950/40">
       <div className="site-container">
-        <div className="rounded-[32px] border border-[#dbe7f5] bg-white p-6 shadow-2xl shadow-blue-950/5 md:p-10">
+        <div className="rounded-[32px] border border-stone-800 bg-stone-900/75 p-6 shadow-2xl shadow-ink/5 md:p-10">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="mb-4 text-sm font-extrabold uppercase tracking-[0.2em] text-[#1d72d2]">{content.cta.contact}</p>
-            <h2 className="hero-display mx-auto max-w-4xl text-4xl font-black leading-[0.98] text-[#0d1626] md:text-6xl">
+            <p className="mb-4 text-sm font-extrabold uppercase tracking-[0.2em] text-amber-500">{content.cta.contact}</p>
+            <h2 className="hero-display mx-auto max-w-4xl text-4xl font-black leading-[0.98] text-stone-100 md:text-6xl">
               {content.contact.title}
             </h2>
-            <p className="mx-auto mt-6 max-w-3xl text-lg font-medium leading-8 text-[#526174]">{content.contact.subtitle}</p>
+            <p className="mx-auto mt-6 max-w-3xl text-lg font-medium leading-8 text-stone-400">{content.contact.subtitle}</p>
             <div className="mx-auto mt-8 grid max-w-3xl gap-3 sm:grid-cols-3">
               <a href={`mailto:${content.brand.email}`} className="contact-link">
                 <FaEnvelope aria-hidden="true" />
@@ -397,7 +401,7 @@ function ContactBand({ content, source }: { content: Content; source: string }) 
             </div>
           </div>
           <div className="mx-auto mt-10 max-w-3xl text-start">
-            <h3 className="mb-5 text-2xl font-black text-[#0d1626]">{content.contact.form.title}</h3>
+            <h3 className="mb-5 text-2xl font-black text-stone-100">{content.contact.form.title}</h3>
             <ContactForm source={source} compact />
           </div>
         </div>
@@ -419,27 +423,25 @@ function TestimonialsSection({ locale, nextHref = '#faq' }: { locale: string; ne
     date: formatTestimonialDate(testimonial.date, isHebrew),
   }));
   return (
-    <section id="testimonials" className="site-section bg-white">
-      <div className="site-container">
-        <SectionIntro
-          content={content}
-          eyebrow={eyebrow}
-          title={title}
-          subtitle={subtitle}
-          centered
-          scrollTo={nextHref}
-        />
-        <TestimonialsCarousel
-          testimonials={localizedTestimonials}
-          isRtl={isHebrew}
-          labels={{
-            stars: isHebrew ? '5 כוכבים' : '5 stars',
-            readFull: isHebrew ? 'קרא את העדות המלאה' : 'Read full testimonial',
-            close: isHebrew ? 'סגור' : 'Close',
-          }}
-        />
+    <>
+      <TestimonialsCarousel
+        testimonials={localizedTestimonials}
+        isRtl={isHebrew}
+        labels={{
+          previous: isHebrew ? 'עדות קודמת' : 'Previous testimonial',
+          next: isHebrew ? 'עדות הבאה' : 'Next testimonial',
+          slide: isHebrew ? 'עדות' : 'Testimonial',
+        }}
+        ctaHref={sitePaths.contact}
+        ctaLabel={content.cta.primary}
+      />
+      <div className="sr-only">
+        <p>{eyebrow}</p>
+        <p>{title}</p>
+        <p>{subtitle}</p>
+        <a href={nextHref}>{content.cta.primary}</a>
       </div>
-    </section>
+    </>
   );
 }
 
@@ -475,7 +477,7 @@ function FAQSection({
   };
 
   return (
-    <section id="faq" className="site-section bg-[#f8fbff]">
+    <section id="faq" className="site-section bg-stone-950/40">
       <div className="site-container">
         <SectionIntro
           content={content}
@@ -488,15 +490,15 @@ function FAQSection({
           {items.map((item) => (
             <details
               key={item.question}
-              className="group rounded-[24px] border border-[#dbe7f5] bg-white p-5 shadow-sm open:shadow-md md:p-6"
+              className="group rounded-[24px] border border-stone-800 bg-stone-900/75 p-5 shadow-sm open:shadow-md md:p-6"
             >
-              <summary className="cursor-pointer list-none text-lg font-black leading-8 text-[#0d1626] marker:content-none md:text-xl">
+              <summary className="cursor-pointer list-none text-lg font-black leading-8 text-stone-100 marker:content-none md:text-xl">
                 <span className="flex items-start justify-between gap-4">
                   <span>{item.question}</span>
-                  <FaArrowDown className="mt-1 h-4 w-4 shrink-0 text-[#1d72d2] transition group-open:rotate-180" aria-hidden="true" />
+                  <FaArrowDown className="mt-1 h-4 w-4 shrink-0 text-amber-500 transition group-open:rotate-180" aria-hidden="true" />
                 </span>
               </summary>
-              <p className="mt-4 text-base font-medium leading-8 text-[#526174]">{item.answer}</p>
+              <p className="mt-4 text-base font-medium leading-8 text-stone-400">{item.answer}</p>
             </details>
           ))}
         </div>
@@ -505,6 +507,7 @@ function FAQSection({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
           suppressHydrationWarning
         />
+        <SectionTalkCta label={content.cta.primary} />
       </div>
     </section>
   );
@@ -512,15 +515,18 @@ function FAQSection({
 
 function ServiceChoiceBand({ content, isRtl }: { content: Content; isRtl: boolean }) {
   return (
-    <div className="mx-auto mt-10 grid max-w-4xl gap-3 md:grid-cols-2">
+    <div className="grid gap-3">
       {content.home.paths.map((path) => (
         <Link
           key={path.href}
           href={path.href}
-          className="group flex items-center justify-between gap-4 rounded-full border border-[#c7d9ee] bg-white px-5 py-4 text-sm font-extrabold text-[#0d1626] shadow-sm transition hover:border-[#4c9df2] hover:text-[#1d72d2]"
+          className="group flex flex-col gap-2 rounded-[24px] border border-white/15 bg-stone-900/75/[0.07] p-5 text-start shadow-lg shadow-black/20 backdrop-blur transition hover:border-[#e8b56a]/50 hover:bg-stone-900/75/[0.1]"
         >
-          <span>{path.title}</span>
-          <ArrowIcon isRtl={isRtl} />
+          <span className="text-xs font-extrabold uppercase tracking-[0.16em] text-[#e8b56a]">{path.label}</span>
+          <span className="flex items-center justify-between gap-3 text-base font-black leading-snug text-[#fffcf7] md:text-lg">
+            {path.title}
+            <ArrowIcon isRtl={isRtl} />
+          </span>
         </Link>
       ))}
     </div>
@@ -528,43 +534,9 @@ function ServiceChoiceBand({ content, isRtl }: { content: Content; isRtl: boolea
 }
 
 export function HomePage({ locale }: PageProps) {
-  const content = getCompanyContent(locale);
-  const isRtl = localeValue(locale) === 'he';
-
   return (
     <PageFrame>
-      <section id="hero" className="relative min-h-screen bg-[#f8fbff] pt-24">
-        <div className="tech-grid" aria-hidden="true" />
-        <div className="site-container relative z-10 pb-16 pt-12 text-center">
-          <p className="mx-auto mb-6 max-w-3xl text-sm font-extrabold uppercase tracking-[0.2em] text-[#1d72d2]">{content.home.eyebrow}</p>
-          <HighlightTitle
-            text={content.home.title}
-            accent={getAccent(locale, 'home')}
-            className="hero-display mx-auto max-w-6xl text-5xl font-black leading-[0.9] text-[#0d1626] sm:text-6xl md:text-8xl lg:text-[7.5rem]"
-          />
-          <p className="mx-auto mt-8 max-w-3xl text-lg font-semibold leading-8 text-[#526174] md:text-2xl md:leading-10">{content.home.subtitle}</p>
-          <div className="mt-8 flex flex-col items-center gap-3">
-            <ContactCta content={content} />
-            <ScrollDownLink href="#paths" label={content.cta.primary} />
-          </div>
-          <ServiceChoiceBand content={content} isRtl={isRtl} />
-          <div className="mx-auto mt-12 max-w-5xl">
-            <HeroShowcaseCarousel items={content.showcases} isRtl={isRtl} />
-          </div>
-        </div>
-      </section>
-      <SplitPaths content={content} isRtl={isRtl} />
-      <ProcessSection content={content} nextHref="#testimonials" />
-      <TestimonialsSection locale={locale} nextHref="#faq" />
-      <FAQSection
-        content={content}
-        eyebrow={content.home.faq.eyebrow}
-        title={content.home.faq.title}
-        items={content.home.faq.items}
-        nextHref="#proof"
-      />
-      <CompanyProof content={content} />
-      <ContactBand content={content} source="home-contact-band" />
+      <HomeMarketingPage locale={locale} />
     </PageFrame>
   );
 }
@@ -582,19 +554,19 @@ export function ServicePage({
 
   return (
     <PageFrame>
-      <section id="hero" className="relative bg-[#f8fbff] pt-28">
+      <section id="hero" className="inner-page-hero relative pt-28">
         <div className="tech-grid" aria-hidden="true" />
         <div className="site-container relative z-10 grid gap-10 pb-16 pt-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div>
-            <p className="mb-5 text-sm font-extrabold uppercase tracking-[0.2em] text-[#1d72d2]">{page.eyebrow}</p>
+            <p className="mb-5 text-sm font-extrabold uppercase tracking-[0.2em] text-amber-500">{page.eyebrow}</p>
             <HighlightTitle
               text={page.title}
               accent={getAccent(locale, type)}
-              className="hero-display max-w-5xl text-5xl font-black leading-[0.9] text-[#0d1626] md:text-7xl"
+              className="hero-display max-w-5xl text-5xl font-black leading-[0.9] text-stone-100 md:text-7xl"
             />
-            <p className="mt-7 max-w-3xl text-lg font-semibold leading-8 text-[#526174] md:text-xl md:leading-9">{page.subtitle}</p>
+            <p className="mt-7 max-w-3xl text-lg font-semibold leading-8 text-stone-400 md:text-xl md:leading-9">{page.subtitle}</p>
             {isSoftware ? (
-              <p className="mt-5 max-w-3xl text-base font-medium leading-8 text-[#526174]">{content.softwarePage.aiNote}</p>
+              <p className="mt-5 max-w-3xl text-base font-medium leading-8 text-stone-400">{content.softwarePage.aiNote}</p>
             ) : null}
           </div>
           <div className="min-w-0">
@@ -609,7 +581,7 @@ export function ServicePage({
           items={content.softwarePage.vibeCoding.items}
         />
       ) : null}
-      <section id="services" className="site-section bg-white">
+      <section id="services" className="site-section bg-stone-900/75">
         <div className="site-container">
           <SectionIntro
             content={content}
@@ -630,10 +602,10 @@ export function ServicePage({
               {content.automationPage.services.map((service, index) => {
                 const Icon = serviceIcons[index] ?? FaCheck;
                 return (
-                  <article key={service.title} className="rounded-[28px] border border-[#dbe7f5] bg-[#f8fbff] p-6 shadow-sm md:p-8">
-                    <Icon className="mb-6 h-7 w-7 text-[#1d72d2]" aria-hidden="true" />
-                    <h2 className="text-3xl font-black leading-tight text-[#0d1626]">{service.title}</h2>
-                    <p className="mt-4 text-base font-medium leading-8 text-[#526174]">{service.text}</p>
+                  <article key={service.title} className="rounded-[28px] border border-stone-800 bg-stone-950/40 p-6 shadow-sm md:p-8">
+                    <Icon className="mb-6 h-7 w-7 text-amber-500" aria-hidden="true" />
+                    <h2 className="text-3xl font-black leading-tight text-stone-100">{service.title}</h2>
+                    <p className="mt-4 text-base font-medium leading-8 text-stone-400">{service.text}</p>
                   </article>
                 );
               })}
@@ -641,7 +613,7 @@ export function ServicePage({
           )}
         </div>
       </section>
-      <section id="stack" className="site-section bg-[#f8fbff]">
+      <section id="stack" className="site-section bg-stone-950/40">
         <div className="site-container">
           <SectionIntro
             content={content}
@@ -652,7 +624,7 @@ export function ServicePage({
           />
           <div className="mx-auto flex max-w-5xl flex-wrap justify-center gap-3">
             {page.stack.map((item) => (
-              <span key={item} className="rounded-full border border-[#c7d9ee] bg-white px-4 py-2 text-sm font-extrabold text-[#0d1626] shadow-sm">
+              <span key={item} className="rounded-full border border-stone-700 bg-stone-900/75 px-4 py-2 text-sm font-extrabold text-stone-100 shadow-sm">
                 {item}
               </span>
             ))}
@@ -677,23 +649,23 @@ export function AboutPage({ locale }: PageProps) {
 
   return (
     <PageFrame>
-      <section id="hero" className="relative min-h-screen bg-[#f8fbff] pt-28">
+      <section id="hero" className="relative min-h-screen bg-stone-950/40 pt-28">
         <div className="tech-grid" aria-hidden="true" />
         <div className="site-container relative z-10 grid gap-10 pb-16 pt-10 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
           <div>
-            <p className="mb-5 text-sm font-extrabold uppercase tracking-[0.2em] text-[#1d72d2]">{content.aboutPage.eyebrow}</p>
+            <p className="mb-5 text-sm font-extrabold uppercase tracking-[0.2em] text-amber-500">{content.aboutPage.eyebrow}</p>
             <HighlightTitle
               text={content.aboutPage.title}
               accent={getAccent(locale, 'about')}
-              className="hero-display max-w-5xl text-5xl font-black leading-[0.9] text-[#0d1626] md:text-7xl"
+              className="hero-display max-w-5xl text-5xl font-black leading-[0.9] text-stone-100 md:text-7xl"
             />
-            <p className="mt-7 max-w-3xl text-lg font-semibold leading-8 text-[#526174] md:text-xl md:leading-9">{content.aboutPage.subtitle}</p>
+            <p className="mt-7 max-w-3xl text-lg font-semibold leading-8 text-stone-400 md:text-xl md:leading-9">{content.aboutPage.subtitle}</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <span className="proof-pill"><FaStar aria-hidden="true" />100% Job Success</span>
               <span className="proof-pill"><SiUpwork aria-hidden="true" />Top Rated Plus</span>
             </div>
           </div>
-          <div className="relative min-h-[440px] overflow-hidden rounded-[36px] bg-[#e7f2ff] shadow-2xl shadow-blue-950/10 md:min-h-[620px]">
+          <div className="relative min-h-[440px] overflow-hidden rounded-[36px] bg-stone-900 shadow-2xl shadow-ink/10 md:min-h-[620px]">
             <Image
               src="/sivan-devco-avatar.webp"
               alt={`${content.aboutPage.bioTitle} - ${content.aboutPage.bioRole}`}
@@ -702,19 +674,19 @@ export function AboutPage({ locale }: PageProps) {
               className="object-cover object-center"
               priority
             />
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0a1423]/90 via-[#0a1423]/40 to-transparent p-6 text-white md:p-8">
-              <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-[#75b7ff]">{content.aboutPage.bioRole}</p>
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0c0e14]/90 via-[#0c0e14]/40 to-transparent p-6 text-white md:p-8">
+              <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-[#e8b56a]">{content.aboutPage.bioRole}</p>
               <p className="mt-2 text-4xl font-black">{content.aboutPage.bioTitle}</p>
             </div>
           </div>
         </div>
       </section>
-      <section id="about-bio" className="site-section bg-white">
+      <section id="about-bio" className="site-section bg-stone-900/75">
         <div className="site-container grid gap-8 lg:grid-cols-[1fr_0.8fr]">
           <article>
-            <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-[#1d72d2]">{content.aboutPage.bioRole}</p>
-            <h2 className="hero-display mt-4 text-4xl font-black leading-none text-[#0d1626] md:text-6xl">{content.aboutPage.bioTitle}</h2>
-            <div className="mt-6 space-y-5 text-lg font-medium leading-9 text-[#526174]">
+            <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-amber-500">{content.aboutPage.bioRole}</p>
+            <h2 className="hero-display mt-4 text-4xl font-black leading-none text-stone-100 md:text-6xl">{content.aboutPage.bioTitle}</h2>
+            <div className="mt-6 space-y-5 text-lg font-medium leading-9 text-stone-400">
               {content.aboutPage.bioParagraphs.map((paragraph) => (
                 <p key={paragraph.slice(0, 48)}>{paragraph}</p>
               ))}
@@ -723,16 +695,16 @@ export function AboutPage({ locale }: PageProps) {
               {content.aboutPage.personalTags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full border border-[#c7d9ee] bg-[#f8fbff] px-4 py-2 text-sm font-extrabold text-[#0d1626]"
+                  className="rounded-full border border-stone-700 bg-stone-950/40 px-4 py-2 text-sm font-extrabold text-stone-100"
                 >
                   {tag}
                 </span>
               ))}
             </div>
           </article>
-          <aside className="rounded-[28px] border border-[#dbe7f5] bg-[#f8fbff] p-6 shadow-sm md:p-8">
-            <h2 className="text-3xl font-black text-[#0d1626]">{content.aboutPage.upworkTitle}</h2>
-            <p className="mt-4 text-base font-medium leading-8 text-[#526174]">{content.aboutPage.upworkText}</p>
+          <aside className="rounded-[28px] border border-stone-800 bg-stone-950/40 p-6 shadow-sm md:p-8">
+            <h2 className="text-3xl font-black text-stone-100">{content.aboutPage.upworkTitle}</h2>
+            <p className="mt-4 text-base font-medium leading-8 text-stone-400">{content.aboutPage.upworkText}</p>
             <div className="mt-6 flex flex-wrap gap-3">
               <span className="proof-pill"><FaStar aria-hidden="true" />100% Job Success</span>
               <span className="proof-pill"><SiUpwork aria-hidden="true" />Top Rated Plus</span>
@@ -745,8 +717,8 @@ export function AboutPage({ locale }: PageProps) {
         <div className="site-container">
           <div className="grid gap-4 md:grid-cols-4">
             {content.aboutPage.values.map((value, index) => (
-              <div key={value} className="rounded-[24px] border border-white/10 bg-white/[0.06] p-5 text-base font-extrabold leading-7 text-white">
-                <span className="mb-8 block text-5xl font-black text-[#75b7ff]">{String(index + 1).padStart(2, '0')}</span>
+              <div key={value} className="rounded-[24px] border border-white/10 bg-stone-900/75/[0.06] p-5 text-base font-extrabold leading-7 text-white">
+                <span className="mb-8 block text-5xl font-black text-[#e8b56a]">{String(index + 1).padStart(2, '0')}</span>
                 {value}
               </div>
             ))}
@@ -784,49 +756,49 @@ export function RagProductionPage({ locale }: PageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
-      <section id="hero" className="relative bg-[#f8fbff] pt-28">
+      <section id="hero" className="inner-page-hero relative pt-28">
         <div className="tech-grid" aria-hidden="true" />
         <div className="site-container relative z-10 pb-16 pt-10">
-          <p className="mb-5 text-sm font-extrabold uppercase tracking-[0.2em] text-[#1d72d2]">{page.eyebrow}</p>
+          <p className="mb-5 text-sm font-extrabold uppercase tracking-[0.2em] text-amber-500">{page.eyebrow}</p>
           <HighlightTitle
             text={page.title}
             accent={getAccent(locale, 'rag')}
-            className="hero-display max-w-5xl text-5xl font-black leading-[0.95] text-[#0d1626] md:text-7xl"
+            className="hero-display max-w-5xl text-5xl font-black leading-[0.95] text-stone-100 md:text-7xl"
           />
-          <p className="mt-7 max-w-3xl text-lg font-semibold leading-8 text-[#526174] md:text-xl md:leading-9">{page.subtitle}</p>
+          <p className="mt-7 max-w-3xl text-lg font-semibold leading-8 text-stone-400 md:text-xl md:leading-9">{page.subtitle}</p>
         </div>
       </section>
-      <section id="problems" className="site-section bg-white">
+      <section id="problems" className="site-section bg-stone-900/75">
         <div className="site-container">
-          <h2 className="mb-8 text-3xl font-black text-[#0d1626] md:text-4xl">{page.problemsTitle}</h2>
+          <h2 className="mb-8 text-3xl font-black text-stone-100 md:text-4xl">{page.problemsTitle}</h2>
           <div className="grid gap-5 md:grid-cols-2">
             {page.problems.map((problem) => (
               <article
                 key={problem.title}
-                className="rounded-[28px] border border-[#dbe7f5] bg-[#f8fbff] p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-[#4c9df2] md:p-8"
+                className="rounded-[28px] border border-stone-800 bg-stone-950/40 p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-amber-600 md:p-8"
               >
-                <h3 className="text-2xl font-black text-[#0d1626]">{problem.title}</h3>
-                <p className="mt-4 text-base font-medium leading-8 text-[#526174]">{problem.text}</p>
+                <h3 className="text-2xl font-black text-stone-100">{problem.title}</h3>
+                <p className="mt-4 text-base font-medium leading-8 text-stone-400">{problem.text}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
-      <section id="work" className="site-section bg-[#f8fbff]">
+      <section id="work" className="site-section bg-stone-950/40">
         <div className="site-container max-w-4xl">
-          <h2 className="text-3xl font-black text-[#0d1626] md:text-4xl">{page.workTitle}</h2>
-          <p className="mt-5 text-lg font-medium leading-9 text-[#526174]">{page.workText}</p>
+          <h2 className="text-3xl font-black text-stone-100 md:text-4xl">{page.workTitle}</h2>
+          <p className="mt-5 text-lg font-medium leading-9 text-stone-400">{page.workText}</p>
         </div>
       </section>
-      <section id="process" className="site-section bg-white">
+      <section id="process" className="site-section bg-stone-900/75">
         <div className="site-container">
-          <h2 className="mb-8 text-3xl font-black text-[#0d1626] md:text-4xl">{page.processTitle}</h2>
+          <h2 className="mb-8 text-3xl font-black text-stone-100 md:text-4xl">{page.processTitle}</h2>
           <ol className="grid gap-4 md:grid-cols-5">
             {page.steps.map((step, index) => (
-              <li key={step.title} className="rounded-[24px] border border-[#dbe7f5] bg-[#f8fbff] p-5">
-                <p className="text-sm font-black text-[#1d72d2]">{String(index + 1).padStart(2, '0')}</p>
-                <h3 className="mt-3 text-xl font-black text-[#0d1626]">{step.title}</h3>
-                <p className="mt-3 text-sm font-medium leading-7 text-[#526174]">{step.text}</p>
+              <li key={step.title} className="rounded-[24px] border border-stone-800 bg-stone-950/40 p-5">
+                <p className="text-sm font-black text-amber-500">{String(index + 1).padStart(2, '0')}</p>
+                <h3 className="mt-3 text-xl font-black text-stone-100">{step.title}</h3>
+                <p className="mt-3 text-sm font-medium leading-7 text-stone-400">{step.text}</p>
               </li>
             ))}
           </ol>

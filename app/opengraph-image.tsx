@@ -1,7 +1,6 @@
 import { ImageResponse } from 'next/og';
 
-export const runtime = 'edge';
-export const alt = 'DevCo Solutions — checks and repairs an AI chat already in the product';
+export const alt = 'DevCo Solutions — repair live RAG chat in SaaS products';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -16,22 +15,22 @@ export default async function Image() {
           flexDirection: 'column',
           justifyContent: 'center',
           padding: '72px',
-          color: '#f3f7fb',
-          background: 'linear-gradient(135deg, #050c16 0%, #07111f 48%, #0d273d 100%)',
+          color: '#f5efe6',
+          background: 'linear-gradient(135deg, #0c0e14 0%, #141820 48%, #1a1f2a 100%)',
           fontFamily: 'system-ui, sans-serif',
         }}
       >
-        <div style={{ display: 'flex', color: '#75b7ff', fontSize: 30, fontWeight: 700, letterSpacing: 4 }}>
+        <div style={{ display: 'flex', color: '#e8b56a', fontSize: 30, fontWeight: 700, letterSpacing: 4 }}>
           DEVCO SOLUTIONS
         </div>
-        <div style={{ display: 'flex', marginTop: 28, maxWidth: 980, fontSize: 64, lineHeight: 1.05, fontWeight: 800 }}>
-          Senior engineer for AI in production
+        <div style={{ display: 'flex', marginTop: 28, maxWidth: 980, fontSize: 58, lineHeight: 1.05, fontWeight: 800 }}>
+          Fix live RAG chat in SaaS products
         </div>
-        <div style={{ display: 'flex', marginTop: 28, maxWidth: 860, color: '#b8c6d8', fontSize: 28, lineHeight: 1.35 }}>
-          Checks and repairs an AI chat already in the product: wrong answers, missing sources, and the wrong person seeing the wrong information.
+        <div style={{ display: 'flex', marginTop: 28, maxWidth: 860, color: '#c8bdb0', fontSize: 28, lineHeight: 1.35 }}>
+          Wrong answers, missing citations, ACL leaks, and no eval gates — repaired in your codebase, not slideware.
         </div>
         <div style={{ display: 'flex', gap: 14, marginTop: 42 }}>
-          {['Chat repair', 'Sources', 'Who can see what'].map((item) => (
+          {['RAG repair', 'Citations', 'ACL + evals'].map((item) => (
             <div
               key={item}
               style={{

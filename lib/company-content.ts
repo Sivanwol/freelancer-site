@@ -130,6 +130,67 @@ export const companyContent = {
           },
         ],
       },
+      marketing: {
+        badgeBeforeCto: 'Sivan Wolberg — software architect and',
+        heroTitleLines: ['Is your product chat embarrassing', 'you in front of customers?'],
+        heroAccentLine: 'I am here to fix it.',
+        heroSubtitle:
+          'You promised clients AI, but they get wrong answers and hallucinations. Let us turn the gimmick into a stable business asset that actually works.',
+        heroPrimaryCta: 'Book an intro call',
+        heroSecondaryCta: 'What I offer',
+        featuredProject: {
+          badge: 'Featured project',
+          title: 'Real-estate rental management platform',
+          caption: 'A production system I built end to end.',
+          summary: 'Web platform for agencies and owners: bookings, schedules, tours, and reservations.',
+          image: '/showcase-real-estate-platform.webp',
+          imageAlt: 'Real-estate rental management platform dashboard in production',
+        },
+        offersTitle: 'How can I help?',
+        offersSubtitle: 'Business-focused technology from code through architecture.',
+        offerRagTitle: 'Fix an existing',
+        offerRagText: 'If a chat in your product invents answers — I get into the code and fix it.',
+        offerBuildTitle: 'Build a product from scratch',
+        offerBuildText: 'From idea to a live product customers actually use.',
+        offerLinkLabel: 'Learn more →',
+        offersCta: 'Let us talk about your project',
+        projectsTitle: 'More projects',
+        projects: [
+          {
+            type: 'image' as const,
+            title: 'AI-powered PropTech platform',
+            summary: 'NestJS rebuild, multi-model AI, and accessibility.',
+            image: '/showcase-delet-mobile-accessibility.webp',
+            imageAlt: 'Mobile and web screens from an AI-powered PropTech platform',
+          },
+          {
+            type: 'image' as const,
+            title: 'Vme dating app for iOS and Android',
+            summary: 'React Native and Laravel delivery.',
+            image: '/showcase-vme.webp',
+            imageAlt: 'Vme dating app screens for iOS and Android',
+          },
+          {
+            type: 'icon' as const,
+            title: 'ETL pipeline for data transfer and conversion',
+            summary: 'Data architecture for high-volume processing and transformation.',
+          },
+        ],
+        testimonialsCta: 'I want results like these too',
+        aboutTitle: 'Nice to meet you — Sivan Wolberg',
+        aboutImageAlt: 'Sivan Wolberg — software architect and CTO',
+        aboutParagraphs: [
+          'As a software architect and CTO, I help companies skip the expensive trial-and-error phase in development and AI.',
+          'I do not only build technology; I am a technical partner who understands your business needs and turns them into high-quality code.',
+        ],
+        blogTitle: 'From the blog',
+        blogSubtitle: 'Notes from AI and engineering in production.',
+        blogAllLink: 'All posts',
+        closingTitle: 'Do not let mediocre AI slow your growth.',
+        closingSubtitle: 'Let us check how to make your system more reliable, faster, and cost-effective.',
+        closingPrimaryCta: 'Book a free consultation',
+        closingEmailCta: 'Send me an email',
+      },
     },
     process: [
       {
@@ -449,12 +510,12 @@ export const companyContent = {
     },
     showcases: [
       {
-        slug: 'delet-platform-accessibility',
+        slug: 'proptech-ai-platform',
         image: '/showcase-delet-mobile-accessibility.webp',
-        title: 'Delet real-estate operations and accessibility tooling',
+        title: 'AI-powered PropTech platform',
         category: 'Web, mobile, and internal tools',
         summary:
-          'A product ecosystem combining mobile property flows, operational screens, and accessibility-oriented tooling.',
+          'NestJS rebuild, multi-model AI, and accessibility-focused product surfaces for property operations.',
         problem:
           'The business needed production software across property operations and specialized internal workflows.',
         solution:
@@ -767,9 +828,9 @@ export const companyContent = {
       ctaText: 'A short call is enough to see whether the failure is retrieval, permissions, or the lack of an eval.',
     },
     meta: {
-      defaultTitle: 'Software architect for product and AI in production | DevCo Solutions',
+      defaultTitle: 'Fix live RAG chat in SaaS products | DevCo Solutions',
       defaultDescription:
-        'Two products. Fix a chat that is already live and wrong, or build a new product from scratch until it is live.',
+        'Primary: repair RAG / AI chat already live in your SaaS (wrong answers, citations, ACL). Secondary: build a new product from scratch until it is live.',
       softwareTitle: 'Build a product from scratch until it is live | DevCo',
       softwareDescription:
         'Build a new product from scratch, screens, server, and information, until it is live and people are using it.',
@@ -904,6 +965,67 @@ export const companyContent = {
               'כן. DevCo מתכננת ומספקת זרימות AI לפרודקשן עם LangChain ו-LangGraph, עבודה עם מודלים שונים (OpenAI, Claude, Gemini ועוד), צינורות RAG, סוכנים, Tool calling ופלטפורמות AI בענן. הדגש הוא על תוצאות מוצר פרקטיות — עוזרים, אוטומציה ופיצ׳רים חכמים שנשארים תחזוקתיים אחרי ההשקה — לא רק דמואים.',
           },
         ],
+      },
+      marketing: {
+        badgeBeforeCto: 'סיון וולברג — ארכיטקט תוכנה ו-',
+        heroTitleLines: ['הצ\'אט שלכם מביך', 'אתכם מול הלקוחות?'],
+        heroAccentLine: 'אני כאן כדי לתקן את זה.',
+        heroSubtitle:
+          'הבטחתם ללקוחות שלכם בינה מלאכותית, אבל בפועל הם מקבלים תשובות שגויות והזיות. בואו נהפוך את הגימיק לנכס עסקי יציב שבאמת עובד בשבילכם.',
+        heroPrimaryCta: 'לתיאום שיחת היכרות',
+        heroSecondaryCta: 'מה אני מציע',
+        featuredProject: {
+          badge: 'פרויקט נבחר',
+          title: 'פלטפורמת ניהול נדל"ן להשכרות',
+          caption: 'מערכת בפרודקשן שבניתי מקצה לקצה.',
+          summary: 'פלטפורמת Web לסוכנויות ובעלי נכסים: ניהול הזמנות, לו"ז, סיורים והזמנות.',
+          image: '/showcase-real-estate-platform.webp',
+          imageAlt: 'פלטפורמת ניהול נדל"ן להשכרות — מסך ממערכת בפרודקשן',
+        },
+        offersTitle: 'איך אני יכול לעזור?',
+        offersSubtitle: 'פתרונות טכנולוגיים ממוקדי עסקים, מהקוד ועד לארכיטקטורה.',
+        offerRagTitle: 'תיקון צ\'אט',
+        offerRagText: 'אם יש לכם צ\'אט במוצר שממציא תשובות - אני נכנס לקוד ומתקן.',
+        offerBuildTitle: 'בניית מוצר מאפס',
+        offerBuildText: 'משלב הרעיון ועד למוצר חי ועובד בידי הלקוחות.',
+        offerLinkLabel: 'למידע נוסף ←',
+        offersCta: 'בואו נדבר על הפרויקט שלכם',
+        projectsTitle: 'פרויקטים נוספים',
+        projects: [
+          {
+            type: 'image' as const,
+            title: 'פלטפורמת PropTech מבוססת AI',
+            summary: 'NestJS rebuild, AI מרובת מודלים ונגישות.',
+            image: '/showcase-delet-mobile-accessibility.webp',
+            imageAlt: 'מסכי מובייל וווב מפלטפורמת PropTech מבוססת AI',
+          },
+          {
+            type: 'image' as const,
+            title: 'Vme אפליקציית היכרויות ל-iOS ול-Android',
+            summary: 'פיתוח ב-React Native ו-Laravel.',
+            image: '/showcase-vme.webp',
+            imageAlt: 'מסכי אפליקציית Vme להיכרויות ב-iOS וב-Android',
+          },
+          {
+            type: 'icon' as const,
+            title: 'צינור ETL להעברת והמרת נתונים',
+            summary: 'ארכיטקטורת נתונים מורכבת לעיבוד והמרת דאטה בהיקפים גבוהים.',
+          },
+        ],
+        testimonialsCta: 'גם אני רוצה תוצאות כאלה',
+        aboutTitle: 'נעים להכיר, סיון וולברג',
+        aboutImageAlt: 'סיון וולברג — ארכיטקט תוכנה ו-CTO',
+        aboutParagraphs: [
+          'כארכיטקט תוכנה ו-CTO, אני עוזר לחברות לדלג מעל שלב הניסוי והטעייה היקר בעולמות הפיתוח והבינה המלאכותית.',
+          'אני לא רק בונה טכנולוגיה; אני שותף טכנולוגי שמבין את הצרכים העסקיים שלכם וממיר אותם לפתרונות קוד ברמה הגבוהה ביותר.',
+        ],
+        blogTitle: 'מהבלוג',
+        blogSubtitle: 'תובנות מעולמות ה-AI והפיתוח.',
+        blogAllLink: 'לכל המאמרים',
+        closingTitle: 'אל תתנו ל-AI בינוני לעכב את הצמיחה שלכם.',
+        closingSubtitle: 'בואו נבדוק יחד איך להפוך את המערכת שלכם לאמינה, מהירה וכלכלית יותר.',
+        closingPrimaryCta: 'תיאום פגישת ייעוץ חינם',
+        closingEmailCta: 'שלחו לי אימייל',
       },
     },
     process: [
@@ -1224,12 +1346,11 @@ export const companyContent = {
     },
     showcases: [
       {
-        slug: 'delet-platform-accessibility',
+        slug: 'proptech-ai-platform',
         image: '/showcase-delet-mobile-accessibility.webp',
-        title: 'מערכת נדל״ן וכלי נגישות של Delet',
+        title: 'פלטפורמת PropTech מבוססת AI',
         category: 'ווב, מובייל וכלים פנימיים',
-        summary:
-          'אקוסיסטם מוצרי שמשלב מסכי מובייל לנכסים, תפעול פנימי וכלי עבודה סביב נגישות.',
+        summary: 'NestJS rebuild, AI מרובת מודלים ונגישות.',
         problem:
           'העסק היה צריך תוכנת פרודקשן עבור תפעול נכסים ותהליכים פנימיים ייחודיים.',
         solution:
@@ -1541,9 +1662,9 @@ export const companyContent = {
       ctaText: 'שיחה קצרה מספיקה כדי לראות אם הכשל הוא בשליפה, בהרשאות, או בחסרון של eval.',
     },
     meta: {
-      defaultTitle: 'ארכיטקט תוכנה למוצר ול-AI בפרודקשן | DevCo Solutions',
+      defaultTitle: 'תיקון צ\'אט RAG ב-SaaS שכבר באוויר | DevCo Solutions',
       defaultDescription:
-        'שני מוצרים. מתקנים צ\'אט שכבר רץ וטועה, או בונים מוצר חדש מאפס עד שהוא חי.',
+        'ההצעה המרכזית: תיקון צ\'אט AI / RAG שכבר רץ במוצר SaaS (תשובות שגויות, מקורות, ACL). משני: בניית מוצר חדש מאפס עד שהוא חי.',
       softwareTitle: 'פיתוח מוצר מאפס עד שהוא חי | DevCo',
       softwareDescription:
         'בונים מוצר חדש מאפס, מסכים, שרת ומידע, עד שהוא חי ואנשים משתמשים בו.',
