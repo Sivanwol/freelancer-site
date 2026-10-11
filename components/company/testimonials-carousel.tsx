@@ -79,6 +79,7 @@ export default function TestimonialsCarousel({ testimonials, isRtl, labels, ctaH
       ref={sectionRef}
       id="testimonials"
       className="relative overflow-hidden py-24 md:py-32"
+      tabIndex={0}
       aria-roledescription="carousel"
       aria-label={regionLabel}
       onMouseEnter={() => setPaused(true)}
@@ -99,8 +100,9 @@ export default function TestimonialsCarousel({ testimonials, isRtl, labels, ctaH
           <div className="overflow-hidden">
             <div
               id={trackId}
+              dir="ltr"
               className="flex transition-transform duration-500 ease-out motion-reduce:transition-none"
-              style={{ transform: `translateX(${index * 100}%)` }}
+              style={{ transform: `translateX(-${index * 100}%)` }}
               aria-live="polite"
             >
               {testimonials.map((testimonial, slideIndex) => (

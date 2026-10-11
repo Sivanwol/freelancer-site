@@ -1,7 +1,7 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
-import { Rubik } from 'next/font/google';
+import { Assistant } from 'next/font/google';
 import { routing } from '@/i18n/routing';
 import { siteConfig, getBaseUrl } from '@/lib/config';
 import { getCompanyContent } from '@/lib/company-content';
@@ -14,9 +14,9 @@ import { GoogleTagManagerHead, GoogleTagManagerNoScript } from '@/components/Goo
 import '../globals.css';
 import type { Metadata } from 'next';
 
-const rubik = Rubik({
+const assistant = Assistant({
   subsets: ['hebrew', 'latin'],
-  weight: ['400', '500', '600', '700', '800', '900'],
+  weight: ['400', '500', '600', '700', '800'],
   variable: '--font-sans',
   display: 'swap',
 });
@@ -217,7 +217,7 @@ export default async function LocaleLayout({
   `;
 
   return (
-    <html lang={locale} dir={dir} suppressHydrationWarning className={rubik.variable}>
+    <html lang={locale} dir={dir} suppressHydrationWarning className={assistant.variable}>
       <head>
         <meta charSet="utf-8" />
         <GoogleTagManagerHead />

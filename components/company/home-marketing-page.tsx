@@ -321,7 +321,7 @@ export async function HomeMarketingPage({ locale }: Props) {
               </h2>
               <p className="mx-auto mb-12 max-w-2xl text-lg text-stone-300 md:text-2xl">{m.closingSubtitle}</p>
               <div className="flex flex-col justify-center gap-4 sm:flex-row">
-                <Link href={sitePaths.contact} className="rounded-2xl bg-white px-10 py-5 text-lg font-bold text-stone-900 transition hover:scale-105">
+                <Link href={sitePaths.contact} className="rounded-2xl bg-stone-900/75 px-10 py-5 text-lg font-bold text-stone-900 transition hover:scale-105">
                   {m.closingPrimaryCta}
                 </Link>
                 <a href={`mailto:${siteConfig.email}`} className="btn-secondary px-10 py-5 text-lg">

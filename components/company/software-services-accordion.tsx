@@ -56,8 +56,8 @@ export default function SoftwareServicesAccordion({
         return (
           <article
             key={service.title}
-            className={`overflow-hidden rounded-[28px] border bg-white shadow-sm transition ${
-              isOpen ? 'border-[#c87628] shadow-md shadow-brand/10' : 'border-[#ddd5c8]'
+            className={`overflow-hidden rounded-[28px] border bg-stone-900/75 shadow-sm transition ${
+              isOpen ? 'border-[#c87628] shadow-md shadow-brand/10' : 'border-stone-800'
             }`}
           >
             <button
@@ -69,7 +69,7 @@ export default function SoftwareServicesAccordion({
             >
               <span
                 className={`mt-1 hidden h-10 w-10 shrink-0 place-items-center rounded-2xl md:grid ${
-                  isOpen ? 'bg-[#9a5a14] text-white' : 'bg-[#f3e4d0] text-[#9a5a14]'
+                  isOpen ? 'bg-[#9a5a14] text-white' : 'bg-stone-900 text-amber-500'
                 }`}
               >
                 <Icon className="h-5 w-5" aria-hidden="true" />
@@ -77,34 +77,34 @@ export default function SoftwareServicesAccordion({
               <div className="min-w-0 flex-1">
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <p className="text-sm font-black text-[#9a5a14]">{number}</p>
-                    <h3 className="mt-1 text-2xl font-black leading-tight text-[#12151c] md:text-3xl">
+                    <p className="text-sm font-black text-amber-500">{number}</p>
+                    <h3 className="mt-1 text-2xl font-black leading-tight text-stone-100 md:text-3xl">
                       {service.title}
                     </h3>
                   </div>
                   <span
-                    className={`mt-1 grid h-10 w-10 shrink-0 place-items-center rounded-full border border-[#ddd5c8] bg-[#f6f1e8] text-[#9a5a14] transition ${
+                    className={`mt-1 grid h-10 w-10 shrink-0 place-items-center rounded-full border border-stone-800 bg-stone-950/40 text-amber-500 transition ${
                       isOpen ? 'rotate-180' : ''
                     }`}
                   >
                     <FaArrowDown className="h-4 w-4" aria-hidden="true" />
                   </span>
                 </div>
-                <p className="mt-3 text-base font-medium leading-8 text-[#5a6270]">{service.summary}</p>
+                <p className="mt-3 text-base font-medium leading-8 text-stone-400">{service.summary}</p>
               </div>
             </button>
             {isOpen ? (
-              <div id={panelId} role="region" className="border-t border-[#e7f0fa] bg-[#f6f1e8] px-5 pb-6 pt-5 md:px-6">
+              <div id={panelId} role="region" className="border-t border-[#e7f0fa] bg-stone-950/40 px-5 pb-6 pt-5 md:px-6">
                 <div className="grid gap-6 lg:grid-cols-2">
                   <div>
-                    <p className="mb-3 text-sm font-extrabold uppercase tracking-[0.16em] text-[#9a5a14]">
+                    <p className="mb-3 text-sm font-extrabold uppercase tracking-[0.16em] text-amber-500">
                       {technologiesLabel}
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {service.technologies.map((tech) => (
                         <span
                           key={tech}
-                          className="rounded-full border border-[#cfc4b4] bg-white px-3 py-1.5 text-xs font-extrabold text-[#12151c]"
+                          className="rounded-full border border-stone-700 bg-stone-900/75 px-3 py-1.5 text-xs font-extrabold text-stone-100"
                         >
                           {tech}
                         </span>
@@ -112,16 +112,16 @@ export default function SoftwareServicesAccordion({
                     </div>
                   </div>
                   <div>
-                    <p className="mb-3 text-sm font-extrabold uppercase tracking-[0.16em] text-[#9a5a14]">
+                    <p className="mb-3 text-sm font-extrabold uppercase tracking-[0.16em] text-amber-500">
                       {outcomesLabel}
                     </p>
                     <ul className="grid gap-2">
                       {service.outcomes.map((outcome) => (
                         <li
                           key={outcome}
-                          className="flex gap-3 rounded-2xl border border-[#ddd5c8] bg-white px-4 py-3 text-sm font-medium leading-7 text-[#5a6270]"
+                          className="flex gap-3 rounded-2xl border border-stone-800 bg-stone-900/75 px-4 py-3 text-sm font-medium leading-7 text-stone-400"
                         >
-                          <FaCheck className="mt-1 h-4 w-4 shrink-0 text-[#9a5a14]" aria-hidden="true" />
+                          <FaCheck className="mt-1 h-4 w-4 shrink-0 text-amber-500" aria-hidden="true" />
                           <span>{outcome}</span>
                         </li>
                       ))}

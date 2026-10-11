@@ -100,23 +100,23 @@ export default async function BlogPostPage({ params }: Props) {
   return (
     <ErrorBoundary>
       <SiteChrome locale={locale}>
-        <main id="main-content" className="min-h-screen bg-[#f6f1e8] pb-20 pt-32">
+        <main id="main-content" className="min-h-screen bg-stone-950/40 pb-20 pt-32">
           <article className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
             <script
               type="application/ld+json"
               dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPosting) }}
             />
-            <p className="text-sm font-bold text-[#6d7583]">
-              <Link href={sitePaths.blog} className="hover:text-[#9a5a14]">
+            <p className="text-sm font-bold text-stone-500">
+              <Link href={sitePaths.blog} className="hover:text-amber-500">
                 {locale === 'he' ? 'בלוג' : 'Blog'}
               </Link>
             </p>
-            <h1 className="hero-display mt-4 text-4xl font-black leading-[1.05] text-[#12151c] md:text-5xl">{article.title}</h1>
-            <p className="mt-4 text-sm font-bold text-[#6d7583]">
+            <h1 className="hero-display mt-4 text-4xl font-black leading-[1.05] text-stone-100 md:text-5xl">{article.title}</h1>
+            <p className="mt-4 text-sm font-bold text-stone-500">
               <time dateTime={article.isoDate}>{article.date || article.isoDate.slice(0, 10)}</time>
             </p>
             {article.excerpt ? (
-              <p className="mt-6 text-lg font-semibold leading-8 text-[#5a6270]">{article.excerpt}</p>
+              <p className="mt-6 text-lg font-semibold leading-8 text-stone-400">{article.excerpt}</p>
             ) : null}
             {article.image ? (
               // Soro hosts the featured image; a plain img avoids a remote-image allowlist.
@@ -124,7 +124,7 @@ export default async function BlogPostPage({ params }: Props) {
               <img
                 src={article.image}
                 alt={article.title}
-                className="mt-8 w-full rounded-[28px] border border-[#ddd5c8] object-cover"
+                className="mt-8 w-full rounded-[28px] border border-stone-800 object-cover"
               />
             ) : null}
             <div

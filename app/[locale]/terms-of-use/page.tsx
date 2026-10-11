@@ -36,36 +36,36 @@ export default async function TermsOfUsePage({ params }: Props) {
   return (
     <ErrorBoundary>
       <SiteChrome locale={locale}>
-        <main id="main-content" className="min-h-screen bg-[#f6f1e8] text-[#12151c]">
-          <section className="relative overflow-hidden bg-[#f6f1e8] pt-28">
+        <main id="main-content" className="min-h-screen bg-stone-950/40 text-stone-100">
+          <section className="relative overflow-hidden bg-stone-950/40 pt-28">
             <div className="tech-grid" aria-hidden="true" />
             <div className="site-container relative z-10 pb-12 pt-10">
               <div className="max-w-4xl">
-                <p className="mb-5 text-sm font-extrabold uppercase tracking-[0.2em] text-[#9a5a14]">
+                <p className="mb-5 text-sm font-extrabold uppercase tracking-[0.2em] text-amber-500">
                   {content.brand.name}
                 </p>
-                <h1 className="hero-display text-5xl font-black leading-[0.9] text-[#12151c] md:text-7xl">
+                <h1 className="hero-display text-5xl font-black leading-[0.9] text-stone-100 md:text-7xl">
                   {content.termsPage.title}
                 </h1>
-                <p className="mt-5 text-sm font-extrabold text-[#9a5a14]">{content.termsPage.updated}</p>
-                <p className="mt-7 max-w-3xl text-lg font-semibold leading-8 text-[#5a6270] md:text-xl md:leading-9">
+                <p className="mt-5 text-sm font-extrabold text-amber-500">{content.termsPage.updated}</p>
+                <p className="mt-7 max-w-3xl text-lg font-semibold leading-8 text-stone-400 md:text-xl md:leading-9">
                   {content.termsPage.intro}
                 </p>
               </div>
             </div>
           </section>
 
-          <section className="site-section bg-white">
+          <section className="site-section bg-stone-900/75">
             <div className="site-container">
               <div className="grid gap-5">
                 {content.termsPage.sections.map((section, index) => (
                   <article
                     key={section.title}
-                    className="rounded-[28px] border border-[#ddd5c8] bg-[#f6f1e8] p-6 shadow-sm md:p-8"
+                    className="rounded-[28px] border border-stone-800 bg-stone-950/40 p-6 shadow-sm md:p-8"
                   >
-                    <p className="text-sm font-black text-[#9a5a14]">{String(index + 1).padStart(2, '0')}</p>
-                    <h2 className="mt-4 text-3xl font-black leading-tight text-[#12151c]">{section.title}</h2>
-                    <p className="mt-4 text-base font-medium leading-8 text-[#5a6270] md:text-lg">{section.text}</p>
+                    <p className="text-sm font-black text-amber-500">{String(index + 1).padStart(2, '0')}</p>
+                    <h2 className="mt-4 text-3xl font-black leading-tight text-stone-100">{section.title}</h2>
+                    <p className="mt-4 text-base font-medium leading-8 text-stone-400 md:text-lg">{section.text}</p>
                   </article>
                 ))}
               </div>

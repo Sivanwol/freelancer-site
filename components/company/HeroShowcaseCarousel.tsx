@@ -37,8 +37,8 @@ export default function HeroShowcaseCarousel({ items, isRtl }: Props) {
   };
 
   return (
-    <div className="rounded-[34px] border border-[#ddd5c8] bg-white p-3 shadow-2xl shadow-ink/10 md:p-4">
-      <div className="relative overflow-hidden rounded-[26px] bg-[#f3e4d0]">
+    <div className="rounded-[34px] border border-stone-800 bg-stone-900/75 p-3 shadow-2xl shadow-ink/10 md:p-4">
+      <div className="relative overflow-hidden rounded-[26px] bg-stone-900">
         <Image
           key={active.slug}
           src={active.image}
@@ -53,7 +53,7 @@ export default function HeroShowcaseCarousel({ items, isRtl }: Props) {
         <button
           type="button"
           onClick={previous}
-          className="absolute top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-white/70 bg-white/88 text-[#9a5a14] shadow-lg shadow-slate-950/10 backdrop-blur transition hover:bg-[#c87628] hover:text-white ltr:left-3 rtl:right-3"
+          className="absolute top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-white/70 bg-stone-900/75/88 text-amber-500 shadow-lg shadow-slate-950/10 backdrop-blur transition hover:bg-amber-600 hover:text-white ltr:left-3 rtl:right-3"
           aria-label={isRtl ? 'הפרויקט הקודם' : 'Previous project'}
         >
           {isRtl ? <FaChevronRight aria-hidden="true" /> : <FaChevronLeft aria-hidden="true" />}
@@ -61,7 +61,7 @@ export default function HeroShowcaseCarousel({ items, isRtl }: Props) {
         <button
           type="button"
           onClick={next}
-          className="absolute top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-white/70 bg-white/88 text-[#9a5a14] shadow-lg shadow-slate-950/10 backdrop-blur transition hover:bg-[#c87628] hover:text-white ltr:right-3 rtl:left-3"
+          className="absolute top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-white/70 bg-stone-900/75/88 text-amber-500 shadow-lg shadow-slate-950/10 backdrop-blur transition hover:bg-amber-600 hover:text-white ltr:right-3 rtl:left-3"
           aria-label={isRtl ? 'הפרויקט הבא' : 'Next project'}
         >
           {isRtl ? <FaChevronLeft aria-hidden="true" /> : <FaChevronRight aria-hidden="true" />}
@@ -69,9 +69,9 @@ export default function HeroShowcaseCarousel({ items, isRtl }: Props) {
       </div>
 
       <div className="mt-5 px-2 pb-1 text-start">
-        <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-[#9a5a14]">{active.category}</p>
-        <h2 className="mt-2 text-2xl font-black leading-tight text-[#12151c] md:text-3xl">{active.title}</h2>
-        <p className="mt-2 text-sm font-medium leading-7 text-[#5a6270]">{active.summary}</p>
+        <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-amber-500">{active.category}</p>
+        <h2 className="mt-2 text-2xl font-black leading-tight text-stone-100 md:text-3xl">{active.title}</h2>
+        <p className="mt-2 text-sm font-medium leading-7 text-stone-400">{active.summary}</p>
       </div>
 
       <div className="mt-4 flex items-center justify-center gap-2">
@@ -81,7 +81,7 @@ export default function HeroShowcaseCarousel({ items, isRtl }: Props) {
             type="button"
             onClick={() => setActiveIndex(index)}
             className={`h-2 rounded-full transition ${
-              index === activeIndex ? 'w-9 bg-[#9a5a14]' : 'w-2 bg-[#cfc4b4] hover:bg-[#c87628]'
+              index === activeIndex ? 'w-9 bg-[#9a5a14]' : 'w-2 bg-[#cfc4b4] hover:bg-amber-600'
             }`}
             aria-label={isRtl ? `מעבר לפרויקט ${index + 1}` : `Go to project ${index + 1}`}
           />

@@ -107,7 +107,7 @@ export default function ContactForm({ source, compact = false }: ContactFormProp
   };
 
   const fieldClassName =
-    'w-full rounded-xl border border-[#dce8f5] bg-[#fbfcfe] px-3.5 py-2.5 text-sm font-medium text-[#12151c] outline-none transition placeholder:text-[#9aa8bc] focus:border-[#7eb4ea] focus:bg-white focus:ring-2 focus:ring-[#7eb4ea]/20';
+    'w-full rounded-xl border border-[#dce8f5] bg-[#fbfcfe] px-3.5 py-2.5 text-sm font-medium text-stone-100 outline-none transition placeholder:text-[#9aa8bc] focus:border-[#7eb4ea] focus:bg-stone-900/75 focus:ring-2 focus:ring-[#7eb4ea]/20';
 
   return (
     <>
@@ -243,27 +243,27 @@ export default function ContactForm({ source, compact = false }: ContactFormProp
             aria-modal="true"
             aria-labelledby="contact-success-title"
             aria-describedby="contact-success-body"
-            className="relative z-10 w-full max-w-md rounded-[28px] border border-[#ddd5c8] bg-white p-7 shadow-2xl shadow-ink/20"
+            className="relative z-10 w-full max-w-md rounded-[28px] border border-stone-800 bg-stone-900/75 p-7 shadow-2xl shadow-ink/20"
           >
             <button
               type="button"
               onClick={dismissSuccess}
-              className="absolute top-4 grid h-9 w-9 place-items-center rounded-full border border-[#d5e4f4] text-[#5a6270] transition hover:border-[#9cc7f0] hover:text-[#9a5a14] ltr:right-4 rtl:left-4"
+              className="absolute top-4 grid h-9 w-9 place-items-center rounded-full border border-[#d5e4f4] text-stone-400 transition hover:border-amber-600 hover:text-amber-500 ltr:right-4 rtl:left-4"
               aria-label={formCopy.successClose}
             >
               <FaTimes className="h-4 w-4" aria-hidden="true" />
             </button>
             <div className="flex flex-col items-center text-center">
-              <FaCheckCircle className="mb-4 h-12 w-12 text-[#9a5a14]" aria-hidden="true" />
+              <FaCheckCircle className="mb-4 h-12 w-12 text-amber-500" aria-hidden="true" />
               <h2
                 id="contact-success-title"
-                className="text-2xl font-black leading-tight text-[#12151c]"
+                className="text-2xl font-black leading-tight text-stone-100"
               >
                 {formCopy.successTitle}
               </h2>
               <p
                 id="contact-success-body"
-                className="mt-3 text-base font-medium leading-7 text-[#5a6270]"
+                className="mt-3 text-base font-medium leading-7 text-stone-400"
               >
                 {formCopy.success}
               </p>

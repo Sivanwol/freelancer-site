@@ -236,7 +236,7 @@ export default function VibeCodingGrid({ eyebrow, title, items }: Props) {
     <section id="vibe-coding" className="site-section overflow-visible bg-[#0c0e14] text-white">
       <div className="site-container overflow-visible">
         <div className="mx-auto mb-10 max-w-4xl text-center">
-          <p className="mb-4 inline-flex rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-sm font-extrabold text-[#e8b56a]">
+          <p className="mb-4 inline-flex rounded-full border border-white/15 bg-stone-900/75/5 px-4 py-1.5 text-sm font-extrabold text-[#e8b56a]">
             {eyebrow}
           </p>
           <h2 className="hero-display text-4xl font-black leading-[0.98] md:text-6xl">{title}</h2>

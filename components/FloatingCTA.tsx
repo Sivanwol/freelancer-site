@@ -42,10 +42,10 @@ export default function FloatingCTA({ content }: FloatingCTAProps) {
       {links.map((link) => {
         const Icon = link.icon;
         const className =
-          'group relative grid h-12 w-12 place-items-center rounded-full border border-[#d5e4f4] bg-white text-[#9a5a14] shadow-sm transition hover:border-[#9cc7f0] hover:bg-[#f3f8fd] hover:text-[#155aa8]';
+          'group relative grid h-12 w-12 place-items-center rounded-full border border-[#d5e4f4] bg-stone-900/75 text-amber-500 shadow-sm transition hover:border-amber-600 hover:bg-[#f3f8fd] hover:text-[#155aa8]';
         const tooltip = (
           <span
-            className={`pointer-events-none absolute top-1/2 z-10 -translate-y-1/2 whitespace-nowrap rounded-lg border border-[#d5e4f4] bg-white/95 px-3 py-1.5 text-xs font-semibold text-[#3d4f66] opacity-0 shadow-sm backdrop-blur transition duration-200 group-hover:opacity-100 ${
+            className={`pointer-events-none absolute top-1/2 z-10 -translate-y-1/2 whitespace-nowrap rounded-lg border border-[#d5e4f4] bg-stone-900/75/95 px-3 py-1.5 text-xs font-semibold text-[#3d4f66] opacity-0 shadow-sm backdrop-blur transition duration-200 group-hover:opacity-100 ${
               isRtl ? 'left-full ms-3' : 'right-full me-3'
             }`}
           >

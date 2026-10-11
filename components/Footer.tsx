@@ -1,11 +1,11 @@
 'use client';
 
-import Image from 'next/image';
 import { useLocale } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { sitePaths } from '@/lib/site-paths';
 import type { ClientChromeContent } from '@/lib/company-content';
-import { FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
+import { SiteLogo } from '@/components/site-logo';
+import { FaLinkedinIn } from 'react-icons/fa';
 
 type FooterProps = {
   content: ClientChromeContent;
@@ -14,59 +14,72 @@ type FooterProps = {
 export default function Footer({ content }: FooterProps) {
   const locale = useLocale();
   const year = new Date().getFullYear();
+  const tagline =
+    locale === 'he'
+      ? 'סיון וולברג — ארכיטקט תוכנה ו-CTO. עוזר לחברות לבנות טכנולוגיה יציבה, חכמה ורווחית.'
+      : 'Sivan Wolberg — software architect and CTO. Helping companies ship stable, smart, profitable technology.';
 
   return (
-    <footer className="border-t border-[#ddd5c8] bg-[#0c0e14] px-4 py-12 text-[#d8cfc2]" role="contentinfo">
-      <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[1.2fr_auto] md:items-start">
-        <div>
-          <Link href="/" className="inline-flex h-12 w-36 items-center overflow-hidden">
-            <Image
-              key={locale}
-              src={locale === 'he' ? '/logo-he.png' : '/logo.png'}
-              alt={content.brand.name}
-              width={220}
-              height={72}
-              className="h-full w-full scale-[2.05] object-contain brightness-110"
-            />
-          </Link>
-          <p className="mt-4 max-w-2xl text-sm font-medium leading-7 text-[#b8aa98]">{content.footer.credit}</p>
-          <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm font-medium text-[#8f8578]">
-            <p>{content.footer.rights.replace('{year}', String(year))}</p>
-            <span aria-hidden="true">/</span>
-            <Link href={sitePaths.termsOfUse} className="font-extrabold text-[#d8cfc2] transition hover:text-[#e8b56a]">
-              {content.footer.terms}
+    <footer className="border-t border-stone-900 bg-stone-950 px-4 py-16" role="contentinfo">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-12 grid grid-cols-1 gap-10 md:grid-cols-4">
+          <div className="md:col-span-2">
+            <Link href="/" aria-label={content.brand.name}>
+              <SiteLogo locale={locale} alt={content.brand.name} />
             </Link>
-            <span aria-hidden="true">/</span>
-            <Link href={sitePaths.privacyPolicy} className="font-extrabold text-[#d8cfc2] transition hover:text-[#e8b56a]">
-              {content.footer.privacy}
-            </Link>
-            <span aria-hidden="true">/</span>
-            <Link
-              href={sitePaths.accessibilityStatement}
-              className="font-extrabold text-[#d8cfc2] transition hover:text-[#e8b56a]"
-            >
-              {content.footer.accessibility}
-            </Link>
+            <p className="mt-6 max-w-sm text-sm leading-7 text-stone-400">{tagline}</p>
+          </div>
+          <div>
+            <h2 className="mb-4 text-sm font-bold text-white">{locale === 'he' ? 'שירותים' : 'Services'}</h2>
+            <ul className="space-y-3 text-sm text-stone-500">
+              <li>
+                <Link href={sitePaths.ragProduction} className="transition hover:text-amber-500">
+                  {locale === 'he' ? "תיקון צ'אט AI" : 'RAG chat repair'}
+                </Link>
+              </li>
+              <li>
+                <Link href={sitePaths.softwareDevelopment} className="transition hover:text-amber-500">
+                  {content.nav.software}
+                </Link>
+              </li>
+              <li>
+                <Link href={sitePaths.businessAutomation} className="transition hover:text-amber-500">
+                  {content.nav.automation}
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2 className="mb-4 text-sm font-bold text-white">{locale === 'he' ? 'מידע נוסף' : 'Legal'}</h2>
+            <ul className="space-y-3 text-sm text-stone-500">
+              <li>
+                <Link href={sitePaths.accessibilityStatement} className="transition hover:text-amber-500">
+                  {content.footer.accessibility}
+                </Link>
+              </li>
+              <li>
+                <Link href={sitePaths.privacyPolicy} className="transition hover:text-amber-500">
+                  {content.footer.privacy}
+                </Link>
+              </li>
+              <li>
+                <Link href={sitePaths.termsOfUse} className="transition hover:text-amber-500">
+                  {content.footer.terms}
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
-        <div className="flex items-center gap-4 md:justify-end">
-          <a
-            href={content.brand.whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-white/5 text-[#f5efe6] transition hover:border-[#c87628]/50 hover:text-[#e8b56a]"
-            aria-label="WhatsApp"
-          >
-            <FaWhatsapp className="h-5 w-5" />
-          </a>
+        <div className="flex flex-col items-center justify-between gap-4 border-t border-stone-900 pt-8 md:flex-row">
+          <p className="text-sm text-stone-500">{content.footer.rights.replace('{year}', String(year))}</p>
           <a
             href={content.brand.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-white/5 text-[#f5efe6] transition hover:border-[#0077b5]/40 hover:text-[#e8b56a]"
+            className="text-2xl text-stone-500 transition hover:text-amber-500"
             aria-label="LinkedIn"
           >
-            <FaLinkedinIn className="h-5 w-5" />
+            <FaLinkedinIn />
           </a>
         </div>
       </div>

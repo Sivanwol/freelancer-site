@@ -123,6 +123,10 @@ body {
   .inner-card {
     @apply rounded-[1.75rem] border border-stone-800 bg-stone-900/70 p-6 shadow-lg shadow-black/20 md:p-8;
   }
+
+  .a11y-action {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-stone-700 bg-stone-900 px-3 py-2 text-xs font-bold text-stone-200 transition hover:border-amber-600;
+  }
 }
 
 .dark-band {
