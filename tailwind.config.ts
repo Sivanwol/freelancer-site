@@ -11,6 +11,16 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        ink: "#12151c",
+        surface: "#f6f1e8",
+        muted: "#5a6270",
+        brand: {
+          DEFAULT: "#c87628",
+          strong: "#9a5a14",
+          soft: "#f3e4d0",
+          glow: "#e8b56a",
+        },
+        line: "#ddd5c8",
       },
       screens: {
         'xs': '475px',
@@ -65,5 +75,3 @@ const config: Config = {
   plugins: [],
 };
 export default config;
-
-

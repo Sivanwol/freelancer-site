@@ -113,7 +113,7 @@ export default function AccessibilityWidget() {
     <div className="fixed bottom-5 right-5 z-50">
       {isOpen ? (
         <div
-          className="mb-3 w-[min(calc(100vw-2.5rem),22rem)] rounded-2xl border border-[#c7d9ee] bg-white p-4 text-[#0d1626] shadow-2xl shadow-blue-950/15"
+          className="mb-3 w-[min(calc(100vw-2.5rem),22rem)] rounded-2xl border border-[#cfc4b4] bg-white p-4 text-[#12151c] shadow-2xl shadow-ink/15"
           role="dialog"
           aria-label={labels.title}
         >
@@ -122,23 +122,23 @@ export default function AccessibilityWidget() {
             <button
               type="button"
               onClick={() => setIsOpen(false)}
-              className="grid h-9 w-9 place-items-center rounded-full border border-[#dbe7f5] text-[#526174] transition hover:border-[#4c9df2] hover:text-[#1d72d2]"
+              className="grid h-9 w-9 place-items-center rounded-full border border-[#ddd5c8] text-[#5a6270] transition hover:border-[#c87628] hover:text-[#9a5a14]"
               aria-label={labels.close}
             >
               <FaTimes className="h-3.5 w-3.5" aria-hidden="true" />
             </button>
           </div>
 
-          <div className="mt-4 rounded-xl border border-[#dbe7f5] bg-[#f8fbff] p-3">
+          <div className="mt-4 rounded-xl border border-[#ddd5c8] bg-[#f6f1e8] p-3">
             <div className="mb-3 flex items-center justify-between gap-3">
               <span className="text-sm font-extrabold">{labels.textSize}</span>
-              <span className="text-sm font-black text-[#1d72d2]">{fontPercent}%</span>
+              <span className="text-sm font-black text-[#9a5a14]">{fontPercent}%</span>
             </div>
             <div className="grid grid-cols-2 gap-2">
               <button
                 type="button"
                 onClick={() => updateSettings({ fontStep: clampFontStep(settings.fontStep - 1) })}
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-[#c7d9ee] bg-white px-3 py-2 text-sm font-extrabold transition hover:border-[#4c9df2] hover:text-[#1d72d2]"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-[#cfc4b4] bg-white px-3 py-2 text-sm font-extrabold transition hover:border-[#c87628] hover:text-[#9a5a14]"
               >
                 <FaMinus className="h-3 w-3" aria-hidden="true" />
                 {labels.decreaseText}
@@ -146,7 +146,7 @@ export default function AccessibilityWidget() {
               <button
                 type="button"
                 onClick={() => updateSettings({ fontStep: clampFontStep(settings.fontStep + 1) })}
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-[#c7d9ee] bg-white px-3 py-2 text-sm font-extrabold transition hover:border-[#4c9df2] hover:text-[#1d72d2]"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-[#cfc4b4] bg-white px-3 py-2 text-sm font-extrabold transition hover:border-[#c87628] hover:text-[#9a5a14]"
               >
                 <FaPlus className="h-3 w-3" aria-hidden="true" />
                 {labels.increaseText}
@@ -184,7 +184,7 @@ export default function AccessibilityWidget() {
           <button
             type="button"
             onClick={resetSettings}
-            className="mt-4 w-full rounded-full border border-[#c7d9ee] bg-white px-4 py-2.5 text-sm font-extrabold text-[#526174] transition hover:border-[#4c9df2] hover:text-[#1d72d2]"
+            className="mt-4 w-full rounded-full border border-[#cfc4b4] bg-white px-4 py-2.5 text-sm font-extrabold text-[#5a6270] transition hover:border-[#c87628] hover:text-[#9a5a14]"
           >
             {labels.reset}
           </button>
@@ -194,7 +194,7 @@ export default function AccessibilityWidget() {
       <button
         type="button"
         onClick={() => setIsOpen((value) => !value)}
-        className="grid h-12 w-12 place-items-center rounded-full border border-[#c7d9ee] bg-white text-[#1d72d2] shadow-lg shadow-blue-950/10 transition hover:border-[#4c9df2] hover:bg-[#f8fbff] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1d72d2]"
+        className="grid h-12 w-12 place-items-center rounded-full border border-[#cfc4b4] bg-white text-[#9a5a14] shadow-lg shadow-ink/10 transition hover:border-[#c87628] hover:bg-[#f6f1e8] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#9a5a14]"
         aria-label={isOpen ? labels.close : labels.open}
         aria-expanded={isOpen}
       >
@@ -225,8 +225,8 @@ function ToggleButton({
       onClick={onClick}
       className={`flex items-center justify-between gap-3 rounded-xl border px-3 py-3 text-sm font-extrabold transition ${
         enabled
-          ? 'border-[#4c9df2] bg-[#e7f2ff] text-[#1d72d2]'
-          : 'border-[#dbe7f5] bg-white text-[#0d1626] hover:border-[#4c9df2] hover:text-[#1d72d2]'
+          ? 'border-[#c87628] bg-[#f3e4d0] text-[#9a5a14]'
+          : 'border-[#ddd5c8] bg-white text-[#12151c] hover:border-[#c87628] hover:text-[#9a5a14]'
       }`}
       aria-pressed={enabled}
     >
@@ -234,7 +234,7 @@ function ToggleButton({
         {icon}
         {label}
       </span>
-      <span className="rounded-full bg-white px-2 py-1 text-xs font-black text-[#526174]">{enabled ? onText : offText}</span>
+      <span className="rounded-full bg-white px-2 py-1 text-xs font-black text-[#5a6270]">{enabled ? onText : offText}</span>
     </button>
   );
 }

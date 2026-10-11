@@ -42,18 +42,18 @@ export default async function ContactPage({ params, searchParams }: Props) {
   return (
     <ErrorBoundary>
       <SiteChrome locale={locale}>
-        <main id="main-content" className="min-h-screen overflow-hidden bg-[#f8fbff] text-[#0d1626]">
-          <section className="relative bg-[#f8fbff] pt-28">
+        <main id="main-content" className="min-h-screen overflow-hidden bg-[#f6f1e8] text-[#12151c]">
+          <section className="relative bg-[#f6f1e8] pt-28">
             <div className="tech-grid" aria-hidden="true" />
             <div className="site-container relative z-10 grid gap-10 pb-16 pt-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
               <div>
-                <p className="mb-5 text-sm font-extrabold uppercase tracking-[0.2em] text-[#1d72d2]">
+                <p className="mb-5 text-sm font-extrabold uppercase tracking-[0.2em] text-[#9a5a14]">
                   {content.cta.contact}
                 </p>
-                <h1 className="hero-display max-w-3xl text-5xl font-black leading-[0.95] text-[#0d1626] md:text-7xl">
+                <h1 className="hero-display max-w-3xl text-5xl font-black leading-[0.95] text-[#12151c] md:text-7xl">
                   {content.contact.title}
                 </h1>
-                <p className="mt-7 max-w-2xl text-lg font-semibold leading-8 text-[#526174] md:text-xl md:leading-9">
+                <p className="mt-7 max-w-2xl text-lg font-semibold leading-8 text-[#5a6270] md:text-xl md:leading-9">
                   {content.contact.subtitle}
                 </p>
                 <div className="mt-8 grid gap-3 sm:grid-cols-3">
@@ -81,8 +81,8 @@ export default async function ContactPage({ params, searchParams }: Props) {
                   </a>
                 </div>
               </div>
-              <div className="rounded-[32px] border border-[#dbe7f5] bg-white p-6 shadow-2xl shadow-blue-950/5 md:p-8">
-                <h2 className="mb-6 text-2xl font-black text-[#0d1626]">{content.contact.form.title}</h2>
+              <div className="rounded-[32px] border border-[#ddd5c8] bg-white p-6 shadow-2xl shadow-ink/5 md:p-8">
+                <h2 className="mb-6 text-2xl font-black text-[#12151c]">{content.contact.form.title}</h2>
                 <ContactForm source={source} />
               </div>
             </div>

@@ -767,9 +767,9 @@ export const companyContent = {
       ctaText: 'A short call is enough to see whether the failure is retrieval, permissions, or the lack of an eval.',
     },
     meta: {
-      defaultTitle: 'Software architect for product and AI in production | DevCo Solutions',
+      defaultTitle: 'Fix live RAG chat in SaaS products | DevCo Solutions',
       defaultDescription:
-        'Two products. Fix a chat that is already live and wrong, or build a new product from scratch until it is live.',
+        'Primary: repair RAG / AI chat already live in your SaaS (wrong answers, citations, ACL). Secondary: build a new product from scratch until it is live.',
       softwareTitle: 'Build a product from scratch until it is live | DevCo',
       softwareDescription:
         'Build a new product from scratch, screens, server, and information, until it is live and people are using it.',
@@ -1541,9 +1541,9 @@ export const companyContent = {
       ctaText: 'שיחה קצרה מספיקה כדי לראות אם הכשל הוא בשליפה, בהרשאות, או בחסרון של eval.',
     },
     meta: {
-      defaultTitle: 'ארכיטקט תוכנה למוצר ול-AI בפרודקשן | DevCo Solutions',
+      defaultTitle: 'תיקון צ\'אט RAG ב-SaaS שכבר באוויר | DevCo Solutions',
       defaultDescription:
-        'שני מוצרים. מתקנים צ\'אט שכבר רץ וטועה, או בונים מוצר חדש מאפס עד שהוא חי.',
+        'ההצעה המרכזית: תיקון צ\'אט AI / RAG שכבר רץ במוצר SaaS (תשובות שגויות, מקורות, ACL). משני: בניית מוצר חדש מאפס עד שהוא חי.',
       softwareTitle: 'פיתוח מוצר מאפס עד שהוא חי | DevCo',
       softwareDescription:
         'בונים מוצר חדש מאפס, מסכים, שרת ומידע, עד שהוא חי ואנשים משתמשים בו.',

@@ -50,8 +50,8 @@ export default function Navbar({ content }: NavbarProps) {
 
   const navItems = [
     { label: content.nav.home, href: sitePaths.home },
-    { label: content.nav.software, href: sitePaths.softwareDevelopment },
     { label: content.nav.rag, href: sitePaths.ragProduction },
+    { label: content.nav.software, href: sitePaths.softwareDevelopment },
     { label: content.nav.about, href: sitePaths.aboutUs },
     { label: content.nav.testimonials, href: `${sitePaths.home}#testimonials` },
     { label: content.nav.blog, href: sitePaths.blog },
@@ -91,28 +91,40 @@ export default function Navbar({ content }: NavbarProps) {
     return true;
   };
 
+  const shellClass = isScrolled
+    ? 'border-[#ddd5c8] bg-[#fffcf7]/94 text-[#12151c] shadow-md shadow-ink/5'
+    : 'border-white/10 bg-[#0c0e14]/82 text-[#f5efe6] shadow-lg shadow-black/25';
+
+  const linkClass = (active: boolean) =>
+    active
+      ? isScrolled
+        ? 'text-[#9a5a14]'
+        : 'text-[#e8b56a]'
+      : isScrolled
+        ? 'text-[#5a6270] hover:text-[#12151c]'
+        : 'text-[#d8cfc2] hover:text-white';
+
   return (
     <nav
       role="navigation"
       aria-label={content.nav.main}
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'border-b border-[#dbe7f5] bg-[#f8fbff]/92 shadow-sm backdrop-blur-xl' : 'bg-[#f8fbff]/72 backdrop-blur-sm'
-      }`}
+      className={`fixed inset-x-0 top-0 z-50 border-b backdrop-blur-xl transition-all duration-300 ${shellClass}`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-20 items-center justify-between gap-4">
-          <Link href="/" className="flex h-14 w-40 shrink-0 items-center overflow-hidden" aria-label={content.brand.name}>
+        <div className="flex h-[4.75rem] items-center justify-between gap-4">
+          <Link href="/" className="flex h-12 w-36 shrink-0 items-center overflow-hidden" aria-label={content.brand.name}>
             <Image
+              key={locale}
               src={locale === 'he' ? '/logo-he.png' : '/logo.png'}
               alt={content.brand.name}
               width={240}
               height={80}
-              className="h-full w-full scale-[2.15] object-contain"
+              className={`h-full w-full scale-[2.05] object-contain ${isScrolled ? '' : 'brightness-110 contrast-125'}`}
               priority
             />
           </Link>
 
-          <div className="hidden items-center gap-5 lg:flex">
+          <div className="hidden items-center gap-4 xl:flex">
             {navItems.map((item) => (
               <Link
                 key={item.href}
@@ -122,23 +134,24 @@ export default function Navbar({ content }: NavbarProps) {
                     event.preventDefault();
                   }
                 }}
-                className={`text-sm font-semibold transition ${
-                  isActive(item.href) ? 'text-[#1d72d2]' : 'text-[#526174] hover:text-[#0d1626]'
-                }`}
+                className={`text-sm font-semibold transition ${linkClass(isActive(item.href))}`}
               >
                 {item.label}
               </Link>
             ))}
           </div>
 
-          {englishLocaleEnabled ? (
-            <div className="hidden items-center gap-3 lg:flex">
-              <div className="flex rounded-full border border-[#c7d9ee] bg-white p-1 shadow-sm">
+          <div className="hidden items-center gap-3 xl:flex">
+            <Link href={sitePaths.contact} className="btn-primary px-5 py-2.5 text-xs uppercase tracking-wide">
+              {content.nav.contact}
+            </Link>
+            {englishLocaleEnabled ? (
+              <div className="flex rounded-full border border-[#cfc4b4] bg-white/90 p-1 shadow-sm">
                 <button
                   type="button"
                   onClick={() => changeLocale('he')}
                   className={`rounded-full px-3 py-1.5 text-sm font-extrabold transition ${
-                    locale === 'he' ? 'bg-[#4c9df2] text-white' : 'text-[#526174] hover:text-[#0d1626]'
+                    locale === 'he' ? 'bg-[#c87628] text-white' : 'text-[#5a6270] hover:text-[#12151c]'
                   }`}
                 >
                   עברית
@@ -147,19 +160,23 @@ export default function Navbar({ content }: NavbarProps) {
                   type="button"
                   onClick={() => changeLocale('en')}
                   className={`rounded-full px-3 py-1.5 text-sm font-extrabold transition ${
-                    locale === 'en' ? 'bg-[#4c9df2] text-white' : 'text-[#526174] hover:text-[#0d1626]'
+                    locale === 'en' ? 'bg-[#c87628] text-white' : 'text-[#5a6270] hover:text-[#12151c]'
                   }`}
                 >
                   EN
                 </button>
               </div>
-            </div>
-          ) : null}
+            ) : null}
+          </div>
 
           <button
             type="button"
             onClick={() => setIsMobileMenuOpen((value) => !value)}
-            className="grid h-11 w-11 place-items-center rounded-full border border-[#c7d9ee] bg-white text-[#0d1626] shadow-sm lg:hidden"
+            className={`grid h-11 w-11 place-items-center rounded-full border shadow-sm lg:hidden ${
+              isScrolled
+                ? 'border-[#cfc4b4] bg-[#fffcf7] text-[#12151c]'
+                : 'border-white/20 bg-white/10 text-[#f5efe6]'
+            }`}
             aria-label={isMobileMenuOpen ? content.nav.close : content.nav.menu}
             aria-expanded={isMobileMenuOpen}
           >
@@ -168,7 +185,11 @@ export default function Navbar({ content }: NavbarProps) {
         </div>
 
         {isMobileMenuOpen ? (
-          <div className="border-t border-[#dbe7f5] bg-[#f8fbff] py-4 lg:hidden">
+          <div
+            className={`border-t py-4 lg:hidden ${
+              isScrolled ? 'border-[#ddd5c8] bg-[#fffcf7]' : 'border-white/10 bg-[#0c0e14]/95'
+            }`}
+          >
             <div className="grid gap-2">
               {navItems.map((item) => (
                 <Link
@@ -181,14 +202,27 @@ export default function Navbar({ content }: NavbarProps) {
                     setIsMobileMenuOpen(false);
                   }}
                   className={`rounded-2xl px-3 py-3 text-base font-extrabold ${
-                    isActive(item.href) ? 'bg-[#e7f2ff] text-[#1d72d2]' : 'text-[#526174]'
+                    isActive(item.href)
+                      ? isScrolled
+                        ? 'bg-[#f3e4d0] text-[#9a5a14]'
+                        : 'bg-white/10 text-[#e8b56a]'
+                      : isScrolled
+                        ? 'text-[#5a6270]'
+                        : 'text-[#d8cfc2]'
                   }`}
                 >
                   {item.label}
                 </Link>
               ))}
+              <Link
+                href={sitePaths.contact}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="btn-primary mt-2 justify-center"
+              >
+                {content.nav.contact}
+              </Link>
               {englishLocaleEnabled ? (
-                <div className="mt-2 flex gap-2 border-t border-[#dbe7f5] pt-4">
+                <div className="mt-2 flex gap-2 border-t border-[#ddd5c8] pt-4">
                   <button
                     type="button"
                     onClick={() => {
@@ -196,7 +230,7 @@ export default function Navbar({ content }: NavbarProps) {
                       setIsMobileMenuOpen(false);
                     }}
                     className={`rounded-full px-3 py-2 text-sm font-extrabold ${
-                      locale === 'he' ? 'bg-[#4c9df2] text-white' : 'border border-[#c7d9ee] text-[#526174]'
+                      locale === 'he' ? 'bg-[#c87628] text-white' : 'border border-[#cfc4b4] text-[#5a6270]'
                     }`}
                   >
                     עברית
@@ -208,7 +242,7 @@ export default function Navbar({ content }: NavbarProps) {
                       setIsMobileMenuOpen(false);
                     }}
                     className={`rounded-full px-3 py-2 text-sm font-extrabold ${
-                      locale === 'en' ? 'bg-[#4c9df2] text-white' : 'border border-[#c7d9ee] text-[#526174]'
+                      locale === 'en' ? 'bg-[#c87628] text-white' : 'border border-[#cfc4b4] text-[#5a6270]'
                     }`}
                   >
                     EN

@@ -1,0 +1,992 @@
+[
+  {
+    "id": "dc51b9e5-520f-47d2-bc48-04e49dfb7a9b",
+    "title": "ארכיטקטורה מודולרית למערכות RAG שחיות בייצור",
+    "slug": "modular-architecture-rag-production",
+    "excerpt": "ארכיטקטורה מודולרית עוזרת לצוותי SaaS לשנות רכיבי RAG, הרשאות ומדידה בלי לסכן את המוצר החי, אך דורשת גבולות ברורים בין רכיבים. במערכת מורכבת בייצור.",
+    "date": "11 באוקטובר 2026",
+    "isoDate": "2026-10-11T20:29:11.617+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/dc51b9e5-520f-47d2-bc48-04e49dfb7a9b.webp"
+  },
+  {
+    "id": "9b4cdb50-69d6-4940-9d8e-82bf231549fb",
+    "title": "צמצום הזנה ידנית לתהליך תפעולי אמין",
+    "slug": "tzimtzum-hazana-yadnit",
+    "excerpt": "צמצום הזנה ידנית מפחית טעויות, מקצר זמני טיפול ומשפר שליטה תפעולית. כך מזהים תהליכים מתאימים ובונים אוטומציה אמינה שמתרחבת עם העסק. בלי לאבד בקרה. בדרך.",
+    "date": "11 באוקטובר 2026",
+    "isoDate": "2026-10-11T01:11:35.66+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/workflows/234e0ab7-fabc-4033-b994-e607b7d681a9.webp"
+  },
+  {
+    "id": "97258668-d4ba-41d4-b6af-cb6ff3713c58",
+    "title": "פיתוח MVP שמייצר החלטות עסקיות מהירות יותר",
+    "slug": "mvp-development-business-decisions",
+    "excerpt": "פיתוח MVP נכון בוחן צורך עסקי אמיתי, מקצר את הדרך להשקה ומניח תשתית לצמיחה בלי לבנות מוצר מלא לפני שיש הוכחת שימוש ומדדי החלטה ברורים להמשך פיתוח מדוד.",
+    "date": "10 באוקטובר 2026",
+    "isoDate": "2026-10-10T01:11:35.622+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/workflows/ad471deb-db4b-4b48-982e-473470ecea72.webp"
+  },
+  {
+    "id": "829d97c0-03ae-4975-8b07-431f0b061a43",
+    "title": "חידוש אפליקציה קיימת בל�� לסכן את הפעילות",
+    "slug": "renewing-an-existing-app",
+    "excerpt": "חידוש אפליקציה קיימת מתחיל באבחון תהליכים, סיכונים ויעדים עסקיים. כיצד מחליטים מה לשמר, מה לשדרג ואיך להשיק מערכת אמינה בלי לעצור את התפעול השוטף שלכם.",
+    "date": "9 באוקטובר 2026",
+    "isoDate": "2026-10-09T01:11:35.624+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/workflows/10c07624-d5c1-4cde-8423-971530d10a5f.webp"
+  },
+  {
+    "id": "c1439621-3c8f-494f-af51-6d57d794f399",
+    "title": "טעויות נפוצות בהגדרת תפקידי משתמשים ואיך מתקנים",
+    "slug": "common-mistakes-user-role-definition",
+    "excerpt": "טעויות נפוצות בהגדרת תפקידי משתמשים יוצרות סיכוני הרשאה, עיכובים ותהליכים ידניים. כך בונים מודל תפקידים ברור, בטוח וגמיש לצמיחה במערכות עסקיות מורכבות.",
+    "date": "8 באוקטובר 2026",
+    "isoDate": "2026-10-08T01:11:35.502+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/workflows/97d61715-4d9a-49ee-a7e7-a28d9c99028b.webp"
+  },
+  {
+    "id": "0ff31f7e-b0b5-44a4-bf36-d76e94099584",
+    "title": "תמיכת SaaS שוטפת שמגינה על צמיחת המוצר",
+    "slug": "ongoing-saas-support",
+    "excerpt": "תמיכת SaaS שוטפת שומרת על מוצר יציב, מאובטח ומוכן לצמיחה. כך בונים תהליך תמיכה עם ניטור, תיעדוף, תחזוקה ושקיפות ניהולית לאורך זמן, במערכת חיה ובעומסים.",
+    "date": "7 באוקטובר 2026",
+    "isoDate": "2026-10-07T01:11:25.684+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/workflows/3705bbcd-6634-4b7c-86dc-85485eb8f4e3.webp"
+  },
+  {
+    "id": "cda5f2c5-892d-4bfa-8fd3-510bc3a4fe19",
+    "title": "כמה עולה פיתוח פורטל לקוחות ומה משפיע על המחיר",
+    "slug": "kama-ole-pituach-portal-lakohot",
+    "excerpt": "כמה עולה פיתוח פורטל לקוחות? פירוק טווחי המחירים, גורמי העלות והחלטות האפיון שישפיעו על התקציב, לוח הזמנים והצמיחה העסקית שלכם.",
+    "date": "6 באוקטובר 2026",
+    "isoDate": "2026-10-06T01:11:27.333+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/workflows/f9f01d3a-12b4-4cac-acb4-d2efbcfb95e5.webp"
+  },
+  {
+    "id": "c47a9aa6-a54e-4e2c-981e-fee50aad6c93",
+    "title": "מדריך למיפוי מסע לקוח דיגיטלי שמוביל לפעולה",
+    "slug": "digital-customer-journey-mapping-guide",
+    "excerpt": "מדריך למיפוי מסע לקוח דיגיטלי: כך מזהים חיכוך, מחברים נתונים ותהליכים, ומתכננים מערכת שמגדילה המרות, שירות ויעילות תפעולית לאורך זמן באופן מדיד ומבוקר.",
+    "date": "5 באוקטובר 2026",
+    "isoDate": "2026-10-05T01:11:28.557+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/workflows/038d3f7c-03c7-4b9f-ad90-4803afccf958.webp"
+  },
+  {
+    "id": "030d80bb-0ace-49c0-8983-a40ed1b288ce",
+    "title": "מגמות אוטומציית מסמכים בארגונים לשנת 2026",
+    "slug": "document-automation-trends-organizations",
+    "excerpt": "מגמות אוטומציית מסמכים בארגונים משנות את הדרך שבה מידע נכנס, נבדק ומנותב. כך בונים תהליך אמין, מדיד ובטוח שמקצר זמני טיפול בלי לאבד שליטה תפעולית מלאה.",
+    "date": "3 באוקטובר 2026",
+    "isoDate": "2026-10-03T01:11:43.027+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/workflows/6e64568b-8ebf-4e33-b257-8f79c82762a9.webp"
+  },
+  {
+    "id": "f1a1ee64-977c-4a92-baf8-eff5015b398e",
+    "title": "חמישה סימנים לנתונים תפעוליים מפוזרים בעסק",
+    "slug": "five-signs-of-fragmented-operational-data",
+    "excerpt": "חמישה סימנים לנתונים תפעוליים מפוזרים חושפים תהליכים ידניים, טעויות ועיכובים. כך מזהים את שורש הבעיה ובונים תשתית נתונים אמינה לצמיחה מבוקרת לאורך זמן.",
+    "date": "2 באוקטובר 2026",
+    "isoDate": "2026-10-02T01:11:44.861+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/workflows/dcae7693-66ec-46a9-a4b0-6d39a983cda1.webp"
+  },
+  {
+    "id": "1799f5df-4868-4324-93bb-ef5bb60b8eca",
+    "title": "סקירת פלטפורמות לפיתוח צאטבוט ארגוני לעסקים",
+    "slug": "skirat-platformot-lepituach-chatbot-irgoni",
+    "excerpt": "סקירת פלטפורמות לפיתוח צאטבוט ארגוני: השוואה מעשית בין כלים, אבטחה, אינטגרציות, עלות ושליטה, כדי לבחור מערכת אמינה שמתחברת לתהליכי העבודה היומיומית.",
+    "date": "1 באוקטובר 2026",
+    "isoDate": "2026-10-01T01:11:40.526+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/workflows/6a435cca-a796-49ff-bb03-819e6b5327a4.webp"
+  },
+  {
+    "id": "d69f9688-ab95-4b3b-803f-b207fb688da2",
+    "title": "יתרונות מערכת התראות בזמן אמת לעסק תפעולי",
+    "slug": "יתרונות-מערכת-התראות-בזמן-אמת",
+    "excerpt": "מערכת התראות בזמן אמת מאפשרת לצוותים לזהות חריגות, לטפל בתקלות ולשמור על תהליכים רציפים. כך מתכננים פתרון אמין שמשרת את העסק. בלי רעש מיותר בכל יום עסקי.",
+    "date": "30 בספטמבר 2026",
+    "isoDate": "2026-09-30T01:12:03.346+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/workflows/c787a3df-294b-4f5b-8438-87a1841ae924.webp"
+  },
+  {
+    "id": "00e9a715-74f4-41c9-914b-b4224b007598",
+    "title": "מגמות אינטגרציה בזמן אמת שמעצבות את התפעול",
+    "slug": "megamut-integraziya-bizman-emet",
+    "excerpt": "מגמות אינטגרציה בזמן אמת מחברות מערכות לתהליכים עסקיים מהירים ומבוקרים. כך מתכננים תשתית אמינה, מדידה ומוכנה לצמיחה בלי לייצר תלות או עומס תפעולי מיותר.",
+    "date": "28 בספטמבר 2026",
+    "isoDate": "2026-09-28T01:11:55.32+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/workflows/1c6d27ba-88cd-4284-bf25-e84de806d94f.webp"
+  },
+  {
+    "id": "6ffba4d0-1eac-4fd8-87e5-884c1a67159d",
+    "title": "איך למנוע כפילויות במאגר לקוחות בלי לפגוע במכירות",
+    "slug": "eich-limnoa-kfiliot-bemagar-lekuchot",
+    "excerpt": "מדריך מעשי: איך למנוע כפילויות במאגר לקוחות בעזרת כללי הזנה, זיהוי חכם ואינטגרציות מבוקרות, כדי לשמור על נתונים מדויקים ותפעול יעיל לאורך זמן בכל ערוץ ובכל מערכת.",
+    "date": "27 בספטמבר 2026",
+    "isoDate": "2026-09-27T01:12:06.478+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/workflows/f5b22ed1-49ad-48ed-830d-a3d85c5c6961.webp"
+  },
+  {
+    "id": "f80c4b75-a094-4333-9c5d-d1a1cb9083c3",
+    "title": "8 טעויות השקת אפליקציה שעולות לעסק ביוקר",
+    "slug": "taויות-hashakat-aplikatzia",
+    "excerpt": "טעויות השקת אפליקציה אינן רק באגים: כך בונים תהליך השקה שמגן על תפעול, נתונים, המרות ואמון לקוחות, ומאפשר שיפור מהיר ובטוח לאחר העלייה לאוויר באופן מבוקר.",
+    "date": "25 בספטמבר 2026",
+    "isoDate": "2026-09-25T01:12:06.932+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/workflows/a70b7a6c-a9dc-4c0b-820d-06b441dd9a12.webp"
+  },
+  {
+    "id": "e2f5e4b8-c3fb-4f3d-bdf0-9e92fd113e3d",
+    "title": "איך מפתחים כלי תפעולי פנימי שמחזיק מעמד?",
+    "slug": "איך-מפתחים-כלי-תפעולי-פנימי",
+    "excerpt": "איך מפתחים כלי תפעולי פנימי שמקצר זמני טיפול, מחבר מערכות ומייצר שליטה תפעולית - מתהליך האפיון ועד השקה, מדידה ויכולת צמיחה יציבה לעסק מורכב בפועל.",
+    "date": "24 בספטמבר 2026",
+    "isoDate": "2026-09-24T01:12:05.702+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/workflows/2893e7bc-5eb1-41eb-be36-0a42899a2f09.webp"
+  },
+  {
+    "id": "e6651a15-750d-40ff-b808-d96023aa69bf",
+    "title": "מדריך לבדיקות תוכנה שמונע תקלות בפרודקשן",
+    "slug": "software-testing-guide",
+    "excerpt": "מדריך לבדיקות תוכנה לעסקים: כך בונים תהליך איכות שמונע תקלות, שומר על נתונים ומאפשר להשיק, לשדרג ולצמוח בלי הפתעות בפרודקשן גם כשהמערכת גדלה בביטחון.",
+    "date": "23 בספטמבר 2026",
+    "isoDate": "2026-09-23T01:12:05.565+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/workflows/532ff8a3-a564-475c-a6a7-05de0913e2a3.webp"
+  },
+  {
+    "id": "e1891939-53a5-440e-895b-0c9055f9a095",
+    "title": "איכות נתונים שקובעת אם האוטומציה באמת עובדת",
+    "slug": "data-quality-for-reliable-automation",
+    "excerpt": "איכות נתונים היא תנאי למערכות אמינות, אוטומציה עסקית מדויקת והחלטות ניהוליות טובות. כך מזהים כשלים, מגדירים בעלות ובונים בקרה שמחזיקה גם בארגון צומח היטב.",
+    "date": "21 בספטמבר 2026",
+    "isoDate": "2026-09-21T01:12:06.016+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/workflows/f7b08e4b-747a-4e03-be76-1c06f1cd0fea.webp"
+  },
+  {
+    "id": "e61ca4b6-2677-4ec1-846d-941051169d76",
+    "title": "מגמות אבטחת תוכנה ארגונית שמעצבות את 2026",
+    "slug": "enterprise-software-security-trends",
+    "excerpt": "מגמות אבטחת תוכנה ארגונית לשנת 2026: איך בונים מערכות בטוחות יותר, מצמצמים סיכוני גישה ושרשרת אספקה, ומטמיעים אבטחה בתהליך הפיתוח בלי להאט מסירה עסקית.",
+    "date": "20 בספטמבר 2026",
+    "isoDate": "2026-09-20T01:12:07.257+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/workflows/8d8f5a1e-1e05-46e1-8265-3cc5dc3c902d.webp"
+  },
+  {
+    "id": "fe010914-ecb8-45a1-9f7e-4a1cd2cc7966",
+    "title": "נייטיב מול היברידי ומה נכון למוצר שלכם",
+    "slug": "native-vs-hybrid-mobile-apps",
+    "excerpt": "נייטיב מול היברידי: כך בוחרים ארכיטקטורת מובייל לפי ביצועים, תקציב, אינטגרציות, אבטחה ותוכנית הצמיחה של המוצר - לפני שמתחילים לפתח בצורה מבוקרת ומדידה.",
+    "date": "19 בספטמבר 2026",
+    "isoDate": "2026-09-19T01:12:06.764+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/workflows/608faf6e-c839-4435-9ca5-8d166dbcc238.webp"
+  },
+  {
+    "id": "04d7804c-6f1f-4215-a22b-029a9b03ecef",
+    "title": "תזמור הזמנות שמחזיר שליטה לתפעול הצומח",
+    "slug": "tizmor-hazmanot",
+    "excerpt": "תזמור הזמנות מחבר מכירות, מלאי, מחסן ומשלוחים לתהליך אחד אמין, מצמצם טעויות ידניות ומאפשר לצוות התפעול לצמוח בלי לאבד שליטה גם בתקופות עומס גבוה.",
+    "date": "17 בספטמבר 2026",
+    "isoDate": "2026-09-17T01:12:11.431+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/workflows/32d47bc1-a0e9-4a9f-9a0e-d2ba8a65fefc.webp"
+  },
+  {
+    "id": "921c7420-02b5-4cd9-ae15-eed77a0e73fe",
+    "title": "מונולית מול מיקרוסרביסים: הבחירה הנכונה",
+    "slug": "monolith-vs-microservices",
+    "excerpt": "מונולית מול מיקרוסרביסים אינה בחירה אידאולוגית. כך בוחנים קצב פיתוח, עומס תפעולי, אינטגרציות ותוכנית צמיחה כדי לבחור ארכיטקטורה נכונה למוצר עסקי.",
+    "date": "16 בספטמבר 2026",
+    "isoDate": "2026-09-16T01:12:26.774+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/workflows/1463c0cb-3467-4f06-ba49-a7a67a3e9763.webp"
+  },
+  {
+    "id": "a32145af-f9d7-4388-b39f-93dabd64e975",
+    "title": "איך מתכננים הרשאות במערכת ארגונית בלי לסכן תפעול",
+    "slug": "how-to-plan-permissions-in-an-organizational-system",
+    "excerpt": "איך מתכננים הרשאות במערכת ארגונית כך שכל עובד מקבל גישה נדרשת בלבד, התפעול נשאר מהיר והבקרה מלאה גם בצמיחה ובפרודקשן לאורך זמן.",
+    "date": "14 בספטמבר 2026",
+    "isoDate": "2026-09-14T01:12:37.815+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/workflows/5a8cf7f1-399d-4f4a-a411-44517c47917d.webp"
+  },
+  {
+    "id": "113f85ca-8af7-4528-ba5e-3a1d681b9f48",
+    "title": "מדריך לאבטחת APIs במערכות מוכנות לפרודקשן",
+    "slug": "api-security-guide-production-systems",
+    "excerpt": "מדריך לאבטחת APIs לצוותים שבונים מוצרים, אוטומציות ואינטגרציות: אימות זהות, הרשאות, הגנת נתונים, ניטור ובדיקות שמונעים כשלים בפרודקשן ובעיות תפעול יקרות.",
+    "date": "13 בספטמבר 2026",
+    "isoDate": "2026-09-13T01:12:24.029+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/workflows/6cd93b18-fecc-4c52-b95e-f45e0efb7881.webp"
+  },
+  {
+    "id": "a30fa96d-0934-4abc-a178-a3063699aefb",
+    "title": "לואו קוד מול פיתוח: מתי לבחור בכל גישה?",
+    "slug": "low-code-vs-custom-development",
+    "excerpt": "לואו קוד מול פיתוח מותאם אישית: כך בוחנים מהירות, עלות, אבטחה ויכולת צמיחה כדי לבחור מערכת שמשרתת את התהליך העסקי לאורך זמן ומפחיתה סיכון בהמשך הדרך.",
+    "date": "12 בספטמבר 2026",
+    "isoDate": "2026-09-12T01:09:40.052+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/workflows/fddb8c37-1510-4f73-94ba-e61e8888d50e.webp"
+  },
+  {
+    "id": "39a4a684-c56c-42dd-a55e-7791d3b1399f",
+    "title": "מדריך לארכיטקטורת ענן שמחזיקה גם בצמיחה",
+    "slug": "cloud-architecture-guide",
+    "excerpt": "מדריך לארכיטקטורת ענן לעסקים שבונים מוצר, מחברים מערכות ומכינים תשתית לצמיחה - עם החלטות מעשיות על אבטחה, עלויות, זמינות וסקייל. ותפעול שוטף לאורך הדרך.",
+    "date": "11 בספטמבר 2026",
+    "isoDate": "2026-09-11T01:05:58.873+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/workflows/22356dd5-9e11-4a14-906e-49e25a90712c.webp"
+  },
+  {
+    "id": "2d985a8e-44e7-41b2-ad7c-125c680da0b2",
+    "title": "סוכני AI תפעוליים שמבצעים עבודה, לא רק מדברים",
+    "slug": "operational-ai-agents",
+    "excerpt": "סוכני AI תפעוליים מחברים בין מידע, מערכות וצוותים כדי לבצע עבודה בפועל. כך מתכננים, בודקים ומטמיעים אותם בתהליך אמין, מדיד ומוכן לצמיחה עסקית לאורך זמן.",
+    "date": "9 בספטמבר 2026",
+    "isoDate": "2026-09-09T01:05:40.949+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/workflows/570f73ad-7a2e-4347-9c33-436f37d74f2a.webp"
+  },
+  {
+    "id": "f6ebd695-7929-41ae-9a81-5078b9870cce",
+    "title": "איך מאיצים מערכת SaaS קיימת בלי לפגוע באמינות",
+    "slug": "eich-maitzim-maarechet-saas-kayemet",
+    "excerpt": "איך מאיצים מערכת SaaS קיימת? מזהים צווארי בקבוק, מייצבים ארכיטקטורה, משפרים ביצועים ואוטומציות, ובונים תהליך סקייל מדיד שמגן על השירות והלקוחות הקיימים.",
+    "date": "8 בספטמבר 2026",
+    "isoDate": "2026-09-08T01:12:58.384+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/workflows/f4ec2a95-bc23-4c01-bb01-474f96e26706.webp"
+  },
+  {
+    "id": "f30c0637-7f90-41b0-a4e3-4dc8c30c0e38",
+    "title": "מגמות הנדסת אמינות מערכות שמעצבות את 2026",
+    "slug": "megamat-handasat-aminut-maarakhot-2026",
+    "excerpt": "מגמות הנדסת אמינות מערכות ב-2026: כך בונים מוצר, אוטומציות ותשתיות שממשיכים לעבוד גם תחת עומס, שינוי ותלות בספקים חיצוניים קריטיים לעסק בפועל, יום יום.",
+    "date": "6 בספטמבר 2026",
+    "isoDate": "2026-09-06T01:13:03.261+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/workflows/7106918f-44ae-42e2-8a3d-05a3d3f30ed5.webp"
+  },
+  {
+    "id": "8153b661-da1a-44d6-92bc-91769cb7bdf0",
+    "title": "מערכת הזמנות שמחברת מכירות לתפעול",
+    "slug": "maarechet-hazmanot",
+    "excerpt": "מערכת הזמנות מותאמת מחליפה תיאומים ידניים, מחברת תפעול, תשלומים ו-CRM, ומספקת נתונים אמינים לצמיחה מבוקרת ולניהול יומי מדויק.",
+    "date": "5 בספטמבר 2026",
+    "isoDate": "2026-09-05T01:12:57.644+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/workflows/ca677f54-33bd-41f6-91cb-e3a9cd6b0b86.webp"
+  },
+  {
+    "id": "c139055d-98f1-413d-8298-cc3c43d37682",
+    "title": "שכתוב קוד קיים - מתי לתקן ומתי לבנות מחדש",
+    "slug": "shichtuv-kod-kayam",
+    "excerpt": "שכתוב קוד קיים אינו פרויקט קוסמטי. כך מחליטים מה לשמר, מה להחליף ואיך לבצע שינוי מבוקר שמפחית סיכון ומשפר ביצועים עסקיים לאורך זמן וביציבות תפעולית נכונה.",
+    "date": "3 בספטמבר 2026",
+    "isoDate": "2026-09-03T01:12:55.39+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/workflows/b592bcfe-eb8f-4908-9a95-3e3f0710397b.webp"
+  },
+  {
+    "id": "b38fa48d-ad87-4867-9932-1cc404f8dc0f",
+    "title": "מדריך לתכנון אפליקציות מובייל שמתחיל בעסק ולא במסכים",
+    "slug": "mobile-app-planning-guide",
+    "excerpt": "מדריך לתכנון אפליקציות מובייל לעסקים: כך מגדירים בעיה, משתמשים, תהליכים, ארכיטקטורה ומדדי הצלחה לפני שמתחילים לפתח - כדי להשיק מוצר אמין שמוכן לצמיחה.",
+    "date": "2 בספטמבר 2026",
+    "isoDate": "2026-09-02T01:12:52.426+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/workflows/85ae1c41-362a-41ab-a0cc-f09540789656.webp"
+  },
+  {
+    "id": "69e593a4-c01f-48bd-ba17-11c9e5c8d8c4",
+    "title": "מדריך לתיעוד תהליכים שמוכן לפיתוח ואוטומציה",
+    "slug": "process-documentation-guide",
+    "excerpt": "מדריך לתיעוד תהליכים: כך ממפים עבודה אמיתית, מגדירים חריגים ובעלות, והופכים ידע תפעולי לבסיס לפיתוח ואוטומציה אמינים שמוכנים לצמיחה ולמערכות יציבות גם בפרודקשן.",
+    "date": "1 בספטמבר 2026",
+    "isoDate": "2026-09-01T01:12:56.556+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/workflows/b3bfd0e3-871b-4709-995e-bad545fae4af.webp"
+  },
+  {
+    "id": "2f7565bf-6d84-46e2-ac44-2ee5a76829f3",
+    "title": "מה כולל שלב גילוי מוצר לפני תחילת הפיתוח?",
+    "slug": "ma-kolel-shlav-giluy-mutzar",
+    "excerpt": "מה כולל שלב גילוי מוצר: מיפוי בעיות, משתמשים, תהליכים, סיכונים והחלטות פיתוח כדי לצאת לביצוע עם תוכנית מסודרת, אומדן ריאלי ומערכת שמשרתת את היעדים העסקיים",
+    "date": "30 באוגוסט 2026",
+    "isoDate": "2026-08-30T01:16:51.386+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/workflows/54043621-927b-4434-8c7e-9e247bbb967e.webp"
+  },
+  {
+    "id": "76463cfe-95b9-474c-b087-1a236cb09b0e",
+    "title": "Backend מותאם מול BaaS: מה נכון למוצר שלכם?",
+    "slug": "custom-backend-vs-baas",
+    "excerpt": "Backend מותאם מול BaaS: כך בוחרים תשתית שמאזנת בין מהירות השקה, אבטחה, עלויות ושליטה תפעולית - בלי לייצר חוב טכנולוגי שמכביד על הצמיחה של העסק לאורך הדרך.",
+    "date": "29 באוגוסט 2026",
+    "isoDate": "2026-08-29T01:12:44.668+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/workflows/aa878810-45b1-4f02-a88b-92672cecaa5b.webp"
+  },
+  {
+    "id": "503d1afb-2683-4ecf-9421-795ac0dd3646",
+    "title": "רעיונות ליישומי AI בארגון שמייצרים ערך תפעולי",
+    "slug": "ai-applications-ideas-for-organizations",
+    "excerpt": "רעיונות ליישומי AI בארגון: כך בוחרים תהליכים עם נתונים, בקרה ובעלים ברורים, ובונים אוטומציה אמינה שמקצרת זמני טיפול, מצמצמת טעויות ותומכת בצמיחה עסקית.",
+    "date": "27 באוגוסט 2026",
+    "isoDate": "2026-08-27T01:15:34.559+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/workflows/66940fc2-cb8d-4906-8128-85b3439d013f.webp"
+  },
+  {
+    "id": "cb80f50f-69b1-469c-bcde-bb2df0926307",
+    "title": "סקירת פלטפורמות CRM לאוטומציה לעסקים צומחים",
+    "slug": "crm-automation-platforms-review",
+    "excerpt": "סקירת פלטפורמות CRM לאוטומציה לעסקים: איך לבחור מערכת שמחברת נתוני לקוחות, תהליכי מכירה ושירות, עם אינטגרציות שאפשר לנהל גם בצמיחה באופן יציב לאורך זמן.",
+    "date": "26 באוגוסט 2026",
+    "isoDate": "2026-08-26T01:15:26.892+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/workflows/cf861274-f8b9-4ddf-842f-bbdc8177c9c4.webp"
+  },
+  {
+    "id": "edd627a2-9bac-41a4-bbaa-5914a0a944d3",
+    "title": "מערכת מדף או פיתוח מותאם - מה נכון לעסק?",
+    "slug": "shelf-system-or-custom-development",
+    "excerpt": "מערכת מדף או פיתוח מותאם: כך בוחנים עלות, גמישות, אינטגרציות וסקייל כדי לבחור פתרון שמקצר עבודה ידנית ותומך בצמיחה עסקית לאורך זמן וביצועים עסקיים צפויים",
+    "date": "25 באוגוסט 2026",
+    "isoDate": "2026-08-25T01:12:41.262+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/workflows/5e1f9e79-3ed0-4a98-8175-6934d30d30a0.webp"
+  },
+  {
+    "id": "9a34b756-2509-47a2-96b4-b76e4d5a8f01",
+    "title": "דשבורדים עסקיים שמניעים החלטות תפעוליות",
+    "slug": "business-dashboards-operational-decisions",
+    "excerpt": "דשבורדים עסקיים הופכים נתונים מפוזרים להחלטות תפעוליות. כך מתכננים לוח בקרה אמין, מחובר למערכות וממוקד בפעולות שמקדמות צמיחה עסקית לאורך זמן ובאחריות.",
+    "date": "23 באוגוסט 2026",
+    "isoDate": "2026-08-23T20:57:37.584+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/9a34b756-2509-47a2-96b4-b76e4d5a8f01.webp"
+  },
+  {
+    "id": "d4fffc2a-b009-464e-85cf-876d8fe24b63",
+    "title": "מוצרי AI ארגוניים שמייצרים ערך תפעולי",
+    "slug": "enterprise-ai-products-operational-value",
+    "excerpt": "מוצרי AI ארגוניים אינם צ'אטבוט מדף: כך מגדירים תהליך, נתונים, הרשאות ומדדים כדי לבנות מערכת אמינה שמקצרת עבודה ידנית ומוכנה לצמיחה בצורה מדידה וברורה.",
+    "date": "23 באוגוסט 2026",
+    "isoDate": "2026-08-23T02:33:46.735+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/d4fffc2a-b009-464e-85cf-876d8fe24b63-1787452445084.webp"
+  },
+  {
+    "id": "caa83769-9e03-404d-b91a-c2d35d012209",
+    "title": "בניית פורטל לקוחות מותאם לתפעול שעובד בפועל",
+    "slug": "bniyat-portal-lakohot-mutaam",
+    "excerpt": "בניית פורטל לקוחות מותאם שמחבר מידע, שירות ותהליכים. כך מאפיינים מערכת אמינה, משלבים אינטגרציות ומייצרים חוויית לקוח ותפעול יעילה לאורך זמן ובשליטה מלאה.",
+    "date": "22 באוגוסט 2026",
+    "isoDate": "2026-08-22T01:18:39.382+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/workflows/6e1d18df-11a9-4aad-8a60-67fc2e756669.webp"
+  },
+  {
+    "id": "e3ed3cd5-fd89-4595-92e3-37a3263905e6",
+    "title": "מדריך למודרניזציה של מערכות ישנות בלי לעצור פעילות",
+    "slug": "madric-modernizatzia-maarakhot-yeshanot",
+    "excerpt": "מדריך למודרניזציה של מערכות ישנות: כך מצמצמים סיכון תפעולי, משפרים אינטגרציות ובונים תשתית אמינה לצמיחה עסקית מדורגת ומדידה. תוך שמירה על רציפות עבודה.",
+    "date": "21 באוגוסט 2026",
+    "isoDate": "2026-08-21T01:22:03.318+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/e3ed3cd5-fd89-4595-92e3-37a3263905e6.webp"
+  },
+  {
+    "id": "be0ec674-a5d4-4191-ac1a-ee51a2a6a15d",
+    "title": "איך מקימים מערכת SaaS מאפס בלי לבנות מוצר שגוי",
+    "slug": "איך-מקימים-מערכת-saas-מאפס",
+    "excerpt": "דרך מעשית להבין איך מקימים מערכת SaaS מאפס: מאפיון בעיה, דרך MVP ותשתיות, ועד השקה, מדידה וצמיחה מבוקרת של מוצר אמין שמוכן לעבודת לקוחות אמיתית לאורך זמן.",
+    "date": "19 באוגוסט 2026",
+    "isoDate": "2026-08-19T01:21:32.812+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/be0ec674-a5d4-4191-ac1a-ee51a2a6a15d.webp"
+  },
+  {
+    "id": "30f0788e-cb56-4666-96f5-066484cdd866",
+    "title": "איך מצמצמים עבודה ידנית במחסן בלי לאבד שליטה",
+    "slug": "how-to-reduce-manual-work-in-a-warehouse",
+    "excerpt": "איך מצמצמים עבודה ידנית במחסן בצורה מבוקרת: מזהים צווארי בקבוק, מחברים מערכות ומטמיעים אוטומציה שמצמצמת טעויות, מקצרת זמני טיפול ומשפרת שליטה במלאי.",
+    "date": "18 באוגוסט 2026",
+    "isoDate": "2026-08-18T12:52:12.786+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/30f0788e-cb56-4666-96f5-066484cdd866.webp"
+  },
+  {
+    "id": "a444a272-8477-4ec5-99a9-0f02cfef33b8",
+    "title": "מהם היתרונות והחסרונות של LangChain בפיתוח?",
+    "slug": "יתרונות-חסרונות-langchain",
+    "excerpt": "מהם היתרונות והחסרונות של LangChain? מדריך פרקטי לבחירת תשתית AI, אינטגרציות, אבטחה וסקייל במוצר או באוטומציה עסקית במערכות AI מוכנות לפרודקשן בישראל.",
+    "date": "18 באוגוסט 2026",
+    "isoDate": "2026-08-18T01:21:23.762+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/a444a272-8477-4ec5-99a9-0f02cfef33b8.webp"
+  },
+  {
+    "id": "e0d7ec3a-ca0d-41db-89b0-7b81b71ace5b",
+    "title": "האם מערכת SaaS צריכה מולטיטננסי? כך מחליטים נכון",
+    "slug": "does-a-saas-system-need-multitenancy",
+    "excerpt": "האם מערכת SaaS צריכה מולטיטננסי? מדריך החלטה ליזמים ומנהלי תפעול: יתרונות, סיכונים, עלויות, אבטחה ודרך לבחור ארכיטקטורה שתתמוך בצמיחה יציבה לאורך זמן.",
+    "date": "17 באוגוסט 2026",
+    "isoDate": "2026-08-17T00:48:22.162+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/e0d7ec3a-ca0d-41db-89b0-7b81b71ace5b.webp"
+  },
+  {
+    "id": "e86b2bb0-f102-4603-9122-3e97efdc52ba",
+    "title": "איך בודקים מוכנות מערכת לפרודקשן לפני ההשקה",
+    "slug": "how-to-check-production-readiness",
+    "excerpt": "איך בודקים מוכנות מערכת לפרודקשן? מסגרת מעשית לבדיקת ביצועים, אבטחה, נתונים, ניטור ותהליכי חזרה לאחור לפני עלייה לאוויר בטוחה ומניעת תקלות עסקיות יקרות.",
+    "date": "16 באוגוסט 2026",
+    "isoDate": "2026-08-16T09:36:10.045+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/e86b2bb0-f102-4603-9122-3e97efdc52ba.webp"
+  },
+  {
+    "id": "01f97836-7dd3-4c45-9ce0-e2b2951ba432",
+    "title": "איך לבנות אפליקציית ווב פנימית שמשרתת תפעול",
+    "slug": "how-to-build-an-internal-web-application",
+    "excerpt": "איך לבנות אפליקציית ווב פנימית שמחליפה גיליונות, מחברת מערכות ומקצרת זמני טיפול - עם אפיון מדויק, הרשאות, אינטגרציות ותהליך השקה נשלט, בטוח ומדיד.",
+    "date": "15 באוגוסט 2026",
+    "isoDate": "2026-08-15T01:12:59.215+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/01f97836-7dd3-4c45-9ce0-e2b2951ba432.webp"
+  },
+  {
+    "id": "63e290b4-1335-46e9-8e93-5ca0c1a4b9d4",
+    "title": "איך מטמיעים צ'אטבוט שירות חכם שמייצר תוצאות",
+    "slug": "eich-matmiim-chatbot-sherut-chacham",
+    "excerpt": "איך מטמיעים צאטבוט שירות חכם שמטפל בפניות, מתחבר ל-CRM ומעביר לנציג בזמן הנכון - עם אפיון, אינטגרציה ומדידה שמייצרים שירות אמין מאוד.",
+    "date": "14 באוגוסט 2026",
+    "isoDate": "2026-08-14T12:50:44.924+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/63e290b4-1335-46e9-8e93-5ca0c1a4b9d4.webp"
+  },
+  {
+    "id": "40775997-bfaf-46ae-a0ed-0a707e564a4c",
+    "title": "7 סימנים שהעסק צריך אינטגרציית API עכשיו",
+    "slug": "simanim-shehaesek-tsarich-integratsiat-api",
+    "excerpt": "סימנים שהעסק צריך אינטגרציית API מתחילים בנתונים כפולים, עבודה ידנית ועיכובים בין מערכות. כך בודקים מה לחבר, מה לאוטומט ואיך מצמצמים סיכון תפעולי מיותר.",
+    "date": "13 באוגוסט 2026",
+    "isoDate": "2026-08-13T01:12:25.964+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/40775997-bfaf-46ae-a0ed-0a707e564a4c.webp"
+  },
+  {
+    "id": "377d546d-e626-4dfb-9d69-bd591c004287",
+    "title": "איך מזהים תהליך עסקי לאוטומציה לפני שמפתחים?",
+    "slug": "eich-mezaim-tohalich-iski-leotomatziya",
+    "excerpt": "איך מזהים תהליך עסקי לאוטומציה שמייצרת ערך? מדריך מעשי לבחירת תהליכים, מדידת השפעה, תכנו�� אינטגרציות והטמעה מבוקרת בארגון צומח ובסביבת מערכות מורכבת.",
+    "date": "12 באוגוסט 2026",
+    "isoDate": "2026-08-12T01:12:16.733+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/377d546d-e626-4dfb-9d69-bd591c004287.webp"
+  },
+  {
+    "id": "31b402ec-39a7-4316-abdd-9f25b8f6f589",
+    "title": "אפליקציה קורסת בעומס? כך מונעים את הקריסה הבאה",
+    "slug": "app-crashes-under-load",
+    "excerpt": "אפליקציה קורסת בעומס אינה תקלה מקרית. כך מזהים את צוואר הבקבוק, בונים תשתית נכונה ומגנים על חוויית הלקוח, ההכנסות והצמיחה עבור העסק ברגעי עומס ובצמיחה.",
+    "date": "11 באוגוסט 2026",
+    "isoDate": "2026-08-11T06:57:28.469+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/31b402ec-39a7-4316-abdd-9f25b8f6f589.webp"
+  },
+  {
+    "id": "35bf36ba-e17e-4326-9071-c70027230ab8",
+    "title": "איך לבנות לוח בקרה תפעולי להחלטות טובות",
+    "slug": "איך-לבנות-לוח-בקרה-תפעולי",
+    "excerpt": "מדריך מעשי שמסביר איך לבנות לוח בקרה תפעולי: בחירת מדדים, חיבור מקורות נתונים, הגדרת התראות והרשאות, והטמעה שמייצרת החלטות מהירות ואמינות לניהול מדויק.",
+    "date": "10 באוגוסט 2026",
+    "isoDate": "2026-08-10T01:15:35.797+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/35bf36ba-e17e-4326-9071-c70027230ab8.webp"
+  },
+  {
+    "id": "7f1d1779-f31f-48de-9b1c-740914ee07ad",
+    "title": "מגמות בפיתוח SaaS לעסקים שבאמת משפיעות על המוצר",
+    "slug": "saas-development-trends-for-businesses",
+    "excerpt": "מגמות בפיתוח SaaS לעסקים: כך AI, אוטומציה, אבטחה וארכיטקטורה גמישה הופכים מוצר דיגיטלי למערכת אמינה, מדידה ומוכנה לצמיחה תפעולית מבוקרת לאורך זמן קדימה.",
+    "date": "9 באוגוסט 2026",
+    "isoDate": "2026-08-09T01:15:18.785+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/7f1d1779-f31f-48de-9b1c-740914ee07ad.webp"
+  },
+  {
+    "id": "f572bff9-60e6-4e18-aa0a-41ea695484fc",
+    "title": "אוטומציה עסקית מתקדמת שמחזירה שליטה לתפעול",
+    "slug": "advanced-business-automation",
+    "excerpt": "אוטומציה עסקית מתקדמת מחברת בין CRM, מערכות תפעול ונתונים, מצמצמת עבודה ידנית וטעויות, ומייצרת תהליכים אמינים, מדידים ומוכנים לצמיחה בטוחה ומבוקרת בעסק.",
+    "date": "8 באוגוסט 2026",
+    "isoDate": "2026-08-08T01:15:20.195+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/f572bff9-60e6-4e18-aa0a-41ea695484fc.webp"
+  },
+  {
+    "id": "42109473-052e-47cb-9445-25a9e31deccd",
+    "title": "מדדי מוצר SaaS שמגלים אם המוצר באמת צומח",
+    "slug": "saas-product-metrics",
+    "excerpt": "מדדי מוצר SaaS אינם רק מספרים בדשבורד. כך בוחרים מדדים שמחברים בין שימוש, שימור, הכנסות ואמינות המערכת כדי לקבל החלטות מוצר ותפעול מדויקות בזמן אמת.",
+    "date": "7 באוגוסט 2026",
+    "isoDate": "2026-08-07T12:25:36.003+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/42109473-052e-47cb-9445-25a9e31deccd.webp"
+  },
+  {
+    "id": "c16cadb8-5436-4ccd-8584-0aa218a1b170",
+    "title": "מדריך להקמת ארכיטקטורת backend יציבה לצמיחה",
+    "slug": "stable-backend-architecture-guide",
+    "excerpt": "מדריך להקמת ארכיטקטורת backend יציבה: עקרונות לתכנון בסיס נתונים, API, תורים, ניטור ואבטחה שמאפשרים למערכת לגדול בלי לעצור את התפעול השוטף של הלקוחות.",
+    "date": "6 באוגוסט 2026",
+    "isoDate": "2026-08-06T08:54:46.719+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/eaa31ab4-5af4-44db-94ce-69ee5f64192c/c16cadb8-5436-4ccd-8584-0aa218a1b170.webp"
+  },
+  {
+    "id": "f340b873-6416-493e-b5f0-77fcb9de1347",
+    "title": "מדריך לפיתוח מוצר דיגיטלי שמגיע לפרודקשן",
+    "slug": "madriche-pituach-motzar-digitali",
+    "excerpt": "מדריך לפיתוח מוצר דיגיטלי: כך הופכים צורך עסקי למערכת אמינה, מתעדפים MVP, בונים ארכיטקטורה נכונה ומנהלים השקה שמוכנה לצמיחה עם מדדים ותהליך עבודה ברור.",
+    "date": "5 באוגוסט 2026",
+    "isoDate": "2026-08-05T08:29:14.666+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/f340b873-6416-493e-b5f0-77fcb9de1347.webp"
+  },
+  {
+    "id": "c33639ea-8f3b-491a-8918-fbd5d0889ab1",
+    "title": "מתי כדאי לפתח אפליקציית מובייל ומה לבדוק קודם",
+    "slug": "matay-kedai-leftach-aplikatsiyat-mobile",
+    "excerpt": "מתי כדאי לפתח אפליקציית מובייל, ומתי עדיף להתחיל בווב או באוטומציה? מסגרת החלטה עסקית לבדיקת צורך, עלות, שימוש, אבטחה ויכולת צמיחה לפני יציאה לפיתוח.",
+    "date": "4 באוגוסט 2026",
+    "isoDate": "2026-08-04T05:45:52.898+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/c33639ea-8f3b-491a-8918-fbd5d0889ab1.webp"
+  },
+  {
+    "id": "67c336a6-8b7b-45b0-9b20-c1dc07222fc9",
+    "title": "Zapier מול אוטומציה מותאמת לעסק - מה נכון לכם?",
+    "slug": "zapier-vs-custom-business-automation",
+    "excerpt": "Zapier מול אוטומציה מותאמת לעסק: השוואה מעשית בין מהירות ההקמה, גמישות, אבטחה ועלויות, כדי לבחור תהליך אמין שיתמוך בצמיחה ולא ייצור חוב תפעולי לאורך זמן.",
+    "date": "3 באוגוסט 2026",
+    "isoDate": "2026-08-03T08:40:51.686+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/67c336a6-8b7b-45b0-9b20-c1dc07222fc9.webp"
+  },
+  {
+    "id": "b8221ad3-1312-49d1-b0bf-faffff0bdd2a",
+    "title": "הפתרונות לניתוק בין מערכות שמאט את העסק",
+    "slug": "haptaronot-lenituk-bein-maarakhot",
+    "excerpt": "הפתרונות לניתוק בין מערכות מחברים נתונים, תהליכים ואחריות תפעולית למקור אמת אחד, מצמצמים טעויות ומאפשרים צמיחה מהירה ובקרה לאורך כל הפעילות העסקית.",
+    "date": "2 באוגוסט 2026",
+    "isoDate": "2026-08-02T05:18:44.136+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/b8221ad3-1312-49d1-b0bf-faffff0bdd2a.webp"
+  },
+  {
+    "id": "dd5cb5be-e9e5-4c11-a6e7-5a045c7819ab",
+    "title": "מתי צריך מערכת CRM מותאמת ולא עוד כלי מדף",
+    "slug": "matay-tsricha-maarechet-crm-mutaemet",
+    "excerpt": "מתי צריך מערכת CRM מותאמת? כך מזהים את נקודת המעבר מכלי מדף למערכת שמחברת תהליכים, נתונים ואוטומציות ותומכת בצמיחה תפעולית אמינה.",
+    "date": "1 באוגוסט 2026",
+    "isoDate": "2026-08-01T08:48:20.471+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/dd5cb5be-e9e5-4c11-a6e7-5a045c7819ab.webp"
+  },
+  {
+    "id": "0f84752a-5e8e-455e-bdc2-3bdb59f3bd40",
+    "title": "איך מחברים מערכות דרך API בלי לשבור את התפעול",
+    "slug": "ech-mechabrim-maarakhot-derech-api",
+    "excerpt": "איך מחברים מערכות דרך API בצורה אמינה: מהאפיון העסקי, דרך אבטחה וניהול נתונים, ועד ניטור, בדיקות ותפעול שוטף שמחזיק גם בצמיחה לאורך זמן ובסקייל עסקי.",
+    "date": "31 ביולי 2026",
+    "isoDate": "2026-07-31T08:49:12.359+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/0f84752a-5e8e-455e-bdc2-3bdb59f3bd40.webp"
+  },
+  {
+    "id": "a8399ad3-6514-4c07-8d16-9f939501cd99",
+    "title": "שירותי פיתוח תוכנה שמתחילים בתהליך, לא בקוד",
+    "slug": "sherutey-pituach-tochna",
+    "excerpt": "שירותי פיתוח תוכנה לעסקים: איך בוחרים שותף שמתרגם צורך תפעולי למערכת אמינה, מתוכננת לסקייל, עם תהליך מסודר מאפיון ועד השקה ותמיכה לאורך הדרך בצמיחה.",
+    "date": "29 ביולי 2026",
+    "isoDate": "2026-07-29T08:42:33.06+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/a8399ad3-6514-4c07-8d16-9f939501cd99.webp"
+  },
+  {
+    "id": "78310724-69b6-4a7a-8bcc-0f579218bc1c",
+    "title": "מהו וייב קוד, איך הוא עובד ואיפה הסכנות?",
+    "slug": "mahu-vibe-code-eich-hu-oved-ve-eifo-hasakanot",
+    "excerpt": "מהו וייב קוד, איך הוא עובד ואיפה מסתתרות הבעיות והסכנות? מדריך למנהלים וליזמים על מהירות, אבטחה, סקייל ובקרת איכות לפני שעולים לפרודקשן במערכות עסקיות.",
+    "date": "28 ביולי 2026",
+    "isoDate": "2026-07-28T21:57:30.142+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/78310724-69b6-4a7a-8bcc-0f579218bc1c.webp"
+  },
+  {
+    "id": "49494799-e9a5-4c6b-bcd6-00d09d2a5979",
+    "title": "למה פרויקט תוכנה נתקע לפני השקה ואיך מונעים זאת",
+    "slug": "lama-proyekt-tochna-nitka-lifnei-hashaka",
+    "excerpt": "למה פרויקט תוכנה נתקע לפני השקה, ואיך אפיון, החלטות ארכיטקטורה, בדיקות ותהליך מסירה מסודר מונעים עיכובים יקרים ומאפשרים עלייה בטוחה לאוויר לפרודקשן יציב.",
+    "date": "27 ביולי 2026",
+    "isoDate": "2026-07-27T06:50:56.676+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/49494799-e9a5-4c6b-bcd6-00d09d2a5979.webp"
+  },
+  {
+    "id": "66219d3b-7797-4195-9264-9f034af75768",
+    "title": "למה וויב קודינג לא עובד כשבונים מוצר אמיתי",
+    "slug": "lama-vibe-coding-lo-oved",
+    "excerpt": "למה וויב קודינג לא עובד בפרודקשן, איפה הוא כן מועיל, ואיך משלבים מהירות AI עם אפיון, ארכיטקטורה ובדיקות למוצר שאפשר להפעיל ולגדול איתו בביטחון תפעולי.",
+    "date": "26 ביולי 2026",
+    "isoDate": "2026-07-26T21:54:57.813+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/66219d3b-7797-4195-9264-9f034af75768.webp"
+  },
+  {
+    "id": "7fd25db0-2de2-4416-ae6f-8358f24e82bc",
+    "title": "7 כלי אוטומציה לעסקים שכדאי להכיר לפני פיתוח",
+    "slug": "business-automation-tools-to-know",
+    "excerpt": "כלי אוטומציה לעסקים שכדאי להכיר יכולים לחסוך שעות, לצמצם טעויות ולחבר מערכות. כך בוחרים את הכלים הנכונים ובונים תהליך אמין לצמיחה בעסק. בצורה מבוקרת.",
+    "date": "26 ביולי 2026",
+    "isoDate": "2026-07-26T17:00:42.309+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/7fd25db0-2de2-4416-ae6f-8358f24e82bc.webp"
+  },
+  {
+    "id": "8738a797-17d8-4354-9a18-a6931bea0b18",
+    "title": "דוגמה להחלפת אקסל במערכת פנימית שעובדת בפועל",
+    "slug": "dugma-lehachlafat-excel-bemaarechet-pnimit",
+    "excerpt": "דוגמה להחלפת אקסל במערכת פנימית: כך מזהים את צווארי הבקבוק, מאפיינים תהליך נכון ובונים כלי אמין שמחבר אנשים, נתונים ואוטומציה לצמיחה בטוחה בארגון צומח ובשל.",
+    "date": "25 ביולי 2026",
+    "isoDate": "2026-07-25T16:30:12.878+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/8738a797-17d8-4354-9a18-a6931bea0b18.webp"
+  },
+  {
+    "id": "7d1f227e-ab3f-43e2-a80b-acf4c187c49c",
+    "title": "Make מול n8n: מתי לבחור ומתי שניהם לא מתאימים",
+    "slug": "make-vs-n8n-matai-livchor-umatai-shnehem-lo-mat-imim",
+    "excerpt": "Make מול n8n: מתי לבחור בכלי אוטומציה, מתי לבנות אינטגרציה מותאמת, ולמה לעיתים שני הפתרונות אינם מתאימים לתהליך העסקי שלכם בארגון תפעולי צומח ומורכב.",
+    "date": "24 ביולי 2026",
+    "isoDate": "2026-07-24T14:22:13.438+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/7d1f227e-ab3f-43e2-a80b-acf4c187c49c.webp"
+  },
+  {
+    "id": "0eefd14b-d5bf-4453-b125-bb43fff65f88",
+    "title": "אוטומציה עסקית ואינטגרציות שמחזירות שליטה לתפעול",
+    "slug": "business-automation-and-integrations",
+    "excerpt": "גלו כיצד אוטומציה עסקית ואינטגרציות מחברות CRM, מכירות, כספים ותפעול לתהליך אמין, מדיד ומוכן לצמיחה - עם פחות עבודה ידנית ויותר שליטה ניהולית לאורך כל יום.",
+    "date": "24 ביולי 2026",
+    "isoDate": "2026-07-24T08:36:43.762+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/0eefd14b-d5bf-4453-b125-bb43fff65f88.webp"
+  },
+  {
+    "id": "b4e1f4a8-8779-4185-894d-e3f35b724f71",
+    "title": "איך לבחור ספק AI ואוטומציה לעסק ב-8 מבחנים",
+    "slug": "איך-לבחור-ספק-ai-ואוטומציה-לעסק",
+    "excerpt": "מתלבטים איך לבחור ספק AI ואוטומציה לעסק? כך תבדקו יכולת אפיון, אינטגרציה, אבטחה, מדדי הצלחה ותמיכה, לפני שמתחילים לבנות מערכת שמייצרת ערך מדיד לאורך זמן.",
+    "date": "23 ביולי 2026",
+    "isoDate": "2026-07-23T08:36:34.155+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/b4e1f4a8-8779-4185-894d-e3f35b724f71.webp"
+  },
+  {
+    "id": "3b4a9c18-22b4-422a-a8c6-b1eb5855b897",
+    "title": "איך לבחור שותף לפיתוח תוכנה נכון",
+    "slug": "איך-לבחור-שותף-לפיתוח-תוכנה",
+    "excerpt": "איך לבחור שותף לפיתוח תוכנה בלי לבזבז זמן ותקציב: הקריטריונים שחייבים לבדוק, השאלות הנכונות, והטעויות היקרות שכדאי למנוע מראש.",
+    "date": "22 ביולי 2026",
+    "isoDate": "2026-07-22T11:42:43.307+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/3b4a9c18-22b4-422a-a8c6-b1eb5855b897-1784720554563.webp"
+  },
+  {
+    "id": "efce848d-f062-4a50-9c5a-03f88571d93a",
+    "title": "10 best crm automation use cases לצמיחה תפעולית",
+    "slug": "best-crm-automation-use-cases",
+    "excerpt": "גלו את best crm automation use cases שמקצרים זמני תגובה, מחברים מערכות ומאפשרים לצוותי מכירות ותפעול לעבוד עם נתונים מדויקים, שליטה ובקרה בזמן אמת.",
+    "date": "22 ביולי 2026",
+    "isoDate": "2026-07-22T08:36:16.76+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/efce848d-f062-4a50-9c5a-03f88571d93a.webp"
+  },
+  {
+    "id": "478dffc0-046c-471b-8d8a-4abdb1003cdc",
+    "title": "10 Best CRM Automation Use Cases",
+    "slug": "best-crm-automation-use-cases",
+    "excerpt": "Explore the best CRM automation use cases to reduce manual work, improve lead handling, speed follow-up, and build more reliable operations.",
+    "date": "21 ביולי 2026",
+    "isoDate": "2026-07-21T08:44:21.935+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/478dffc0-046c-471b-8d8a-4abdb1003cdc-1784623460477.webp"
+  },
+  {
+    "id": "12cd2d81-aaed-4861-8ca3-fe699d4dff10",
+    "title": "10 business process automation examples לעסקים",
+    "slug": "business-process-automation-examples",
+    "excerpt": "business process automation examples שמצמצמות עבודה ידנית, מחברות מערכות ומספקות לצוותי תפעול שליטה, דיוק ויכולת צמיחה. לעסקים שצומחים. עם יישום מדוד בפועל.",
+    "date": "21 ביולי 2026",
+    "isoDate": "2026-07-21T08:33:41.931+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/12cd2d81-aaed-4861-8ca3-fe699d4dff10.webp"
+  },
+  {
+    "id": "e71fb843-c70d-4390-b880-4df6cc67bf71",
+    "title": "אוטומציה ל-CRM ותהליכי מכירה לצמיחה נשלטת",
+    "slug": "automation-crm-sales-processes",
+    "excerpt": "אוטומציה ל-CRM ותהליכי מכירה מחברת בין לידים, צוותים ומערכות, מקצרת זמני תגובה, מצמצמת טעויות ובונה תהליך מכירה מדיד שמוכן לצמיחה עם שליטה ניהולית מלאה.",
+    "date": "20 ביולי 2026",
+    "isoDate": "2026-07-20T08:27:14.045+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/e71fb843-c70d-4390-b880-4df6cc67bf71.webp"
+  },
+  {
+    "id": "c6676455-f473-47f9-8b60-1fcd9548a19b",
+    "title": "פיתוח דשבורד ניהולי לעסק שמוביל החלטות טובות",
+    "slug": "pituach-dashboard-nihuli-laesek",
+    "excerpt": "פיתוח דשבורד ניהולי לעסק מחבר נתונים מפוזרים למדדים שמניעים פעולה, עם תכנון נכון, אינטגרציות אמינות והרשאות המותאמות לצוות. לקבלת תמונה תפעולית מדויקת.",
+    "date": "18 ביולי 2026",
+    "isoDate": "2026-07-18T08:27:42.951+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/c6676455-f473-47f9-8b60-1fcd9548a19b.webp"
+  },
+  {
+    "id": "aacb566d-a9ea-4c54-bdb6-6b471f798937",
+    "title": "איך לשלב AI בתהליכים עסקיים בלי לאבד שליטה",
+    "slug": "eich-leshalev-ai-betahalichim-iskim",
+    "excerpt": "איך לשלב AI בתהליכים עסקיים באופן שמפחית עבודה ידנית, מחבר מערכות ומשפר החלטות, בלי לסכן מידע, בקרה או חוויית לקוח לאורך זמן ובונה בסיס תפעולי מדיד לצמיחה.",
+    "date": "17 ביולי 2026",
+    "isoDate": "2026-07-17T08:24:36.277+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/aacb566d-a9ea-4c54-bdb6-6b471f798937.webp"
+  },
+  {
+    "id": "1c2ff991-4e44-4779-9918-da23f1e719d9",
+    "title": "12 Business Process Automation Examples",
+    "slug": "business-process-automation-examples",
+    "excerpt": "See 12 business process automation examples that reduce manual work, improve accuracy, and help teams scale operations with less friction.",
+    "date": "15 ביולי 2026",
+    "isoDate": "2026-07-15T08:58:51.169+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/1c2ff991-4e44-4779-9918-da23f1e719d9-1782903564074.webp"
+  },
+  {
+    "id": "3dc23e99-4d2e-4292-a569-cb1eecf1f78d",
+    "title": "איך לתכנן אינטגרציות API בלי לשבור את התפעול",
+    "slug": "eich-letachnen-integratziot-api",
+    "excerpt": "מתכננים מערכת חדשה או אוטומציה? כך תיגשו לשאלה איך לתכנן אינטגרציות API עם תהליכים אמינים, אבטחה, ניטור ותוכנית צמיחה ברורה לפרודקשן כבר מהאפיון המוקדם.",
+    "date": "15 ביולי 2026",
+    "isoDate": "2026-07-15T08:15:35.627+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/3dc23e99-4d2e-4292-a569-cb1eecf1f78d.webp"
+  },
+  {
+    "id": "c198f92b-cadf-497c-a4d2-1309eece5f36",
+    "title": "מתי פיתוח SaaS מותאם לעסק מצדיק השקעה",
+    "slug": "saas-development-customized-for-business",
+    "excerpt": "פיתוח SaaS מותאם לעסק מתחיל באפיון התהליך, ממשיך בארכיטקטורה נכונה ומסתיים במערכת אמינה שמתחברת לאופרציה, לצוות ולצמיחה שלכם לאורך זמן ובמדידה שוטפת.",
+    "date": "13 ביולי 2026",
+    "isoDate": "2026-07-13T08:15:25.971+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/c198f92b-cadf-497c-a4d2-1309eece5f36.webp"
+  },
+  {
+    "id": "86fde570-4c37-44b8-9715-a84b6bca0fd3",
+    "title": "LangChain - למה זה טוב ואיפה זה שימושי בארגון?",
+    "slug": "langchain-lama-ze-tov-ve-eifo-ze-shimushi",
+    "excerpt": "LangChain למה זה טוב ואיפה זה שימושי? מדריך מעשי לחיבור מודלי שפה לנתוני החברה, מערכות CRM ותהליכי עבודה אמינים, מדידים ומוכנים לפרודקשן לעסקים צומחים.",
+    "date": "12 ביולי 2026",
+    "isoDate": "2026-07-12T15:35:17.729+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/86fde570-4c37-44b8-9715-a84b6bca0fd3.webp"
+  },
+  {
+    "id": "8ae50514-a51c-4566-b3e4-cc3d45fe2b54",
+    "title": "כמה עולה פיתוח MVP ומה קובע את התקציב",
+    "slug": "kama-ole-pituach-mvp",
+    "excerpt": "כמה עולה פיתוח MVP בישראל? פירוט טווחי מחירים, הגורמים שמשפיעים על התקציב, ומה חייבים לכלול כדי להשיק מוצר אמין ולבדוק ביקוש בלי לבנות יותר מדי נכון.",
+    "date": "12 ביולי 2026",
+    "isoDate": "2026-07-12T08:18:26.024+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/8ae50514-a51c-4566-b3e4-cc3d45fe2b54.webp"
+  },
+  {
+    "id": "f8d7d37c-05a7-4302-a6f8-7ff6a14d1adc",
+    "title": "פיתוח אפליקציות לעסקים שמשרת את התפעול והצמיחה",
+    "slug": "business-app-development",
+    "excerpt": "פיתוח אפליקציות לעסקים מתחיל בבעיה תפעולית אמיתית: כך מאפיינים, בונים ומשיקים מערכת אמינה שמתחברת לתהליכים, לנתונים וליעדי הצמיחה שלכם בפועל ובביטחון.",
+    "date": "10 ביולי 2026",
+    "isoDate": "2026-07-10T21:39:21.995+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/f8d7d37c-05a7-4302-a6f8-7ff6a14d1adc.webp"
+  },
+  {
+    "id": "9d7d834e-7a57-4ceb-a55c-e5507f3c0b57",
+    "title": "מתי צריך מערכת פנימית מותאמת לעסק",
+    "slug": "matai-tzarich-maarechet-pnimit-muteemet",
+    "excerpt": "מתי צריך מערכת פנימית מותאמת? כשאקסלים, כלים מנותקים ותהליכים ידניים כבר פוגעים במהירות, בקרה ויכולת הצמיחה של העסק.",
+    "date": "10 ביולי 2026",
+    "isoDate": "2026-07-10T07:41:14.772+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/9d7d834e-7a57-4ceb-a55c-e5507f3c0b57.webp"
+  },
+  {
+    "id": "72bb1f1d-395d-487d-b948-3dbecb7ccd9a",
+    "title": "פיתוח מערכת ניהול תהליכים שעובדת באמת",
+    "slug": "pituach-maarechet-nihol-tahalichim",
+    "excerpt": "פיתוח מערכת ניהול תהליכים דורש אפיון עסקי, ארכיטקטורה נכונה ואוטומציה חכמה. כך בונים מערכת יציבה שמקצרת עבודה ותומכת בצמיחה.",
+    "date": "9 ביולי 2026",
+    "isoDate": "2026-07-09T18:28:36.083+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/72bb1f1d-395d-487d-b948-3dbecb7ccd9a.webp"
+  },
+  {
+    "id": "2063dde2-7aab-494f-a165-246d9e740cbf",
+    "title": "איך עושים אוטומציה לעסק בלי לייצר בלגן",
+    "slug": "eich-osim-automatzia-laesek",
+    "excerpt": "איך עושים אוטומציה לעסק בצורה נכונה? מדריך פרקטי לבחירת תהליכים, חיבור מערכות ומדידה, בלי לשבור את התפעול ובלי לבנות פתרון מיותר.",
+    "date": "8 ביולי 2026",
+    "isoDate": "2026-07-08T08:03:12.486+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/2063dde2-7aab-494f-a165-246d9e740cbf.webp"
+  },
+  {
+    "id": "3b67644c-067a-4d3c-9808-48fdfb30d725",
+    "title": "מקרה בוחן של אוטומציית לידים בפועל",
+    "slug": "lead-automation-case-study",
+    "excerpt": "מקרה בוחן של אוטומציית לידים שמראה איך תהליך ידני, איטי ומפוזר הפך למערכת אמינה עם ניתוב, ניקוד ומדידה עסקית מלאה.",
+    "date": "7 ביולי 2026",
+    "isoDate": "2026-07-07T14:15:55.083+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/3b67644c-067a-4d3c-9808-48fdfb30d725.webp"
+  },
+  {
+    "id": "bf0fde80-dc19-45a5-81fc-21f3b74dc080",
+    "title": "המודלים השונים: יתרונות, חסרונות, מה כדאי ואיפה",
+    "slug": "hamodelim-hashonim-yitronot-hesronot-ma-kedai",
+    "excerpt": "המודלים השונים שיש יתרונות וחסרונות מה כדאי ואיפה - מ��ריך פרקטי לבחירת מודל פיתוח, צוות או אוטומציה לפי תקציב, מהירות וסקייל.",
+    "date": "7 ביולי 2026",
+    "isoDate": "2026-07-07T07:19:56.442+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/bf0fde80-dc19-45a5-81fc-21f3b74dc080.webp"
+  },
+  {
+    "id": "47b5378e-efa0-40b9-afaf-2e79cc2c849e",
+    "title": "פיתוח MVP או מוצר מלא - איך מחליטים נכון",
+    "slug": "mvp-or-full-product-how-to-decide",
+    "excerpt": "פיתוח MVP או מוצר מלא הוא לא רק החלטה טכנית. כך בוחנים תקציב, זמן, סיכון ותלות תפעולית כדי לבחור מסלול פיתוח נכון לעסק.",
+    "date": "6 ביולי 2026",
+    "isoDate": "2026-07-06T13:10:06.049+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/47b5378e-efa0-40b9-afaf-2e79cc2c849e.webp"
+  },
+  {
+    "id": "c18269f7-09bb-4bf6-9d7d-73b0a4dade7a",
+    "title": "עתיד האוטומציה העסקית עם AI בפועל",
+    "slug": "atid-ha-automatzia-ha-iskit-im-ai",
+    "excerpt": "עתיד האוטומציה העסקית עם AI כבר משנה תפעול, מכירות ושירות. כך בונים מערכות אמינות, מדידות ומוכנות לצמיחה בלי להסתבך.",
+    "date": "6 ביולי 2026",
+    "isoDate": "2026-07-06T13:09:36.979+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/c18269f7-09bb-4bf6-9d7d-73b0a4dade7a.webp"
+  },
+  {
+    "id": "1f84a034-65db-44b9-8950-eabd4bdb82ba",
+    "title": "מה זה אוטומציה עסקית ואיך היא עובדת",
+    "slug": "ma-ze-automatizatzia-iskiyt",
+    "excerpt": "מה זה אוטומציה עסקית, איך היא עובדת בפועל, אילו תהליכים נכון לאוטמט, ומה ההבדל בין חיסכון נקודתי למערכת אמינה שתומכת בצמיחה.",
+    "date": "6 ביולי 2026",
+    "isoDate": "2026-07-06T08:00:49.183+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/1f84a034-65db-44b9-8950-eabd4bdb82ba.webp"
+  },
+  {
+    "id": "f8421737-05da-4b36-b5ed-87c9cf212798",
+    "title": "שירותי אוטומציה לעסקים - מתי זה באמת משתלם",
+    "slug": "business-automation-services-when-it-pays",
+    "excerpt": "שירותי אוטומציה לעסקים עוזרים לצמצם עבודה ידנית, לחבר מערכות ולשפר תפעול. כך בוחנים איפה להתחיל, מה לבנות ואיך למדוד תוצאה.",
+    "date": "5 ביולי 2026",
+    "isoDate": "2026-07-05T06:48:38.067+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/f8421737-05da-4b36-b5ed-87c9cf212798.webp"
+  },
+  {
+    "id": "27ef8322-5af4-40f9-bef7-ad1c2a361207",
+    "title": "איך לבחור שותף לפיתוח תוכנה נכון",
+    "slug": "eich-livchor-shutaf-lefituach-tochna",
+    "excerpt": "איך לבחור שותף לפיתוח תוכנה בלי ליפול על ספק לא מתאים? כך בודקים התאמה עסקית, יכולת טכנית, תהליך עבודה ואחריות לתוצאה בפועל.",
+    "date": "4 ביולי 2026",
+    "isoDate": "2026-07-04T08:00:58.022+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/27ef8322-5af4-40f9-bef7-ad1c2a361207.webp"
+  },
+  {
+    "id": "6cf62748-ff1c-4753-b481-36049482bd18",
+    "title": "פיתוח תוכנה מותאם לעסקים - מתי זה נכון",
+    "slug": "pituach-tochna-mutaam-laasakim",
+    "excerpt": "פיתוח תוכנה מותאם לעסקים מתאים כשמערכות מדף לא פותרות את התהליך האמיתי. כך מזהים צורך, מצמצמים סיכון ובונים מערכת שעובדת.",
+    "date": "3 ביולי 2026",
+    "isoDate": "2026-07-03T13:05:08.344+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/6cf62748-ff1c-4753-b481-36049482bd18.webp"
+  },
+  {
+    "id": "e80f58e2-34d3-42ea-9bc9-fdf1abccc2a0",
+    "title": "איך בוחרים חברת פיתוח תוכנה נכון",
+    "slug": "eich-bochrim-chevrat-pituach-tochna",
+    "excerpt": "איך בוחרים חברת פיתוח תוכנה בלי ליפול על ספק לא מתאים? כך בודקים ניסיון, תהליך עבודה, ארכיטקטורה, תקשורת ויכולת מסירה אמיתית.",
+    "date": "3 ביולי 2026",
+    "isoDate": "2026-07-03T07:51:27.839+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/e80f58e2-34d3-42ea-9bc9-fdf1abccc2a0.webp"
+  },
+  {
+    "id": "8a7bb536-aad6-49e9-9183-064e39f1151c",
+    "title": "שירותי אוטומציה לעסקים: מתי זה באמת משתלם",
+    "slug": "shirutei-automatzia-laasakim",
+    "excerpt": "שירותי אוטומציה עוזרים לצמצם טעויות, לקצר זמני טיפול ולחבר בין מערכות. כך בוחנים איפה להתחיל, מה לבנות ואיך לייצר ערך עסקי אמיתי.",
+    "date": "2 ביולי 2026",
+    "isoDate": "2026-07-02T14:05:36.044+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/8a7bb536-aad6-49e9-9183-064e39f1151c-1783001106743.webp"
+  },
+  {
+    "id": "dcb6b82c-e3dd-497b-91d7-2bc1b5d4dc6c",
+    "title": "שירותי אוטומציה לעסקים שבאמת חוסכים זמן",
+    "slug": "shirutei-automatzia-laasakim",
+    "excerpt": "שירותי אוטומציה עוזרים לעסקים לצמצם עבודה ידנית, לחבר מערכות ולשפר ביצועים. כך בונים פתרון אמין שמותאם לתהליך העסקי.",
+    "date": "2 ביולי 2026",
+    "isoDate": "2026-07-02T13:35:00.451+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/dcb6b82c-e3dd-497b-91d7-2bc1b5d4dc6c.webp"
+  },
+  {
+    "id": "7dfd17b6-34c2-44f2-a55a-841fe6aefc99",
+    "title": "what are best ai agent frameworks לעסקים",
+    "slug": "what-are-best-ai-agent-frameworks-business",
+    "excerpt": "what are best ai agent frameworks? סקירה פרקטית לעסקים וצוותי פיתוח: מתי לבחור LangGraph, AutoGen, CrewAI או Semantic Kernel, ומה לבדוק לפני פרודקשן.",
+    "date": "2 ביולי 2026",
+    "isoDate": "2026-07-02T10:44:26.596+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/7dfd17b6-34c2-44f2-a55a-841fe6aefc99.webp"
+  },
+  {
+    "id": "6f327ac7-f724-40ff-8cc1-e8f3dae5c2ca",
+    "title": "פיתוח MVP לסטארטאפים בלי לבזבז חודשים",
+    "slug": "mvp-development-for-startups-without-wasting-months",
+    "excerpt": "פיתוח mvp לסטארטאפים צריך לקצר זמן לשוק, לא לנפח פיצ'רים. כך בונים מוצר ראשון ממוקד, אמין ופרודקשן-רדי עם תהליך ברור.",
+    "date": "2 ביולי 2026",
+    "isoDate": "2026-07-02T10:30:42.481+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/6f327ac7-f724-40ff-8cc1-e8f3dae5c2ca.webp"
+  },
+  {
+    "id": "2591e66b-4603-42b8-ab6e-eb6eabe47deb",
+    "title": "כמה עולה פיתוח תוכנה מותאם אישית באמת",
+    "slug": "kamah-oleh-pituach-tochna-mutaam-ishit",
+    "excerpt": "כמה עולה פיתוח תוכנה מותאם אישית? המחיר תלוי בהיקף, מורכבות, אינטגרציות וצוות הביצוע. כך מתמחרים נכון בלי לחרוג מהתקציב.",
+    "date": "2 ביולי 2026",
+    "isoDate": "2026-07-02T07:54:36.294+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/2591e66b-4603-42b8-ab6e-eb6eabe47deb.webp"
+  },
+  {
+    "id": "7305d9fb-3168-4c65-81f8-d9a75ab88763",
+    "title": "איך לבנות MVP לסטארטאפ בלי לבזבז חודשים",
+    "slug": "איך-לבנות-mvp-לסטארטאפ",
+    "excerpt": "איך לבנות MVP לסטארטאפ בצורה חכמה: להגדיר בעיה, לצמצם פיצ'רים, לבחור טכנולוגיה נכונה ולהשיק מוצר ראשוני שאפשר למדוד ולשפר מהר.",
+    "date": "30 ביוני 2026",
+    "isoDate": "2026-06-30T23:05:20.619+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/7305d9fb-3168-4c65-81f8-d9a75ab88763-1782906086323.webp"
+  },
+  {
+    "id": "53959c23-5aae-4600-ae19-140db7394bde",
+    "title": "מדריך לאפיון מוצר דיגיטלי שעובד באמת",
+    "slug": "madrich-leafyon-motzar-digitali",
+    "excerpt": "מדריך לאפיון מוצר דיגיטלי שמתרגם רעיון לדרישות ברורות, סדר פיתוח נכון והחלטות מוצר חכמות - בלי לבזבז זמן, תקציב ומשאבים.",
+    "date": "30 ביוני 2026",
+    "isoDate": "2026-06-30T23:04:31.773+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/53959c23-5aae-4600-ae19-140db7394bde-1784016888831.webp"
+  },
+  {
+    "id": "51416a1e-f7c9-4e37-a013-c3c9bc77b1b4",
+    "title": "איך אוטומציה עסקית עובדת בפועל",
+    "slug": "eich-automatziya-iskit-ovedet-bepoal",
+    "excerpt": "איך אוטומציה עסקית עובדת בפועל? מדריך ברור לעסקים שרוצים לחבר מערכות, לצמצם עבודה ידנית ולבנות תהליכים אמינים שנשארים יציבים.",
+    "date": "30 ביוני 2026",
+    "isoDate": "2026-06-30T23:04:23.07+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/51416a1e-f7c9-4e37-a013-c3c9bc77b1b4-1783420347865.webp"
+  },
+  {
+    "id": "3a534f37-e16a-4eb9-a0b5-1bef5a238d05",
+    "title": "אוטומציות לעסקים קטנים שעובדות באמת",
+    "slug": "automations-for-small-businesses-that-actually-work",
+    "excerpt": "אוטומציות לעסקים קטנים חוסכות זמן, מצמצמות טעויות ומשפרות ביצועים. כך בונים תהליך נכון, בוחרים מה לאוטומט ומטמיעים בלי בלגן מיותר.",
+    "date": "30 ביוני 2026",
+    "isoDate": "2026-06-30T23:03:59.843+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/3a534f37-e16a-4eb9-a0b5-1bef5a238d05-1783552353597.webp"
+  },
+  {
+    "id": "578acb63-523c-49f5-9c80-2e5a902f63b9",
+    "title": "אינטגרציות API לעסקים - מתי זה באמת משתלם",
+    "slug": "api-integrations-for-businesses-when-it-pays-off",
+    "excerpt": "אינטגרציות API לעסקים מחברות בין מערכות, מצמצמות עבודה ידנית ומשפרות בקרה. כך תדעו מה נכון לחבר, מתי, ואיך להימנע מטעויות יקרות.",
+    "date": "30 ביוני 2026",
+    "isoDate": "2026-06-30T23:03:53.677+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/578acb63-523c-49f5-9c80-2e5a902f63b9-1784105668488.webp"
+  },
+  {
+    "id": "eb4673c3-dd98-4628-8542-1f79238c5f54",
+    "title": "שדרוג מערכות ישנות לעסק בלי לעצור פעילות",
+    "slug": "legacy-system-upgrade-for-business",
+    "excerpt": "שדרוג מערכות ישנות לעסק לא חייב להיות פרויקט מסוכן. כך מתכננים מעבר מדורג, מצמצמים סיכונים ומשפרים תפעול, נתונים ויכולת צמיחה.",
+    "date": "30 ביוני 2026",
+    "isoDate": "2026-06-30T23:03:41.101+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/eb4673c3-dd98-4628-8542-1f79238c5f54-1784105627652.webp"
+  },
+  {
+    "id": "e2b0b6f3-fbae-4717-b799-19695a22e62b",
+    "title": "למה פיתוח תוכנה מותאם אישית חשוב לעסקים",
+    "slug": "lama-pituach-tochna-mutaam-ishi-chashuv-laasakim",
+    "excerpt": "למה פיתוח תוכנה מותאם אישית חשוב לעסקים? כי הוא מצמצם כפילויות, מחבר מערכות, תומך בצמיחה ובונה תהליכים מדויקים יותר.",
+    "date": "30 ביוני 2026",
+    "isoDate": "2026-06-30T23:03:25.814+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/e2b0b6f3-fbae-4717-b799-19695a22e62b-1782906077060.webp"
+  },
+  {
+    "id": "e02c1c0e-dc58-4688-b690-6c5f11969093",
+    "title": "מה זה פיתוח תוכנה מותאם אישית באמת",
+    "slug": "ma-ze-pituach-tochna-mutaam-ishi",
+    "excerpt": "מה זה פיתוח תוכנה מותאם אישית, מתי הוא עדיף על מוצר מדף, איך נראה התהליך, מה היתרונות, החסרונות והעלויות לעסקים רציניים.",
+    "date": "30 ביוני 2026",
+    "isoDate": "2026-06-30T22:42:54.332+00:00",
+    "image": "https://afocirmbqdxnkyescnev.supabase.co/storage/v1/object/public/featured-images/ed440288-425e-4afa-987e-d6bacc330ecd/e02c1c0e-dc58-4688-b690-6c5f11969093-1784105695984.webp"
+  }
+]

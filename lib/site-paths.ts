@@ -26,12 +26,12 @@ export const publicSitemapPaths = [
 
 /** Content revision dates. Not a build-time stamp shared by every URL. */
 export const staticContentUpdatedAt: Record<(typeof publicSitemapPaths)[number], string> = {
-  [sitePaths.home]: '2026-10-06',
+  [sitePaths.home]: '2026-10-11',
   [sitePaths.softwareDevelopment]: '2026-10-06',
-  [sitePaths.ragProduction]: '2026-10-06',
+  [sitePaths.ragProduction]: '2026-10-11',
   [sitePaths.businessAutomation]: '2026-10-06',
   [sitePaths.aboutUs]: '2026-10-06',
-  [sitePaths.blog]: '2026-10-06',
+  [sitePaths.blog]: '2026-10-11',
   [sitePaths.contact]: '2026-10-06',
   [sitePaths.termsOfUse]: '2026-05-19',
   [sitePaths.privacyPolicy]: '2026-10-06',

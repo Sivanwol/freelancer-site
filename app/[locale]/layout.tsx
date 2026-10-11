@@ -1,6 +1,7 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
+import { Rubik } from 'next/font/google';
 import { routing } from '@/i18n/routing';
 import { siteConfig, getBaseUrl } from '@/lib/config';
 import { getCompanyContent } from '@/lib/company-content';
@@ -12,6 +13,13 @@ import LazyAccessibilityWidget from '@/components/lazy-accessibility-widget';
 import { GoogleTagManagerHead, GoogleTagManagerNoScript } from '@/components/GoogleTagManager';
 import '../globals.css';
 import type { Metadata } from 'next';
+
+const rubik = Rubik({
+  subsets: ['hebrew', 'latin'],
+  weight: ['400', '500', '600', '700', '800', '900'],
+  variable: '--font-sans',
+  display: 'swap',
+});
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -97,11 +105,14 @@ export default async function LocaleLayout({
   const content = getCompanyContent(locale);
 
   // Structured data for SEO. Values are trusted constants/content from this codebase.
+  const brandLegalName = content.brand.legalName;
+
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: siteConfig.name,
-    legalName: siteConfig.legalName,
+    legalName: brandLegalName,
+    alternateName: siteConfig.author,
     url: baseUrl,
     logo: `${baseUrl}/logo.png`,
     email: siteConfig.email,
@@ -206,7 +217,7 @@ export default async function LocaleLayout({
   `;
 
   return (
-    <html lang={locale} dir={dir} suppressHydrationWarning>
+    <html lang={locale} dir={dir} suppressHydrationWarning className={rubik.variable}>
       <head>
         <meta charSet="utf-8" />
         <GoogleTagManagerHead />

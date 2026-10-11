@@ -21,7 +21,7 @@ type Props = {
 
 function Stars({ label }: { label: string }) {
   return (
-    <div className="flex gap-1 text-[#1d72d2]" aria-label={label}>
+    <div className="flex gap-1 text-[#9a5a14]" aria-label={label}>
       {[0, 1, 2, 3, 4].map((star) => (
         <FaStar key={star} className="h-4 w-4" aria-hidden="true" />
       ))}
@@ -131,27 +131,27 @@ export default function TestimonialsCarousel({ testimonials, isRtl, labels }: Pr
               <button
                 key={`${testimonial.project}-${index}`}
                 type="button"
-                className="flex h-[320px] w-[min(100vw-2.5rem,22rem)] shrink-0 flex-col rounded-[28px] border border-[#dbe7f5] bg-white p-6 text-start shadow-sm outline-none transition hover:border-[#9cc7f0] hover:shadow-md focus-visible:border-[#1d72d2] sm:w-[22rem]"
+                className="flex h-[320px] w-[min(100vw-2.5rem,22rem)] shrink-0 flex-col rounded-[28px] border border-[#ddd5c8] bg-white p-6 text-start shadow-sm outline-none transition hover:border-[#9cc7f0] hover:shadow-md focus-visible:border-[#9a5a14] sm:w-[22rem]"
                 aria-label={`${labels.readFull}: ${testimonial.project}`}
                 onClick={(event) => open(sourceIndex, event.currentTarget)}
               >
                 <div className="mb-5 flex items-center justify-between gap-4">
-                  <FaQuoteLeft className="h-7 w-7 text-[#1d72d2]/30" aria-hidden="true" />
+                  <FaQuoteLeft className="h-7 w-7 text-[#9a5a14]/30" aria-hidden="true" />
                   <Stars label={labels.stars} />
                 </div>
                 <blockquote
                   id={seoQuoteId}
                   lang="en"
                   dir="ltr"
-                  className="line-clamp-5 overflow-hidden text-start text-base font-semibold leading-8 text-[#0d1626]"
+                  className="line-clamp-5 overflow-hidden text-start text-base font-semibold leading-8 text-[#12151c]"
                 >
                   “{testimonial.text}”
                 </blockquote>
                 <div className="mt-auto pt-6">
-                  <p lang="en" dir="ltr" className="text-start text-sm font-extrabold text-[#0d1626]">
+                  <p lang="en" dir="ltr" className="text-start text-sm font-extrabold text-[#12151c]">
                     {testimonial.project}
                   </p>
-                  <p className="mt-1 text-sm font-semibold text-[#526174]">{testimonial.date}</p>
+                  <p className="mt-1 text-sm font-semibold text-[#5a6270]">{testimonial.date}</p>
                 </div>
               </button>
             );
@@ -163,7 +163,7 @@ export default function TestimonialsCarousel({ testimonials, isRtl, labels }: Pr
         <div className="fixed inset-0 z-[80] flex items-center justify-center p-4" role="presentation">
           <button
             type="button"
-            className="absolute inset-0 bg-[#0a1423]/45 backdrop-blur-[1px]"
+            className="absolute inset-0 bg-[#0c0e14]/45 backdrop-blur-[1px]"
             aria-label={labels.close}
             onClick={close}
           />
@@ -172,7 +172,7 @@ export default function TestimonialsCarousel({ testimonials, isRtl, labels }: Pr
             aria-modal="true"
             aria-labelledby={titleId}
             aria-describedby={bodyId}
-            className={`relative z-10 flex max-h-[min(90vh,42rem)] w-full max-w-2xl flex-col overflow-hidden rounded-[28px] border border-[#dbe7f5] bg-white p-6 shadow-2xl shadow-blue-950/20 sm:p-8 ${
+            className={`relative z-10 flex max-h-[min(90vh,42rem)] w-full max-w-2xl flex-col overflow-hidden rounded-[28px] border border-[#ddd5c8] bg-white p-6 shadow-2xl shadow-ink/20 sm:p-8 ${
               preferReducedMotion ? '' : 'animate-scale-in'
             }`}
           >
@@ -180,14 +180,14 @@ export default function TestimonialsCarousel({ testimonials, isRtl, labels }: Pr
               ref={closeButtonRef}
               type="button"
               onClick={close}
-              className="absolute top-4 grid h-9 w-9 place-items-center rounded-full border border-[#d5e4f4] bg-white text-[#526174] transition hover:border-[#9cc7f0] hover:text-[#1d72d2] ltr:right-4 rtl:left-4"
+              className="absolute top-4 grid h-9 w-9 place-items-center rounded-full border border-[#d5e4f4] bg-white text-[#5a6270] transition hover:border-[#9cc7f0] hover:text-[#9a5a14] ltr:right-4 rtl:left-4"
               aria-label={labels.close}
             >
               <FaTimes className="h-4 w-4" aria-hidden="true" />
             </button>
 
             <div className="mb-5 flex items-center justify-between gap-4 pe-10">
-              <FaQuoteLeft className="h-7 w-7 text-[#1d72d2]/30" aria-hidden="true" />
+              <FaQuoteLeft className="h-7 w-7 text-[#9a5a14]/30" aria-hidden="true" />
               <Stars label={labels.stars} />
             </div>
 
@@ -195,16 +195,16 @@ export default function TestimonialsCarousel({ testimonials, isRtl, labels }: Pr
               id={bodyId}
               lang="en"
               dir="ltr"
-              className="overflow-y-auto text-start text-base font-semibold leading-8 text-[#0d1626] sm:text-lg sm:leading-9"
+              className="overflow-y-auto text-start text-base font-semibold leading-8 text-[#12151c] sm:text-lg sm:leading-9"
             >
               “{active.text}”
             </blockquote>
 
-            <div className="mt-6 border-t border-[#dbe7f5] pt-5">
-              <p id={titleId} lang="en" dir="ltr" className="text-start text-sm font-extrabold text-[#0d1626]">
+            <div className="mt-6 border-t border-[#ddd5c8] pt-5">
+              <p id={titleId} lang="en" dir="ltr" className="text-start text-sm font-extrabold text-[#12151c]">
                 {active.project}
               </p>
-              <p className="mt-1 text-sm font-semibold text-[#526174]">{active.date}</p>
+              <p className="mt-1 text-sm font-semibold text-[#5a6270]">{active.date}</p>
             </div>
           </div>
         </div>

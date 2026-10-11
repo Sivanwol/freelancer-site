@@ -17,9 +17,11 @@ export const siteConfig = {
     supported: ['he', 'en'] as const,
   },
   theme: {
-    background: '#07111f',
-    foreground: '#f3f7fb',
+    background: '#f6f1e8',
+    foreground: '#12151c',
   },
+  /** Used in JSON-LD Organization.legalName — must match privacy/terms copy. */
+  legalEntityDescription: 'DevCo Solutions, operated by Sivan Wolberg',
   verification: {
     google: 'SLo_aGwT241-MU7vu68QtpEX4G8GXrlioxS8RBhJzEM',
   },
