@@ -29,6 +29,7 @@ import {
 import { SiUpwork } from 'react-icons/si';
 import { buildWhatsAppUrl } from '@/lib/whatsapp';
 import HeroShowcaseCarousel from './HeroShowcaseCarousel';
+import { HomeMarketingPage } from './home-marketing-page';
 import SoftwareServicesAccordion from './software-services-accordion';
 import TestimonialsCarousel from './testimonials-carousel';
 import VibeCodingGrid from './vibe-coding-grid';
@@ -419,27 +420,25 @@ function TestimonialsSection({ locale, nextHref = '#faq' }: { locale: string; ne
     date: formatTestimonialDate(testimonial.date, isHebrew),
   }));
   return (
-    <section id="testimonials" className="site-section bg-white">
-      <div className="site-container">
-        <SectionIntro
-          content={content}
-          eyebrow={eyebrow}
-          title={title}
-          subtitle={subtitle}
-          centered
-          scrollTo={nextHref}
-        />
-        <TestimonialsCarousel
-          testimonials={localizedTestimonials}
-          isRtl={isHebrew}
-          labels={{
-            stars: isHebrew ? '5 כוכבים' : '5 stars',
-            readFull: isHebrew ? 'קרא את העדות המלאה' : 'Read full testimonial',
-            close: isHebrew ? 'סגור' : 'Close',
-          }}
-        />
+    <>
+      <TestimonialsCarousel
+        testimonials={localizedTestimonials}
+        isRtl={isHebrew}
+        labels={{
+          previous: isHebrew ? 'עדות קודמת' : 'Previous testimonial',
+          next: isHebrew ? 'עדות הבאה' : 'Next testimonial',
+          slide: isHebrew ? 'עדות' : 'Testimonial',
+        }}
+        ctaHref={sitePaths.contact}
+        ctaLabel={content.cta.primary}
+      />
+      <div className="sr-only">
+        <p>{eyebrow}</p>
+        <p>{title}</p>
+        <p>{subtitle}</p>
+        <a href={nextHref}>{content.cta.primary}</a>
       </div>
-    </section>
+    </>
   );
 }
 
@@ -531,51 +530,9 @@ function ServiceChoiceBand({ content, isRtl }: { content: Content; isRtl: boolea
 }
 
 export function HomePage({ locale }: PageProps) {
-  const content = getCompanyContent(locale);
-  const isRtl = localeValue(locale) === 'he';
-
   return (
     <PageFrame>
-      <section id="hero" className="hero-shell relative min-h-[92vh] pt-24">
-        <div className="tech-grid" aria-hidden="true" />
-        <div className="grain-overlay absolute inset-0" aria-hidden="true" />
-        <div className="site-container relative z-10 pb-16 pt-10 lg:pt-14">
-          <div className="mx-auto max-w-4xl text-center">
-            <p className="hero-rise eyebrow-label mb-6 text-[#e8b56a]">{content.home.eyebrow}</p>
-            <HighlightTitle
-              text={content.home.title}
-              accent={getAccent(locale, 'home')}
-              className="hero-rise hero-rise-delay-1 font-display hero-display mx-auto max-w-6xl text-4xl font-black leading-[0.95] text-[#fffcf7] sm:text-5xl md:text-7xl lg:text-[5.25rem]"
-            />
-            <p className="hero-rise hero-rise-delay-2 mx-auto mt-8 max-w-3xl text-lg font-medium leading-8 text-[#d8cfc2] md:text-xl md:leading-9">
-              {content.home.subtitle}
-            </p>
-            <div className="hero-rise hero-rise-delay-3 mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-              <Link href={sitePaths.ragProduction} className="btn-primary">
-                {content.nav.rag}
-              </Link>
-              <ContactCta content={content} />
-            </div>
-            <ScrollDownLink href="#paths" label={content.cta.primary} />
-          </div>
-          <div className="mt-12 grid gap-4 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
-            <ServiceChoiceBand content={content} isRtl={isRtl} />
-            <HeroShowcaseCarousel items={content.showcases} isRtl={isRtl} />
-          </div>
-        </div>
-      </section>
-      <SplitPaths content={content} isRtl={isRtl} />
-      <ProcessSection content={content} nextHref="#testimonials" />
-      <TestimonialsSection locale={locale} nextHref="#faq" />
-      <FAQSection
-        content={content}
-        eyebrow={content.home.faq.eyebrow}
-        title={content.home.faq.title}
-        items={content.home.faq.items}
-        nextHref="#proof"
-      />
-      <CompanyProof content={content} />
-      <ContactBand content={content} source="home-contact-band" />
+      <HomeMarketingPage locale={locale} />
     </PageFrame>
   );
 }
